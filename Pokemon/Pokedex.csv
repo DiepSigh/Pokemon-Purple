@@ -1,0 +1,2 @@
+m_pokedex,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_type2,m_catchRate,m_expYield
+1,BULBASAUR,45,49,49,45,65,GRASS,POISON,45,64
