@@ -153,7 +153,7 @@
     <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
-    <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
