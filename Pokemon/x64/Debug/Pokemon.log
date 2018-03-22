@@ -2,8 +2,10 @@
 c:\users\stephen.diep\desktop\pokemon\pokemon\timer.cpp(47): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
   texture.cpp
 c:\users\stephen.diep\desktop\pokemon\pokemon\texture.cpp(47): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Pokemon.cpp
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(35): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
   main.cpp
-c:\users\stephen.diep\desktop\pokemon\pokemon\main.cpp(15): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+c:\users\stephen.diep\desktop\pokemon\pokemon\main.cpp(17): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
   graphics.cpp
 c:\users\stephen.diep\desktop\pokemon\pokemon\graphics.cpp(99): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
   gameManager.cpp

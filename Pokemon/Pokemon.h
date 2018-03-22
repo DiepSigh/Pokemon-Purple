@@ -19,8 +19,12 @@ enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, C
 
 class Pokemon {
 public:
-
-	void setPokemon();
+	Pokemon();
+	Pokemon(int pokemon, int level);
+	const void getPokemon(int pokemon);
+	void setIV();
+	void setStats();
+	const void displayStats();
 
 protected:
 	int m_pokedex; //stores # in pokedex
@@ -28,13 +32,30 @@ protected:
 
 	const int m_MAX_EV = 65535;
 
+
+
 	//dynamic stats
+	int m_level;
 	int m_hp;
 	int m_att;
 	int m_def;
 	int m_spd;
 	int m_spe;
 	int m_exp;
+
+	//IV
+	int m_IV_hp;
+	int m_IV_att;
+	int m_IV_def;
+	int m_IV_spd;
+	int m_IV_spe;
+
+	//EV
+	int m_EV_hp;
+	int m_EV_att;
+	int m_EV_def;
+	int m_EV_spd;
+	int m_EV_spe;
 
 	//static stats
 	int m_baseHP;
