@@ -21,7 +21,6 @@ class Pokemon {
 public:
 
 	void setPokemon();
-	
 
 protected:
 	int m_pokedex; //stores # in pokedex

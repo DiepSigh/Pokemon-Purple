@@ -53,17 +53,17 @@ void GameManager::Run() {
 				}
 				break;
 
-			case SDL_MOUSEMOTION:
-				printf(events.motion.x + ", " + events.motion.y);
-				break;
+			//case SDL_MOUSEMOTION:
+			//	printf(events.motion.x + ", " + events.motion.y);
+			//	break;
 
-			case SDL_MOUSEBUTTONDOWN:
-				printf("You clicked.\n");
-				break;
+			//case SDL_MOUSEBUTTONDOWN:
+			//	printf("You clicked.\n");
+			//	break;
 
-			case SDL_MOUSEBUTTONUP:
-				printf("You released mouse click.\n");
-				break;
+			//case SDL_MOUSEBUTTONUP:
+			//	printf("You released mouse click.\n");
+			//	break;
 			}
 		}
 		if (mTimer->DeltaTime() >= (0.1f / FRAME_RATE)) {
