@@ -9,9 +9,10 @@ public:
 	void addItem(const Item &item);
 	void removeItem(string itemName);
 private:
+	int cap;
 	int numbOfItems;
 	void expand();
-	void initialize();
+	void initialize(const int from);
 	Item **itemList;
 };
 

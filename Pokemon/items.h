@@ -8,7 +8,9 @@ class Item {
 public:
 	Item();
 	Item(string, bool, int, int);
-	virtual ~Item();	//GETTER
+	virtual ~Item();	
+	
+	//GETTER
 
 	//SETTER
 
