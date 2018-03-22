@@ -9,7 +9,7 @@ Inventory::Inventory()
 
 Inventory::~Inventory()
 {
-	for (size_t i = 0; i < this->numbOfItems; i++)
+	for (int i = 0; i < this->numbOfItems; i++)
 	{
 		delete this->itemList[i];
 	}
@@ -21,18 +21,20 @@ void Inventory::expand() {
 	this->cap *= 2;
 	Item **tempitemList = new Item*[this->cap];
 
-	for (size_t i = 0; i < this->numbOfItems; i++)
+	for (int i = 0; i < this->numbOfItems; i++)
 	{
 		tempitemList[i] = new Item(*this->itemList[i]);
 	}
 
-	for (size_t i = 0; i < this->numbOfItems; i++)
+	for (int i = 0; i < this->numbOfItems; i++)
 	{
 		delete this->itemList[i];
 	}
 	delete[] this->itemList;
 
+	this->itemList = tempitemList;
 
+	this->initialize(this->numbOfItems);
 }
 
 void Inventory::addItem(const Item &item)
@@ -43,15 +45,13 @@ void Inventory::addItem(const Item &item)
 	this->itemList[this->numbOfItems++] = new Item(item);
 }
 
-
 void Inventory::removeItem(string itemName) {
 
 }
 
-
 void Inventory::initialize(const int from) 
 {
-	for (size_t i = from; i < cap; i++)
+	for (int i = from; i < cap; i++)
 	{
 		this->itemList[i] = nullptr;
 	}
