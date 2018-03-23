@@ -1,9 +1,12 @@
 #include "inventory.h"
 #include "items.h"
-#include <vector>
 
 Inventory::Inventory() {}
 
-Inventory::Inventory( int maxCapacity ) {
-	m_maxCapacity = maxCapacity;
-}
+Inventory::Inventory(int capacity) {
+	m_Capacity = capacity;
+	};
+
+void Inventory::AddItem(Item item) {
+	playerInventory.push_back(item);
+};

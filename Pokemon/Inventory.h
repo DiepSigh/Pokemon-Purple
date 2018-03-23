@@ -1,25 +1,30 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
+#include <vector>
+
 
 class Inventory {
 
 public:
 	Inventory();
 	Inventory(int);
-
-	void AddItem();
+	void AddItem(Item item);
+	//void AddItem(Item item);
 	void RemoveItem();
 
 	//GETTERS
-	int GetMaxCapacity() { return m_maxCapacity; }
+	int GetCapacity() { return m_Capacity; }
 
 	//SETTERS
+	void SetCapacity(int capacity) { m_Capacity = capacity; }
 
 private:
-	int m_maxCapacity;
-	//vector<std::string> Item;
+	int m_Capacity;
+	std::vector<Item>  playerInventory;
 };
 
-void Inventory::AddItem() {
+class PlayerInventory : public Inventory {
+public:
+	int m_Capacity = 99;
 };
 #endif
