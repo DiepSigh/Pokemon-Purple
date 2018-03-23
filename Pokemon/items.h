@@ -84,8 +84,8 @@ public:
 	//RemoveEffect();
 };
 
-void Item::RemoveEffect() {
+//void Item::RemoveEffect() {
 	//Remove the effect
-};
+//};
 
 #endif // !ITEMS_H

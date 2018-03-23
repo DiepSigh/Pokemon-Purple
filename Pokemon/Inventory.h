@@ -7,7 +7,7 @@ public:
 	Inventory();
 	Inventory(int);
 
-	void AddItem(std::string);
+	void AddItem();
 	void RemoveItem();
 
 	//GETTERS
@@ -20,8 +20,6 @@ private:
 	//vector<std::string> Item;
 };
 
-	void Inventory::AddItem(std::string Item) {
-		//Item::pop_back();
-	};
-
+void Inventory::AddItem() {
+};
 #endif
