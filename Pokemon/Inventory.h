@@ -7,7 +7,7 @@ public:
 	Inventory();
 	Inventory(int);
 
-	void AddItem();
+	void AddItem(std::string);
 	void RemoveItem();
 
 	//GETTERS
@@ -18,11 +18,10 @@ public:
 private:
 	int m_maxCapacity;
 	//vector<std::string> Item;
+};
 
-
-	void Inventory::AddItem(std::string item) {
+	void Inventory::AddItem(std::string Item) {
 		//Item::pop_back();
 	};
-}
 
 #endif

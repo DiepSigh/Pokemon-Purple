@@ -6,4 +6,4 @@ Inventory::Inventory() {}
 
 Inventory::Inventory( int maxCapacity ) {
 	m_maxCapacity = maxCapacity;
-};
+}
