@@ -23,6 +23,7 @@ GameManager::GameManager() {
 	}
 
 	mTimer = Timer::Instance();
+	//mTex = new AnimatedTexture("PokemonSpriteSheet.png", 7, 1, 50, 50, 2, 1.0f,AnimatedTexture::HORIZONTAL);
 }
 
 GameManager::~GameManager() {

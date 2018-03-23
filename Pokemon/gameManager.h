@@ -13,6 +13,7 @@ private:
 	bool isPlaying = false;
 	Graphics* mGraphics;
 	Timer* mTimer;
+	//AnimatedTexture* mTex;
 
 public:
 	static GameManager* Instance();

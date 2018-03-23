@@ -39,6 +39,7 @@ Texture::~Texture() {
 
 void Texture::Render() {
 
+//	mGraphics->DrawTexture(mTex, (mClipped) ? &mClipRect : NULL, &mRenderRect);
 }
 
 void Texture::Update() {
