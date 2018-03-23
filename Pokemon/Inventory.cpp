@@ -1,5 +1,4 @@
 #include "inventory.h"
-#include "items.h"
 
 Inventory::Inventory() {}
 
@@ -10,6 +9,4 @@ Inventory::Inventory(int capacity) {
 void Inventory::AddItem(Item item) {
 	playerInventory.push_back(item);
 };
-void Inventory::RemoveItem(Item item) {
-	playerInventory.push_back(item);
-};
+//REmoveItem

@@ -1,6 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include <vector>
+#include "items.h"
 
 
 class Inventory {
@@ -10,7 +11,7 @@ public:
 	Inventory(int);
 
 	void AddItem(Item item);
-	void RemoveItem(Item item);
+	//void RemoveItem(Item item);
 
 	//GETTERS
 	int GetCapacity() { return m_Capacity; }
