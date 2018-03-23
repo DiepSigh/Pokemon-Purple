@@ -8,9 +8,9 @@ class Inventory {
 public:
 	Inventory();
 	Inventory(int);
+
 	void AddItem(Item item);
-	//void AddItem(Item item);
-	void RemoveItem();
+	void RemoveItem(Item item);
 
 	//GETTERS
 	int GetCapacity() { return m_Capacity; }
@@ -19,12 +19,12 @@ public:
 	void SetCapacity(int capacity) { m_Capacity = capacity; }
 
 private:
-	int m_Capacity;
+	int m_Capacity = 0;
 	std::vector<Item>  playerInventory;
 };
 
-class PlayerInventory : public Inventory {
+class playerInventory : public Inventory {
 public:
-	int m_Capacity = 99;
+
 };
 #endif
