@@ -1,2 +1,27 @@
-﻿  texture.cpp
-  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  animatedTexture.cpp
+c:\users\mike\documents\github\pokemon\pokemon\animatedtexture.cpp(30): warning C4552: '-': operator has no effect; expected operator with side-effect
+  assetManager.cpp
+  gameManager.cpp
+  graphics.cpp
+c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(39): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(39): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(45): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(45): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(51): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(51): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(59): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(59): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Inventory.cpp
+c:\users\mike\documents\github\pokemon\pokemon\inventory.h(24): error C2039: 'string': is not a member of 'std'
+  c:\users\mike\documents\github\pokemon\pokemon\predefined c++ types (compiler internal)(238): note: see declaration of 'std'
+c:\users\mike\documents\github\pokemon\pokemon\inventory.h(24): error C2061: syntax error: identifier 'string'
+c:\users\mike\documents\github\pokemon\pokemon\inventory.h(24): error C2535: 'void Inventory::AddItem(void)': member function already defined or declared
+  c:\users\mike\documents\github\pokemon\pokemon\inventory.h(11): note: see declaration of 'Inventory::AddItem'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\sal.h(2361): error C2059: syntax error: 'string'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\sal.h(2361): error C2143: syntax error: missing ';' before '{'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\sal.h(2361): error C2447: '{': missing function header (old-style formal list?)
+  Items.cpp
+  main.cpp
+  texture.cpp
+  timer.cpp
+  Generating Code...

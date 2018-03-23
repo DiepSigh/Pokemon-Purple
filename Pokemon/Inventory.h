@@ -1,18 +1,28 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-
-#include <string>
-using namespace std;
-
-
 class Inventory {
+
+public:
 	Inventory();
 	Inventory(int);
 
-public:
+	void AddItem();
+	void RemoveItem();
+
+	//GETTERS
+	int GetMaxCapacity() { return m_maxCapacity; }
+
+	//SETTERS
 
 private:
-};
+	int m_maxCapacity;
+	//vector<std::string> Item;
 
-#endif // !ITEMS_H
+
+	void Inventory::AddItem(std::string item) {
+		//Item::pop_back();
+	};
+}
+
+#endif
