@@ -4,8 +4,15 @@
 #include <string>
 
 class Item {
-public:
 
+protected:
+	std::string m_itemName;
+	int m_itemId;
+	int m_itemCost;
+	std::string m_itemDescription;
+	int m_healAmount;
+
+public:
 	Item();
 	Item( std::string, int, int, std::string, int );
 	//void RemoveEffect();
@@ -23,12 +30,7 @@ public:
 	void SetItemDescription(std::string description) { m_itemDescription = description; }
 	void SetHealAmount(int healamount) { m_healAmount = healamount; }
 
-private:
-	std::string m_itemName;
-	int m_itemId;
-	int m_itemCost;
-	std::string m_itemDescription;
-	int m_healAmount;
+
 };
 
 class Potion : public Item

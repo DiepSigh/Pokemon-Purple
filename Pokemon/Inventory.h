@@ -24,8 +24,5 @@ private:
 	std::vector<Item>  playerInventory;
 };
 
-class playerInventory : public Inventory {
-public:
 
-};
 #endif

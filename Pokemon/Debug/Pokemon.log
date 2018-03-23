@@ -12,19 +12,9 @@ c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(51): warning C4474: 
 c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(59): warning C4474: 'printf' : too many arguments passed for format string
   c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(59): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
   Inventory.cpp
-c:\users\mike\documents\github\pokemon\pokemon\inventory.h(12): error C2061: syntax error: identifier 'Item'
-c:\users\mike\documents\github\pokemon\pokemon\inventory.h(23): error C2065: 'Item': undeclared identifier
-c:\users\mike\documents\github\pokemon\pokemon\inventory.h(23): error C2923: 'std::vector': 'Item' is not a valid template type argument for parameter '_Ty'
-c:\users\mike\documents\github\pokemon\pokemon\inventory.h(23): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
-c:\users\mike\documents\github\pokemon\pokemon\inventory.cpp(4): error C2512: 'std::vector': no appropriate default constructor available
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\vector(662): note: see declaration of 'std::vector'
-c:\users\mike\documents\github\pokemon\pokemon\inventory.cpp(6): error C2512: 'std::vector': no appropriate default constructor available
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.13.26128\include\vector(662): note: see declaration of 'std::vector'
-c:\users\mike\documents\github\pokemon\pokemon\inventory.cpp(10): error C2511: 'void Inventory::AddItem(Item)': overloaded member function not found in 'Inventory'
-  c:\users\mike\documents\github\pokemon\pokemon\inventory.h(6): note: see declaration of 'Inventory'
-c:\users\mike\documents\github\pokemon\pokemon\inventory.cpp(11): error C2228: left of '.push_back' must have class/struct/union
   Items.cpp
   main.cpp
   texture.cpp
   timer.cpp
   Generating Code...
+  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
