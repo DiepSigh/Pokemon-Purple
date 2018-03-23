@@ -7,7 +7,7 @@ class Item {
 public:
 	Item();
 	Item( std::string, int, int, std::string, int );
-
+	void RemoveEffect();
 	//GETTERS
 	std::string GetItemName() { return m_itemName; }
 	int GetId() { return m_itemId; }
@@ -48,7 +48,7 @@ public:
 	int m_itemCost = 100;
 	std::string m_itemDescription = "Heals poison effects from a Pokémon./n";
 	int m_healAmount = 0;
-};
+	RemoveEffect();
 
 class PokeBall : public Item
 {
@@ -68,6 +68,7 @@ public:
 	int m_itemCost = 200;
 	std::string m_itemDescription = "Heals paralysis effects from a Pokémon./n";
 	int m_healAmount = 0;
+	RemoveEffect();
 };
 
 class BurnHeal : public Item
@@ -78,6 +79,11 @@ public:
 	int m_itemCost = 250;
 	std::string m_itemDescription = "Heals burn effects from a Pokémon./n";
 	int m_healAmount = 0;
+	RemoveEffect();
+};
+
+void Item::RemoveEffect() {
+	//Remove the effect
 };
 
 #endif // !ITEMS_H
