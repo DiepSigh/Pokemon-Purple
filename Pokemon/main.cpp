@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	srand(static_cast<unsigned int> (time(0))); //seed
 	Pokemon Encounter(CHARMANDER, 5);
 
+	Encounter.displayStats();
     return 0;
 }
 
