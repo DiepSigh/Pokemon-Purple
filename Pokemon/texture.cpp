@@ -38,7 +38,11 @@ Texture::~Texture() {
 }
 
 void Texture::Render() {
-
+	
+	/*mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
+	mRenderRect.x = (int)(pos.x - mHeight * 0.5f);*/
+	//left of colon is true, right is false
+	mGraphics->DrawTexture(mTex, (mClipped) ? &mClipRect : NULL, &mRenderRect);
 }
 
 void Texture::Update() {

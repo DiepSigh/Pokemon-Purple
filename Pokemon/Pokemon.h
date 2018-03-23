@@ -10,29 +10,29 @@
 #include <string>
 #include <map>
 
-enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8, BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHIC=18, ICE=19, DRAGON=20 };
-
 enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
 	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
 	  NIDORAN_F, NIDORINA, NIDOQUEEN, NIDORAN_M, NIDORINO, NIDOKING, CLEFAIRY, CLEFABLE, VULPIX, NINETALES, JIGGLYPUFF, WIGGLYTUFF, ZUBAT, GOLBAT,  
 	  ODDISH, GLOOM, VILEPLUME, PARAS, PARASECT, VENONAT, VENOMOTH, DIGLETT, DUGTRIO};
 
-std::map<std::string, pokemon>;
-//https://stackoverflow.com/questions/7163069/c-string-to-enum
+enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8, BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHIC=18, ICE=19, DRAGON=20 };
+
+enum pokemon_status { CLEAN=0, BURN=1, FREEZE=2, PARALYSIS=3, POISON=4, TOXIC=5, SLEEP=6 };
 
 class Pokemon {
 public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
 	const void getPokemon(int pokemon);
-	int typeConvert(std::string type);
 	void setIV();
+	int typeConvert(std::string t);
 	void setStats();
 	const void displayStats();
 
 protected:
 	int m_pokedex; //stores # in pokedex
 	std::string m_name; //stores nickname if any
+	int status;
 
 	const int m_MAX_EV = 65535;
 
@@ -68,6 +68,8 @@ protected:
 
 	int m_type1;
 	int m_type2;
+	std::string m_type1_str;
+	std::string m_type2_str;
 	int m_catchRate;
 	int m_expYield;
 };

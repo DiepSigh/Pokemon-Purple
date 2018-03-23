@@ -14,6 +14,7 @@ private:
 	Graphics* mGraphics;
 	Timer* mTimer;
 
+	//AnimatedTexture* mTex; //Pointer for animated texture
 public:
 	static GameManager* Instance();
 	static void Release();

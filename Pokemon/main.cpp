@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	GameManager::Release();
 	game = nullptr;*/
 	srand(static_cast<unsigned int> (time(0))); //seed
-	Pokemon Encounter(CHARMANDER, 5);
+	Pokemon Encounter(SQUIRTLE, 7);
 
 	Encounter.displayStats();
     return 0;

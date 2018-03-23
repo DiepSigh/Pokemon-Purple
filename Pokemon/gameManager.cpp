@@ -21,7 +21,8 @@ GameManager::GameManager() {
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
-
+														//x,y, size,frames,speed
+	//mTex = new AnimatedTexture("PokemonSpriteSHeet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
 	mTimer = Timer::Instance();
 }
 
@@ -68,6 +69,7 @@ void GameManager::Run() {
 		}
 		if (mTimer->DeltaTime() >= (0.1f / FRAME_RATE)) {
 			//Updates
+
 			mGraphics->ClearBackBuffer();
 
 			//Renders

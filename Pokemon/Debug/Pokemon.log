@@ -1,10 +1,2 @@
-﻿  main.cpp
-  Pokemon.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  timer.cpp
-  texture.cpp
-  graphics.cpp
-  assetManager.cpp
-  animatedTexture.cpp
-  Pokemon.vcxproj -> C:\Users\Stephen Diep\Desktop\Pokemon\Debug\Pokemon.exe
+﻿  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
