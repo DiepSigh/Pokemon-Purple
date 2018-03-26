@@ -1,3 +1,46 @@
-﻿  graphics.cpp
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
+﻿  menuStart.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(9): error C2011: 'Vector2': 'struct' type redefinition
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(43): error C2084: function 'Vector2 operator +(const Vector2 &,const Vector2 &)' already has a body
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(42): note: see previous definition of '+'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(43): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(44): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(44): error C2228: left of '.x' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(44): error C2228: left of '.y' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(47): error C2084: function 'Vector2 operator -(const Vector2 &,const Vector2 &)' already has a body
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(45): note: see previous definition of '-'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(47): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(48): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(48): error C2228: left of '.x' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(48): error C2228: left of '.y' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(51): error C2084: function 'Vector2 operator *(const Vector2 &,const Vector2 &)' already has a body
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(48): note: see previous definition of '*'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(51): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(52): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(52): error C2228: left of '.x' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(52): error C2228: left of '.y' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(55): error C2084: function 'Vector2 RotateVector(Vector2 &,float)' already has a body
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(52): note: see previous definition of 'RotateVector'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(55): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(58): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(58): error C2228: left of '.x' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(58): error C2228: left of '.y' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(59): error C2027: use of undefined type 'Vector2'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\math.h(9): note: see declaration of 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(59): error C2228: left of '.x' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\mathhelper.h(59): error C2228: left of '.y' must have class/struct/union
+c:\users\rick-trios\documents\github\pokemon\pokemon\gameentity.h(11): error C2079: 'GameEntity::mPos' uses undefined struct 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(29): error C2079: 'Menu::mPos' uses undefined struct 'Vector2'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(3): error C2512: 'Texture': no appropriate default constructor available
+  c:\users\rick-trios\documents\github\pokemon\pokemon\texture.h(8): note: see declaration of 'Texture'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(9): error C2659: '=': function as left operand
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(10): error C3867: 'Menu::CheckState': non-standard syntax; use '&' to create a pointer to member
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(10): fatal error C1903: unable to recover from previous error(s); stopping compilation
