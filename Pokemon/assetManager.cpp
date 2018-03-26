@@ -1,10 +1,12 @@
 #include "assetManager.h"
 
 AssetManager* AssetManager::sInstance = NULL;
+
 AssetManager* AssetManager::Instance() {
 	if (sInstance == NULL) {
 		sInstance = new AssetManager();
 	}
+
 	return sInstance;
 }
 
@@ -13,7 +15,9 @@ void AssetManager::Release() {
 	sInstance = NULL;
 }
 
-AssetManager::AssetManager(){}
+AssetManager::AssetManager(){
+
+}
 
 AssetManager::~AssetManager() {
 	for (auto tex : mTexture) {
@@ -24,7 +28,7 @@ AssetManager::~AssetManager() {
 	mTexture.clear();
 }
 
-SDL_Texture* AssetManager::getTexture(std::string filename) {
+SDL_Texture* AssetManager::GetTexture(std::string filename) {
 	std::string fullPath = SDL_GetBasePath();
 	fullPath.append("Assets\\" + filename);
 
