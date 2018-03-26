@@ -9,9 +9,12 @@ class Camera {
 	Camera(SDL_Rect, int, int);	
 
 public:
+
 	static SDL_Rect cameraRect;
 	int screenWidth = Graphics::SCREEN_WIDTH;
 	int screenHeight = Graphics::SCREEN_WIDTH;
+	void UpdatePos();
+
 private:
 	
 };
