@@ -3,6 +3,7 @@
 
 #include "graphics.h"
 #include "timer.h"
+#include "animatedTexture.h"
 
 class GameManager {
 private:
@@ -13,6 +14,7 @@ private:
 	bool isPlaying = false;
 	Graphics* mGraphics;
 	Timer* mTimer;
+	AnimatedTexture* mTex;
 
 public:
 	static GameManager* Instance();
@@ -20,10 +22,11 @@ public:
 	void Run();
 	bool GetIsPlaying() { return isPlaying; }
 	void SetIsPlaying(bool playing) { isPlaying = playing; }
-	
+
 private:
 	GameManager();
 	~GameManager();
 };
 
-#endif
+#endif // !GAMEMANAGER_H
+

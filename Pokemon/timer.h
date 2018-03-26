@@ -25,5 +25,5 @@ private:
 	Timer();
 	~Timer();
 };
+#endif // !TIMER_H
 
-#endif
