@@ -1,8 +1,11 @@
 ﻿  animatedTexture.cpp
   AssetManager.cpp
+  camera.cpp
   gameEntity.cpp
   gameManager.cpp
   graphics.cpp
+  Inventory.cpp
+  Items.cpp
   Pokemon.cpp
   texture.cpp
   timer.cpp
