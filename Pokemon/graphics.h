@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <string>
 #include <stdio.h>
 
@@ -27,6 +28,8 @@ public:
 	void ClearBackBuffer();
 	void DrawTexture(SDL_Texture* tex, SDL_Rect* clip = NULL, SDL_Rect* rend = NULL);
 	void Render();
+
+	SDL_Texture* CreateTextTexture(TTF_Font* font, std::string text);
 
 private:
 	Graphics();

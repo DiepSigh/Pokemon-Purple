@@ -1,9 +1,8 @@
 #include "menu.h"
 
-Menu::Menu() {
-}
+Menu::Menu() {}
 
-Menu::~Menu() {}
+
 
 void Menu::CheckState() {
 	CheckState = NEWGAME;
@@ -26,6 +25,9 @@ void Menu::CheckState() {
 			break;
 	}
 }
+
+
+Menu::~Menu() {}
 
 void Menu::Update(){}
 
