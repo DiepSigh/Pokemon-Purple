@@ -5,10 +5,10 @@
 #include <time.h>
 int main(int argc, char *argv[])
 {
-	GameManager* game = GameManager::Instance();
+	/*GameManager* game = GameManager::Instance();
 	game->Run();
 	GameManager::Release();
-	game = nullptr;
+	game = nullptr;*/
 
 	srand(static_cast<unsigned int> (time(0))); //seed
 	Pokemon Encounter(SQUIRTLE, 7);
