@@ -15,6 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> parent of 1e5a008... Updated with Richard's
     <ClCompile Include="assetManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,9 +40,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+<<<<<<< HEAD
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pokemon.cpp">
+=======
+>>>>>>> parent of 1e5a008... Updated with Richard's
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,6 +59,12 @@
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+>>>>>>> parent of 1e5a008... Updated with Richard's
     <ClInclude Include="texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -59,6 +74,7 @@
     <ClInclude Include="animatedTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Pokemon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,5 +84,7 @@
     <ClInclude Include="mathHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> parent of 1e5a008... Updated with Richard's
   </ItemGroup>
 </Project>

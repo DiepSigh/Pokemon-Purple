@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="gameManager.cpp" />
@@ -167,6 +168,28 @@
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
+=======
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="animatedTexture.cpp" />
+    <ClCompile Include="assetManager.cpp" />
+    <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animatedTexture.h" />
+    <ClInclude Include="assetManager.h" />
+    <ClInclude Include="gameManager.h" />
+    <ClInclude Include="graphics.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="timer.h" />
+  </ItemGroup>
+>>>>>>> parent of 1e5a008... Updated with Richard's
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

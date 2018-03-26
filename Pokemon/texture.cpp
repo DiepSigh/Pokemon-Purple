@@ -38,11 +38,15 @@ Texture::~Texture() {
 }
 
 void Texture::Render() {
+<<<<<<< HEAD
 	
 	/*mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
 	mRenderRect.x = (int)(pos.x - mHeight * 0.5f);*/
 	//left of colon is true, right is false
 	mGraphics->DrawTexture(mTex, (mClipped) ? &mClipRect : NULL, &mRenderRect);
+=======
+
+>>>>>>> parent of 1e5a008... Updated with Richard's
 }
 
 void Texture::Update() {

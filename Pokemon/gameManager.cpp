@@ -21,8 +21,12 @@ GameManager::GameManager() {
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
+<<<<<<< HEAD
 														//x,y, size,frames,speed
 	//mTex = new AnimatedTexture("PokemonSpriteSHeet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
+=======
+
+>>>>>>> parent of 1e5a008... Updated with Richard's
 	mTimer = Timer::Instance();
 }
 
@@ -54,6 +58,7 @@ void GameManager::Run() {
 				}
 				break;
 
+<<<<<<< HEAD
 			//case SDL_MOUSEMOTION:
 			//	printf(events.motion.x + ", " + events.motion.y);
 			//	break;
@@ -70,6 +75,23 @@ void GameManager::Run() {
 		if (mTimer->DeltaTime() >= (0.1f / FRAME_RATE)) {
 			//Updates
 
+=======
+			case SDL_MOUSEMOTION:
+				printf(events.motion.x + ", " + events.motion.y);
+				break;
+
+			case SDL_MOUSEBUTTONDOWN:
+				printf("You clicked.\n");
+				break;
+
+			case SDL_MOUSEBUTTONUP:
+				printf("You released mouse click.\n");
+				break;
+			}
+		}
+		if (mTimer->DeltaTime() >= (0.1f / FRAME_RATE)) {
+			//Updates
+>>>>>>> parent of 1e5a008... Updated with Richard's
 			mGraphics->ClearBackBuffer();
 
 			//Renders
