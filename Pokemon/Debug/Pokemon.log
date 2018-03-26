@@ -1,6 +1,20 @@
 ﻿  animatedTexture.cpp
 c:\users\mike\documents\github\pokemon\pokemon\animatedtexture.cpp(30): warning C4552: '-': operator has no effect; expected operator with side-effect
   assetManager.cpp
+  camera.cpp
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(8): error C2460: 'Camera::SDL_Rect': uses 'Camera', which is being defined
+  c:\users\mike\documents\github\pokemon\pokemon\camera.h(6): note: see declaration of 'Camera'
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(11): error C3646: 'cameraRect': unknown override specifier
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(11): error C2370: 'Camera::SDL_Rect': redefinition; different storage class
+  c:\users\mike\documents\github\pokemon\pokemon\camera.h(8): note: see declaration of 'Camera::SDL_Rect'
+c:\users\mike\documents\github\pokemon\sdl2-2.0.8\include\sdl_platform.h(182): error C2059: syntax error: 'string'
+c:\users\mike\documents\github\pokemon\sdl2-2.0.8\include\sdl_platform.h(182): error C2143: syntax error: missing ';' before '{'
+c:\users\mike\documents\github\pokemon\sdl2-2.0.8\include\sdl_platform.h(182): error C2447: '{': missing function header (old-style formal list?)
+c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(4): error C2039: 'cameraRect': is not a member of 'Camera'
+  c:\users\mike\documents\github\pokemon\pokemon\camera.h(6): note: see declaration of 'Camera'
+c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(8): error C2761: '{ctor}': redeclaration of member is not allowed
+c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(8): error C2448: 'Camera::{ctor}': function-style initializer appears to be a function definition
   gameManager.cpp
   graphics.cpp
 c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(39): warning C4474: 'printf' : too many arguments passed for format string
@@ -17,4 +31,3 @@ c:\users\mike\documents\github\pokemon\pokemon\graphics.cpp(59): warning C4474: 
   texture.cpp
   timer.cpp
   Generating Code...
-  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe

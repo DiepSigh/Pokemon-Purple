@@ -152,7 +152,7 @@
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="assetManager.cpp" />
-    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Inventory.cpp" />
