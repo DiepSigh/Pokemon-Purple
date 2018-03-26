@@ -2,21 +2,22 @@
 #define STARTROOM_H
 
 #include "animatedTexture.h"
-#include "graphics.h"
 
 class StartRoom : public AnimatedTexture {
 
-private:
+protected:
 	AnimatedTexture* mFloor;
-	AnimatedTexture* mObject;
+	AnimatedTexture* mObjects;
+	AnimatedTexture* mComputer;
 
 public:
 	StartRoom();
 	~StartRoom();
-	//inline AnimatedTexture* GetFloor() {return mFloor;}
-
+	inline AnimatedTexture* GetFloor() {return mFloor;}
+	inline AnimatedTexture* GetObjects() {return mObjects;}
+	inline AnimatedTexture* GetComputer() {return mComputer;}
 
 };
 
-#endif // !_STARTROOM_H
+#endif // !STARTROOM_H
 

@@ -20,6 +20,7 @@ protected:
 public:
 	Texture(std::string, int, int, int, int);
 	~Texture();
+	Texture();
 	virtual void Render();
 	virtual void Update();
 
