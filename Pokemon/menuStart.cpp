@@ -5,8 +5,8 @@ Menu::Menu() {}
 
 
 void Menu::CheckState() {
-	CheckState = NEWGAME;
-	switch (CheckState) {
+	menuState = NEWGAME;
+	switch (menuState) {
 		case NEWGAME:
 			break;
 		case OPTIONS:

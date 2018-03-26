@@ -26,8 +26,11 @@ GameManager::GameManager() {
 	
 	mTimer = Timer::Instance();
 
-	mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
-	mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
+	//mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
+	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
+
+	mTex = new Texture("Hello World!","POKEMONGB.ttf", 40);
+	mTex->Pos(Vector2(400, 250));
 }
 
 GameManager::~GameManager() {

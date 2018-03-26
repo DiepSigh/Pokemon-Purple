@@ -2,13 +2,9 @@
 #define MENU_H
 
 #include "SDL.h"
-#include "timer.h"
 #include <string>
 #include <vector>
-#include "math.h"
-#include "graphics.h"
 #include  "texture.h"
-#include "assetManager.h"
 
 class Menu : public Texture {
 public:

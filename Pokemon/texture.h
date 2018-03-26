@@ -20,8 +20,11 @@ protected:
 public:
 	Texture(std::string, int, int, int, int);
 	~Texture();
+	Texture();
 	virtual void Render();
 	virtual void Update();
+
+	Texture(std::string text, std::string fontPath, int size);
 
 	SDL_Texture *GetmTex() { return mTex; }
 	Graphics *GetmGraphics() { return mGraphics; }
