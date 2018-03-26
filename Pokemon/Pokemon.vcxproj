@@ -151,6 +151,7 @@
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="mathHelper.h" />
+    <ClInclude Include="startRoom.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
