@@ -19,7 +19,6 @@ Texture::Texture(std::string filename, int x, int y, int w, int h) {
 }
 
 Texture::~Texture() {
-	
 	mTex = NULL;
 	mGraphics = NULL;
 }

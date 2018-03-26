@@ -26,6 +26,8 @@ enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, 
 
 enum pokemon_status { CLEAN=0, BURN=1, FREEZE=2, PARALYSIS=3, POISONED=4, TOXIC=5, SLEEP=6 };
 
+enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
+
 const int MAX_EV = 65535;
 
 class Pokemon {
@@ -34,24 +36,36 @@ public:
 	Pokemon(int pokemon, int level);
 	const void getPokemon(int pokemon);
 	void setIV();
+	void emptyEV();
 	int typeConvert(std::string t);
 	void setStats();
+	void expCalculator(int group);
 	const void displayStats();
+
 
 protected:
 	int m_pokedex; //stores # in pokedex
-	std::string m_name; //stores nickname if any
+	std::string m_nickname; //stores nickname if any
+	int m_level;
+	int m_exp;
 	int m_status;
 	bool m_seen;
 
+	//Other
+	int m_type1;
+	int m_type2;
+	std::string m_type1_str;
+	std::string m_type2_str;
+	int m_catchRate;
+	int m_expYield;
+	int m_expGroup;
+
 	//dynamic stats
-	int m_level;
 	int m_hp;
 	int m_atk;
 	int m_def;
 	int m_spd;
 	int m_spe;
-	int m_exp;
 
 	//IV
 	int m_IV_hp;
@@ -74,12 +88,6 @@ protected:
 	int m_baseSpd;
 	int m_baseSpe;
 
-	int m_type1;
-	int m_type2;
-	std::string m_type1_str;
-	std::string m_type2_str;
-	int m_catchRate;
-	int m_expYield;
 };
 
 #endif // !POKEMON_H

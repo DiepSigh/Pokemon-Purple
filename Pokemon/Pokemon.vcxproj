@@ -152,6 +152,7 @@
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="mathHelper.h" />
+    <ClInclude Include="moves.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />

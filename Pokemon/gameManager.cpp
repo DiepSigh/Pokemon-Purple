@@ -26,7 +26,7 @@ GameManager::GameManager() {
 	
 	mTimer = Timer::Instance();
 
-	mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
+	mTex = new AnimatedTexture("PokemonSpriteSheet.png",1,1,57,56,3,1.0f,AnimatedTexture::HORIZONTAL);
 	mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
 }
 
