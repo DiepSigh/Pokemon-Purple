@@ -1,14 +1,3 @@
-﻿  timer.cpp
-  texture.cpp
-  Pokemon.cpp
-  main.cpp
-  graphics.cpp
-  gameManager.cpp
-  gameEntity.cpp
-  battle.cpp
-  AssetManager.cpp
-  animatedTexture.cpp
-  Generating Code...
-c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(118): warning C4715: 'Pokemon::typeConvert': not all control paths return a value
+﻿  main.cpp
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
