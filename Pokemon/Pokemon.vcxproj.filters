@@ -15,61 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClCompile Include="assetManager.cpp">
-=======
-    <ClInclude Include="graphics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="assetManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="animatedTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mathHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Pokemon.cpp">
->>>>>>> master
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="timer.cpp">
+    <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AssetManager.cpp">
+    <ClCompile Include="timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="animatedTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gameEntity.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Pokemon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -102,7 +68,5 @@
     <ClInclude Include="mathHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-=======
->>>>>>> master
   </ItemGroup>
 </Project>

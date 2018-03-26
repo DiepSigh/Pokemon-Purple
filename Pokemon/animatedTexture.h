@@ -7,7 +7,8 @@
 class AnimatedTexture : public Texture {
 public:
 	enum WRAP_MODE {ONCE = 0, LOOP = 1 };
-	enum ANIM_DIR {HORIZONTAL = 0, VERTICAL = 1};
+	enum ANIM_DIR {HORIZONTAL = 0, VRETICAL = 1};
+
 
 private:
 	Timer* mTimer;
@@ -26,6 +27,6 @@ public:
 	~AnimatedTexture();
 	void WrapMode(WRAP_MODE);
 	void Update();
-};
-#endif // !ANIMATEDTEXTURE_H
 
+};
+#endif

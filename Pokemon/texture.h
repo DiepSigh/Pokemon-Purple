@@ -2,10 +2,8 @@
 #define TEXTURE_H
 
 #include "graphics.h"
-#include "assetManager.h"
-#include "gameEntity.h"
 
-class Texture : public GameEntity {
+class Texture {
 protected:
 	SDL_Texture *mTex;
 	Graphics *mGraphics;
@@ -19,19 +17,21 @@ protected:
 
 public:
 	Texture(std::string, int, int, int, int);
+	//Texture(std::string, std::string, int);
 	~Texture();
 	virtual void Render();
 	virtual void Update();
 
-	SDL_Texture *GetmTex() { return mTex; }
-	Graphics *GetmGraphics() { return mGraphics; }
-	int GetWidth() { return mWidth; }
-	int GetHeight() { return mHeight; }
-	bool GetClipped() { return mClipped; }
-	SDL_Rect GetmRenderRect() { return mRenderRect; }
-	SDL_Rect GetmClipRect() { return mClipRect; }
-	void SetRenderRectX(int x) { mRenderRect.x = x; }
-	void SetRenderRectY(int y) { mRenderRect.y = y; }
-};
-#endif // !TEXTURE_H
+	SDL_Texture *getmTex() { return mTex; }
+	Graphics *getmGraphics() { return mGraphics; }
+	int getWidth() { return mWidth; }
+	int getHeight() { return mHeight; }
+	bool getClipped() { return mClipped; }
+	SDL_Rect getmRenderRect() { return mRenderRect; }
+	SDL_Rect getmClipRect() { return mClipRect; }
+	void setRenderRectX(int x) { mRenderRect.x = x; }
+	void setRenderRectY(int y) { mRenderRect.y = y; }
 
+};
+
+#endif

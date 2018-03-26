@@ -36,19 +36,19 @@ Graphics::~Graphics() {
 
 bool Graphics::Init() {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		printf("SDL Initialization Error: %s\n", SDL_GetError());
+		printf("SDL Initialization Error: &s\n", SDL_GetError());
 	}
 
 	mWindow = SDL_CreateWindow("Pokemon", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOWEVENT_NONE);
 
 	if (mWindow == NULL) {
-		printf("Window Creation Error %s\n", SDL_GetError());
+		printf("Window Creation Error &s\n", SDL_GetError());
 	}
 
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED);
 
 	if (mRenderer == NULL) {
-		printf("Renderer Creation Error: %s\n", SDL_GetError());
+		printf("Renderer Creation Error: &s\n", SDL_GetError());
 	}
 
 	SDL_SetRenderDrawColor(mRenderer, 0xff, 0xff, 0xff, 0xff);
@@ -56,7 +56,7 @@ bool Graphics::Init() {
 	int flag = IMG_INIT_PNG;
 
 	if (!(IMG_Init(flag)&flag)) {
-		printf("IMG Initialization Error: %s\n", SDL_GetError());
+		printf("IMG Initialization Error: &s\n", SDL_GetError());
 		return false;
 	}
 
@@ -80,7 +80,7 @@ SDL_Texture* Graphics::LoadTexture(std::string path) {
 	tex = SDL_CreateTextureFromSurface(mRenderer, surface);
 
 	if (tex == NULL) {
-		printf("Create Texture Error %s\n", SDL_GetError());
+		printf("Create Texture Error%s\n", SDL_GetError());
 		return tex;
 	}
 
