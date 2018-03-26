@@ -1,3 +1,7 @@
-﻿  graphics.cpp
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
+﻿  playerWalk.cpp
+  gameManager.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Pokemon.cpp
+  Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)

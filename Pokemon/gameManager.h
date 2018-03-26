@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+#include "playerWalk.h"
 
 class GameManager {
 private:
@@ -15,6 +16,7 @@ private:
 	Graphics* mGraphics;
 	Timer* mTimer;
 	AnimatedTexture* mTex;
+	PlayerWalk* playerControls;
 
 public:
 	static GameManager* Instance();
@@ -22,6 +24,7 @@ public:
 	void Run();
 	bool GetIsPlaying() { return isPlaying; }
 	void SetIsPlaying(bool playing) { isPlaying = playing; }
+
 
 private:
 	GameManager();

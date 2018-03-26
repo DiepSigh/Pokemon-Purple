@@ -151,6 +151,7 @@
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="mathHelper.h" />
+    <ClInclude Include="playerWalk.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="playerWalk.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />

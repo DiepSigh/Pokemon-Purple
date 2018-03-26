@@ -26,6 +26,8 @@ GameManager::GameManager() {
 	
 	mTimer = Timer::Instance();
 
+	playerControls = new PlayerWalk();
+
 	mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
 	mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
 }
@@ -46,14 +48,13 @@ void GameManager::Run() {
 	while (!mQuit) {
 		mTimer->Update();
 
-		while (SDL_PollEvent(&events) != 0) {
-			if (events.type == SDL_QUIT) {
-				mQuit = true;
-			}
-		}
+		
+
+		playerControls->Input();
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 			//UPDATES!!!!
+			
 			mTex->Update();
 			mGraphics->ClearBackBuffer();
 
