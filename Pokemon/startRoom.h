@@ -84,6 +84,10 @@ public:
 	StartRoom();
 	~StartRoom();
 
+	void Render();
+	void Update();
+
+	inline AnimatedTexture* GetComputer() { return mComputer; }
 	inline AnimatedTexture* GetWall() { return mWall; }
 	inline AnimatedTexture* GetWall2() { return mWall2; }
 	inline AnimatedTexture* GetWall3() { return mWall3; }
@@ -91,21 +95,24 @@ public:
 	inline AnimatedTexture* GetWall5() { return mWall5; }
 	inline AnimatedTexture* GetWall6() { return mWall6; }
 	inline AnimatedTexture* GetWall7() { return mWall7; }
-
-
-	inline AnimatedTexture* GetStairs() { return mStairs; }
-
+	
+	inline AnimatedTexture* GetComputer2() { return mComputer2; }
 	inline AnimatedTexture* GetTable() { return mTable; }
 	inline AnimatedTexture* GetTable2() { return mTable2; }
+	inline AnimatedTexture* GetFloor() { return mFloor; }
+	inline AnimatedTexture* GetFloor2() { return mFloor2; }
+	inline AnimatedTexture* GetFloor3() { return mFloor3; }
+	inline AnimatedTexture* GetFloor4() { return mFloor4; }
+	inline AnimatedTexture* GetStairs() { return mStairs; }
+
+
+
+
 
 	inline AnimatedTexture* GetTelevision() { return mTelevision; }
 	inline AnimatedTexture* GetConsole() { return mConsole; }
 
-	inline AnimatedTexture* GetFloor() { return mFloor; }
-
-
-	inline AnimatedTexture* GetComputer() { return mComputer; }
-	inline AnimatedTexture* GetComputer2() { return mComputer2; }
+		
 
 	inline AnimatedTexture* GetBed() { return mBed; }
 	inline AnimatedTexture* GetBed2() { return mBed2; }

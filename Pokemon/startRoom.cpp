@@ -2,8 +2,8 @@
 
 StartRoom::StartRoom() {
 
-	mComputer = new AnimatedTexture("01_Start_Game_Room.png", 0, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
-	mWall = new AnimatedTexture("01_Start_Game_Room.png", 16, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
+	mComputer = new AnimatedTexture("01_Start_Game_Room.png", 0, 0, 32, 32, 1, 0, AnimatedTexture::HORIZONTAL);
+	mWall = new AnimatedTexture("01_Start_Game_Room.png", 64, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mWall2 = new AnimatedTexture("01_Start_Game_Room.png", 32, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mWall3 = new AnimatedTexture("01_Start_Game_Room.png", 48, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mWall4 = new AnimatedTexture("01_Start_Game_Room.png", 64, 0, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
@@ -56,7 +56,7 @@ StartRoom::StartRoom() {
 	mFloor33 = new AnimatedTexture("01_Start_Game_Room.png", 96, 80, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mFloor34 = new AnimatedTexture("01_Start_Game_Room.png", 112, 80, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 
-	mBed = new AnimatedTexture("01_Start_Game_Room.png", 0, 96, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
+	mBed = new AnimatedTexture("01_Start_Game_Room.png", 0, 96, 16, 16, 1, 1.0f, AnimatedTexture::HORIZONTAL);
 	mFloor35 = new AnimatedTexture("01_Start_Game_Room.png", 16, 96, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mFloor36 = new AnimatedTexture("01_Start_Game_Room.png", 32, 96, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
 	mFloor37 = new AnimatedTexture("01_Start_Game_Room.png", 48, 96, 16, 16, 1, 0, AnimatedTexture::HORIZONTAL);
@@ -77,6 +77,7 @@ StartRoom::StartRoom() {
 }
 
 StartRoom::~StartRoom() {
+
 	delete mComputer;
 	mComputer = NULL;
 	delete mWall;
@@ -199,5 +200,29 @@ StartRoom::~StartRoom() {
 	delete mFloor40;
 	mFloor40 = NULL;
 
+	delete mBed2;
+	mBed2 = NULL;
+	delete mFloor41;
+	mFloor41 = NULL;
+	delete mFloor42;
+	mFloor42 = NULL;
+	delete mFloor43;
+	mFloor43 = NULL;
+	delete mFloor44;
+	mFloor44 = NULL;
+	delete mFloor45;
+	mFloor45 = NULL;
+	delete mFlower2;
+	mFlower2 = NULL;
+	delete mFloor46;
+	mFloor46 = NULL;
+
 
 }
+
+void StartRoom::Render() {}
+
+void StartRoom::Update() {}
+
+
+
