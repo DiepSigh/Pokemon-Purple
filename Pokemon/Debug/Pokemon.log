@@ -1,4 +1,1 @@
-﻿  Pokemon.cpp
-c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(120): warning C4715: 'Pokemon::typeConvert': not all control paths return a value
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
-  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
+﻿  Pokemon.vcxproj -> C:\Users\Stephen Diep\Desktop\Pokemon\Debug\Pokemon.exe

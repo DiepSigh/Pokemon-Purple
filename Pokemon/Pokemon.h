@@ -9,6 +9,7 @@
 
 // Base of Pokémon
 #include <string>
+#include "moves.h"
 
 enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
 	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
@@ -24,7 +25,7 @@ enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, C
 
 enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8, BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHIC=18, ICE=19, DRAGON=20 };
 
-enum pokemon_status { CLEAN=0, BURN=1, FREEZE=2, PARALYSIS=3, POISONED=4, TOXIC=5, SLEEP=6 };
+enum pokemon_status { OK=0, BURNED=1, FROZEN=2, PARALYZED=3, POISONED=4, BADLY_POISONED=5, ASLEEP=6 };
 
 enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
 
@@ -42,14 +43,14 @@ public:
 	void expCalculator(int group);
 	const void displayStats();
 
-
 protected:
 	int m_pokedex; //stores # in pokedex
 	std::string m_nickname; //stores nickname if any
 	int m_level;
-	int m_exp;
 	int m_status;
-	bool m_seen;
+	int m_exp;
+	Move move[4];
+	//bool m_seen;
 
 	//Other
 	int m_type1;
@@ -59,6 +60,12 @@ protected:
 	int m_catchRate;
 	int m_expYield;
 	int m_expGroup;
+
+	//description
+	std::string m_kind;
+	std::string m_height;
+	float m_weight;
+	std::string m_description;
 
 	//dynamic stats
 	int m_hp;
