@@ -43,7 +43,7 @@ public:
 
 protected:
 	int m_pokedex; //stores # in pokedex
-	std::string m_nickname; //stores nickname if any
+	std::string *m_nickname; //stores nickname if any
 	int m_level;
 	int m_status;
 	int m_exp;
