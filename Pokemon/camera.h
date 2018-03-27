@@ -1,7 +1,10 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "SDL_Rect.h"
+#include <SDL.h>
+#include <SDL_image.h>
+#include <stdio.h>
+#include <string>
 #include "graphics.h"
 
 class Camera {
@@ -11,14 +14,19 @@ class Camera {
 public:
 
 	static SDL_Rect m_cameraRect;
-	int m_screenWidth = Graphics::SCREEN_WIDTH;
-	int m_screenHeight = Graphics::SCREEN_WIDTH;
-	int LEVEL_WIDTH = 1280;
-	int LEVEL_HEIGHT = 960;
-	void UpdatePos();
+	int m_screenWidtht;
+	int m_screenHeight;
+
+	int getPosX(int);
+	int getPosY(int);
+
+	void UpdatePos(int, int);
 
 private:
-	
+
+	int m_camX;
+	int m_camY;
+
 };
 
 

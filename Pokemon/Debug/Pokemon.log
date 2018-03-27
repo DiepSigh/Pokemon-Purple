@@ -1,13 +1,4 @@
-﻿  animatedTexture.cpp
-  AssetManager.cpp
-  camera.cpp
-  gameEntity.cpp
+﻿  camera.cpp
   gameManager.cpp
-  graphics.cpp
-  Inventory.cpp
-  Items.cpp
-  Pokemon.cpp
-  texture.cpp
-  timer.cpp
   Generating Code...
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
