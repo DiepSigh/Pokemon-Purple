@@ -1,3 +1,9 @@
-﻿  gameManager.cpp
+﻿  menuStart.cpp
+  Generating Code...
+  Compiling...
+  menuManager.cpp
+  gameManager.cpp
+  Pokemon.cpp
+  Generating Code...
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)

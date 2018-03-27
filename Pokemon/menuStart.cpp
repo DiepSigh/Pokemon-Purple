@@ -1,8 +1,22 @@
 #include "menu.h"
 
-Menu::Menu() {}
+using namespace std;
+
+Menu::Menu(){
+
+}
+
+Menu::Menu(float x, float y, Texture* tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+
+	mPos.x = x;
+	mPos.y = y;
+	mTex = tex;
 
 
+
+}
 
 void Menu::CheckState() {
 	menuState = NEWGAME;
@@ -31,4 +45,18 @@ Menu::~Menu() {}
 
 void Menu::Update(){}
 
-void Menu::Render(){}
+void Menu::Render(){
+	//Vector2 pos = Pos(WORLD);
+	//mRenderRect.x = (int)pos.x;
+	//mRenderRect.y = (int)pos.y;
+
+	SetRenderRectX((int)this->mPos.x);
+	SetRenderRectY((int)this->mPos.y);
+	cout << this->mPos.x;
+	cout << this->mPos.y;
+
+
+	//GetmGraphics()->DrawTexture(GetmTex()->GetSDLTex(), GetClipped() ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+
+}

@@ -1,13 +1,11 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "graphics.h"
 #include "assetManager.h"
-#include "gameEntity.h"
 
-class Texture : public GameEntity {
+class Texture {
 protected:
-	SDL_Texture *mTex;
+	SDL_Texture *SDLTex;
 	Graphics *mGraphics;
 
 	int mWidth;
@@ -26,7 +24,7 @@ public:
 
 	Texture(std::string text, std::string fontPath, int size);
 
-	SDL_Texture *GetmTex() { return mTex; }
+	SDL_Texture *GetSDLTex() { return SDLTex; }
 	Graphics *GetmGraphics() { return mGraphics; }
 	int GetWidth() { return mWidth; }
 	int GetHeight() { return mHeight; }

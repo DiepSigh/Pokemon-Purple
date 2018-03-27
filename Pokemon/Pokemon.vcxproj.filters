@@ -45,6 +45,9 @@
     <ClInclude Include="DisplayText.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="menuManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">
@@ -75,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="menuStart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menuManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

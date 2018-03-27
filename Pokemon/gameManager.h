@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+#include "menuManager.h"
 
 class GameManager {
 private:
@@ -14,8 +15,8 @@ private:
 	bool isPlaying = false;
 	Graphics* mGraphics;
 	Timer* mTimer;
-	//AnimatedTexture* mTex;
 	Texture* mTex;
+	MenuManager* mMenuManager;
 
 public:
 	static GameManager* Instance();

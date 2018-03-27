@@ -1,1 +1,10 @@
-#include "SDL_ttf.h"
+#include "texture.h"
+
+class TextScreen {
+public:
+	
+
+private:
+
+
+};
