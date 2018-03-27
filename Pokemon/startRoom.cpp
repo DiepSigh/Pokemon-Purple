@@ -165,4 +165,39 @@ StartRoom::~StartRoom() {
 	delete mFloor27;
 	mFloor27 = NULL;
 
+	delete mFloor28;
+	mFloor28 = NULL;
+	delete mFloor29;
+	mFloor29 = NULL;
+	delete mFloor30;
+	mFloor30 = NULL;
+	delete mConsole;
+	mConsole = NULL;
+	delete mFloor31;
+	mFloor31 = NULL;
+	delete mFloor32;
+	mFloor32 = NULL;
+	delete mFloor33;
+	mFloor33 = NULL;
+	delete mFloor34;
+	mFloor34 = NULL;
+
+	delete mBed;
+	mBed = NULL;
+	delete mFloor35;
+	mFloor35 = NULL;
+	delete mFloor36;
+	mFloor36 = NULL;
+	delete mFloor37;
+	mFloor37 = NULL;
+	delete mFloor38;
+	mFloor38 = NULL;
+	delete mFloor39;
+	mFloor39 = NULL;
+	delete mFlower;
+	mFlower = NULL;
+	delete mFloor40;
+	mFloor40 = NULL;
+
+
 }
