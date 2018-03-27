@@ -39,7 +39,7 @@
     <ClInclude Include="gameEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="playerWalk.h">
+    <ClInclude Include="userInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,7 +68,7 @@
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="playerWalk.cpp">
+    <ClCompile Include="userInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
