@@ -1,8 +1,2 @@
-﻿  texture.cpp
-  startRoom.cpp
-  gameManager.cpp
-  animatedTexture.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Pokemon.cpp
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  startRoom.cpp
+  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe
