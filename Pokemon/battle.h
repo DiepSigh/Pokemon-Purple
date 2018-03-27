@@ -2,7 +2,7 @@
 #define BATTLE_H
 #include "Pokemon.h"
 
-class battle : protected Pokemon, protected Move {
+class battle : protected Pokemon {
 public:
 	void battleMenu();
 	void fight(Pokemon, Pokemon);

@@ -1,0 +1,7 @@
+m_moveID,m_moveName,m_moveType,m_moveCat,m_movePower,m_moveAcc,m_movePPMax,m_moveEffect,m_moveChance,m_movePriority
+1,ABSORB,GRASS,2,20,100,25,0,0,0
+2,ACID,POISON,2,40,100,40,4,10,0
+3,ACID ARMOR,POISON,3,2,0,40,0,0,0
+4,AGILITY,PSYCHIC,3,2,0,30,0,0,0
+5,AMNESIA,PSYCHIC,3,2,0,20,0,0,0
+6,AURORA BEAM,ICE,2,65,100,20,0,10,0

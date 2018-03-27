@@ -1,1 +1,10 @@
-﻿  Pokemon.vcxproj -> C:\Users\Stephen Diep\Desktop\Pokemon\Debug\Pokemon.exe
+﻿  Pokemon.cpp
+  Generating Code...
+  Compiling...
+  moves.cpp
+  main.cpp
+  battle.cpp
+  Generating Code...
+c:\users\stephen.diep\desktop\pokemon\pokemon\moves.cpp(96): warning C4715: 'Move::typeConvert': not all control paths return a value
+  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)

@@ -8,7 +8,6 @@
 //Catch Rate: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_catch_rate
 
 // Base of Pokémon
-#include <string>
 #include "moves.h"
 
 enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
@@ -23,25 +22,24 @@ enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, C
 	  JOLTEON, FLAREON, PORYGON, OMANYTE, OMASTAR, KABUTO, KABUTOPS, AERODACTYL, SNORLAX, ARTICUNO, ZAPDOS, MOLTRES, DRATINI, DRAGONAIR, DRAGONITE,  
 	  MEWTWO, MEW};
 
-enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8, BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHIC=18, ICE=19, DRAGON=20 };
-
 enum pokemon_status { OK=0, BURNED=1, FROZEN=2, PARALYZED=3, POISONED=4, BADLY_POISONED=5, ASLEEP=6 };
 
 enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
 
 const int MAX_EV = 65535;
 
-class Pokemon {
+class Pokemon : protected Move {
 public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
+	~Pokemon();
 	const void getPokemon(int pokemon);
 	void setIV();
 	void emptyEV();
-	int typeConvert(std::string t);
 	void setStats();
 	void expCalculator(int group);
 	const void displayStats();
+	//void setMoves(int pokemon, int level);
 
 protected:
 	int m_pokedex; //stores # in pokedex
