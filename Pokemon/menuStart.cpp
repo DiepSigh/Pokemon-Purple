@@ -1,12 +1,26 @@
 #include "menu.h"
 
-Menu::Menu() {}
+using namespace std;
+
+Menu::Menu(){
+
+}
+
+Menu::Menu(float x, float y, Texture* tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+
+	mPos.x = x;
+	mPos.y = y;
+	mTex = tex;
 
 
+
+}
 
 void Menu::CheckState() {
-	CheckState = NEWGAME;
-	switch (CheckState) {
+	menuState = NEWGAME;
+	switch (menuState) {
 		case NEWGAME:
 			break;
 		case OPTIONS:
@@ -31,4 +45,11 @@ Menu::~Menu() {}
 
 void Menu::Update(){}
 
-void Menu::Render(){}
+void Menu::Render(){
+	GetmTex()->SetRenderRectX(GetPosX());
+	GetmTex()->SetRenderRectY(GetPosY());
+
+	//GetmGraphics()->DrawTexture(GetmTex()->GetSDLTex(), GetClipped() ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+
+}

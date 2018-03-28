@@ -2,8 +2,11 @@
 #define GAMEENTITY_H
 
 #include "mathHelper.h"
+#include "texture.h"
 
-class GameEntity {
+class GameEntity : public Texture {
+protected:
+	Texture* mTex;
 public:
 	enum SPACE {LOCAL = 0, WORLD = 1};
 
@@ -14,8 +17,13 @@ private:
 	GameEntity* mParent;
 
 public:
+	Texture* GetmTex() { return mTex; }
 	GameEntity(float x = 0.0f, float y = 0.0f);
 	~GameEntity();
+	float GetPosX() { return mPos.x; }
+	float GetPosY() { return mPos.y; }
+	void SetPosX(float x) { mPos.x = x; }
+	void SetPosY(float y) { mPos.y = y; }
 
 	void Pos(Vector2 pos);
 	Vector2 Pos(SPACE space = WORLD);
@@ -28,6 +36,8 @@ public:
 
 	virtual void Update();
 	virtual void Render();
+
+
 };
 #endif
 

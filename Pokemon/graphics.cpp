@@ -98,7 +98,22 @@ SDL_Texture* Graphics::LoadTexture(std::string path) {
 
 SDL_Texture* Graphics::CreateTextTexture(TTF_Font* font, std::string text) {
 
-	SDL_Surface* surface = 
+	SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), {0,0,0});
+	if (surface == NULL) {
+
+		printf("Text Render Error: %s\n", TTF_GetError());
+		return NULL;
+	}
+
+	SDL_Texture* tex = SDL_CreateTextureFromSurface(mRenderer, surface);
+	if (tex == NULL) {
+
+		printf("Text Texture Creation Error: %s\n", SDL_GetError());
+		return NULL;
+	}
+
+	SDL_FreeSurface(surface);
+	return tex;
 }
 
 void Graphics::ClearBackBuffer() {

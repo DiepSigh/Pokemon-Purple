@@ -3,14 +3,15 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
-#include <SDL_ttf.h>
 #include <string>
 #include <stdio.h>
+#include <SDL_ttf.h>
 
 class Graphics {
 public:
 	static const int SCREEN_WIDTH = 800;
 	static const int SCREEN_HEIGHT = 600;
+	SDL_Texture* CreateTextTexture(TTF_Font* font, std::string text);
 
 private:
 	static Graphics* sInstance;
@@ -29,7 +30,7 @@ public:
 	void DrawTexture(SDL_Texture* tex, SDL_Rect* clip = NULL, SDL_Rect* rend = NULL);
 	void Render();
 
-	SDL_Texture* CreateTextTexture(TTF_Font* font, std::string text);
+	
 
 private:
 	Graphics();
