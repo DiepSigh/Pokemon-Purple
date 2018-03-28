@@ -11,7 +11,11 @@ private:
 public:
 	static Camera* Instance();
 	static bool Initialized();
-	void Update();
+	void UpdatePos();
+	float GetPlayerXPos() { return mPlayerXPos; }
+	float GetPlayerYPos() { return mPlayerYPos; }
+	float GetCamXPos() { return mCamXPos; }
+	float GetCamYPos() { return mCamYPos; }
 
 private:
 	Camera();

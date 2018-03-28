@@ -24,7 +24,8 @@ Camera::~Camera() {
 	//map1 = nullptr;
 }
 
-void Camera::Update() {
-	//map1->Update();
+void Camera::UpdatePos() {
+	GetPlayerXPos;
+	GetPlayerYPos;
 }
 
