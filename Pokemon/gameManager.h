@@ -5,6 +5,7 @@
 #include "timer.h"
 #include "animatedTexture.h"
 #include "menuManager.h"
+#include "startRoom.h"
 
 class GameManager {
 private:
@@ -17,6 +18,7 @@ private:
 	Timer* mTimer;
 	Texture* mTex;
 	MenuManager* mMenuManager;
+	StartRoom* mStartRoom;
 
 public:
 	static GameManager* Instance();

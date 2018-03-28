@@ -3,14 +3,14 @@
 
 MasterMap::MasterMap() {
 
-	mMap = new AnimatedTexture("MasterMap.png", 0, 0, 1550, 3200, 1, 0, AnimatedTexture::HORIZONTAL);
+	//mMap = new AnimatedTexture("MasterMap.png", 0, 0, 1550, 3200, 1, 0, AnimatedTexture::HORIZONTAL);
 
 }
 
 MasterMap::~MasterMap() {
 
-	delete mMap;
-	mMap = NULL;
+	//delete mMap;
+	//mMap = NULL;
 
 }
 

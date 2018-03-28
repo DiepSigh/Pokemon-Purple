@@ -7,17 +7,18 @@
 class GameEntity : public Texture {
 protected:
 	Texture* mTex;
+	Vector2 mPos;
 public:
 	enum SPACE {LOCAL = 0, WORLD = 1};
 
 private:
-	Vector2 mPos;
 	float  mRotation;
 	bool mActive;
 	GameEntity* mParent;
 
 public:
 	Texture* GetmTex() { return mTex; }
+	void SetmTex(Texture* tex) {mTex = tex;}
 	GameEntity(float x = 0.0f, float y = 0.0f);
 	~GameEntity();
 	float GetPosX() { return mPos.x; }

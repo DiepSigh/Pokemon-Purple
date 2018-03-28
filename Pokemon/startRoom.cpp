@@ -1,9 +1,11 @@
 #include "startRoom.h"
 
-StartRoom::StartRoom() {
+using namespace std;
+
+StartRoom::StartRoom(float x, float y) {
 	
-	mComputer1 = new Texture("01_Start_Game_Room.png", 0, 0, 256, 256);
-	mWall1 = new Texture("01_Start_Game_Room.png", 0, 0, 128, 128);
+	mComputer1 = new Texture("01_Start_Game_Room.png", 12, 12, 256, 256);
+	/*mWall1 = new Texture("01_Start_Game_Room.png", 0, 0, 128, 128);
 	mWall2 = new Texture("01_Start_Game_Room.png", 32, 0, 16, 16);
 	mWall3 = new Texture("01_Start_Game_Room.png", 48, 0, 16, 16);
 	mWall4 = new Texture("01_Start_Game_Room.png", 64, 0, 16, 16);
@@ -72,8 +74,13 @@ StartRoom::StartRoom() {
 	mFloor44 = new Texture("01_Start_Game_Room.png", 64, 112, 16, 16);
 	mFloor45 = new Texture("01_Start_Game_Room.png", 80, 112, 16, 16);
 	mFlower2 = new Texture("01_Start_Game_Room.png", 96, 112, 16, 16);
-	mFloor46 = new Texture("01_Start_Game_Room.png", 112, 112, 16, 16);
-
+	mFloor46 = new Texture("01_Start_Game_Room.png", 112, 112, 16, 16);*/
+	mGraphics = Graphics::Instance();
+	mPos.x = x;
+	mPos.y = y;
+	//this->SetPosX(mPos.x);
+	//cout << this->GetPosX();
+	//cout << y;
 }
 
 
@@ -224,13 +231,60 @@ StartRoom::~StartRoom() {
 void StartRoom::Render() {
 
 	Vector2 pos = Pos(WORLD);
-	mRenderRect.x = (int)(pos.x - mWidth * 0.0f);
-	mRenderRect.y = (int)(pos.x - mHeight * 0.0f);
+	GetmTex()->SetRenderRectX((int)(GetPosX()));
+	GetmTex()->SetRenderRectY((int)(GetPosY()));
+	//mRenderRect.y = (int)(GetPosY());
 
-	mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped)? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 }
 
-void StartRoom::Update() {}
+void StartRoom::Update() {
+	for (int i = 0; i < 8; i++) {
+		if (i != 0) {
+			SetPosY(GetPosY() + 16);
+			//SetPosY(GetPosY() + 16);
+			//cout << this->GetPosY();
+			//cout << i;
+		}
+		for (int j = 0; j < 8; j++) {
+			if (j != 0) {
+				SetPosX(GetPosX() + 16);
+				//cout << GetPosY();
+				//cout << j;
+			}
+			mTile = DrawMap(map[i][j]);
+			mTile->SetRenderRectX(1);
+			mTile->SetRenderRectY(2);
+			Render();
+			//SetPosX(10);
+		}
+	}
+}
+
+Texture* StartRoom::DrawMap(int tile) {
+	switch (currTile) {
+	case 0:
+		return mComputer1;
+		break;
+
+	case 1:
+
+		break;
+
+
+	case 2:
+
+		break;
+
+	case 3:
+
+		break;
+
+	case 4:
+
+		break;
+	}
+}
 
 
 

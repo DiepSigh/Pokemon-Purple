@@ -30,7 +30,7 @@ GameManager::GameManager() {
 	}
 	
 	mTimer = Timer::Instance();
-
+	mStartRoom = new StartRoom(10,10);
 	//mTex = new AnimatedTexture("01_Start_Game_Room.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
 	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.25f, Graphics::SCREEN_HEIGHT * 0.25f));
 
@@ -72,23 +72,12 @@ void GameManager::Run() {
 		
 
 			//RENDERS!!!!!
-			StartRoom startroom;
-			startroom.GetComputer1()->Render();
-			startroom.GetWall1()->Render();
-
-			MasterMap map;
-			map.GetMap()->Render();
-
-
-									
-
-			//mTex->Render();
 			
-
 			//mTex->Render();
-			mMenuManager->menu->Render();
-			mMenuManager->menu1->Render();
-			mMenuManager->menu2->Render();
+			mStartRoom->Update();
+			//mMenuManager->menu->Render();
+			//mMenuManager->menu1->Render();
+			//mMenuManager->menu2->Render();
 
 			mGraphics->Render();
 			mTimer->Reset();

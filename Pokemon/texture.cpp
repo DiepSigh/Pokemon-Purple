@@ -20,8 +20,6 @@ Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mClipRect.h = mHeight;
 }
 
-Texture::Texture() {};
-
 Texture::Texture(std::string text, std::string fontPath, int size) {
 	mGraphics = Graphics::Instance();
 	SDLTex = AssetManager::Instance()->GetText(text, fontPath, size);

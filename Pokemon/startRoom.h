@@ -1,9 +1,11 @@
 #ifndef _STARTROOM_H
 #define _STARTROOM_H
 
-#include "texture.h"
+#include "AnimatedTexture.h"
+#include "gameEntity.h"
+#include <iostream>
 
-class StartRoom : public Texture {
+class StartRoom : public GameEntity {
 
 private:
 
@@ -28,12 +30,25 @@ private:
 		mBed2, mFloor41, mFloor42, mFloor43, mFloor44, mFloor45, mFlower2, mFloor46
 	};
 
+	int map[8][8] = { {0,0,0,0,0,0,0,0},
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 },
+					{ 0,0,0,0,0,0,0,0 }, };
+
 	int xPos;
 	int yPos;
 	Graphics* mGraphics;
+	int currTile;
+
+	Texture* DrawMap(int);
+	Texture* mTile;
 
 public:
-	StartRoom();
+	StartRoom(float, float);
 	~StartRoom();
 	virtual void Render();
 	virtual void Update();

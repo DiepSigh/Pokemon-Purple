@@ -1,21 +1,5 @@
-<<<<<<< HEAD
 ﻿  startRoom.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\startroom.cpp(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\startroom.cpp(251): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\startroom.cpp(287): warning C4715: 'StartRoom::DrawMap': not all control paths return a value
   Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
-=======
-﻿  timer.cpp
-  texture.cpp
-  Pokemon.cpp
-  menuStart.cpp
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  menuManager.cpp
-  graphics.cpp
-  gameManager.cpp
-  gameEntity.cpp
-  DisplayText.cpp
-  AssetManager.cpp
-  animatedTexture.cpp
-  Generating Code...
-  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
-  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
->>>>>>> master
