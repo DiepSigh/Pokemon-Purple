@@ -1,3 +1,4 @@
+//Stephen
 #include "moves.h"
 
 #include <iostream>
@@ -17,16 +18,17 @@ Move::Move() {
 	m_moveChance = 0;		
 	m_movePriority = 0;
 	m_movePPCurrent = 0;
+	m_moveSTAB = false;
 }
 
 const void Move::getMove(int move_index) {
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
+	Move();
 	std::ifstream src("moves.csv");
-
+	
 	if (!src.is_open()) {
 		std::cout << "Could not open file.";
 	}
-
 	else {
 		//Determines which row to fetch data from based on move_index
 		for (int k = 0; k < move_index; k++) {
@@ -92,5 +94,7 @@ int Move::typeConvert(std::string t) {
 		return ICE;
 	}else if (t == "DRAGON") {
 		return DRAGON;
+	}else {
+		return BLANK;
 	}
 }

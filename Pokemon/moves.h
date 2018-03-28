@@ -1,3 +1,4 @@
+//Stephen
 #ifndef MOVES_H
 #define MOVES_H
 
@@ -11,12 +12,12 @@ enum move_category { PHYSICAL=1, SPECIAL=2, STATUS=3};
 
 enum volatile_effect {BURN=1, PARALYSIS=2, /*POISON=3,*/ TOXIC=4, FREEZE=5, SLEEP=6 };
 enum non_volatile_effect {BOUND=7, CONFUSE=8, FLINCH=9, LEECH=10};
-enum effect {RECOVERY=11};
 
 class Move {
 public:
 	Move();
 	const void getMove(int move);
+	std::string returnMove() { return m_moveName; }
 	int typeConvert(std::string t);
 protected:
 	int m_moveID;
@@ -31,6 +32,7 @@ protected:
 	int m_moveChance;		//Chance for status
 	int m_movePriority;
 	int m_movePPCurrent;
+	bool m_moveSTAB;
 };
 
 #endif

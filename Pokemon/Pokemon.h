@@ -1,3 +1,4 @@
+//Stephen
 #ifndef POKEMON_H
 #define POKEMON_H
 
@@ -38,12 +39,12 @@ public:
 	void emptyEV();
 	void setStats();
 	void expCalculator(int group);
+	void setMoves(int pokemon, int level);
 	const void displayStats();
-	//void setMoves(int pokemon, int level);
 
 protected:
 	int m_pokedex; //stores # in pokedex
-	std::string *m_nickname; //stores nickname if any
+	std::string m_nickname; //stores nickname if any
 	int m_level;
 	int m_status;
 	int m_exp;
@@ -58,6 +59,10 @@ protected:
 	int m_catchRate;
 	int m_expYield;
 	int m_expGroup;
+	int m_evolve; //level Pokemon evolves at
+	int m_numMoves; //number of moves they can learn from leveing
+	int m_learnLevel[10]; //levels moves will be learned
+	
 
 	//description
 	std::string m_kind;
