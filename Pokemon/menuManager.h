@@ -12,6 +12,7 @@ public:
 	Menu* menu;
 	Menu* menu1;
 	Menu* menu2;
+	Menu* menu3;
 private:
 	float xu;
 	MenuManager();

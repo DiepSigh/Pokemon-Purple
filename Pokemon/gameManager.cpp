@@ -61,6 +61,7 @@ void GameManager::Run() {
 			mMenuManager->menu->Render();
 			mMenuManager->menu1->Render();
 			mMenuManager->menu2->Render();
+			mMenuManager->menu3->Render();
 			mGraphics->Render();
 			mTimer->Reset();
 		}
