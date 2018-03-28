@@ -1,30 +1,30 @@
 #include "camera.h"
 
-Camera::Camera() {}
+Camera* Camera::sInstance = nullptr;
+bool Camera::sInitialized = false;
 
-Camera::Camera(SDL_Rect, int screenWidth,int screenHeight) {
-
-	int m_screenWidth = Graphics::SCREEN_WIDTH;
-	int m_screenHeight = Graphics::SCREEN_WIDTH;
-	int m_camX = 0;
-	int m_camY = 0;
-}
-
-SDL_Rect Camera::m_cameraRect = { 0, 0, Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT };
-
-int Camera::getPosX(int m_camX)
+Camera* Camera::Instance()
 {
-	return m_camX;
+	if (sInstance == nullptr) {
+		sInstance = new Camera();
+	}
+	return sInstance;
 }
 
-int Camera::getPosY(int m_camY)
-{
-	return m_camY;
+bool Camera::Initialized() {
+	return sInitialized;
 }
 
-void Camera::UpdatePos(int camX, int camY) {
-	//cameraRect.x = Player.GetComponent<TransformComponent>().position.x - Graphics::SCREEN_WIDTH / 2;
-	//cameraRect.y = Player.GetComponent<TransformComponent>().position.y - Graphics::SCREEN_HEIGHT / 2;
+Camera::Camera() {
+	//map1 = new Map1();
 }
 
+Camera::~Camera() {
+	//delete map1;
+	//map1 = nullptr;
+}
+
+void Camera::Update() {
+	//map1->Update();
+}
 

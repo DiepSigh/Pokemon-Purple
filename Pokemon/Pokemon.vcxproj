@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -153,6 +153,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="items.h" />
+    <ClInclude Include="levelManager.h" />
     <ClInclude Include="mathHelper.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
+    <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
