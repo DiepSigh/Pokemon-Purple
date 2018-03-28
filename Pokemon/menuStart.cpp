@@ -46,15 +46,8 @@ Menu::~Menu() {}
 void Menu::Update(){}
 
 void Menu::Render(){
-	//Vector2 pos = Pos(WORLD);
-	//mRenderRect.x = (int)pos.x;
-	//mRenderRect.y = (int)pos.y;
-
-	SetRenderRectX((int)this->mPos.x);
-	SetRenderRectY((int)this->mPos.y);
-	cout << this->mPos.x;
-	cout << this->mPos.y;
-
+	GetmTex()->SetRenderRectX(GetPosX());
+	GetmTex()->SetRenderRectY(GetPosY());
 
 	//GetmGraphics()->DrawTexture(GetmTex()->GetSDLTex(), GetClipped() ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());

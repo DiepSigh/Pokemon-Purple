@@ -11,6 +11,7 @@ public:
 	static MenuManager* Instance();
 	Menu* menu;
 	Menu* menu1;
+	Menu* menu2;
 private:
 	float xu;
 	MenuManager();

@@ -26,13 +26,6 @@ GameManager::GameManager() {
 	}
 	
 	mTimer = Timer::Instance();
-
-	//mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
-	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
-
-	//POKEMON TEXT
-	//mTex = new Texture("POKéMON","POKEMONGB.ttf", 30);
-	//mTex->Pos(Vector2(500, 60));
 }
 
 GameManager::~GameManager() {
@@ -67,6 +60,7 @@ void GameManager::Run() {
 			//mTex->Render();
 			mMenuManager->menu->Render();
 			mMenuManager->menu1->Render();
+			mMenuManager->menu2->Render();
 			mGraphics->Render();
 			mTimer->Reset();
 		}
