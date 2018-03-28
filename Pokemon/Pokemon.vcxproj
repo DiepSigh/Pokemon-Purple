@@ -150,6 +150,7 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="MasterMap.h" />
     <ClInclude Include="mathHelper.h" />
     <ClInclude Include="startRoom.h" />
     <ClInclude Include="texture.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="MasterMap.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />

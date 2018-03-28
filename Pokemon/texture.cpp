@@ -28,8 +28,8 @@ Texture::~Texture() {
 
 void Texture::Render() {
 	Vector2 pos = Pos(WORLD);
-	mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
-	mRenderRect.y = (int)(pos.x - mHeight * 0.5f);
+	mRenderRect.x = (int)(pos.x - mWidth * 0.0f);
+	mRenderRect.y = (int)(pos.x - mHeight * 0.0f);
 
 	mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
 }
