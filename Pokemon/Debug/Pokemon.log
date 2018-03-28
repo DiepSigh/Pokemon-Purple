@@ -1,3 +1,22 @@
+<<<<<<< HEAD
 ﻿  userInput.cpp
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
+=======
+﻿  timer.cpp
+  texture.cpp
+  Pokemon.cpp
+  menuStart.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  menuManager.cpp
+  graphics.cpp
+  gameManager.cpp
+  gameEntity.cpp
+  DisplayText.cpp
+  AssetManager.cpp
+  animatedTexture.cpp
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
+>>>>>>> master

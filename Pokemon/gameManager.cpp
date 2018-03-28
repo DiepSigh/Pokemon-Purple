@@ -19,6 +19,7 @@ void GameManager::Release() {
 GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
+	mMenuManager = MenuManager::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -28,8 +29,6 @@ GameManager::GameManager() {
 
 	playerControls = new UserInput();
 
-	mTex = new AnimatedTexture("PokemonSpriteSheet.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
-	mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
 }
 
 GameManager::~GameManager() {
@@ -54,12 +53,15 @@ void GameManager::Run() {
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 			//UPDATES!!!!
-			
-			mTex->Update();
+
 			mGraphics->ClearBackBuffer();
+		
 
 			//RENDERS!!!!!
-			mTex->Render();
+			//mTex->Render();
+			mMenuManager->menu->Render();
+			mMenuManager->menu1->Render();
+			mMenuManager->menu2->Render();
 			mGraphics->Render();
 			mTimer->Reset();
 		}

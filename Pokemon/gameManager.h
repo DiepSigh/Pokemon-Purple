@@ -4,8 +4,11 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+
 #include "userInput.h"
 #include "userInput.h"
+#include "menuManager.h"
+
 
 class GameManager {
 private:
@@ -16,8 +19,13 @@ private:
 	bool isPlaying = false;
 	Graphics* mGraphics;
 	Timer* mTimer;
+
 	AnimatedTexture* mTex;
 	UserInput* playerControls;
+
+	Texture* mTex;
+	MenuManager* mMenuManager;
+
 
 public:
 	static GameManager* Instance();
