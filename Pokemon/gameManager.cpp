@@ -23,7 +23,8 @@ void GameManager::Release() {
 GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
-	
+	mMenuManager = MenuManager::Instance();
+
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
@@ -32,7 +33,6 @@ GameManager::GameManager() {
 
 	//mTex = new AnimatedTexture("01_Start_Game_Room.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
 	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.25f, Graphics::SCREEN_HEIGHT * 0.25f));
-
 
 }
 
@@ -68,12 +68,10 @@ void GameManager::Run() {
 			//UPDATES!!!!
 			//mTex->Update();
 
-
 			mGraphics->ClearBackBuffer();
+		
 
 			//RENDERS!!!!!
-					
-
 			StartRoom startroom;
 			startroom.GetComputer1()->Render();
 			startroom.GetWall1()->Render();
@@ -86,6 +84,11 @@ void GameManager::Run() {
 
 			//mTex->Render();
 			
+
+			//mTex->Render();
+			mMenuManager->menu->Render();
+			mMenuManager->menu1->Render();
+			mMenuManager->menu2->Render();
 
 			mGraphics->Render();
 			mTimer->Reset();
