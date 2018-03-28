@@ -19,7 +19,6 @@ private:
 	LevelManager();
 	~LevelManager();
 
-	static LevelManager* sInstance;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;

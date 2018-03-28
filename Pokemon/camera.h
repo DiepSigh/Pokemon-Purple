@@ -12,16 +12,24 @@ public:
 	static Camera* Instance();
 	static bool Initialized();
 	void UpdatePos();
+
+	//GETTERS
 	float GetPlayerXPos() { return mPlayerXPos; }
 	float GetPlayerYPos() { return mPlayerYPos; }
 	float GetCamXPos() { return mCamXPos; }
 	float GetCamYPos() { return mCamYPos; }
 
+	//SETTERS
+	void SetPlayerXPos(int playerx) { mPlayerXPos = playerx; }
+	void SetPlayerYPos(int playery) { mPlayerYPos = playery; }	
+	void SetCamXPos(int camx) { mPlayerXPos = camx; }
+	void SetCamYPos(int camy) { mPlayerYPos = camy; }
+
+
 private:
 	Camera();
 	~Camera();
 
-	static Camera* sInstance;
 	float mPlayerXPos;
 	float mPlayerYPos;	
 	float mCamXPos;
