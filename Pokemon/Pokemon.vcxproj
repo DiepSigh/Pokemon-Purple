@@ -153,12 +153,12 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="mathHelper.h" />
-<<<<<<< HEAD
+
     <ClInclude Include="startRoom.h" />
-=======
+
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
->>>>>>> master
+
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
@@ -168,13 +168,12 @@
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
-    <ClCompile Include="graphics.cpp" />
-<<<<<<< HEAD
+
     <ClCompile Include="MasterMap.cpp" />
-=======
+
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
->>>>>>> master
+
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
