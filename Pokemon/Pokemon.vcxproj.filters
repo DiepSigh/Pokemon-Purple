@@ -39,12 +39,6 @@
     <ClInclude Include="gameEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="startRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MasterMap.h">
-=======
     <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -52,7 +46,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="menuManager.h">
->>>>>>> master
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="characters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -81,12 +83,6 @@
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="startRoom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MasterMap.cpp">
-=======
     <ClCompile Include="DisplayText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -94,7 +90,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="menuManager.cpp">
->>>>>>> master
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="characters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

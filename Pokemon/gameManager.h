@@ -3,8 +3,10 @@
 
 #include "graphics.h"
 #include "timer.h"
-#include "animatedTexture.h"
+//#Include "animatedTexture.h"
 #include "menuManager.h"
+#include "userInput.h"
+#include "levelManager.h"
 
 class GameManager {
 private:
@@ -17,6 +19,9 @@ private:
 	Timer* mTimer;
 	Texture* mTex;
 	MenuManager* mMenuManager;
+	LevelManager* mLevelManager;
+	UserInput* mPlayerControls;
+	
 
 public:
 	static GameManager* Instance();

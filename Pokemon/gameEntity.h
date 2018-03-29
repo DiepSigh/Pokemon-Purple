@@ -2,11 +2,12 @@
 #define GAMEENTITY_H
 
 #include "mathHelper.h"
-#include "texture.h"
+#include "animatedTexture.h"
 
 class GameEntity : public Texture {
 protected:
 	Texture* mTex;
+	AnimatedTexture* mAtex;
 public:
 	enum SPACE {LOCAL = 0, WORLD = 1};
 
@@ -18,6 +19,7 @@ private:
 
 public:
 	Texture* GetmTex() { return mTex; }
+	AnimatedTexture* GetmAtex() { return mAtex; }
 	GameEntity(float x = 0.0f, float y = 0.0f);
 	~GameEntity();
 	float GetPosX() { return mPos.x; }

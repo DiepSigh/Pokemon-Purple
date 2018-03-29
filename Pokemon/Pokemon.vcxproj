@@ -88,12 +88,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_ttf-2.0.14\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -147,37 +147,34 @@
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
+    <ClInclude Include="characters.h" />
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
-    <ClInclude Include="MasterMap.h" />
+    <ClInclude Include="levelManager.h" />
     <ClInclude Include="mathHelper.h" />
-
-    <ClInclude Include="startRoom.h" />
-
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
-
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="userInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="characters.cpp" />
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
-
-    <ClCompile Include="MasterMap.cpp" />
-
+    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
-
     <ClCompile Include="Pokemon.cpp" />
-    <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="userInput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
