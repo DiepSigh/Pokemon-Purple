@@ -1,14 +1,10 @@
-﻿  animatedTexture.cpp
-  AssetManager.cpp
-  camera.cpp
-  gameEntity.cpp
-  gameManager.cpp
-  graphics.cpp
-  Inventory.cpp
-  Items.cpp
-  levelManager.cpp
+﻿  Inventory.cpp
   Pokemon.cpp
-  texture.cpp
-  timer.cpp
+  camera.cpp
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  gameManager.cpp
   Generating Code...
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe

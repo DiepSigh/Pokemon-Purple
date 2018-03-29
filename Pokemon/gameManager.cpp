@@ -31,7 +31,10 @@ GameManager::GameManager() {
 }
 
 GameManager::~GameManager() {
+
 	AssetManager::Release();
+	LevelManager::Release();
+
 	Graphics::Release();
 	mGraphics = NULL;
 

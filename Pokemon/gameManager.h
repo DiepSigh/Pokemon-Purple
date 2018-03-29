@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+#include "levelmanager.h"
 
 class GameManager {
 private:
