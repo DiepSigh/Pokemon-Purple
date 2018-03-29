@@ -1,10 +1,2 @@
-﻿  Inventory.cpp
-  Pokemon.cpp
-  camera.cpp
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  gameManager.cpp
-  Generating Code...
+﻿  gameManager.cpp
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
