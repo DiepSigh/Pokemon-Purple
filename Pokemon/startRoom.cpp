@@ -262,28 +262,30 @@ void StartRoom::Update() {
 }
 
 Texture* StartRoom::DrawMap(int tile) {
-	switch (currTile) {
-	case 0:
-		return mComputer1;
-		break;
 
-	case 1:
+		switch (currTile) {
+		case 0:
+			return mComputer1;
+			break;
 
-		break;
+		case 1:
+
+			break;
 
 
-	case 2:
+		case 2:
 
-		break;
+			break;
 
-	case 3:
+		case 3:
 
-		break;
+			break;
 
-	case 4:
+		case 4:
 
-		break;
-	}
+			break;
+		}
+
 }
 
 
