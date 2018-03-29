@@ -1,20 +1,7 @@
-﻿  animatedTexture.cpp
-  AssetManager.cpp
-  DisplayText.cpp
-  gameEntity.cpp
-  gameManager.cpp
-  graphics.cpp
-  MasterMap.cpp
-  menuManager.cpp
-  menuStart.cpp
-c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Pokemon.cpp
-  startRoom.cpp
-c:\users\zver\documents\github\pokemon\pokemon\startroom.cpp(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\startroom.cpp(251): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  texture.cpp
-  timer.cpp
+﻿  startRoom.cpp
   Generating Code...
-c:\users\zver\documents\github\pokemon\pokemon\startroom.cpp(287): warning C4715: 'StartRoom::DrawMap': not all control paths return a value
-  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+  Compiling...
+  gameManager.cpp
+  Pokemon.cpp
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe

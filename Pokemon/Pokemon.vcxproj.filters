@@ -29,5 +29,6 @@
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="playerRoom.h" />
   </ItemGroup>
 </Project>

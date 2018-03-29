@@ -153,6 +153,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="mathHelper.h" />
+    <ClInclude Include="playerRoom.h" />
     <ClInclude Include="startRoom.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
