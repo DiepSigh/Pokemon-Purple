@@ -25,6 +25,7 @@ Camera::~Camera() {
 }
 
 void Camera::UpdatePos() {
-	GetCamXPos() + GetCamYPos() / 2 == (GetPlayerXPos() + GetPlayerYPos()) / 2;
+	//GetCamXPos() + GetCamYPos() / 2 == (GetPlayerXPos() + GetPlayerYPos()) / 2;
+//SET THESE VALUSE^
 }
 
