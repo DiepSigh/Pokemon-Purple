@@ -1,5 +1,8 @@
 #include "inventory.h"
 
+Inventory* Inventory::sInstance = nullptr;
+bool Inventory::sInitialized = false;
+
 Inventory::Inventory() {}
 
 Inventory::Inventory(int capacity) {

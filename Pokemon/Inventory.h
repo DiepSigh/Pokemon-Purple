@@ -9,6 +9,9 @@ class Inventory {
 public:
 	Inventory();
 	Inventory(int);
+	static Inventory* Instance();
+	static void Release();
+	static bool Initialized();
 
 	void AddItem(Item item);
 	//void RemoveItem(Item item);
@@ -22,6 +25,8 @@ public:
 private:
 	int m_Capacity = 0;
 	std::vector<Item>  playerInventory;
+	static Inventory* sInstance;
+	static bool sInitialized;
 };
 
 
