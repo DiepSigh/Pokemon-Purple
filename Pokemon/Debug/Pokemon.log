@@ -1,3 +1,4 @@
 ﻿  menuManager.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(101): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)

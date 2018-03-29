@@ -18,9 +18,10 @@ public:
 	MenuStates GetMenuState() { return menuState; }
 	void SetMenuState(MenuStates state) { menuState = state; }
 	void CheckState();
-	bool isActive = false;
+	bool StrtMnuisActive = true;
 	void Update();
 	void Render();
+	
 
 	
 

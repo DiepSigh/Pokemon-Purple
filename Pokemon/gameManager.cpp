@@ -58,10 +58,10 @@ void GameManager::Run() {
 
 			//RENDERS!!!!!
 			//mTex->Render();
-			mMenuManager->menu->Render();
-			mMenuManager->menu1->Render();
-			mMenuManager->menu2->Render();
-			mMenuManager->menu3->Render();
+
+			mMenuManager->Render();
+			//MenuManager->Update();
+
 			mGraphics->Render();
 			mTimer->Reset();
 		}

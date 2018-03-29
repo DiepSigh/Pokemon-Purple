@@ -3,19 +3,31 @@
 
 #include "menu.h"
 
-class MenuManager {
+class MenuManager : public Menu {
 public:
 	static void Release();
 	Graphics* mGraphics;
 	static MenuManager* sInstance;
 	static MenuManager* Instance();
+	void StartMenu();
 	Menu* menu;
 	Menu* menu1;
 	Menu* menu2;
 	Menu* menu3;
+	Menu* menu4;
+	Menu* menu5;
+	Menu* menu6;
+	Menu* Cursor;
+
+	void CursorMoveDown();
+	void CursorMoveUp();
+
+	void Update();
+	void Render();
+
 private:
-	float xu;
 	MenuManager();
+	MenuManager(int, int, Texture*);
 	~MenuManager();
 };
 #endif // !MENUMANAGER_H
