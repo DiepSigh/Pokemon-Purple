@@ -172,7 +172,6 @@
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
@@ -183,8 +182,6 @@
     <ClCompile Include="menuStart.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="characters.cpp" />
-    <ClCompile Include="gameEntity.cpp" />
-    <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
