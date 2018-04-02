@@ -1,6 +1,6 @@
 #ifndef LEVELMANAGER_H
 #define LEVELMANAGER_H
-
+#include "characters.h"
 
 class LevelManager {
 
@@ -14,11 +14,18 @@ public:
 	static bool Initialized();
 	void Render();
 	void Update();
+	void moveLeft();
+	void moveRight();
+	void moveUp();
+	void moveDown();
+	void buttonA();
+	void buttonS();
+	void buttonC();
 
 private:
 	LevelManager();
 	~LevelManager();
-
+	Characters* mPlayer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;

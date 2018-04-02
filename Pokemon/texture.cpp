@@ -2,7 +2,7 @@
 
 Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mGraphics = Graphics::Instance();
-	mTex = AssetManager::Instance()->GetTexture(filename);
+	SDLTex = AssetManager::Instance()->GetTexture(filename);
 
 	mClipped = true;
 
@@ -20,16 +20,16 @@ Texture::Texture(std::string filename, int x, int y, int w, int h) {
 
 Texture::~Texture() {
 	
-	mTex = NULL;
+	SDLTex = NULL;
 	mGraphics = NULL;
 }
 
 void Texture::Render() {
-	Vector2 pos = Pos(WORLD);
-	mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
-	mRenderRect.y = (int)(pos.x - mHeight * 0.5f);
-
-	mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
+	//Vector2 pos = Pos(WORLD);
+	//mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
+	//mRenderRect.y = (int)(pos.x - mHeight * 0.5f);
+	//
+	//mGraphics->DrawTexture(SDLTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
 }
 
 void Texture::Update(){
