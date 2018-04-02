@@ -15,7 +15,7 @@ protected:
 public:
 	Item();
 	Item( std::string, int, int, std::string, int );
-	//void RemoveEffect();
+
 	//GETTERS
 	std::string GetItemName() { return m_itemName; }
 	int GetId() { return m_itemId; }
