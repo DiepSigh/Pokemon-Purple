@@ -21,6 +21,14 @@ public:
 	bool StrtMnuisActive = true;
 	void Update();
 	void Render();
+	Menu* menu;
+	Menu* menu1;
+	Menu* menu2;
+	Menu* menu3;
+	Menu* menu4;
+	Menu* menu5;
+	Menu* menu6;
+	Menu* Cursor;
 	
 
 	

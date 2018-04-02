@@ -154,6 +154,8 @@
     <ClInclude Include="mathHelper.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
+    <ClInclude Include="PkmnState.h" />
+    <ClInclude Include="PokeDex.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
@@ -166,6 +168,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
+    <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />

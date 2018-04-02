@@ -2,6 +2,7 @@
 #define MENUMANAGER_H
 
 #include "menu.h"
+#include "PokeDex.h"
 
 class MenuManager : public Menu {
 public:
@@ -10,17 +11,12 @@ public:
 	static MenuManager* sInstance;
 	static MenuManager* Instance();
 	void StartMenu();
-	Menu* menu;
-	Menu* menu1;
-	Menu* menu2;
-	Menu* menu3;
-	Menu* menu4;
-	Menu* menu5;
-	Menu* menu6;
-	Menu* Cursor;
+
 
 	void CursorMoveDown();
 	void CursorMoveUp();
+
+	void MenuState();
 
 	void Update();
 	void Render();
