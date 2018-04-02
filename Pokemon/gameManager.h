@@ -19,7 +19,7 @@ private:
 	AnimatedTexture* mTex;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
-
+	static SDL_Rect Camera;
 public:
 	static GameManager* Instance();
 	static void Release();
