@@ -1,4 +1,24 @@
-﻿  PokeDex.cpp
+﻿  MasterMap.cpp
+  PkmnState.cpp
+  PokeDex.cpp
 c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+  animatedTexture.cpp
+  characters.cpp
+c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  gameManager.cpp
+  levelManager.cpp
+  menuManager.cpp
+c:\users\mike\documents\github\pokemon\pokemon\menumanager.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  menuStart.cpp
+c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  startRoom.cpp
+  texture.cpp
+  userInput.cpp
+  Generating Code...
+  LINK : C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe not found or not built by the last incremental link; performing full link
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
