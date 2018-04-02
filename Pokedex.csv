@@ -1,4 +1,4 @@
-0,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_type2,m_catchRate,m_expYield,m_expGroup,m_evolve,m_numMoves,m_learnLevel,m_kind,m_height,m_weight,m_description
+m_pokedex,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_type2,m_catchRate,m_expYield,m_expGroup,m_evolve,m_numMoves,m_learnLevel,m_kind,m_height,m_weight,m_description
 1,BULBASAUR,45,49,49,45,65,GRASS,POISON,45,64,2,16,9,1,1,7,13,20,27,34,41,48,Seed,"2'04""",15.2,A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
 2,IVYSAUR,60,62,63,60,80,GRASS,POISON,45,142,2,32,10,"1,1,1,7,13,22,30,38,46,54",Seed,"3'03""",28.7,"When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
 3,VENUSAUR,80,82,83,80,100,GRASS,POISON,45,236,2,,11,"1,1,1,1,7,13,22,30,43,55,65",Seed,"6'07""",220.5,The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.
@@ -57,5 +57,5 @@
 56,MANKEY,,,,,,,,90,74,,,,,,,,
 57,PRIMEAPE,,,,,,,,190,149,,,,,,,,
 58,GROWLITHE,,,,,,,,75,91,,,,,,,,
-,ARCANINE,,,,,,,,190,213,,,,,,,,
-,POLIWAG,,,,,,,,75,77,,,,,,,,
+59,ARCANINE,,,,,,,,190,213,,,,,,,,
+60,POLIWAG,,,,,,,,75,77,,,,,,,,

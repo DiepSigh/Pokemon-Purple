@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <random>
+#include <string>
 
 Move::Move() {
 	m_moveID = 0;
@@ -18,9 +18,10 @@ Move::Move() {
 	m_moveChance = 0;		
 	m_movePriority = 0;
 	m_movePPCurrent = 0;
+	m_moveSTAB = false;
 }
 
-void Move::getMove(int move_index){
+const void Move::getMove(int move_index) {
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	Move();
 	std::ifstream src("moves.csv");
@@ -60,7 +61,7 @@ void Move::getMove(int move_index){
 	}
 }
 
-int typeConvert(std::string &t) {
+int Move::typeConvert(std::string t) {
 	//enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8,
 	//BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHIC=18, ICE=19, DRAGON=20 };
 	if (t == "NORMAL") {
@@ -88,7 +89,7 @@ int typeConvert(std::string &t) {
 	}else if (t == "ELECTRIC") {
 		return ELECTRIC;
 	}else if (t == "PSYCHIC") {
-		return PSYCHC;
+		return PSYCHIC;
 	}else if (t == "ICE") {
 		return ICE;
 	}else if (t == "DRAGON") {
@@ -96,13 +97,4 @@ int typeConvert(std::string &t) {
 	}else {
 		return BLANK;
 	}
-}
-
-int randomGen(int low, int high) {
-
-	std::random_device rng; // obtain a random number from hardware
-	std::mt19937 seed(rng()); // seed the generator
-	std::uniform_int_distribution<> gen(low, high); // define the range
-
-	return gen(rng);
 }

@@ -10,13 +10,10 @@ int main(int argc, char *argv[])
 	//GameManager::Release();
 	//game = nullptr;
 
-	Pokemon Encounter(BULBASAUR, 50);
-	Pokemon Encounter2(BULBASAUR, 50);
-	Pokemon *test;
-	test = new Pokemon(BULBASAUR, 50);
-	test->displayStats();
+	srand(static_cast<unsigned int> (time(0))); //seed
+	Pokemon Encounter(BULBASAUR, 5);
+
 	Encounter.displayStats();
-	Encounter2.displayStats();
     return 0;
 }
 
