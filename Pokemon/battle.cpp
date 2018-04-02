@@ -6,28 +6,69 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 	
 	switch (input) {
 	case 0:
-		playerMove = active.getMove(input).getMoveID();
+		//playerMove = active.getMove(input).getMoveID();
 		break;
 	case 1:
-		playerMove = active.getMove(input).getMoveID();
+		//playerMove = active.getMove(input).getMoveID();
 		break;
 	case 2:
-		playerMove = active.getMove(input).getMoveID();
+		//playerMove = active.getMove(input).getMoveID();
 		break;
 	case 3:
-		playerMove = active.getMove(input).getMoveID();
+		//playerMove = active.getMove(input).getMoveID();
 		break;
 	}
 	
-	//if (active.)
+	int aiMove = AI(opposing);
+	firstAttack(active, input, opposing, aiMove);
 
 }
 
-void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
-
-		if (aiMove == QUICK_ATTACK) {
-
+int battle::AI(Pokemon &ai) {
+	int move = 0;
+	int moveCount = 1;
+	int k = 1;
+	bool done = false;
+	do {
+		//if move is not empty
+		if (ai.getMove(k).getMoveID != 0) {
+			moveCount++;
 		}
+		else {
+			done = true;
+		}
+		k++;
+	} while (!done);
+
+	//random move to use
+	move = randomGen(0, moveCount-1);
+	return move;
+}
+
+void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
+	bool playerFirst = false;
+	//Compare priority
+	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
+		playerFirst = true;
+	}
+	//Compare speed
+	else if (active.getSpd() > opposing.getSpd) {
+		playerFirst = true;
+	}
+	//50/50 for same speed
+	else if (active.getSpd() == opposing.getSpd) {
+		int rng = randomGen(1, 2);
+		if (rng == 1) {
+			playerFirst = true;
+		}
+	}
+
+	if (playerFirst) {
+		//player attacks
+	}
+	else {
+		//ai attacks
+	}
 }
 
 int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int num_move) {
@@ -63,7 +104,7 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int num_mo
 		a = attacking.getSpe();
 		d = defending.getSpe();
 	}
-	//Modifier
+	//Building Modifier
 	double random = randomGen(85, 100) * 0.01; //integer percentage 0.85 to 1.00
 	float STAB = 1;
 	if (attacking.getType1() == moveType || attacking.getType2() == moveType) {	STAB = 1.5; }

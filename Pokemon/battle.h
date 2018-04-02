@@ -2,11 +2,10 @@
 #define BATTLE_H
 #include "Pokemon.h"
 
-class battle{
-public:
+struct battle{
 	void battleMenu();
 	void fight(Pokemon &, Pokemon &);
-	void AI();
+	int AI(Pokemon &);
 	void firstAttack(Pokemon &, int, Pokemon &, int);
 	int damageCalculation(Pokemon &, Pokemon &, int move);
 	float typeEffectiveness(int moveType, int pokemonType); //returns the multiplier based on the type effective chart

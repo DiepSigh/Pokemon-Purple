@@ -44,6 +44,7 @@ public:
 	int getMoveType() { return m_moveType; }
 	int getPower() { return m_movePower; }
 	int getCat() { return m_moveCat; }
+	int getPriority() { return m_movePriority; }
 protected:
 	int m_moveID;
 	std::string m_moveName;
