@@ -2,8 +2,9 @@
 #define _STARTROOM_H
 
 #include "texture.h"
+#include "gameEntity.h"
 
-class StartRoom : public Texture {
+class StartRoom : public GameEntity {
 
 private:
 

@@ -88,12 +88,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -158,9 +158,7 @@
     <ClInclude Include="items.h" />
     <ClInclude Include="levelManager.h" />
     <ClInclude Include="mathHelper.h" />
-
     <ClInclude Include="startRoom.h" />
-
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="PkmnState.h" />
@@ -175,9 +173,7 @@
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
-
     <ClCompile Include="MasterMap.cpp" />
-
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
     <ClCompile Include="camera.cpp" />
@@ -187,6 +183,7 @@
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="PkmnState.cpp" />
+    <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />

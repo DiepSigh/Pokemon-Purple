@@ -69,20 +69,12 @@ void GameManager::Run() {
 
 
 			//UPDATES!!!!
-			//mTex->Update();
 
 
 			mGraphics->ClearBackBuffer();
 		
 
 			//RENDERS!!!!!
-			StartRoom startroom;
-			startroom.GetComputer1()->Render();
-			startroom.GetWall1()->Render();
-
-			MasterMap map;
-			map.GetMap()->Render();
-
 			mMenuManager->Render();
 			//MenuManager->Update();
 

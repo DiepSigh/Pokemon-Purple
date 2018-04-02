@@ -15,7 +15,6 @@ public:
 
 	PokeDex* contents;
 
-
 private:
 	PokedexState PkDexState;
 

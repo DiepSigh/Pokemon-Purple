@@ -4,13 +4,12 @@
 #include "menu.h"
 #include "PokeDex.h"
 
-class MenuManager {
+class MenuManager : public Menu {
 public:
 	static void Release();
 	Graphics* mGraphics;
 	static MenuManager* sInstance;
 	static MenuManager* Instance();
-<<<<<<< HEAD
 	void StartMenu();
 
 
@@ -22,15 +21,9 @@ public:
 	void Update();
 	void Render();
 
-=======
-	Menu* menu;
-	Menu* menu1;
-	Menu* menu2;
-	Menu* menu3;
->>>>>>> parent of 5fab02f... Menu Moving/RenderFull
 private:
-	float xu;
 	MenuManager();
+	MenuManager(int, int, Texture*);
 	~MenuManager();
 };
 #endif // !MENUMANAGER_H

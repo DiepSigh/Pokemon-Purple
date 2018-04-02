@@ -1,13 +1,13 @@
 #ifndef  _MASTERMAP_h
 #define _MASTERMAP_H
 
-#include "texture.h"
+#include "animatedTexture.h"
 
 class MasterMap {
 
 private:
 
-	Texture *mMap;
+	AnimatedTexture *mMap;
 	int PosX;
 	int PosY;
 
