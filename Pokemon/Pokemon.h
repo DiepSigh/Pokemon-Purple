@@ -29,19 +29,29 @@ enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
 
 const int MAX_EV = 65535;
 
-class Pokemon : protected Move {
+class Pokemon {
 public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
 	~Pokemon();
-	const void getPokemon(int pokemon);
-	void setIV();
-	void emptyEV();
-	void setStats();
-	void expCalculator(int group);
-	void setMoves(int pokemon, int level);
-	const void displayStats();
+	void getPokemon(int pokemon); //Grabs Pokemon data from CSV based on Pokedex passed in
+	void getMoves(int pokemon);
+	void setIV(); //Sets IV's randomly
+	void emptyEV(); //Sets all EV's to 0
+	void setStats(); //Sets stats of Pokemon based IV's, current EV's, and level
+	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
+	void setMoves(int pokemon, int level); 
+	void displayStats();
 
+	//Getters
+	Move getMove(int k) { return move[k]; }
+	int getLevel() { return m_level; }
+	int getAtk() { return m_atk; }
+	int getDef() { return m_def; }
+	int getSpd() { return m_spd; }
+	int getSpe() { return m_spe; }
+	int getType1() { return m_type1; }
+	int getType2() { return m_type2; }
 protected:
 	int m_pokedex; //stores # in pokedex
 	std::string m_nickname; //stores nickname if any
@@ -49,8 +59,7 @@ protected:
 	int m_status;
 	int m_exp;
 	Move move[4];
-	//bool m_seen;
-
+	
 	//Other
 	int m_type1;
 	int m_type2;
@@ -62,7 +71,7 @@ protected:
 	int m_evolve; //level Pokemon evolves at
 	int m_numMoves; //number of moves they can learn from leveing
 	int m_learnLevel[10]; //levels moves will be learned
-	
+	int m_moveToLearn[10]; //moves to be learnt
 
 	//description
 	std::string m_kind;
