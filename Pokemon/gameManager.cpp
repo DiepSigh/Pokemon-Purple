@@ -30,14 +30,24 @@ GameManager::GameManager() {
 	}
 	
 	mTimer = Timer::Instance();
+	mLevelManager = LevelManager::Instance();
+	mPlayerControls = new UserInput();
 
+<<<<<<< HEAD
 	//mTex = new AnimatedTexture("01_Start_Game_Room.png",7,1,50,50,2,1.0f,AnimatedTexture::HORIZONTAL);
 	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.25f, Graphics::SCREEN_HEIGHT * 0.25f));
 
+=======
+	//mTex = new AnimatedTexture("PokemonSpriteSheet.png",0,0,50,50,5,1.0f,AnimatedTexture::HORIZONTAL);
+	//mTex->Pos(Vector2(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f));
+>>>>>>> MIKE
 }
 
 GameManager::~GameManager() {
+
 	AssetManager::Release();
+	LevelManager::Release();
+
 	Graphics::Release();
 	mGraphics = NULL;
 
@@ -54,6 +64,7 @@ void GameManager::Run() {
 
 	while (!mQuit) {
 		mTimer->Update();
+		mPlayerControls->Input();
 
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
@@ -67,6 +78,7 @@ void GameManager::Run() {
 
 			//UPDATES!!!!
 			//mTex->Update();
+<<<<<<< HEAD
 
 			mGraphics->ClearBackBuffer();
 		
@@ -90,6 +102,13 @@ void GameManager::Run() {
 			mMenuManager->menu1->Render();
 			mMenuManager->menu2->Render();
 
+=======
+			mGraphics->ClearBackBuffer();
+			mLevelManager->Update();
+			mLevelManager->Render();
+			//RENDERS!!!!!
+			//mTex->Render();
+>>>>>>> MIKE
 			mGraphics->Render();
 			mTimer->Reset();
 		}

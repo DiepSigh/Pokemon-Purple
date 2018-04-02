@@ -4,7 +4,12 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+<<<<<<< HEAD
 #include "menuManager.h"
+=======
+#include "levelmanager.h"
+#include "userInput.h"
+>>>>>>> MIKE
 
 class GameManager {
 private:
@@ -15,9 +20,16 @@ private:
 	bool isPlaying = false;
 	Graphics* mGraphics;
 	Timer* mTimer;
+<<<<<<< HEAD
 	Texture* mTex;
 	MenuManager* mMenuManager;
 
+=======
+	AnimatedTexture* mTex;
+	LevelManager* mLevelManager;
+	UserInput* mPlayerControls;
+	static SDL_Rect Camera;
+>>>>>>> MIKE
 public:
 	static GameManager* Instance();
 	static void Release();

@@ -42,6 +42,7 @@ Texture::~Texture() {
 
 void Texture::Render() {
 	//Vector2 pos = Pos(WORLD);
+<<<<<<< HEAD
 	//SetRenderRectX(10);
 	//SetRenderRectY(15);
 	//mRenderRect.x =(int)pos.x;
@@ -50,6 +51,12 @@ void Texture::Render() {
 	//mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
 	//GetmGraphics()->DrawTexture(GetSDLTex(), GetClipped() ? &GetmClipRect() : NULL, &GetmRenderRect());
 
+=======
+	//mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
+	//mRenderRect.y = (int)(pos.x - mHeight * 0.5f);
+	//
+	//mGraphics->DrawTexture(SDLTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
+>>>>>>> MIKE
 }
 
 void Texture::Update(){

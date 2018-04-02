@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  startRoom.cpp
   Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
 =======
@@ -19,3 +20,9 @@ c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(50): warning 
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
 >>>>>>> master
+=======
+﻿  Pokemon.cpp
+  gameManager.cpp
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+>>>>>>> MIKE

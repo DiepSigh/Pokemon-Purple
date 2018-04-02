@@ -40,6 +40,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="startRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -53,6 +54,24 @@
     </ClInclude>
     <ClInclude Include="menuManager.h">
 >>>>>>> master
+=======
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="items.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="characters.h">
+>>>>>>> MIKE
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,6 +101,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="startRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -95,6 +115,24 @@
     </ClCompile>
     <ClCompile Include="menuManager.cpp">
 >>>>>>> master
+=======
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="characters.cpp">
+>>>>>>> MIKE
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
