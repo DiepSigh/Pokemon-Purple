@@ -1,28 +1,22 @@
-#ifndef  _MASTERMAP_h
+#ifndef _MASTERMAP_h
 #define _MASTERMAP_H
 
-#include "animatedTexture.h"
+#include "gameEntity.h"
 
-class MasterMap {
+class MasterMap : public GameEntity {
 
 private:
 
-	AnimatedTexture *mMap;
-	int PosX;
-	int PosY;
-
+	Texture *mMap;
+	Graphics* mGraphics;
+	void DrawMap();
+	
 public:
-	MasterMap();
+	MasterMap(float, float);
 	~MasterMap();
-
 	void Render();
 	void Update();
-	void Events();
 
-	int GetPosX() { return PosX; }
-	int GetPosY() { return PosY; }
-
-	inline AnimatedTexture* GetMap() { return mMap; }
 };
 
 

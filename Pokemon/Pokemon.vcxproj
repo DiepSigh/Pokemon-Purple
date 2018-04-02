@@ -151,14 +151,21 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="pokemonLeague.h" />
+    <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="mathHelper.h" />
-    <ClInclude Include="playerRoom.h" />
+    <ClInclude Include="playerHouse.h" />
+    <ClInclude Include="pokemonCenter.h" />
+    <ClInclude Include="pokemonSchool.h" />
+    <ClInclude Include="redHouse.h" />
+    <ClInclude Include="reserchLab.h" />
     <ClInclude Include="startRoom.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="viridianCityHouse.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
@@ -167,13 +174,21 @@
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="pokemonLeague.cpp" />
+    <ClCompile Include="pokemonMart.cpp" />
     <ClCompile Include="MasterMap.cpp" />
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
+    <ClCompile Include="playerHouse.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="pokemonCenter.cpp" />
+    <ClCompile Include="pokemonSchool.cpp" />
+    <ClCompile Include="redHouse.cpp" />
+    <ClCompile Include="reserchLab.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="viridianCityHouse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

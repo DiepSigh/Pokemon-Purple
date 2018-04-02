@@ -1,7 +1,23 @@
-﻿  startRoom.cpp
-  Generating Code...
-  Compiling...
-  gameManager.cpp
+﻿  AssetManager.cpp
+  MasterMap.cpp
   Pokemon.cpp
+  animatedTexture.cpp
+  gameEntity.cpp
+  gameManager.cpp
+  graphics.cpp
+  menuManager.cpp
+  menuStart.cpp
+c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  playerHouse.cpp
+  pokemonCenter.cpp
+  pokemonLeague.cpp
+  pokemonMart.cpp
+  pokemonSchool.cpp
+  redHouse.cpp
+  reserchLab.cpp
+  startRoom.cpp
+  texture.cpp
+  viridianCityHouse.cpp
   Generating Code...
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe

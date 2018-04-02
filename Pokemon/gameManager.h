@@ -6,6 +6,15 @@
 #include "animatedTexture.h"
 #include "menuManager.h"
 #include "startRoom.h"
+#include "playerHouse.h"
+#include "redHouse.h"
+#include "reserchLab.h"
+#include "pokemonMart.h"
+#include "pokemonCenter.h"
+#include "pokemonSchool.h"
+#include "viridianCityHouse.h"
+#include "pokemonLeague.h"
+#include "MasterMap.h"
 
 class GameManager {
 private:
@@ -19,6 +28,15 @@ private:
 	Texture* mTex;
 	MenuManager* mMenuManager;
 	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
 
 public:
 	static GameManager* Instance();

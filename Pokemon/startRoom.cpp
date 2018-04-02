@@ -1,7 +1,5 @@
 #include "startRoom.h"
 
-using namespace std;
-
 StartRoom::StartRoom(float x, float y) {
 	
 	mComputer1 = new Texture("startRoom/computer1.png", 0, 0, 32, 32); 
@@ -61,7 +59,6 @@ StartRoom::~StartRoom() {
 	delete mTv;
 	mTv = NULL;
 
-
 }
 
 void StartRoom::Render() {
@@ -75,13 +72,13 @@ void StartRoom::Render() {
 
 void StartRoom::Update() {
 	
-	SetPosY(150);
-	SetPosX(270);	
+	SetPosY(0);
+	SetPosX(0);	
 
 	for (int i = 0; i < 8; i++) {
 	
 		if (i != 0) {
-			SetPosX(270);
+			SetPosX(0);
 			SetPosY(GetPosY() + 32);
 			
 		}
@@ -96,8 +93,8 @@ void StartRoom::Update() {
 		}
 	
 	}
-	SetPosY(150);
-	SetPosX(270);
+	SetPosY(0);
+	SetPosX(0);
 
 }
 

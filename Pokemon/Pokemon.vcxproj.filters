@@ -14,6 +14,14 @@
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="playerHouse.cpp" />
+    <ClCompile Include="redHouse.cpp" />
+    <ClCompile Include="reserchLab.cpp" />
+    <ClCompile Include="pokemonCenter.cpp" />
+    <ClCompile Include="pokemonMart.cpp" />
+    <ClCompile Include="pokemonSchool.cpp" />
+    <ClCompile Include="viridianCityHouse.cpp" />
+    <ClCompile Include="pokemonLeague.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -29,6 +37,13 @@
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
-    <ClInclude Include="playerRoom.h" />
+    <ClInclude Include="playerHouse.h" />
+    <ClInclude Include="redHouse.h" />
+    <ClInclude Include="reserchLab.h" />
+    <ClInclude Include="pokemonCenter.h" />
+    <ClInclude Include="pokemonSchool.h" />
+    <ClInclude Include="pokemonMart.h" />
+    <ClInclude Include="viridianCityHouse.h" />
+    <ClInclude Include="pokemonLeague.h" />
   </ItemGroup>
 </Project>
