@@ -39,6 +39,7 @@ GameManager::GameManager() {
 	mViridianCityHouse = new ViridianCityHouse(0, 0);
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
+	mAudioMgr = AudioManager::Instance();
 }
 
 GameManager::~GameManager() {
@@ -49,6 +50,9 @@ GameManager::~GameManager() {
 
 	Timer::Release();
 	mTimer = NULL;
+
+	AudioManager::Release();
+	mAudioMgr = NULL;
 
 	delete mTex;
 	mTex = NULL;
@@ -106,6 +110,8 @@ void GameManager::Run() {
 			mGraphics->ClearBackBuffer();
 
 			//RENDERS!!!!!
+
+			
 					
 			//mStartRoom->Update();
 			//mPlayerHouse->Update();
@@ -116,7 +122,10 @@ void GameManager::Run() {
 			//mPokemonSchool->Update();
 			//mViridianCityHouse->Update();
 			//mPokemonLeague->Update();
-			//mMasterMap->Update();
+			mMasterMap->Update();
+
+			mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
+
 
 			mGraphics->Render();
 			mTimer->Reset();

@@ -15,6 +15,7 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
+#include "AudioManager.h"
 
 class GameManager {
 private:
@@ -37,6 +38,7 @@ private:
 	ViridianCityHouse* mViridianCityHouse;
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
+	AudioManager* mAudioMgr;
 
 public:
 	static GameManager* Instance();
