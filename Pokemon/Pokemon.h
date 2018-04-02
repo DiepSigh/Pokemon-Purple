@@ -35,12 +35,12 @@ public:
 	Pokemon(int pokemon, int level);
 	~Pokemon();
 	void getPokemon(int pokemon); //Grabs Pokemon data from CSV based on Pokedex passed in
-	void getMoves(int pokemon);
+	void getMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
 	void setStats(); //Sets stats of Pokemon based IV's, current EV's, and level
 	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
-	void setMoves(int pokemon, int level); 
+	void setMoves(int pokemon, int level); //Sets 4 learnables moves based on level or less
 	void displayStats();
 
 	//Getters

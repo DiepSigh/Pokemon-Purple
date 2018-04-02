@@ -9,7 +9,7 @@ public:
 	void AI();
 	void firstAttack(Pokemon &, int, Pokemon &, int);
 	int damageCalculation(Pokemon &, Pokemon &, int move);
-	float typeEffectiveness(int moveType, int pokemonType);
+	float typeEffectiveness(int moveType, int pokemonType); //returns the multiplier based on the type effective chart
 	void switchOut(Pokemon &, Pokemon &);
 	void items(Pokemon &, Pokemon &);
 	void flee(Pokemon &, Pokemon &);

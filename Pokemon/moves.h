@@ -36,8 +36,8 @@ public:
 	void getMove(int move); //gets move from CSV file
 	std::string returnMove() { return m_moveName; }
 
-	friend int typeConvert(std::string &t); //takes string and converts to enum ("NORMAL" becomes 0 which is NORMAL).
-	friend int randomGen(int low, int high);
+	friend int typeConvert(std::string &t); //takes string and converts to enum ("NORMAL" becomes 0 which is NORMAL)
+	friend int randomGen(int low, int high); //returns number based on range
 
 	//Getters
 	int getMoveID() { return m_moveID; }

@@ -10,13 +10,12 @@ int main(int argc, char *argv[])
 	//GameManager::Release();
 	//game = nullptr;
 
-	Pokemon Encounter(BULBASAUR, 50);
-	Pokemon Encounter2(BULBASAUR, 50);
+	Pokemon Encounter(CHARMANDER, 50);
+
 	Pokemon *test;
 	test = new Pokemon(BULBASAUR, 50);
 	test->displayStats();
 	Encounter.displayStats();
-	Encounter2.displayStats();
     return 0;
 }
 
