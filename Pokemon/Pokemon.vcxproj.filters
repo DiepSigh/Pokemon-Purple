@@ -74,6 +74,12 @@
 >>>>>>> MIKE
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PokeDex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PkmnState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">
@@ -133,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="characters.cpp">
 >>>>>>> MIKE
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PkmnState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

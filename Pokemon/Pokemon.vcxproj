@@ -147,29 +147,24 @@
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
-<<<<<<< HEAD
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="MasterMap.h" />
-=======
     <ClInclude Include="camera.h" />
     <ClInclude Include="characters.h" />
-    <ClInclude Include="gameEntity.h" />
-    <ClInclude Include="gameManager.h" />
-    <ClInclude Include="graphics.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="levelManager.h" />
->>>>>>> MIKE
     <ClInclude Include="mathHelper.h" />
 
     <ClInclude Include="startRoom.h" />
 
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
-
+    <ClInclude Include="PkmnState.h" />
+    <ClInclude Include="PokeDex.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="userInput.h" />
@@ -186,8 +181,6 @@
 
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
-
-=======
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="characters.cpp" />
     <ClCompile Include="gameEntity.cpp" />
@@ -196,7 +189,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
->>>>>>> MIKE
+    <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />

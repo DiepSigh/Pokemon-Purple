@@ -21,6 +21,18 @@ public:
 	bool isActive = false;
 	void Update();
 	void Render();
+<<<<<<< HEAD
+	Menu* menu;
+	Menu* menu1;
+	Menu* menu2;
+	Menu* menu3;
+	Menu* menu4;
+	Menu* menu5;
+	Menu* menu6;
+	Menu* Cursor;
+	
+=======
+>>>>>>> parent of 5fab02f... Menu Moving/RenderFull
 
 	
 
