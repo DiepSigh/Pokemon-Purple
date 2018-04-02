@@ -1,31 +1,154 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-﻿  menuStart.cpp
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-=======
-<<<<<<< HEAD
-﻿  startRoom.cpp
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
-=======
-﻿  timer.cpp
-  texture.cpp
-  Pokemon.cpp
+﻿  texture.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\texture.cpp(23): error C2084: function 'Texture::Texture(void)' already has a body
+  c:\users\rick-trios\documents\github\pokemon\pokemon\texture.cpp(3): note: see previous definition of '{ctor}'
+  startRoom.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(226): error C2065: 'Vector2': undeclared identifier
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(226): error C2146: syntax error: missing ';' before identifier 'pos'
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(226): error C2065: 'pos': undeclared identifier
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(226): error C2065: 'WORLD': undeclared identifier
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(226): error C3861: 'Pos': identifier not found
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(227): error C2065: 'pos': undeclared identifier
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(227): error C2228: left of '.x' must have class/struct/union
+  c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(227): note: type is 'unknown-type'
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(228): error C2065: 'pos': undeclared identifier
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(228): error C2228: left of '.x' must have class/struct/union
+  c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(228): note: type is 'unknown-type'
+c:\users\rick-trios\documents\github\pokemon\pokemon\startroom.cpp(230): error C2065: 'mTex': undeclared identifier
+  PkmnState.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(24): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(34): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(39): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.h(3): error C2504: 'Menu': base class undefined
+c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.h(4): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.h(4): warning C4183: 'Pkmn': missing return type; assumed to be a member function returning 'int'
+c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.h(5): error C2523: 'Menu::PkmnState::~Pkmn': destructor tag mismatch
+c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.cpp(3): fatal error C1004: unexpected end-of-file found
   menuStart.cpp
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(24): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(34): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(39): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(3): error C2059: syntax error: 'using namespace'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(3): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(5): error C2535: 'Menu::Menu(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(14): note: see declaration of 'Menu::Menu'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(32): error C2535: 'Menu::Menu(float,float,Texture *)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(15): note: see declaration of 'Menu::Menu'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(44): error C2535: 'void Menu::CheckState(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(20): note: see declaration of 'Menu::CheckState'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(67): error C2535: 'Menu::~Menu(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(16): note: see declaration of 'Menu::~Menu'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(69): error C2535: 'void Menu::Update(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(22): note: see declaration of 'Menu::Update'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(71): error C2535: 'void Menu::Render(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(23): note: see declaration of 'Menu::Render'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(78): fatal error C1004: unexpected end-of-file found
   menuManager.cpp
-  graphics.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(24): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(34): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(39): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.h(3): error C2504: 'Menu': base class undefined
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(13): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(14): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(25): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(26): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(30): error C2059: syntax error: '>>'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(31): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(3): error C2086: 'Menu::MenuManager *Menu::MenuManager::sInstance': redefinition
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(11): note: see declaration of 'Menu::MenuManager::sInstance'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(29): error C2686: cannot overload static and non-static member functions with the same parameter types
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(29): note: could be 'Menu::MenuManager *Menu::MenuManager::Instance(void)'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(29): note: or       'Menu::MenuManager *Menu::MenuManager::Instance(void)'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(30): error C2059: syntax error: 'if'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(34): error C2059: syntax error: 'return'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(34): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(37): error C2628: 'Menu::MenuManager' followed by 'void' is illegal (did you forget a ';'?)
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(37): error C3254: 'Menu': class contains explicit override 'Release' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(37): error C2838: 'Release': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(42): error C3254: 'Menu': class contains explicit override '{dtor}' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(42): error C2838: '{dtor}': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(42): error C2535: 'Menu::~Menu(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(16): note: see declaration of 'Menu::~Menu'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(48): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(49): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(53): error C3254: 'Menu': class contains explicit override 'Render' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(53): error C2838: 'Render': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(53): error C2535: 'void Menu::Render(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(23): note: see declaration of 'Menu::Render'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(86): error C2039: 'StartMenu': is not a member of 'Menu::MenuManager'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(7): note: see declaration of 'Menu::MenuManager'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(99): error C3254: 'Menu': class contains explicit override 'CursorMoveDown' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(99): error C2838: 'CursorMoveDown': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(107): error C3254: 'Menu': class contains explicit override 'CursorMoveUp' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(107): error C2838: 'CursorMoveUp': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(114): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(117): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.cpp(120): fatal error C1004: unexpected end-of-file found
+  MasterMap.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.h(25): error C2433: 'MasterMap::AnimatedTexture': 'inline' not permitted on data declarations
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.h(25): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.cpp(6): error C2061: syntax error: identifier 'AnimatedTexture'
+c:\users\rick-trios\documents\github\pokemon\pokemon\mastermap.cpp(6): error C2653: 'AnimatedTexture': is not a class or namespace name
   gameManager.cpp
-  gameEntity.cpp
-  DisplayText.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(24): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(34): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(39): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.h(3): error C2504: 'Menu': base class undefined
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(13): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(14): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(25): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(26): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(30): error C2059: syntax error: '>>'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(31): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(7): error C2838: 'sInstance': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(10): error C3254: 'Menu::MenuManager': class contains explicit override 'Instance' but does not derive from an interface that contains the function declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(10): error C2838: 'Instance': illegal qualified name in member declaration
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(10): error C2686: cannot overload static and non-static member functions with the same parameter types
+  c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(10): note: could be 'Menu::MenuManager *Menu::MenuManager::Instance(void)'
+  c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(10): note: or       'Menu::MenuManager::GameManager *Menu::MenuManager::Instance(void)'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(11): error C2059: syntax error: 'if'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(11): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(15): error C2059: syntax error: 'return'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(15): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(18): error C2628: 'Menu::MenuManager' followed by 'void' is illegal (did you forget a ';'?)
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(18): error C2653: 'GameManager': is not a class or namespace name
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(23): error C2653: 'GameManager': is not a class or namespace name
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(37): warning C4183: 'GameManager': missing return type; assumed to be a member function returning 'int'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(39): error C2653: 'GameManager': is not a class or namespace name
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(39): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(39): error C2535: 'int Menu::GameManager(void)': member function already defined or declared
+  c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(23): note: see declaration of 'Menu::GameManager'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(50): warning C4183: 'GameManager': missing return type; assumed to be a member function returning 'int'
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(53): error C2653: 'GameManager': is not a class or namespace name
+c:\users\rick-trios\documents\github\pokemon\pokemon\gamemanager.cpp(111): fatal error C1004: unexpected end-of-file found
   AssetManager.cpp
   animatedTexture.cpp
   Generating Code...
->>>>>>> c13e646d50f718e4ada0dd4dd100f0ef4f3d880b
-=======
-﻿  menuManager.cpp
->>>>>>> parent of 5fab02f... Menu Moving/RenderFull
-  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
-  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
->>>>>>> master
+  Compiling...
+  gameEntity.cpp
+  Generating Code...
+  Compiling...
+  Pokemon.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(24): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(34): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menu.h(39): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.h(3): error C2504: 'Menu': base class undefined
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(13): error C2059: syntax error: '<<'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(14): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(25): error C2059: syntax error: '=='
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(26): error C2238: unexpected token(s) preceding ';'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(30): error C2059: syntax error: '>>'
+c:\users\rick-trios\documents\github\pokemon\pokemon\menumanager.h(31): error C2334: unexpected token(s) preceding ':'; skipping apparent function body
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokemon.cpp(15): fatal error C1004: unexpected end-of-file found
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  timer.cpp
+  DisplayText.cpp

@@ -158,12 +158,8 @@
 
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
-<<<<<<< HEAD
     <ClInclude Include="PkmnState.h" />
     <ClInclude Include="PokeDex.h" />
-=======
-
->>>>>>> c13e646d50f718e4ada0dd4dd100f0ef4f3d880b
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>
@@ -178,11 +174,7 @@
 
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="PkmnState.cpp" />
-=======
-
->>>>>>> c13e646d50f718e4ada0dd4dd100f0ef4f3d880b
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
