@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  menuStart.cpp
 c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -22,6 +23,9 @@ c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(50): warning 
   animatedTexture.cpp
   Generating Code...
 >>>>>>> c13e646d50f718e4ada0dd4dd100f0ef4f3d880b
+=======
+﻿  menuManager.cpp
+>>>>>>> parent of 5fab02f... Menu Moving/RenderFull
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.pdb (Partial PDB)
 >>>>>>> master

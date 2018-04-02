@@ -87,6 +87,7 @@ void GameManager::Run() {
 
 			//mTex->Render();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 			mMenuManager->Render();
 			//MenuManager->Update();
@@ -96,6 +97,12 @@ void GameManager::Run() {
 			mMenuManager->menu2->Render();
 >>>>>>> c13e646d50f718e4ada0dd4dd100f0ef4f3d880b
 
+=======
+			mMenuManager->menu->Render();
+			mMenuManager->menu1->Render();
+			mMenuManager->menu2->Render();
+			mMenuManager->menu3->Render();
+>>>>>>> parent of 5fab02f... Menu Moving/RenderFull
 			mGraphics->Render();
 			mTimer->Reset();
 		}

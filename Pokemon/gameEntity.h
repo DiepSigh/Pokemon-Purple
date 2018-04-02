@@ -6,12 +6,12 @@
 
 class GameEntity : public Texture {
 protected:
-	Vector2 mPos;
 	Texture* mTex;
 public:
 	enum SPACE {LOCAL = 0, WORLD = 1};
 
 private:
+	Vector2 mPos;
 	float  mRotation;
 	bool mActive;
 	GameEntity* mParent;
