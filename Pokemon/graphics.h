@@ -16,7 +16,6 @@ public:
 private:
 	static Graphics* sInstance;
 	static bool sInitialized;
-
 	SDL_Window* mWindow;
 	SDL_Surface* mBackBuffer;
 	SDL_Renderer* mRenderer;
@@ -29,8 +28,6 @@ public:
 	void ClearBackBuffer();
 	void DrawTexture(SDL_Texture* tex, SDL_Rect* clip = NULL, SDL_Rect* rend = NULL);
 	void Render();
-
-	
 
 private:
 	Graphics();

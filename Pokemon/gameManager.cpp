@@ -7,7 +7,6 @@ GameManager* GameManager::Instance() {
 	if (sInstance == nullptr) {
 		sInstance = new GameManager();
 	}
-
 	return sInstance;
 }
 
@@ -24,11 +23,8 @@ GameManager::GameManager() {
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
-	
 	mTimer = Timer::Instance();
-
 	mPlayerControls = new UserInput();
-
 }
 
 GameManager::~GameManager() {
@@ -59,20 +55,12 @@ void GameManager::Run() {
 		}
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-			//UPDATES!!!!
-			//mTex->Update();
+			//UPDATES
 			mGraphics->ClearBackBuffer();
-		
-
-			//RENDERS!!!!!
-			//mTex->Render();
+			//RENDERS
 			mMenuManager->menu->Render();
-			//mMenuManager->menu1->Render();
-			//mMenuManager->menu2->Render();
 			mLevelManager->Update();
 			mLevelManager->Render();
-
-
 			mGraphics->Render();
 			mTimer->Reset();
 		}

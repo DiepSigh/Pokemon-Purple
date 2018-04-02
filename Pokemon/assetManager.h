@@ -11,7 +11,6 @@ private:
 	std::map<std::string, SDL_Texture*>mText;
 	std::map<std::string, TTF_Font*>mFonts;
 
-
 public:
 	static AssetManager* Instance();
 	static void Release();
@@ -21,7 +20,6 @@ public:
 private:
 	AssetManager();
 	~AssetManager();
-
 	TTF_Font* GetFont(std::string filename, int size);
 };
 #endif // !ASSETSMANAGER_H

@@ -7,6 +7,7 @@
 #include "menuManager.h"
 #include "userInput.h"
 #include "levelManager.h"
+#include "DisplayText.h"
 
 class GameManager {
 private:
