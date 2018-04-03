@@ -9,8 +9,6 @@ protected:
 	Texture* mTex;
 	AnimatedTexture* mAtex;
 	Vector2 mPos;
-public:
-	enum SPACE {LOCAL = 0, WORLD = 1};
 
 private:
 	float  mRotation;
@@ -44,5 +42,5 @@ public:
 
 
 };
-#endif
+#endif // !GAMEENTITY_H
 

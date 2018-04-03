@@ -182,11 +182,6 @@
     <ClInclude Include="pokemonSchool.h" />
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
-    <ClInclude Include="startRoom.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="menuManager.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="timer.h" />
     <ClInclude Include="viridianCityHouse.h" />
   </ItemGroup>
   <ItemGroup>

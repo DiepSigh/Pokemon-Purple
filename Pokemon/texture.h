@@ -16,9 +16,10 @@ protected:
 	SDL_Rect mClipRect;
 
 public:
+	Texture();
 	Texture(std::string, int, int, int, int);
 	~Texture();
-	Texture();
+
 	virtual void Render();
 	virtual void Update();
 

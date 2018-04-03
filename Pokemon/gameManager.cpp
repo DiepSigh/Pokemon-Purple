@@ -115,14 +115,12 @@ void GameManager::Run() {
 
 			//UPDATES!!!!
 
-
-			mGraphics->ClearBackBuffer();
-
 			//RENDERS!!!!!
 			mMenuManager->Render();
 			//MenuManager->Update();
 
 			mGraphics->ClearBackBuffer();
+			mMasterMap->Update();
 			mLevelManager->Update();
 			mLevelManager->Render();
 			//RENDERS!!!!!			
@@ -136,7 +134,7 @@ void GameManager::Run() {
 			//mPokemonSchool->Update();
 			//mViridianCityHouse->Update();
 			//mPokemonLeague->Update();
-			mMasterMap->Update();
+			
 
 			mGraphics->Render();
 			mTimer->Reset();

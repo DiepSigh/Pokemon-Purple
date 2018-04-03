@@ -8,7 +8,6 @@
 class MasterMap : public GameEntity {
 
 private:
-	AnimatedTexture *mMap;
 	int PosX;
 	int PosY;
 

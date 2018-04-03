@@ -1,9 +1,2 @@
-<<<<<<< HEAD
-﻿  PokeDex.cpp
-c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
-=======
 ﻿  gameManager.cpp
   Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
->>>>>>> Andrey

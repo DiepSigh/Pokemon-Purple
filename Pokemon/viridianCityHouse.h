@@ -3,7 +3,7 @@
 
 #include "gameEntity.h"
 
-class ViridianCityHouse : GameEntity {
+class ViridianCityHouse : public GameEntity {
 private:
 
 	Texture
