@@ -1,2 +1,9 @@
 ﻿  gameManager.cpp
+  AudioManager.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4778: 'printf' : unterminated format string '%\n'
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Pokemon.cpp
   Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe

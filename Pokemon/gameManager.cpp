@@ -29,7 +29,7 @@ GameManager::GameManager() {
 	mLevelManager = LevelManager::Instance();
 	mPlayerControls = new UserInput();
 	
-	// By Canados
+	// By Canados //
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -41,17 +41,15 @@ GameManager::GameManager() {
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
 	mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
-	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
-
+	mAudioMgr->PalletTownSound();
+	
+	// By Canados //
 }
 
 GameManager::~GameManager() {
 
 	AssetManager::Release();
 	LevelManager::Release();
-
-
 	
 	Graphics::Release();
 	mGraphics = NULL;
@@ -59,40 +57,41 @@ GameManager::~GameManager() {
 	Timer::Release();
 	mTimer = NULL;
 
-	AudioManager::Release();
-	mAudioMgr = NULL;
-
 	delete mTex;
 	mTex = NULL;
 
-	delete mStartRoom;
+	
+	AudioManager::Release(); // By Canados
+	mAudioMgr = NULL;
+	
+	delete mStartRoom; // By Canados
 	mStartRoom = NULL;
 
-	delete mPlayerHouse;
+	delete mPlayerHouse; // By Canados
 	mPlayerHouse = NULL;
 
-	delete mRedHouse;
+	delete mRedHouse; // By Canados
 	mRedHouse = NULL;
 
-	delete mReserchLab;
+	delete mReserchLab; // By Canados
 	mReserchLab = NULL;
 
-	delete mPokemonMart;
+	delete mPokemonMart; // By Canados
 	mPokemonMart = NULL;
 
-	delete mPokemonCenter;
+	delete mPokemonCenter; // By Canados
 	mPokemonCenter = NULL;
 
-	delete mPokemonSchool;
+	delete mPokemonSchool; // By Canados
 	mPokemonSchool = NULL;
 
-	delete mViridianCityHouse;
+	delete mViridianCityHouse; // By Canados
 	mViridianCityHouse = NULL;
 
-	delete mPokemonLeague;
+	delete mPokemonLeague; // By Canados
 	mPokemonLeague = NULL;
 
-	delete mMasterMap;
+	delete mMasterMap; // By Canados
 	mMasterMap = NULL;
 	
 }
@@ -115,8 +114,18 @@ void GameManager::Run() {
 
 			//UPDATES!!!!
 
-			//RENDERS!!!!!
-			mMenuManager->Render();
+			mMenuManager->Render();  // By Canados
+			//mStartRoom->Update(); // By Canados
+			//mPlayerHouse->Update(); // By Canados
+			//mRedHouse->Update(); // By Canados
+			//mReserchLab->Update(); // By Canados
+			//mPokemonMart->Update(); // By Canados
+			//mPokemonCenter->Update(); // By Canados
+			//mPokemonSchool->Update(); // By Canados
+			//mViridianCityHouse->Update(); // By Canados
+			//mPokemonLeague->Update(); // By Canados
+			
+			
 			//MenuManager->Update();
 
 			mGraphics->ClearBackBuffer();
@@ -124,16 +133,7 @@ void GameManager::Run() {
 			mLevelManager->Update();
 			mLevelManager->Render();
 			//RENDERS!!!!!			
-					
-			//mStartRoom->Update();
-			//mPlayerHouse->Update();
-			//mRedHouse->Update();
-			//mReserchLab->Update();
-			//mPokemonMart->Update();
-			//mPokemonCenter->Update();
-			//mPokemonSchool->Update();
-			//mViridianCityHouse->Update();
-			//mPokemonLeague->Update();
+
 			
 
 			mGraphics->Render();

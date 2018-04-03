@@ -3,7 +3,7 @@
 
 MasterMap::MasterMap(float x, float y) {
 
-	mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
+	mMap = new Texture("MasterMap.png", 0, 0, 3100, 6400);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -29,8 +29,8 @@ void MasterMap::Render() {
 
 void MasterMap::Update() {
 
-		SetPosX(-700);
-		SetPosY(-2800);
+		SetPosX(-1800);
+		SetPosY(-5800);
 
 		DrawMap();
 

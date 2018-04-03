@@ -62,12 +62,21 @@ void AudioManager::PlaySFX(std::string filename, int loops, int channel) {
 
 void AudioManager::PalletTownSound() {
 	
-	
+	AudioManager PalletTown;
+	PalletTown.PlayMusic("Palette_Town_Theme.wav", 0);
+
+}
+
+void AudioManager::RoadToViridianCitySound() {
+
+	AudioManager RoadToViridianCity;
+	RoadToViridianCity.PlayMusic("Road_Viridian_City_From_Palette.wav", 0);
 
 }
 
 void AudioManager::ViridianCitySound() {
 
-
+	AudioManager VeridianCity;
+	VeridianCity.PlayMusic();
 
 }
