@@ -14,8 +14,11 @@ int main(int argc, char *argv[])
 
 	Pokemon *test;
 	test = new Pokemon(BULBASAUR, 50);
+	Pokemon *starter;
+	starter = new Pokemon(SQUIRTLE, 50);
 	test->displayStats();
 	Encounter.displayStats();
+	starter->displayStats();
     return 0;
 }
 

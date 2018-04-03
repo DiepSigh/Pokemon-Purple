@@ -1,10 +1,6 @@
 //Stephen
 #include "moves.h"
 
-#include <iostream>
-#include <fstream>
-#include <random>
-
 Move::Move() {
 	m_moveID = 0;
 	m_moveName = "------";

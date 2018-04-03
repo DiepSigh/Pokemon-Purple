@@ -1,6 +1,14 @@
 #include "battle.h"
 
+battle::battle() {
+	accPlayer = 100;
+	accAI = 100;
+	evaPlayer = 100;
+	evaAI = 100;
+}
+
 void battle::fight(Pokemon &active, Pokemon &opposing) {
+
 	int input = 0;
 	int playerMove = 0;
 	
@@ -19,19 +27,19 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 		break;
 	}
 	
-	int aiMove = AI(opposing);
+	int aiMove = AIChoice(opposing);
 	firstAttack(active, input, opposing, aiMove);
 
 }
 
-int battle::AI(Pokemon &ai) {
+int battle::AIChoice(Pokemon &ai) {
 	int move = 0;
 	int moveCount = 1;
 	int k = 1;
 	bool done = false;
 	do {
 		//if move is not empty
-		if (ai.getMove(k).getMoveID != 0) {
+		if (ai.getMove(k).getMoveID() != 0) {
 			moveCount++;
 		}
 		else {
@@ -52,11 +60,11 @@ void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int
 		playerFirst = true;
 	}
 	//Compare speed
-	else if (active.getSpd() > opposing.getSpd) {
+	else if (active.getSpd() > opposing.getSpd()) {
 		playerFirst = true;
 	}
 	//50/50 for same speed
-	else if (active.getSpd() == opposing.getSpd) {
+	else if (active.getSpd() == opposing.getSpd()) {
 		int rng = randomGen(1, 2);
 		if (rng == 1) {
 			playerFirst = true;
@@ -64,10 +72,134 @@ void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int
 	}
 
 	if (playerFirst) {
-		//player attacks
+		//accuracy check
+		if (!attackMissed(active.getMove(playerMove).getAcc(), accPlayer, evaAI)) {
+			//check if damaging move or status move
+			if (active.getMove(playerMove).getCat() == STATUS) {
+				//check if status effect or stat change
+				if (active.getMove(playerMove).getEffect() > 0) {
+					
+				}else{
+					statChange(PLAYER, active.getMove(playerMove).getMoveID());
+				}
+			}
+			//player attacks
+		}
 	}
 	else {
 		//ai attacks
+	}
+}
+
+void battle::statChange(int user, int move) {
+
+	enum stat {att, def, spd, spe, eva};
+	int stat = 0;
+	int change = 0;
+
+	switch (move) {
+		//attack 
+	case MEDITATE: case SHARPEN: //case RAGE:
+		stat = att;
+		change += 1;
+		break;
+	case SWORDS_DANCE:
+		stat = att;
+		change += 2;
+		break;
+		//defence
+	case DEFENSE_CURL: case HARDEN: case WITHDRAW:
+		stat = def;
+		change += 1;
+		break;
+	case ACID_ARMOR: case BARRIER:
+		stat = def;
+		change += 2;
+		break;
+		//speed
+	case AGILITY:
+		stat = spd;
+		change += 2;
+		break;
+		//special 
+	case GROWTH:
+		stat = spe;
+		change += 1;
+		break;
+	case AMNESIA:
+		stat = spe;
+		change += 2;
+		break;
+		//evasion
+	case DOUBLE_TEAM:
+		stat = eva;
+		change += 1;
+		break;
+	case MINIMIZE:
+		stat = eva;
+		change += 2;
+		break;
+	}
+	if (user == PLAYER) {
+		switch (stat) {
+		case att:
+			attPlayer += change;
+			break;
+		case def:
+			defPlayer += change;
+			break;
+		case spd:
+			spdPlayer += change;
+			break;
+		case spe:
+			spePlayer += change;
+			break;
+		case eva:
+			evaPlayer += change;
+			break;
+		}
+	}
+	else if (user == AI) {
+		switch (stat) {
+		case att:
+			attAI += change;
+			break;
+		case def:
+			defAI += change;
+			break;
+		case spd:
+			spdAI += change;
+			break;
+		case spe:
+			speAI += change;
+			break;
+		case eva:
+			evaAI += change;
+			break;
+		}
+	}
+}
+
+bool battle::attackMissed(int baseAcc, int accuracy, int evasion) {
+	if (baseAcc != 0) {
+		float p = 100;
+
+		p = baseAcc * (accuracy / evasion);
+		if (p >= 100) {
+			return false;
+		}
+		else {
+			int rng = randomGen(0, 100);
+			if (p > rng) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+	}
+	else {
+		return false;
 	}
 }
 

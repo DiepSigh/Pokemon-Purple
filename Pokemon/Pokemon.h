@@ -10,6 +10,9 @@
 
 // Base of Pokémon
 #include "moves.h"
+#include <math.h>
+//#include <iostream>
+//#include <fstream>
 
 enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
 	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
@@ -106,7 +109,6 @@ protected:
 	int m_baseDef;
 	int m_baseSpd;
 	int m_baseSpe;
-
 };
 
 #endif // !POKEMON_H

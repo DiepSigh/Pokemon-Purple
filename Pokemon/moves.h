@@ -3,6 +3,9 @@
 #define MOVES_H
 
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <random>
 
 enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8,
 	BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHC=18, ICE=19, DRAGON=20 };
@@ -44,6 +47,8 @@ public:
 	int getMoveType() { return m_moveType; }
 	int getPower() { return m_movePower; }
 	int getCat() { return m_moveCat; }
+	int getAcc() { return m_moveAcc; }
+	int getEffect() { return m_moveEffect; }
 	int getPriority() { return m_movePriority; }
 protected:
 	int m_moveID;
@@ -53,7 +58,7 @@ protected:
 	int m_moveCat;			//Physical, Special or Status
 	int m_movePower;		//Base Power
 	int m_moveAcc;			//Accuracy
-	int m_movePPMax;
+	int m_movePPMax;		//Max PP of move
 	int m_moveEffect;		//Status effect
 	int m_moveChance;		//Chance for status
 	int m_movePriority;
