@@ -58,3 +58,16 @@ void AudioManager::PlaySFX(std::string filename, int loops, int channel) {
 
 	Mix_PlayChannel(channel, mAssetMng->GetSFX(filename), loops);
 }
+
+
+void AudioManager::PalletTownSound() {
+	
+	
+
+}
+
+void AudioManager::ViridianCitySound() {
+
+
+
+}

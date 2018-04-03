@@ -26,7 +26,8 @@ GameManager::GameManager() {
 	}
 	
 	mTimer = Timer::Instance();
-		
+	
+	// By Canados
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -38,7 +39,9 @@ GameManager::GameManager() {
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
 	mAudioMgr = AudioManager::Instance();
-	mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
+	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
+	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
+
 }
 
 GameManager::~GameManager() {
@@ -109,8 +112,7 @@ void GameManager::Run() {
 			mGraphics->ClearBackBuffer();
 
 			//RENDERS!!!!!
-
-			
+						
 					
 			//mStartRoom->Update();
 			//mPlayerHouse->Update();
@@ -122,8 +124,6 @@ void GameManager::Run() {
 			//mViridianCityHouse->Update();
 			//mPokemonLeague->Update();
 			mMasterMap->Update();
-
-			
 
 
 			mGraphics->Render();
