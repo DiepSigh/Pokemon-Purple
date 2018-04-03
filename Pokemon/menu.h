@@ -18,10 +18,10 @@ public:
 	MenuStates GetMenuState() { return menuState; }
 	void SetMenuState(MenuStates state) { menuState = state; }
 	void CheckState();
-	bool isActive = false;
+	bool StrtMnuisActive = true;
 	void Update();
 	void Render();
-<<<<<<< HEAD
+
 	Menu* menu;
 	Menu* menu1;
 	Menu* menu2;
@@ -30,11 +30,6 @@ public:
 	Menu* menu5;
 	Menu* menu6;
 	Menu* Cursor;
-	
-=======
->>>>>>> parent of 5fab02f... Menu Moving/RenderFull
-
-	
 
 private:
 	MenuStates menuState;

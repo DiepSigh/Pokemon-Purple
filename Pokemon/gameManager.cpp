@@ -3,15 +3,12 @@
 #include "MasterMap.h"
 #include <iostream>
 
-
 GameManager* GameManager::sInstance = nullptr;
-
 
 GameManager* GameManager::Instance() {
 	if (sInstance == nullptr) {
 		sInstance = new GameManager();
 	}
-
 	return sInstance;
 }
 
@@ -53,7 +50,6 @@ GameManager::~GameManager() {
 
 
 void GameManager::Run() {
-
 	while (!mQuit) {
 		mTimer->Update();
 		mPlayerControls->Input();
@@ -66,27 +62,13 @@ void GameManager::Run() {
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 
-
+			mGraphics->ClearBackBuffer();
 
 			//UPDATES!!!!
-			//mTex->Update();
 
-
-			mGraphics->ClearBackBuffer();
-		
-
-			//RENDERS!!!!!
-			StartRoom startroom;
-			startroom.GetComputer1()->Render();
-			startroom.GetWall1()->Render();
-
-			MasterMap map;
-			map.GetMap()->Render();
-
+			//RENDERS!!!!!	
+			
 			mMenuManager->Render();
-			//MenuManager->Update();
-
-			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
 			mLevelManager->Render();
 			//RENDERS!!!!!

@@ -20,22 +20,18 @@ void UserInput::Input(){
 			
 			case SDLK_LEFT:
 				mLevelManager->moveLeft();
-				printf("You pressed left arrow\n");
 				break;
 
 			case SDLK_RIGHT:
 				mLevelManager->moveRight();
-				//printf("You pressed right arrow\n");
 				break;
 
 			case SDLK_UP:
 				mLevelManager->moveUp();
-				//printf("You pressed up arrow\n");
 				break;
 
 			case SDLK_DOWN:
 				mLevelManager->moveDown();
-				//printf("You pressed down arrow\n");
 				break;
 
 			case SDLK_ESCAPE:
@@ -48,15 +44,14 @@ void UserInput::Input(){
 			switch (events.key.keysym.sym) {
 
 			case SDLK_a:
-				//printf("You pressed 'a'\n");
+				printf("You pressed 'a'\n");
 				break;
 
 			case SDLK_s:
-				//printf("You pressed 's'\n");
+				printf("You pressed 's'\n");
 				break;
 
 			case SDLK_c:
-				//printf("You pressed 'c'\n");
 				break;
 
 			}

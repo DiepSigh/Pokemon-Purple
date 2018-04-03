@@ -36,9 +36,6 @@ Menu::Menu(float x, float y, Texture* tex) {
 	mPos.x = x;
 	mPos.y = y;
 	mTex = tex;
-
-
-
 }
 
 void Menu::CheckState() {

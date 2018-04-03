@@ -8,11 +8,11 @@ PokeDex::~PokeDex() {
 	
 }
 
-PokeDex::Update() {
+void PokeDex::Update() {
 
 }
 
-PokeDex::Render() {
+void PokeDex::Render() {
 	GetmTex()->SetRenderRectX(GetPosX());
 	GetmTex()->SetRenderRectY(GetPosY());
 

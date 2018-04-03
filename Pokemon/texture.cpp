@@ -1,6 +1,7 @@
 #include "texture.h"
 
-Texture::Texture() {}
+Texture::Texture() {
+}
 
 Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mGraphics = Graphics::Instance();
@@ -19,8 +20,6 @@ Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mClipRect.w = mWidth;
 	mClipRect.h = mHeight;
 }
-
-Texture::Texture() {};
 
 Texture::Texture(std::string text, std::string fontPath, int size) {
 	mGraphics = Graphics::Instance();
@@ -42,7 +41,6 @@ Texture::~Texture() {
 
 void Texture::Render() {
 	//Vector2 pos = Pos(WORLD);
-<<<<<<< HEAD
 	//SetRenderRectX(10);
 	//SetRenderRectY(15);
 	//mRenderRect.x =(int)pos.x;
@@ -51,12 +49,10 @@ void Texture::Render() {
 	//mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
 	//GetmGraphics()->DrawTexture(GetSDLTex(), GetClipped() ? &GetmClipRect() : NULL, &GetmRenderRect());
 
-=======
 	//mRenderRect.x = (int)(pos.x - mWidth * 0.5f);
 	//mRenderRect.y = (int)(pos.x - mHeight * 0.5f);
 	//
 	//mGraphics->DrawTexture(SDLTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
->>>>>>> MIKE
 }
 
 void Texture::Update(){

@@ -1,20 +1,10 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-<<<<<<< HEAD
 #include "assetManager.h"
-
-class Texture {
-protected:
-	SDL_Texture *SDLTex;
-=======
-
-#include "assetManager.h"
-
 
 class Texture{
 protected:
->>>>>>> MIKE
 	Graphics *mGraphics;
 	SDL_Texture *SDLTex;
 
@@ -32,12 +22,9 @@ public:
 	virtual void Render();
 	virtual void Update();
 
-<<<<<<< HEAD
 	Texture(std::string text, std::string fontPath, int size);
 
-=======
 	//SDL_Texture *GetmTex() { return mTex; }
->>>>>>> MIKE
 	SDL_Texture *GetSDLTex() { return SDLTex; }
 	Graphics *GetmGraphics() { return mGraphics; }
 	int GetWidth() { return mWidth; }
@@ -49,4 +36,3 @@ public:
 	void SetRenderRectY(int y) { mRenderRect.y = y; }
 };
 #endif // !TEXTURE_H
-

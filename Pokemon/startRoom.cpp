@@ -223,11 +223,10 @@ StartRoom::~StartRoom() {
 
 void StartRoom::Render() {
 
-	Vector2 pos = Pos(WORLD);
-	mRenderRect.x = (int)(pos.x - mWidth * 0.0f);
-	mRenderRect.y = (int)(pos.x - mHeight * 0.0f);
+	//mRenderRect.x = (int)(pos.x - mWidth * 0.0f);
+	//mRenderRect.y = (int)(pos.x - mHeight * 0.0f);
 
-	mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
+	//mGraphics->DrawTexture(mTex, (mClipped)? &mClipRect : NULL, &mRenderRect);
 }
 
 void StartRoom::Update() {}

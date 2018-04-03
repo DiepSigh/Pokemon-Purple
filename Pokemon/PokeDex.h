@@ -18,6 +18,7 @@ public:
 
 private:
 	PokedexState PkDexState;
+	Graphics* mGraphics;
 
 
 };
