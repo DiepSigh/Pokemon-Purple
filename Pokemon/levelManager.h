@@ -7,7 +7,6 @@
 class LevelManager {
 protected:
 	
-
 private:
 	static LevelManager* sInstance;
 	static bool sInitialized;

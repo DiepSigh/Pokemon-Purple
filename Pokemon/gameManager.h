@@ -3,11 +3,12 @@
 
 #include "graphics.h"
 #include "timer.h"
-//#Include "animatedTexture.h"
+//#include "animatedTexture.h"
 #include "menuManager.h"
 #include "userInput.h"
 #include "levelManager.h"
 #include "DisplayText.h"
+#include "TextManager.h"
 
 class GameManager {
 private:
@@ -22,8 +23,9 @@ private:
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
+	TextManager* mTextManager;
+	TextScreen* mNPCtext;
 	
-
 public:
 	static GameManager* Instance();
 	static void Release();

@@ -40,7 +40,6 @@ void LevelManager::Update() {
 
 void LevelManager::Render() {
 	//map1->Render();
-	
 	mPlayer->Render();
 }
 

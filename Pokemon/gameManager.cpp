@@ -20,11 +20,13 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 	mLevelManager = LevelManager::Instance();
+	mTextManager = new TextManager();
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
 	mTimer = Timer::Instance();
 	mPlayerControls = new UserInput();
+	mNPCtext = new TextScreen();
 }
 
 GameManager::~GameManager() {
@@ -41,6 +43,12 @@ GameManager::~GameManager() {
 
 	delete mPlayerControls;
 	mPlayerControls = NULL;
+
+	delete mNPCtext;
+	mNPCtext = NULL;
+
+	delete mTextManager;
+	mTextManager = NULL;
 }
 
 void GameManager::Run() {
@@ -54,6 +62,7 @@ void GameManager::Run() {
 			}
 		}
 
+
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 			//UPDATES
 			mGraphics->ClearBackBuffer();
@@ -61,6 +70,8 @@ void GameManager::Run() {
 			mMenuManager->menu->Render();
 			mLevelManager->Update();
 			mLevelManager->Render();
+			mTextManager->Render();
+		
 			mGraphics->Render();
 			mTimer->Reset();
 		}
