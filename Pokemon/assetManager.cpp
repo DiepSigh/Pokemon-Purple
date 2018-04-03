@@ -85,33 +85,33 @@ SDL_Texture* AssetManager::GetText(std::string text, std::string filename, int s
 //Adding music by Canados
 Mix_Music* AssetManager::GetMusic(std::string filename) {
 
-	std::string fullpath = SDL_GetBasePath();
-	fullpath.append("Assets/" + filename);
+	std::string fullPath = SDL_GetBasePath();
+	fullPath.append("Assets/" + filename);
 
-	if (mMusic[fullpath] == nullptr) {
-		mMusic[fullpath] = Mix_LoadMUS(fullpath.c_str());
-		if (mMusic[fullpath] == NULL) {
+	if (mMusic[fullPath] == nullptr) {
+		mMusic[fullPath] = Mix_LoadMUS(fullPath.c_str());
+		if (mMusic[fullPath] == NULL) {
 			printf("Music Loading Error: File-%s Error-%s", filename.c_str(), Mix_GetError());
 		}
 	}
 
-	return mMusic[fullpath];
+	return mMusic[fullPath];
 }
 
 //Adding SFX by Canados
 Mix_Chunk* AssetManager::GetSFX(std::string filename) {
 
-	std::string fullpath = SDL_GetBasePath();
-	fullpath.append("Assets/" + filename);
+	std::string fullPath = SDL_GetBasePath();
+	fullPath.append("Assets/" + filename);
 
-	if (mSFX[fullpath] == nullptr) {
-		mSFX[fullpath] = Mix_LoadWAV(fullpath.c_str());
-		if (mSFX[fullpath] = NULL) {
+	if (mSFX[fullPath] == nullptr) {
+		mSFX[fullPath] = Mix_LoadWAV(fullPath.c_str());
+		if (mSFX[fullPath] = NULL) {
 			printf("SFX Loading Error: File-%s Error-%s", filename.c_str(), Mix_GetError());
 		}
 		
 	}
 
-	return mSFX[fullpath];
+	return mSFX[fullPath];
 
 }

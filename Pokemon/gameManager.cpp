@@ -1,9 +1,7 @@
 #include "gameManager.h"
 #include <iostream>
 
-
 GameManager* GameManager::sInstance = nullptr;
-
 
 GameManager* GameManager::Instance() {
 	if (sInstance == nullptr) {
@@ -40,14 +38,15 @@ GameManager::GameManager() {
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
 	mAudioMgr = AudioManager::Instance();
+	mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
 }
 
 GameManager::~GameManager() {
 	AssetManager::Release();
+	
 	Graphics::Release();
 	mGraphics = NULL;
-	mGraphics = NULL;
-
+	
 	Timer::Release();
 	mTimer = NULL;
 
@@ -124,7 +123,7 @@ void GameManager::Run() {
 			//mPokemonLeague->Update();
 			mMasterMap->Update();
 
-			mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
+			
 
 
 			mGraphics->Render();

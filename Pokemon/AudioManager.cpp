@@ -4,7 +4,7 @@ AudioManager* AudioManager::sInstance = NULL;
 
 AudioManager* AudioManager::Instance() {
 
-	if (sInstance = NULL) {
+	if (sInstance == NULL) {
 		sInstance = new AudioManager();
 	}
 
