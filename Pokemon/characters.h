@@ -2,7 +2,6 @@
 #define CHARACTERS_H
 
 #include "gameEntity.h"
-#include "animatedTexture.h"
 
 
 class Characters : public GameEntity{

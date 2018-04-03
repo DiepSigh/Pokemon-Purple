@@ -61,9 +61,11 @@ void Menu::CheckState() {
 }
 
 
-Menu::~Menu() {}
+Menu::~Menu() {
+}
 
-void Menu::Update(){}
+void Menu::Update(){
+}
 
 void Menu::Render(){
 	GetmTex()->SetRenderRectX(GetPosX());
@@ -71,4 +73,20 @@ void Menu::Render(){
 
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 
+}
+
+void Menu::CursorMoveDown() {
+	Cursor->SetPosY(Cursor->GetPosY() + 56);
+
+	if (Cursor->GetPosY() > 340) {
+		Cursor->SetPosY(30);
+	}
+}
+
+void Menu::CursorMoveUp() {
+	Cursor->SetPosY(Cursor->GetPosY() - 56);
+
+	if (Cursor->GetPosY() < 30) {
+		Cursor->SetPosY(340);
+	}
 }

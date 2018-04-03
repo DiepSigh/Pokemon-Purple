@@ -13,10 +13,7 @@ public:
 
 	void StartMenu();
 
-
-	void CursorMoveDown();
-	void CursorMoveUp();
-
+	Menu* mMenu;
 	void MenuState();
 
 	void Update();

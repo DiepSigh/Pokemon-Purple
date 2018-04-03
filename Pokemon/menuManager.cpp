@@ -5,8 +5,7 @@ using namespace std;
 MenuManager* MenuManager::sInstance = nullptr;
 
 MenuManager::MenuManager(){
-	Menu::Menu();
-	PokeDex::PokeDex();
+	mMenu = new Menu();
 	//Start Menu Activation
 	StrtMnuisActive = true;
 
@@ -80,21 +79,7 @@ void MenuManager::StartMenu() {
 	Cursor->Render();
 }
 
-void MenuManager::CursorMoveDown(){
-	Cursor->SetPosY(Cursor->GetPosY() + 50);
 
-	if (Cursor->GetPosY() > 340) {
-		Cursor->SetPosY(30);
-	}
-}
-
-void MenuManager::CursorMoveUp() {
-	Cursor->SetPosY(Cursor->GetPosY() - 50);
-
-	if (Cursor->GetPosY() < 30) {
-		Cursor->SetPosY(340);
-	}
-}
 
 void MenuManager::MenuState() {
 

@@ -2,7 +2,7 @@
 #define LEVELMANAGER_H
 #include "characters.h"
 
-class LevelManager : public GameEntity {
+class LevelManager {
 
 private:
 	static LevelManager* sInstance;

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "SDL_keycode.h"
 #include "levelManager.h"
+#include "menuManager.h"
 
 class UserInput{
 public:
@@ -14,6 +15,7 @@ public:
 private:
 	SDL_Event events;
 	LevelManager* mLevelManager;
+	MenuManager* mMenu;
 	
 };
 

@@ -31,6 +31,9 @@ public:
 	Menu* menu6;
 	Menu* Cursor;
 
+	void CursorMoveDown();
+	void CursorMoveUp();
+
 private:
 	MenuStates menuState;
 	Vector2 mPos;

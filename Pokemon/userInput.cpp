@@ -3,6 +3,8 @@
 
 UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
+
+	mMenu = MenuManager::Instance();
 }
 
 void UserInput::Input(){
@@ -19,19 +21,21 @@ void UserInput::Input(){
 			switch (events.key.keysym.sym) {
 			
 			case SDLK_LEFT:
-				mLevelManager->moveLeft();
+				//mLevelManager->moveLeft();
 				break;
 
 			case SDLK_RIGHT:
-				mLevelManager->moveRight();
+				//mLevelManager->moveRight();
 				break;
 
 			case SDLK_UP:
-				mLevelManager->moveUp();
+				mMenu->CursorMoveUp();
+				//mLevelManager->moveUp();
 				break;
 
 			case SDLK_DOWN:
-				mLevelManager->moveDown();
+				mMenu->CursorMoveDown();
+				//mLevelManager->moveDown();
 				break;
 
 			case SDLK_ESCAPE:
