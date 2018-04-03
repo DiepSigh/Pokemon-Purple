@@ -9,6 +9,8 @@ protected:
 	Texture* mTex;
 	AnimatedTexture* mAtex;
 	Vector2 mPos;
+public:
+	enum SPACE {LOCAL = 0, WORLD = 1};
 
 private:
 	float  mRotation;
@@ -17,6 +19,7 @@ private:
 
 public:
 	Texture* GetmTex() { return mTex; }
+	void SetmTex(Texture* tex) {mTex = tex;}
 	GameEntity(float x = 0.0f, float y = 0.0f);
 	~GameEntity();	
 	enum SPACE {LOCAL = 0, WORLD = 1};

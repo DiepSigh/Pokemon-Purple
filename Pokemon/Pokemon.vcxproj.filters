@@ -6,6 +6,7 @@
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="MasterMap.cpp" />
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
@@ -16,12 +17,30 @@
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="PkmnState.cpp" />
+=======
+    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="MasterMap.cpp" />
+    <ClCompile Include="menuManager.cpp" />
+    <ClCompile Include="menuStart.cpp" />
+>>>>>>> Andrey
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="PokeDex.cpp" />
+=======
+    <ClCompile Include="playerHouse.cpp" />
+    <ClCompile Include="redHouse.cpp" />
+    <ClCompile Include="reserchLab.cpp" />
+    <ClCompile Include="pokemonCenter.cpp" />
+    <ClCompile Include="pokemonMart.cpp" />
+    <ClCompile Include="pokemonSchool.cpp" />
+    <ClCompile Include="viridianCityHouse.cpp" />
+    <ClCompile Include="pokemonLeague.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
+>>>>>>> Andrey
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -31,19 +50,36 @@
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="MasterMap.h" />
+<<<<<<< HEAD
     <ClInclude Include="camera.h" />
     <ClInclude Include="characters.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="levelManager.h" />
+=======
+>>>>>>> Andrey
     <ClInclude Include="mathHelper.h" />
     <ClInclude Include="startRoom.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
+<<<<<<< HEAD
     <ClInclude Include="PkmnState.h" />
     <ClInclude Include="PokeDex.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="userInput.h" />
+=======
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="playerHouse.h" />
+    <ClInclude Include="redHouse.h" />
+    <ClInclude Include="reserchLab.h" />
+    <ClInclude Include="pokemonCenter.h" />
+    <ClInclude Include="pokemonSchool.h" />
+    <ClInclude Include="pokemonMart.h" />
+    <ClInclude Include="viridianCityHouse.h" />
+    <ClInclude Include="pokemonLeague.h" />
+    <ClInclude Include="AudioManager.h" />
+>>>>>>> Andrey
   </ItemGroup>
 </Project>
