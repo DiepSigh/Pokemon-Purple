@@ -1,18 +1,15 @@
 #include "menuManager.h"
+
 using namespace std;
 
 MenuManager* MenuManager::sInstance = nullptr;
 
 MenuManager::MenuManager(){
-	Menu::Menu();
-	PokeDex::PokeDex();
+	mMenu = new Menu();
 	//Start Menu Activation
 	StrtMnuisActive = true;
-
 	mGraphics = Graphics::Instance();
 }
-
-MenuManager::MenuManager(int, int, Texture*){}
 
 MenuManager*MenuManager::Instance(){
 	if (sInstance == nullptr) {
@@ -33,13 +30,13 @@ MenuManager::~MenuManager(){
 	mGraphics = NULL;
 }
 
+
 void MenuManager::Update() {
 
 }
 
 void MenuManager::Render() {
 	if (StrtMnuisActive) {
-		cout << ((int) Cursor->GetPosY());
 		StartMenu();
 		switch ((int)Cursor->GetPosY()) {
 		case 30:
@@ -50,21 +47,20 @@ void MenuManager::Render() {
 		case 80:
 			//Load POKEMON
 			break;
-		case 140:
+		case 130:
 			// Load ITEMS
 			break;
-		case 190:
+		case 180:
 			//Load PLAYER
 			break;
-		case 240:
+		case 230:
 			//Load SAVE
 			break;
-		case 290:
+		case 380:
 			//Load OPTIONS
 			break;
-		case 340:
+		case 405:
 			//Load EXIT
-			StrtMnuisActive = false;
 			break;
 		}
 	}
@@ -78,26 +74,10 @@ void MenuManager::StartMenu() {
 	menu4->Render();
 	menu5->Render();
 	menu6->Render();
-	Cursor->SetPosY(Cursor->GetPosY() + 0.1);
 	Cursor->Render();
-
 }
 
-void MenuManager::CursorMoveDown(){
-	Cursor->SetPosY(Cursor->GetPosY() + 50);
 
-	if (Cursor->GetPosY() > 340) {
-		Cursor->SetPosY(30);
-	}
-}
-
-void MenuManager::CursorMoveUp() {
-	Cursor->SetPosY(Cursor->GetPosY() - 50);
-
-	if (Cursor->GetPosY() < 30) {
-		Cursor->SetPosY(340);
-	}
-}
 
 void MenuManager::MenuState() {
 

@@ -1,2 +1,4 @@
-﻿  gameManager.cpp
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  menuStart.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\menustart.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
