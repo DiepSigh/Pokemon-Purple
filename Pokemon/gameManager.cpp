@@ -124,7 +124,7 @@ void GameManager::Run() {
 			mMasterMap->Update();
 			mLevelManager->Update();
 			mLevelManager->Render();
-			mCamera->UpdatePos();
+		
 
 			//RENDERS!!!!!			
 					

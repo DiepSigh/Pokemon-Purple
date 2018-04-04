@@ -39,7 +39,7 @@ void MenuManager::Update() {
 
 void MenuManager::Render() {
 	if (StrtMnuisActive) {
-		cout << ((int) Cursor->GetPosY());
+		//cout << ((int) Cursor->GetPosY());
 		StartMenu();
 		switch ((int)Cursor->GetPosY()) {
 		case 30:

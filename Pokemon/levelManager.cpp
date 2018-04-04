@@ -1,6 +1,6 @@
 #include "levelmanager.h"
-#include "camera.h"
-
+#include <iostream>
+using namespace std;
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
 
@@ -25,6 +25,12 @@ LevelManager::LevelManager() {
 	mPlayer = new Characters();
 	mPlayer->SetPosX(150);
 	mPlayer->SetSpeed(2);
+	
+	mCamera = new Camera(500,100);
+	mCamera->SetPosX(10000);
+	mCamera->SetPosY(500);
+	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
+	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
 
 LevelManager::~LevelManager() {
@@ -33,14 +39,16 @@ LevelManager::~LevelManager() {
 }
 
 void LevelManager::Update() {
+
 	//map1->Update();
 	//mPlayer->SetPosX(mPlayer->GetPosX() + 0.1f);
 }
 
 void LevelManager::Render() {
 	//map1->Render();
-
+	
 	mPlayer->Render();
+	mCamera->Render();
 }
 
 void LevelManager::moveLeft() {

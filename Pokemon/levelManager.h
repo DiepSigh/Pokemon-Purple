@@ -1,6 +1,8 @@
 #ifndef LEVELMANAGER_H
 #define LEVELMANAGER_H
+
 #include "characters.h"
+#include "camera.h"
 
 class LevelManager {
 
@@ -26,6 +28,7 @@ private:
 	LevelManager();
 	~LevelManager();
 	Characters* mPlayer;
+	Camera* mCamera;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;

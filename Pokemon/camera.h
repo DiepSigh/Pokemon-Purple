@@ -1,47 +1,47 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-//APRIL 4th 10:02AM
-
-#include "camera.h"
 #include "characters.h"
+#include "graphics.h"
 
-
-class Camera {
+class Camera : public GameEntity{
 
 private:
 	static Camera* sInstance;
 	static bool sInitialized;
 
 public:
+	Camera(int,int);
+	Camera();
+	~Camera();
+
 	static Camera* Instance();
 	static bool Initialized();
-	void UpdatePos();
-
+	void UpdatePos(Characters &mPlayer);
+	void Render();
 	//GETTERS
 	float GetPlayerXPos() { return mPlayerXPos; }
 	float GetPlayerYPos() { return mPlayerYPos; }
-	float GetCamXPos() { return mCamXPos; }
-	float GetCamYPos() { return mCamYPos; }
+	int GetCamXPos() { return mCamXPos; }
+	int GetCamYPos() { return mCamYPos; }
 	//Camera* GetCamXPos;
 	//Camera* GetCamXPos() { return mCamXPos; }
 
 
 	//SETTERS
-	void SetPlayerXPos(int playerx) { mPlayerXPos = playerx; }
-	void SetPlayerYPos(int playery) { mPlayerYPos = playery; }	
-	void SetCamXPos(float camx) { mPlayerXPos = camx; }
-	void SetCamYPos(float camy) { mPlayerYPos = camy; }
-	static SDL_Rect mMainCamera;
+	 void SetPlayerXPos(int playerx) { mPlayerXPos = playerx; }
+	 void SetPlayerYPos(int playery) { mPlayerYPos = playery; }
+	 void SetCamXPos(float camx) { mPlayerXPos = camx; }
+	 void SetCamYPos(float camy) { mPlayerYPos = camy; }
+	 static SDL_Rect mMainCamera;
 
 private:
-	Camera();
-	~Camera();
-
+	
 	float mPlayerXPos;
 	float mPlayerYPos;	
 	float mCamXPos;
 	float mCamYPos;
+	Graphics* mGraphics;
 };
 
 
