@@ -27,6 +27,7 @@ GameManager::GameManager() {
 	
 	mTimer = Timer::Instance();
 	mLevelManager = LevelManager::Instance();
+	mCamera = Camera::Instance();
 	mPlayerControls = new UserInput();
 	
 	// By Canados
@@ -123,6 +124,8 @@ void GameManager::Run() {
 			mMasterMap->Update();
 			mLevelManager->Update();
 			mLevelManager->Render();
+			mCamera->UpdatePos();
+
 			//RENDERS!!!!!			
 					
 			//mStartRoom->Update();

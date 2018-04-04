@@ -6,6 +6,7 @@
 #include "animatedTexture.h"
 #include "menuManager.h"
 #include "levelmanager.h"
+#include "camera.h"
 #include "userInput.h"
 #include "startRoom.h"
 #include "playerHouse.h"
@@ -31,6 +32,7 @@ private:
 	Texture* mTex;
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
+	Camera* mCamera;
 	UserInput* mPlayerControls;
 	static SDL_Rect Camera;
 	StartRoom* mStartRoom;

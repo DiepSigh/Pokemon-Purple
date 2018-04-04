@@ -33,5 +33,6 @@ void Camera::UpdatePos() {
 	if (mMainCamera.y < 0) { mMainCamera.y = 0; }
 	if (mMainCamera.x > mMainCamera.w) { mMainCamera.x = mMainCamera.w; }
 	if (mMainCamera.y > mMainCamera.h) { mMainCamera.y = mMainCamera.h; }
+
 }
 
