@@ -64,13 +64,13 @@ void PlayerHouse::Render() {
 
 void PlayerHouse::Update() {
 
-	SetPosY(0);
-	SetPosX(260);
+	SetPosY(140);
+	SetPosX(250);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(260);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -85,8 +85,8 @@ void PlayerHouse::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(260);
+	SetPosY(140);
+	SetPosX(250);
 
 }
 

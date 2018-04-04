@@ -100,13 +100,13 @@ void PokemonCenter::Render() {
 }
 
 void PokemonCenter::Update() {
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(200);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(0);
+			SetPosX(200);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -121,8 +121,8 @@ void PokemonCenter::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(200);
 
 }
 

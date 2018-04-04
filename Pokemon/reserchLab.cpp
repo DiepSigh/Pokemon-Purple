@@ -73,13 +73,13 @@ void ReserchLab::Render() {
 
 void ReserchLab::Update() {
 	
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(100);
+	SetPosX(250);
 
 	for (int i = 0; i < 12; i++) {
 
 		if (i != 0) {
-			SetPosX(0);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -94,8 +94,8 @@ void ReserchLab::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(100);
+	SetPosX(250);
 
 }
 

@@ -67,22 +67,23 @@ void StartRoom::Render() {
 	//mRenderRect.x = (int)(pos.x - mWidth * 0.0f);
 	//mRenderRect.y = (int)(pos.x - mHeight * 0.0f);
 
-	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+	
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped)? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 }
 
 void StartRoom::Update() {
 	
-	SetPosY(0);
-	SetPosX(0);	
+	SetPosY(140);
+	SetPosX(250);	
 
 	for (int i = 0; i < 8; i++) {
 	
 		if (i != 0) {
-			SetPosX(0);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 			
 		}
@@ -97,8 +98,8 @@ void StartRoom::Update() {
 		}
 	
 	}
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(250);
 
 
 }

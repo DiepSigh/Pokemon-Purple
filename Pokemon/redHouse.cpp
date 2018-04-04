@@ -73,13 +73,13 @@ void RedHouse::Render() {
 
 void RedHouse::Update() {
 	
-	SetPosY(0);
-	SetPosX(520);
+	SetPosY(140);
+	SetPosX(250);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(520);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -94,8 +94,8 @@ void RedHouse::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(520);
+	SetPosY(140);
+	SetPosX(250);
 
 }
 

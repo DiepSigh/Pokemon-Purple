@@ -49,13 +49,13 @@ void PokemonLeague::Render() {
 
 void PokemonLeague::Update() {
 
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(250);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(0);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -70,8 +70,8 @@ void PokemonLeague::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(250);
 }
 
 void PokemonLeague::DrawMap(int tile) {
