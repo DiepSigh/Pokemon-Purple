@@ -24,7 +24,7 @@ public:
 	void SetPlayerYPos(int playery) { mPlayerYPos = playery; }	
 	void SetCamXPos(int camx) { mPlayerXPos = camx; }
 	void SetCamYPos(int camy) { mPlayerYPos = camy; }
-
+	static SDL_Rect mMainCamera;
 
 private:
 	Camera();
