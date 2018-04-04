@@ -20,9 +20,13 @@ public:
 
 	void PlaySFX(std::string filename, int loops = 0, int channel = 0);
 
+	void GameMenuSound();
+	void DialogWithOakSound();
 	void PalletTownSound();
 	void RoadToViridianCitySound();
 	void ViridianCitySound();
+	void ReserchLabSound();
+
 
 private:
 
