@@ -7,10 +7,8 @@ c:\users\mike\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C44
   DisplayText.cpp
   gameEntity.cpp
   gameManager.cpp
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   MasterMap.cpp
   menuManager.cpp
 c:\users\mike\documents\github\pokemon\pokemon\menumanager.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
@@ -18,16 +16,8 @@ c:\users\mike\documents\github\pokemon\pokemon\menumanager.cpp(81): warning C424
 c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   camera.cpp
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(27): error C3646: 'mMainCamera': unknown override specifier
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(27): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(6): error C2039: 'mMainCamera': is not a member of 'Camera'
-  c:\users\mike\documents\github\pokemon\pokemon\camera.h(5): note: see declaration of 'Camera'
-c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   characters.cpp
 c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -35,6 +25,8 @@ c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244
   Inventory.cpp
   Items.cpp
   levelManager.cpp
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   PkmnState.cpp
   PokeDex.cpp
 c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -45,10 +37,8 @@ c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: '
   Generating Code...
   Compiling...
   Pokemon.cpp
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.h(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   pokemonCenter.cpp
   pokemonSchool.cpp
   redHouse.cpp
@@ -59,3 +49,4 @@ c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: '=':
   userInput.cpp
   viridianCityHouse.cpp
   Generating Code...
+  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe

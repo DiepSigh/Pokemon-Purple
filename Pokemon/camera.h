@@ -1,6 +1,9 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+#include "camera.h"
+#include "characters.h"
+
 
 class Camera {
 
@@ -18,12 +21,15 @@ public:
 	float GetPlayerYPos() { return mPlayerYPos; }
 	float GetCamXPos() { return mCamXPos; }
 	float GetCamYPos() { return mCamYPos; }
+	//Camera* GetCamXPos;
+	//Camera* GetCamXPos() { return mCamXPos; }
+
 
 	//SETTERS
 	void SetPlayerXPos(int playerx) { mPlayerXPos = playerx; }
 	void SetPlayerYPos(int playery) { mPlayerYPos = playery; }	
-	void SetCamXPos(int camx) { mPlayerXPos = camx; }
-	void SetCamYPos(int camy) { mPlayerYPos = camy; }
+	void SetCamXPos(float camx) { mPlayerXPos = camx; }
+	void SetCamYPos(float camy) { mPlayerYPos = camy; }
 	static SDL_Rect mMainCamera;
 
 private:

@@ -20,7 +20,6 @@ void UserInput::Input(){
 			
 			case SDLK_LEFT:
 				mLevelManager->moveLeft();
-				printf("You pressed left arrow\n");
 				break;
 
 			case SDLK_RIGHT:

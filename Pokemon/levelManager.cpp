@@ -1,4 +1,5 @@
 #include "levelmanager.h"
+#include "camera.h"
 
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
@@ -14,7 +15,6 @@ LevelManager* LevelManager::Instance()
 void LevelManager::Release() {
 	delete sInstance;
 	sInitialized = false;
-
 }
 
 bool LevelManager::Initialized() {
