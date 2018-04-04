@@ -21,7 +21,10 @@ public:
 	bool StrtMnuisActive = true;
 	void Update();
 	void Render();
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	Menu* menu;
 	Menu* menu1;
 	Menu* menu2;
@@ -30,9 +33,12 @@ public:
 	Menu* menu5;
 	Menu* menu6;
 	Menu* Cursor;
+<<<<<<< HEAD
 
 	void CursorMoveDown();
 	void CursorMoveUp();
+=======
+>>>>>>> master
 
 private:
 	MenuStates menuState;

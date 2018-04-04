@@ -16,15 +16,19 @@ protected:
 	SDL_Rect mClipRect;
 
 public:
+	Texture();
 	Texture(std::string, int, int, int, int);
 	~Texture();
-	Texture();
+
 	virtual void Render();
 	virtual void Update();
 
 	Texture(std::string text, std::string fontPath, int size);
 
+<<<<<<< HEAD
 	//SDL_Texture *GetmTex() { return mTex; }
+=======
+>>>>>>> master
 	SDL_Texture *GetSDLTex() { return SDLTex; }
 	Graphics *GetmGraphics() { return mGraphics; }
 	int GetWidth() { return mWidth; }

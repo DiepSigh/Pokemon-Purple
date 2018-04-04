@@ -1,16 +1,24 @@
 #include "menuManager.h"
+using namespace std;
 
 using namespace std;
 
 MenuManager* MenuManager::sInstance = nullptr;
 
 MenuManager::MenuManager(){
+<<<<<<< HEAD
 	mMenu = new Menu();
+=======
+	Menu::Menu();
+	PokeDex::PokeDex();
+>>>>>>> master
 	//Start Menu Activation
 	StrtMnuisActive = true;
 
 	mGraphics = Graphics::Instance();
 }
+
+MenuManager::MenuManager(int, int, Texture*){}
 
 MenuManager*MenuManager::Instance(){
 	if (sInstance == nullptr) {
@@ -31,7 +39,10 @@ MenuManager::~MenuManager(){
 	mGraphics = NULL;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 void MenuManager::Update() {
 
 }
@@ -80,6 +91,21 @@ void MenuManager::StartMenu() {
 }
 
 
+<<<<<<< HEAD
+=======
+	if (Cursor->GetPosY() > 340) {
+		Cursor->SetPosY(30);
+	}
+}
+
+void MenuManager::CursorMoveUp() {
+	Cursor->SetPosY(Cursor->GetPosY() - 50);
+
+	if (Cursor->GetPosY() < 30) {
+		Cursor->SetPosY(340);
+	}
+}
+>>>>>>> master
 
 void MenuManager::MenuState() {
 

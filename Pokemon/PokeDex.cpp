@@ -16,7 +16,7 @@ void PokeDex::Render() {
 	GetmTex()->SetRenderRectX(GetPosX());
 	GetmTex()->SetRenderRectY(GetPosY());
 
-	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+//	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetClipped()) ? &GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
 void PokeDex::CheckDexState() {

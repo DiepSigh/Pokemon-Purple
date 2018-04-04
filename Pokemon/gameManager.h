@@ -4,11 +4,28 @@
 #include "graphics.h"
 #include "timer.h"
 #include "animatedTexture.h"
+<<<<<<< HEAD
 
 #include "menuManager.h"
 #include "levelmanager.h"
 #include "userInput.h"
 
+=======
+#include "menuManager.h"
+#include "levelmanager.h"
+#include "userInput.h"
+#include "startRoom.h"
+#include "playerHouse.h"
+#include "redHouse.h"
+#include "reserchLab.h"
+#include "pokemonMart.h"
+#include "pokemonCenter.h"
+#include "pokemonSchool.h"
+#include "viridianCityHouse.h"
+#include "pokemonLeague.h"
+#include "MasterMap.h"
+#include "AudioManager.h"
+>>>>>>> master
 
 class GameManager {
 private:
@@ -21,11 +38,28 @@ private:
 	Timer* mTimer;
 	Texture* mTex;
 	MenuManager* mMenuManager;
+<<<<<<< HEAD
 
 	//AnimatedTexture* mTex;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
 	static SDL_Rect Camera;
+=======
+	LevelManager* mLevelManager;
+	UserInput* mPlayerControls;
+	static SDL_Rect Camera;
+	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
+	AudioManager* mAudioMgr;
+>>>>>>> master
 
 public:
 	static GameManager* Instance();
