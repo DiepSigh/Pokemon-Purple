@@ -1,7 +1,11 @@
 #include "camera.h"
+#include <iostream>
 
 Camera* Camera::sInstance = nullptr;
 bool Camera::sInitialized = false;
+SDL_Rect Camera::mMainCamera = { 0,0,400,320 };
+
+using namespace std;
 
 Camera* Camera::Instance()
 {
@@ -25,7 +29,15 @@ Camera::~Camera() {
 }
 
 void Camera::UpdatePos() {
-	//GetCamXPos() + GetCamYPos() / 2 == (GetPlayerXPos() + GetPlayerYPos()) / 2;
-//SET THESE VALUSE^
+	//GetCamXPos()->SetCamXPos(mPlayerXPos);
+	//mMainCamera.y = mPlayerYPos;
+	
+//	cout << mMainCamera.x;
+
+	//if (mMainCamera.x < 0) { mMainCamera.x = 0; }
+	//if (mMainCamera.y < 0) { mMainCamera.y = 0; }
+	//if (mMainCamera.x > mMainCamera.w) { mMainCamera.x = mMainCamera.w; }
+	//if (mMainCamera.y > mMainCamera.h) { mMainCamera.y = mMainCamera.h; }
+	
 }
 

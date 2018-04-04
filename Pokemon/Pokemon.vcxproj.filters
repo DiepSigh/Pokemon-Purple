@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
@@ -16,20 +17,31 @@
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="PkmnState.cpp" />
+    <ClCompile Include="PokeDex.cpp" />
+    <ClCompile Include="pokemonLeague.cpp" />
+    <ClCompile Include="pokemonMart.cpp" />
+    <ClCompile Include="playerHouse.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="pokemonCenter.cpp" />
+    <ClCompile Include="pokemonSchool.cpp" />
+    <ClCompile Include="redHouse.cpp" />
+    <ClCompile Include="reserchLab.cpp" />
     <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
-    <ClCompile Include="PokeDex.cpp" />
+    <ClCompile Include="viridianCityHouse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="pokemonLeague.h" />
+    <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="characters.h" />
@@ -45,5 +57,11 @@
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="userInput.h" />
+    <ClInclude Include="playerHouse.h" />
+    <ClInclude Include="pokemonCenter.h" />
+    <ClInclude Include="pokemonSchool.h" />
+    <ClInclude Include="redHouse.h" />
+    <ClInclude Include="reserchLab.h" />
+    <ClInclude Include="viridianCityHouse.h" />
   </ItemGroup>
 </Project>

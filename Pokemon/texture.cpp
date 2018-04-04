@@ -1,5 +1,7 @@
 #include "texture.h"
 
+Texture::Texture() {}
+
 Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mGraphics = Graphics::Instance();
 	SDLTex = AssetManager::Instance()->GetTexture(filename);
@@ -17,8 +19,6 @@ Texture::Texture(std::string filename, int x, int y, int w, int h) {
 	mClipRect.w = mWidth;
 	mClipRect.h = mHeight;
 }
-
-Texture::Texture() {};
 
 Texture::Texture(std::string text, std::string fontPath, int size) {
 	mGraphics = Graphics::Instance();
