@@ -26,3 +26,7 @@ void Characters::Update() {
 void Characters::NPC(){
 
 }
+
+void Characters::DisplayText()
+{
+}

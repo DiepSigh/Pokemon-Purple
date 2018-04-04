@@ -1,6 +1,25 @@
-﻿  DisplayText.cpp
+﻿  animatedTexture.cpp
+  AssetManager.cpp
+  characters.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  DisplayText.cpp
 c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  gameManager.cpp
+  graphics.cpp
+  levelManager.cpp
+  menuManager.cpp
+  menuStart.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+  TextManager.cpp
+  texture.cpp
+  timer.cpp
+  userInput.cpp
+  Generating Code...
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe

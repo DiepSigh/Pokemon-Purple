@@ -3,8 +3,8 @@
 
 TextManager::TextManager() {
 	mTextScreen = new TextScreen(0, 0, "OAK");
-	mTextScreen->SetPosX(10);
-	mTextScreen->SetPosY(10);
+	mTextScreen->SetPosX(130);
+	mTextScreen->SetPosY(450);
 }
 
 TextManager::~TextManager()

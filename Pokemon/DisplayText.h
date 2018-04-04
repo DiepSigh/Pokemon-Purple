@@ -7,6 +7,7 @@
 #include "texture.h"
 #include "gameEntity.h"
 #include "graphics.h"
+#include <vector>
 
 
 class TextScreen : public GameEntity {
@@ -19,7 +20,6 @@ public:
 	std::string Talk(std::string);
 	void Update();
 	void Speech();
-
 	void Render();
 	TextScreen* mNPCtext;
 	std::string GetDisplay() { return Display ; }
@@ -31,6 +31,7 @@ private:
 	Graphics* mGraphics;
 	AssetManager* mAssetManager;
 	Vector2 mPos;
+	std::vector <std::string> Dialouge;
 };
 
 #endif // !DISPLAYTEXT_H

@@ -4,6 +4,8 @@
 #include "gameEntity.h"
 #include "animatedTexture.h"
 #include "texture.h"
+#include "DisplayText.h"
+#include <vector>
 
 class Characters : public GameEntity{
 public:
@@ -14,11 +16,13 @@ public:
 	void NPC();
 	inline float GetSpeed() { return SPEED; }
 	void SetSpeed(float s) { SPEED = s; }
+	void DisplayText();
 
 private:
 	Graphics* mGraphics;
 	Texture* mPlayer;
 	float SPEED;
+	TextScreen* mTextScreen;
 
 };
 

@@ -67,7 +67,7 @@ void GameManager::Run() {
 			//UPDATES
 			mGraphics->ClearBackBuffer();
 			//RENDERS
-			mMenuManager->menu->Render();
+			//mMenuManager->menu->Render();
 			mLevelManager->Update();
 			mLevelManager->Render();
 			mTextManager->Render();

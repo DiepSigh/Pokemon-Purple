@@ -5,7 +5,7 @@ using namespace std;
 TextScreen::TextScreen(){
 	mGraphics = Graphics::Instance();
 	mAssetManager = AssetManager::Instance();
-	Talk("OAK");
+	//Talk("OAK");
 	//mNPCtext = new TextScreen(0, 0, new Texture(mSpeech, "PKMNSOLID.ttf", 60));
 	//mNPCtext->SetPosY(10);
 	//mNPCtext->SetPosX(10);
@@ -18,7 +18,7 @@ TextScreen::TextScreen(int x, int y, string name) {
 	mPos.x = x;
 	mPos.y = y;
 	Talk(name);
-	mTex = new Texture(mSpeech, "PKMNSOLID.ttf", 60);
+	mTex = new Texture(mSpeech, "PKMNSOLID.ttf", 40);
 }
 
 TextScreen::~TextScreen()
@@ -37,8 +37,13 @@ string TextScreen::Talk(string NPC){
 		do {
 			getline(src, Name, ',');
 			if (NPC == Name) {
-				getline(src, mSpeech, ',');
 				Found = true;
+				do {
+					getline(src, mSpeech, ',');
+					Dialouge.push_back(mSpeech);
+					cout << mSpeech;
+				} while (mSpeech != "\n");
+				
 			}
 			else {
 				src.ignore(500, '\n');
