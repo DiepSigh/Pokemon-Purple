@@ -10,7 +10,7 @@
 #include "startRoom.h"
 #include "playerHouse.h"
 #include "redHouse.h"
-#include "reserchLab.h"
+#include "researchLab.h"
 #include "pokemonMart.h"
 #include "pokemonCenter.h"
 #include "pokemonSchool.h"
@@ -36,7 +36,7 @@ private:
 	StartRoom* mStartRoom;
 	PlayerHouse* mPlayerHouse;
 	RedHouse* mRedHouse;
-	ReserchLab* mReserchLab;
+	ResearchLab* mResearchLab;
 	PokemonMart* mPokemonMart;
 	PokemonCenter* mPokemonCenter;
 	PokemonSchool* mPokemonSchool;
@@ -44,7 +44,7 @@ private:
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
 	AudioManager* mAudioMgr;
-
+	
 public:
 	static GameManager* Instance();
 	static void Release();

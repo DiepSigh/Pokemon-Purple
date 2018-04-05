@@ -1,15 +1,15 @@
 #ifndef _POKEMONSCHOOL_H
 #define _POKEMONSCHOOL_H
 
-#include "gameEntity.h"
+#include "mapsLoader.h"
 
-class PokemonSchool : public GameEntity {
+class PokemonSchool : public MapsLoader {
 
 private:
 	
 	Texture
-		*mBoard1, *mBoard2, *mBookshelf1, *mBookShelf2, *mChair, *mExit, *mFloor,
-		*mFlower1, *mFlower2, *mTable1, *mTable2, *mTable3, *mTable4, *mWall, *mWindow;
+		**mBoard1, **mBoard2, **mBookshelf1, **mBookShelf2, **mChair, **mExit, **mFloor,
+		**mFlower1, **mFlower2, **mTable1, **mTable2, **mTable3, **mTable4, **mWall, **mWindow;
 
 	int map[8][8] =
 	{

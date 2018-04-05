@@ -60,49 +60,49 @@ void AudioManager::PlaySFX(std::string filename, int loops, int channel) {
 }
 
 void AudioManager::StartGameSound() {
-	PlayMusic("StartGameSound.wav");
+	PlayMusic("sounds/StartGameSound.wav");
 }
 
 void AudioManager::DialogWithOakSound() {
-	PlayMusic("DialogWithOakSound.wav");
+	PlayMusic("sounds/DialogWithOakSound.wav");
 }
 
 void AudioManager::PalletTownSound() {
-	PlayMusic("PaletteTownTheme.wav");
+	PlayMusic("sounds/PaletteTownTheme.wav");
 }
 
 void AudioManager::ReserchLabSound() {
-	PlayMusic("ResearchLab.wav");
+	PlayMusic("sounds/ResearchLab.wav");
 }
 
 void AudioManager::RoadToViridianCitySound() {
-	PlayMusic("RoadViridianCityFromPalette.wav");
+	PlayMusic("sounds/RoadViridianCityFromPalette.wav");
 }
 
 void AudioManager::ViridianCitySound() {
-	PlayMusic("ViridianCity.wav");
+	PlayMusic("sounds/ViridianCity.wav");
 }
 
 void AudioManager::PokemonCenterSound() {
-	PlayMusic("PokemonCenter.wav");
+	PlayMusic("sounds/PokemonCenter.wav");
 }
 
 void AudioManager::PokemonMartSound() {
-	PlayMusic("PokemonMart.wav");
+	PlayMusic("sounds/PokemonMart.wav");
 }
 void AudioManager::BattleVsWildPokemonSound() {
-	PlayMusic("BattleVsWildPokemon.wav");
+	PlayMusic("sounds/BattleVsWildPokemon.wav");
 }
 
 void AudioManager::VictoryVsWildPokemon() {
-	PlayMusic("VictoryVsWildPokemon.wav");
+	PlayMusic("sounds/VictoryVsWildPokemon.wav");
 }
 
 
 void AudioManager::BumpSFX() {
-	PlaySFX("bump.wav", 0);
+	PlaySFX("sounds/bump.wav", 0);
 }
 
 void AudioManager::ExitSFX() {
-	PlaySFX("exit.wav", 0);
+	PlaySFX("sounds/exit.wav", 0);
 }
