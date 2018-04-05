@@ -89,20 +89,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-
       <AdditionalIncludeDirectories>C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\SDL2_mixer-2.0.2\include;C:\Users\Zver\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-
       <AdditionalLibraryDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-
       <AdditionalLibraryDirectories>C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\SDL2_mixer-2.0.2\lib\x86;C:\Users\Zver\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
-
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -160,6 +155,7 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
@@ -200,6 +196,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="pokemonLeague.cpp" />

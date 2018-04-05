@@ -4,14 +4,14 @@ using namespace std;
 
 MenuManager* MenuManager::sInstance = nullptr;
 
-MenuManager::MenuManager(){
+MenuManager::MenuManager() {
 	mMenu = new Menu();
 	//Start Menu Activation
 	StrtMnuisActive = true;
 	mGraphics = Graphics::Instance();
 }
 
-MenuManager*MenuManager::Instance(){
+MenuManager*MenuManager::Instance() {
 	if (sInstance == nullptr) {
 		sInstance = new MenuManager();
 	}
@@ -24,7 +24,7 @@ void MenuManager::Release() {
 	sInstance = nullptr;
 }
 
-MenuManager::~MenuManager(){
+MenuManager::~MenuManager() {
 	MenuManager::Release();
 	Graphics::Release();
 	mGraphics = NULL;
@@ -38,31 +38,6 @@ void MenuManager::Update() {
 void MenuManager::Render() {
 	if (StrtMnuisActive) {
 		StartMenu();
-		switch ((int)Cursor->GetPosY()) {
-		case 30:
-			//Activate PkDexActive
-			//Activate 	PkDexState = CONTENTS;
-			//Load POKEDEX
-			break;
-		case 80:
-			//Load POKEMON
-			break;
-		case 130:
-			// Load ITEMS
-			break;
-		case 180:
-			//Load PLAYER
-			break;
-		case 230:
-			//Load SAVE
-			break;
-		case 380:
-			//Load OPTIONS
-			break;
-		case 405:
-			//Load EXIT
-			break;
-		}
 	}
 }
 
@@ -77,8 +52,48 @@ void MenuManager::StartMenu() {
 	Cursor->Render();
 }
 
-
-
 void MenuManager::MenuState() {
-
+	switch ((int)Cursor->GetPosY()) {
+	case 30:
+		if ((int)Cursor->GetPosY() == menu->GetPosY()) {
+			printf("Entering Pokedex");
+		}
+		break;
+	case 80:
+		//Load POKEMON
+		if ((int)Cursor->GetPosY() == menu1->GetPosY()) {
+			//Use Pokemon Render function
+			Pokemon->Render();
+			printf("Entering Pokemon");
+		}
+		break;
+	case 130:
+		if ((int)Cursor->GetPosY() == menu2->GetPosY()) {
+			printf("Entering Items");
+		}
+		// Load ITEMS
+		break;
+	case 180:
+		if ((int)Cursor->GetPosY() == menu3->GetPosY()) {
+			printf("Entering Player");
+		}
+		//Load PLAYER
+		break;
+	case 230:
+		if ((int)Cursor->GetPosY() == menu4->GetPosY()) {
+			printf("Entering Save");
+		}
+		//Load SAVE
+		break;
+	case 280:
+		if ((int)Cursor->GetPosY() == menu5->GetPosY()) {
+			printf("Entering Options");
+		}
+		//Load OPTIONS
+		break;
+	case 330:
+		StrtMnuisActive = false;
+		//Load EXIT
+		break;
+	}
 }

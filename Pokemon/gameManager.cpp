@@ -117,7 +117,6 @@ void GameManager::Run() {
 			mMenuManager->Update();
 			//RENDERS!!!!!
 			mGraphics->ClearBackBuffer();
-
 			//mMasterMap->Update();
 			mLevelManager->Render();
 			mMenuManager->Render();

@@ -3,46 +3,50 @@
 
 UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
-	//mMenu = 
 }
 
 void UserInput::Input(MenuManager* menuM) {
-	if (StrtMnuisActive) {
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
-			//mQuit = true;
-		}
-
-		//Example of keyboard/mouse functionality
-
+				//mQuit = true;
+			}
 		switch (events.type) {
-		case SDL_KEYDOWN:
+			case SDL_KEYDOWN:
 			switch (events.key.keysym.sym) {
 
 			case SDLK_LEFT:
-				mLevelManager->moveLeft();
-				printf("You pressed left arrow\n");
+				//World Control
+				if (menuM->StrtMnuisActive == false) {
+					mLevelManager->moveLeft();
+				}
 				break;
 
 			case SDLK_RIGHT:
-				mLevelManager->moveRight();
+				//World Control
+				if (menuM->StrtMnuisActive == false) {
+					mLevelManager->moveRight();
+				}
 				//printf("You pressed right arrow\n");
 				break;
 
 			case SDLK_UP:
-				//mLevelManager->moveUp();
-				//Cursor->CursorMoveUp();
-				//mMenu->Cursor->CursorMoveUp();
-				//printf("You pressed up arrow\n");
-				menuM->CursorMoveUp();
+				if (menuM->StrtMnuisActive) {
+					menuM->CursorMoveUp();
+				}
+				//World Control
+				else if (menuM->StrtMnuisActive == false) {
+					mLevelManager->moveUp();
+				}
 				break;
 
 			case SDLK_DOWN:
-				menuM->CursorMoveDown();
-				//mLevelManager->moveDown();
-				//Cursor->CursorMoveDown();
-				//mMenu->Cursor->CursorMoveDown();
-				//printf("You pressed down arrow\n");
+				if (menuM->StrtMnuisActive) {
+					menuM->CursorMoveDown();
+				}
+				//World Control
+				else if (menuM->StrtMnuisActive == false) {
+					mLevelManager->moveDown();
+				}
 				break;
 
 			case SDLK_ESCAPE:
@@ -51,28 +55,39 @@ void UserInput::Input(MenuManager* menuM) {
 			}
 			break;
 
-		case SDL_KEYUP:
+			case SDL_KEYUP:
+
 			switch (events.key.keysym.sym) {
+				case SDLK_a:
+					if (menuM->StrtMnuisActive) {
+						menuM->StrtMnuisActive = false;
+					}
+					//World Control
+					break;
 
-			case SDLK_a:
-				//printf("You pressed 'a'\n");
+				case SDLK_s:
+					if (menuM->StrtMnuisActive) {
+						menuM->MenuState();
+					}
+					//World Control
+					break;
+
+				case SDLK_c:
+					//Opens Menu
+					if (menuM->StrtMnuisActive == false) {
+						printf("Opening menu");
+						menuM->StrtMnuisActive = true;
+					}
+					break;
+
+				}
 				break;
-
-			case SDLK_s:
-				//printf("You pressed 's'\n");
-				break;
-
-			case SDLK_c:
-				//printf("You pressed 'c'\n");
-				break;
-
-			}
-			break;
-			}
 		}
 	}
 }
 
+
+//Not needed anymore..... 
 void UserInput::Input(){
 		
 	while (SDL_PollEvent(&events) != 0) {

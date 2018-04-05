@@ -29,6 +29,9 @@ public:
 	Menu* menu5;
 	Menu* menu6;
 	Menu* Cursor;
+	Menu* Pokemon;
+
+	void DrawPokemon();
 
 	void CursorMoveDown();
 	void CursorMoveUp();
@@ -40,5 +43,4 @@ private:
 	AssetManager* mAssetManager;
 protected:
 };
-
 #endif // !MENU_H

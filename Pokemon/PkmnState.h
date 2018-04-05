@@ -1,8 +1,15 @@
 #include "menu.h"
 
 class PkmnState : public Menu {
-//	Pkmn();
-//	~Pkmn();
-//
+public:
+	PkmnState();
+	~PkmnState();
 
+	void Render();
+	void Update();
+	
+	void PokemonState();
+
+private:
+	Graphics* mGraphics;
 };

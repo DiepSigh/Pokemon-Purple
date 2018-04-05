@@ -11,7 +11,7 @@ Menu::Menu(){
 	menu1->SetPosY(80);
 	menu2 = new Menu(0, 0, new Texture("itém", "PKMNSOLID.ttf", 30));
 	menu2->SetPosX(560);
-	menu2->SetPosY(135);
+	menu2->SetPosY(130);
 	menu3 = new Menu(0, 0, new Texture("playér", "PKMNSOLID.ttf", 30));
 	menu3->SetPosX(560);
 	menu3->SetPosY(180);
@@ -27,6 +27,10 @@ Menu::Menu(){
 	Cursor = new Menu(0, 0, new Texture("arrowPKMN.png", 0, 0, 40, 40));
 	Cursor->SetPosX(520);
 	Cursor->SetPosY(30);
+	Pokemon = new Menu(0, 0, new Texture("Choose a POKeMON.", "PKMNSOLID.ttf", 30));
+	Pokemon->SetPosX(250);
+	Pokemon->SetPosY(250);
+
 }
 
 Menu::Menu(float x, float y, Texture* tex) {
@@ -39,25 +43,6 @@ Menu::Menu(float x, float y, Texture* tex) {
 }
 
 void Menu::CheckState() {
-	menuState = NEWGAME;
-	switch (menuState) {
-		case NEWGAME:
-			break;
-		case OPTIONS:
-			break;
-		case POKEDEX:
-			break;
-		case POKEMON:
-			break;
-		case ITEM:
-			break;
-		case PLAYER:
-			break;
-		case SAVE:
-			break;
-		case EXIT:
-			break;
-	}
 }
 
 
@@ -65,6 +50,7 @@ Menu::~Menu() {
 }
 
 void Menu::Update(){
+
 }
 
 void Menu::Render(){
@@ -77,7 +63,7 @@ void Menu::Render(){
 void Menu::CursorMoveDown() {
 	Cursor->SetPosY(Cursor->GetPosY() + 50);
 
-	if (Cursor->GetPosY() > 345) {
+	if (Cursor->GetPosY() > 330) {
 		Cursor->SetPosY(30);
 	}
 }
@@ -86,6 +72,10 @@ void Menu::CursorMoveUp() {
 	Cursor->SetPosY(Cursor->GetPosY() - 50);
 
 	if (Cursor->GetPosY() < 30) {
-		Cursor->SetPosY(345);
+		Cursor->SetPosY(330);
 	}
+}
+
+void Menu::DrawPokemon() {
+	Pokemon->Render();
 }

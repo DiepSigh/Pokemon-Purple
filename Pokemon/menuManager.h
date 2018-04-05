@@ -3,6 +3,7 @@
 
 #include "menu.h"
 #include "PokeDex.h"
+#include "PkmnState.h"
 
 class MenuManager : public Menu{
 public:

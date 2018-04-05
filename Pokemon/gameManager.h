@@ -44,6 +44,7 @@ private:
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
 	AudioManager* mAudioMgr;
+	PkmnState* mPokeState;
 
 public:
 	static GameManager* Instance();
