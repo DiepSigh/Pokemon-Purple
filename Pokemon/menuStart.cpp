@@ -3,25 +3,25 @@
 using namespace std;
 
 Menu::Menu(){
-	menu = new Menu(80, 100, new Texture("pokédéx", "PKMNSOLID.ttf", 30));
+	menu = new Menu(80, 100, new Texture("POKEDEX", "PKMNSOLID.ttf", 30));
 	menu->SetPosX(560);
 	menu->SetPosY(30);
-	menu1 = new Menu(60, 50, new Texture("pokémon", "PKMNSOLID.ttf", 30));
+	menu1 = new Menu(60, 50, new Texture("POKEMON", "PKMNSOLID.ttf", 30));
 	menu1->SetPosX(560);
 	menu1->SetPosY(80);
-	menu2 = new Menu(0, 0, new Texture("itém", "PKMNSOLID.ttf", 30));
+	menu2 = new Menu(0, 0, new Texture("ITEM", "PKMNSOLID.ttf", 30));
 	menu2->SetPosX(560);
 	menu2->SetPosY(130);
-	menu3 = new Menu(0, 0, new Texture("playér", "PKMNSOLID.ttf", 30));
+	menu3 = new Menu(0, 0, new Texture("PLAYER", "PKMNSOLID.ttf", 30));
 	menu3->SetPosX(560);
 	menu3->SetPosY(180);
-	menu4 = new Menu(0, 0, new Texture("savé", "PKMNSOLID.ttf", 30));
+	menu4 = new Menu(0, 0, new Texture("SAVE", "PKMNSOLID.ttf", 30));
 	menu4->SetPosX(560);
 	menu4->SetPosY(230);
-	menu5 = new Menu(0, 0, new Texture("options", "PKMNSOLID.ttf", 30));
+	menu5 = new Menu(0, 0, new Texture("OPTIONS", "PKMNSOLID.ttf", 30));
 	menu5->SetPosX(560);
 	menu5->SetPosY(280);
-	menu6 = new Menu(0, 0, new Texture("éxit", "PKMNSOLID.ttf", 30));
+	menu6 = new Menu(0, 0, new Texture("EXIT", "PKMNSOLID.ttf", 30));
 	menu6->SetPosX(560);
 	menu6->SetPosY(330);
 	Cursor = new Menu(0, 0, new Texture("arrowPKMN.png", 0, 0, 40, 40));

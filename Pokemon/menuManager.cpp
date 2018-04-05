@@ -6,8 +6,10 @@ MenuManager* MenuManager::sInstance = nullptr;
 
 MenuManager::MenuManager() {
 	mMenu = new Menu();
+	mOptions = new Options();
 	//Start Menu Activation
 	StrtMnuisActive = true;
+	OptsMnuisActive = false;
 	mGraphics = Graphics::Instance();
 }
 
@@ -39,6 +41,10 @@ void MenuManager::Render() {
 	if (StrtMnuisActive) {
 		StartMenu();
 	}
+
+	if (OptsMnuisActive) {
+		LoadOptions();
+	}
 }
 
 void MenuManager::StartMenu() {
@@ -63,7 +69,7 @@ void MenuManager::MenuState() {
 		//Load POKEMON
 		if ((int)Cursor->GetPosY() == menu1->GetPosY()) {
 			//Use Pokemon Render function
-			Pokemon->Render();
+			//Pokemon->Render();
 			printf("Entering Pokemon");
 		}
 		break;
@@ -88,12 +94,28 @@ void MenuManager::MenuState() {
 	case 280:
 		if ((int)Cursor->GetPosY() == menu5->GetPosY()) {
 			printf("Entering Options");
+			OptsMnuisActive = true;
+			StrtMnuisActive = false;
 		}
-		//Load OPTIONS
 		break;
 	case 330:
 		StrtMnuisActive = false;
 		//Load EXIT
 		break;
 	}
+}
+
+void MenuManager::LoadOptions() {
+	mOptions->textSpeed->Render();
+	mOptions->btlAnimation->Render();
+	mOptions->btlStyle->Render();
+	mOptions->Cancel->Render();
+	mOptions->Fast->Render();
+	mOptions->Medium->Render();
+	mOptions->Slow->Render();
+	mOptions->On->Render();
+	mOptions->Off->Render();
+	mOptions->Shift->Render();
+	mOptions->Set->Render();
+	mOptions->CursorO->Render();
 }

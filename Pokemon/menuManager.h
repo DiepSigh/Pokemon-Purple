@@ -4,6 +4,7 @@
 #include "menu.h"
 #include "PokeDex.h"
 #include "PkmnState.h"
+#include "Options.h"
 
 class MenuManager : public Menu{
 public:
@@ -15,10 +16,14 @@ public:
 	void StartMenu();
 
 	Menu* mMenu;
+	Options* mOptions;
+
 	void MenuState();
 
 	void Update();
 	void Render();
+
+	void LoadOptions();
 private:
 	MenuManager();
 	~MenuManager();

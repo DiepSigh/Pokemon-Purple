@@ -45,6 +45,7 @@ private:
 	MasterMap* mMasterMap;
 	AudioManager* mAudioMgr;
 	PkmnState* mPokeState;
+	Options* mOptions;
 
 public:
 	static GameManager* Instance();

@@ -5,7 +5,7 @@ UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
 }
 
-void UserInput::Input(MenuManager* menuM) {
+void UserInput::Input(MenuManager* menuM, Options* menuO) {
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
 				//mQuit = true;
@@ -26,10 +26,15 @@ void UserInput::Input(MenuManager* menuM) {
 				if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveRight();
 				}
+				//Option Menu Right
+				if (menuO->OptsMnuisActive == true) {
+
+				}
 				//printf("You pressed right arrow\n");
 				break;
 
 			case SDLK_UP:
+				//Main Menu Up
 				if (menuM->StrtMnuisActive) {
 					menuM->CursorMoveUp();
 				}
@@ -37,11 +42,20 @@ void UserInput::Input(MenuManager* menuM) {
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveUp();
 				}
+				// Options Menu Up
+				else if (menuM->StrtMnuisActive == false && menuO->OptsMnuisActive == true) {
+
+				}
 				break;
 
 			case SDLK_DOWN:
+				//Main Menu Down
 				if (menuM->StrtMnuisActive) {
 					menuM->CursorMoveDown();
+				}
+				//Options Menu Down
+				if (menuM->OptsMnuisActive) {
+					menuO->oCursorDown();
 				}
 				//World Control
 				else if (menuM->StrtMnuisActive == false) {

@@ -20,6 +20,7 @@ GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
+	mOptions = Options::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -101,7 +102,7 @@ void GameManager::Run() {
 
 	while (!mQuit) {
 		mTimer->Update();
-		mPlayerControls->Input(mMenuManager);
+		mPlayerControls->Input(mMenuManager, mOptions);
 
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
@@ -113,11 +114,11 @@ void GameManager::Run() {
 
 
 			//UPDATES!!!!
-			mLevelManager->Update();
+			
 			mMenuManager->Update();
 			//RENDERS!!!!!
 			mGraphics->ClearBackBuffer();
-
+			mLevelManager->Update();
 			//mMasterMap->Update();
 			//mStartRoom->Update();
 			//mPlayerHouse->Update();
