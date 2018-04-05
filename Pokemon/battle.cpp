@@ -10,22 +10,12 @@ battle::battle() {
 	aiFlinch = false;
 	playerSeed = false;
 	aiSeed=false;
-	attPlayer=0;
-	attAI=0;
-	defPlayer=0;
-	defAI=0;
-	spdPlayer=0;
-	spdAI=0;
-	spePlayer = 0;
-	speAI = 0;
-	accPlayer = 100;
-	accAI = 100;
-	evaPlayer = 100;
-	evaAI = 100;
 }
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
 	battle();
+	active.resetStatStages();
+	opposing.resetStatStages();
 	using namespace std;
 	active.setSide(PLAYER);
 	opposing.setSide(AI);
@@ -118,7 +108,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 
 	if (playerFirst) {
 		//accuracy check
-		if (!attackMissed(active.getMove(playerMove).getAcc(), accPlayer, evaAI)) {
+		if (!attackMissed(active.getMove(playerMove).getAcc(), active.getAccStage(), opposing.getEvaStage())) {
 			//check if damaging move or status move
 			if (active.getMove(playerMove).getCat() == STATUS) {
 				//check if status effect or stat change
@@ -130,7 +120,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 						vStatusChange(opposing, active.getMove(playerMove).getEffect());
 					}
 				}else{
-					statChange(PLAYER, active.getMove(playerMove).getMoveID());
+					statChange(active, opposing, active.getMove(playerMove).getMoveID());
 				}
 
 			}
@@ -150,7 +140,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 	}
 	else {
 		//accuracy check
-		if (!attackMissed(opposing.getMove(aiMove).getAcc(), accAI, evaPlayer)) {
+		if (!attackMissed(opposing.getMove(aiMove).getAcc(), opposing.getAccStage(), active.getEvaStage())) {
 			//check if damaging move or status move
 			if (opposing.getMove(aiMove).getCat() == STATUS) {
 				//check if status effect or stat change
@@ -164,7 +154,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 					}
 				}
 				else {
-					statChange(AI, opposing.getMove(aiMove).getMoveID());
+					statChange(opposing, active, opposing.getMove(aiMove).getMoveID());
 				}
 
 			}
@@ -194,18 +184,9 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 
 void battle::secondAttack(Pokemon &attacking, Pokemon &defending, int move) {
 	int damage = 0;
-	int accAttack = 0;
-	int evaDefend = 0;
-	if (attacking.getSide() == PLAYER) {
-		accAttack = accPlayer;
-		evaDefend = evaAI;
-	}
-	else {
-		accAttack = accAI;
-		evaDefend = evaPlayer;
-	}
+
 		//accuracy check
-		if (!attackMissed(attacking.getMove(move).getAcc(), accAttack, evaDefend)) {
+		if (!attackMissed(attacking.getMove(move).getAcc(), attacking.getAccStage(), defending.getEvaStage())) {
 			//check if damaging move or status move
 			if (attacking.getMove(move).getCat() == STATUS) {
 				//check if status effect or stat change
@@ -219,7 +200,7 @@ void battle::secondAttack(Pokemon &attacking, Pokemon &defending, int move) {
 					}
 				}
 				else {
-					statChange(attacking.getSide(), attacking.getMove(move).getMoveID());
+					statChange(attacking, defending, attacking.getMove(move).getMoveID());
 				}
 
 			}
@@ -296,7 +277,7 @@ void battle::vStatusChange(Pokemon &affected, int effect) {
 	}
 }
 
-void battle::statChange(int user, int move) {
+void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 
 	enum stat {att, def, spd, spe, acc, eva};
 	int stat = 0;
@@ -366,62 +347,95 @@ void battle::statChange(int user, int move) {
 		change += 2;
 		break;
 	}
-	if (user == PLAYER && change > 0 || user == AI && change < 0) {
+	if (change > 0) {
 		switch (stat) {
 		case att:
-			attPlayer += change;
+			user.setAtkStage(change);
 			break;
 		case def:
-			defPlayer += change;
+			user.setDefStage(change);
 			break;
 		case spd:
-			spdPlayer += change;
+			user.setSpdStage(change);
 			break;
 		case spe:
-			spePlayer += change;
+			user.setSpeStage(change);
 			break;
 		case acc:
-			accPlayer += change;
+			user.setAccStage(change);
 			break;
 		case eva:
-			evaPlayer += change;
+			user.setEvaStage(change);
 			break;
 		}
 	}
-	else if (user == AI && change > 0 || user == PLAYER && change < 0) {
+	else if (change < 0) {
 		switch (stat) {
 		case att:
-			attAI += change;
+			opposing.setAtkStage(change);
 			break;
 		case def:
-			defAI += change;
+			opposing.setDefStage(change);
 			break;
 		case spd:
-			spdAI += change;
+			opposing.setSpdStage(change);
 			break;
 		case spe:
-			speAI += change;
+			opposing.setSpeStage(change);
 			break;
 		case acc:
-			accPlayer += change;
+			opposing.setAccStage(change);
 			break;
 		case eva:
-			evaAI += change;
+			opposing.setEvaStage(change);
 			break;
 		}
 	}
 }
 
+float battle::stageConversion(int stage) {
+	switch (stage) {
+	case -6:
+		return 0.25;
+	case -5:
+		return 0.28;
+	case -4:
+		return 0.33;
+	case -3:
+		return 0.4;
+	case -2:
+		return 0.5;
+	case -1:
+		return 0.66;
+	case 0:
+		return 1;
+	case 1:
+		return 1.5;
+	case 2:
+		return 2;
+	case 3:
+		return 2.5;
+	case 4:
+		return 3;
+	case 5:
+		return 3.5;
+	case 6:
+		return 4;
+	default: 
+		return 1;
+	}
+}
+
 bool battle::attackMissed(int baseAcc, int accuracy, int evasion) {
 	if (baseAcc != 0) {
-		float p = 100;
+		float p = 1;
 
-		p = baseAcc * (accuracy / evasion);
-		if (p >= 100) {
+		p = (baseAcc * 0.01) * (stageConversion(accuracy) / stageConversion(evasion));
+		if (p >= 1) {
 			return false;
 		}
 		else {
-			int rng = randomGen(0, 100);
+			float rng = randomGen(0, 1);
 			if (p > rng) {
 				return false;
 			}
@@ -462,11 +476,11 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int move) 
 	int a = 1;
 	int d = 1;
 	if (attacking.getMove(move).getCat() == PHYSICAL) {
-		a = attacking.getAtk();
-		d = defending.getDef();
+		a = attacking.getAtk() * (stageConversion(attacking.getAtkStage()));
+		d = defending.getDef() * (stageConversion(defending.getDefStage()));
 	}else if (attacking.getMove(move).getCat() == SPECIAL ) {
-		a = attacking.getSpe();
-		d = defending.getSpe();
+		a = attacking.getSpe() * (stageConversion(attacking.getSpeStage()));
+		d = defending.getSpe() * (stageConversion(attacking.getSpeStage()));
 	}
 	//Building Modifier
 	double random = randomGen(85, 100) * 0.01; //integer percentage 0.85 to 1.00

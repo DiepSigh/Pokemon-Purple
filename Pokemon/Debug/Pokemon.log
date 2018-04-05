@@ -1,5 +1,13 @@
-﻿  main.cpp
-  battle.cpp
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(419): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Pokemon.cpp
+﻿  battle.cpp
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(401): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(403): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(405): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(409): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(433): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(438): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(479): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
+  Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)

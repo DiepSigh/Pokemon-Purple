@@ -17,7 +17,8 @@ struct battle{
 	bool faintCheck(Pokemon &, Pokemon &); //returns true if one of the Pokemon has fainted
 	void nvStatusChange(int affected, int effect); //called when non-volatile affects a Pokemon
 	void vStatusChange(Pokemon &affected, int effect); //called when Pokemon status change occurs from a move
-	void statChange(int affected, int move); //called when a stat change occurs from a move
+	void statChange(Pokemon &, Pokemon &, int move); //called when a stat change occurs from a move
+	float stageConversion(int stage); //converts stages of stats to a multiplier
 	bool attackMissed(int move, int accuracy, int evasion); //determines whether an move hits or misses
 	int damageCalculation(Pokemon &, Pokemon &, int move); //calculates damage
 	float typeEffectiveness(int moveType, int pokemonType); //returns the multiplier based on the type effective chart
@@ -39,20 +40,6 @@ protected:
 	bool aiFlinch;
 	bool playerSeed;
 	bool aiSeed;
-
-	//stat stages
-	int attPlayer;
-	int attAI;
-	int defPlayer;
-	int defAI;
-	int spdPlayer;
-	int spdAI;
-	int spePlayer;
-	int speAI;
-	int accPlayer;
-	int accAI;
-	int evaPlayer;
-	int evaAI;
 };
 
 #endif

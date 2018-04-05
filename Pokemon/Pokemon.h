@@ -47,6 +47,7 @@ public:
 	void setStats(); //Sets stats of Pokemon based on IV's, current EV's, and level
 	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
 	void setMoves(int pokemon, int level); //Sets 4 learnables moves based on level or less
+	void resetStatStages(); //Resets stages of stats for battles
 	void displayMoves();
 	void displayStats();
 
@@ -66,12 +67,26 @@ public:
 	inline int getType2() { return m_type2; }
 	inline int getSide() { return m_side; }
 
+	inline int getAtkStage() { return m_atkStage; }
+	inline int getDefStage() { return m_defStage; }
+	inline int getSpdStage() { return m_spdStage; }
+	inline int getSpeStage() { return m_speStage; }
+	inline int getAccStage() { return m_accStage; }
+	inline int getEvaStage() { return m_evaStage; }
+
 	//Setters
 	inline void setStatus(int status) { m_status = status; }
 	inline void hurt(int damage) { m_hp -= damage; }
 	inline void setSide(int side) { m_side = side; }
 	inline void fainted() { m_fainted = true; m_hp = 0; }
 	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
+
+	inline void setAtkStage(int stage) { m_atkStage += stage; }
+	inline void setDefStage(int stage) { m_defStage += stage; }
+	inline void setSpdStage(int stage) { m_spdStage += stage; }
+	inline void setSpeStage(int stage) { m_speStage += stage; }
+	inline void setAccStage(int stage) { m_accStage += stage; }
+	inline void setEvaStage(int stage) { m_evaStage += stage; }
 
 protected:
 	int m_pokedex; //stores # in pokedex
@@ -130,6 +145,14 @@ protected:
 	int m_baseDef;
 	int m_baseSpd;
 	int m_baseSpe;
+
+	//stat stages for battle
+	int m_atkStage;
+	int m_defStage;
+	int m_spdStage;
+	int m_speStage;
+	int m_accStage;
+	int m_evaStage;
 };
 
 #endif // !POKEMON_H
