@@ -2,14 +2,14 @@
 
 PokemonLeague::PokemonLeague(float x, float y) {
 	
-	mCarpet1 = new Texture("pokemonLeague/carpet1.png", 0, 0, 32, 32);
-	mCarpet2 = new Texture("pokemonLeague/carpet2.png", 0, 0, 32, 32);
-	mDoor = new Texture("pokemonLeague/door.png", 0, 0, 32, 32);
-	mFloor = new Texture("pokemonLeague/floor.png", 0, 0, 32, 32);
-	mStatue1 = new Texture("pokemonLeague/statue1.png", 0, 0, 32, 32);
-	mStatue2 = new Texture("pokemonLeague/statue2.png", 0, 0, 32, 32);
-	mStatue3 = new Texture("pokemonLeague/statue3.png", 0, 0, 32, 32);
-	mWall = new Texture("pokemonLeague/wall.png", 0, 0, 32, 32);
+	mCarpet1 = &plCarpet1;
+	mCarpet2 = &plCarpet2;
+	mDoor = &plDoor;
+	mFloor = &plFloor;
+	mStatue1 = &plStatue1;
+	mStatue2 = &plStatue2;
+	mStatue3 = &plStatue3;
+	mWall = &Wall;
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -77,28 +77,28 @@ void PokemonLeague::Update() {
 void PokemonLeague::DrawMap(int tile) {
 	switch (tile) {
 	case 0:
-		mTex = mCarpet1;
+		mTex = *mCarpet1;
 		break;
 	case 1:
-		mTex = mCarpet2;
+		mTex = *mCarpet2;
 		break;
 	case 2:
-		mTex = mDoor;
+		mTex = *mDoor;
 		break;
 	case 3:
-		mTex = mFloor;
+		mTex = *mFloor;
 		break;
 	case 4:
-		mTex = mStatue1;
+		mTex = *mStatue1;
 		break;
 	case 5:
-		mTex = mStatue2;
+		mTex = *mStatue2;
 		break;
 	case 6:
-		mTex = mStatue3;
+		mTex = *mStatue3;
 		break;
 	case 7:
-		mTex = mWall;
+		mTex = *mWall;
 		break;
 	}
 

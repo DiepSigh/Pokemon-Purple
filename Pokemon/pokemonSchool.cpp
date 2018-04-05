@@ -13,8 +13,8 @@ PokemonSchool::PokemonSchool(float x, float y) {
 	mFlower2 = &Flower2;
 	mTable1 = &psTable1;
 	mTable2 = &psTable2;
-	mTable3 = &psTable3;
-	mTable4 = &psTable4;
+	mTable3 = &TableTopRight;
+	mTable4 = &Bottom_Table_Right;
 	mWall = &Wall;
 	mWindow = &Window;
 

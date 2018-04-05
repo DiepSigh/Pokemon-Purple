@@ -8,10 +8,10 @@ PokemonCenter::PokemonCenter(float x, float y){
 	mComputer1 = &pcComputer1;
 	mComputer2 = &pcComputer2;
 	mExit = &pcExit;
-	mFloor = &pcFloor;
-	mFloorShadow = &pcFloorShadow;
-	mFlower1 = &pcFlower1;
-	mFlower2 = &pcFlower2;
+	mFloor = &Floor2;
+	mFloorShadow = &Floor2Shadow;
+	mFlower1 = &Flower1;
+	mFlower2 = &Flower2;
 	mLongDesk1 = &pcLongDesk1;
 	mLongDesk2 = &pcLongDesk2;
 	mLongDesk3 = &pcLongDesk3;
@@ -25,7 +25,7 @@ PokemonCenter::PokemonCenter(float x, float y){
 	mSofa1 = &pcSofa1;
 	mSofa2 = &pcSofa2;
 	mSofaFloor1 = &pcSofaFloor1;
-	mSofaFloor2 = &pcSofaFloor2;
+	mSofaFloor2 = &Floor2Shadow;
 	mWall = &pcWall;
 	mWayBackRoom = &pcWayBackRoom;
 

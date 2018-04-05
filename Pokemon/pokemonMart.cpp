@@ -8,8 +8,8 @@ PokemonMart::PokemonMart(float x, float y) {
 	mCooler1 = &pmCooler1;
 	mCooler2 = &pmCooler2;
 	mExit = &pmExit;
-	mFloor = &pmFloor;
-	mFloorShadow = &pmFloorShadow;
+	mFloor = &Floor2;
+	mFloorShadow = &Floor2Shadow;
 	mShelfCashierBottom1 = &pmShelfCashierBottom1;
 	mShelfCashierBottom2 = &pmShelfCashierBottom2;
 	mShelfCashier1 = &pmShelfCashier1;

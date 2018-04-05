@@ -2,18 +2,18 @@
 
 ResearchLab::ResearchLab(float x, float y) {
 
-	mBigTableBottomMiddle = &rlBigTableBottomMiddle;
-	mBigTableTopLeft = &rlBigTableTopLeft;
 	mBigTableTopMiddle = &rlBigTableTopMiddle;
-	mBigTableTopRight = &rlBigTableTopRight;
+	mBigTableBottomMiddle = &rlBigTableBottomMiddle;
+	mBigTableTopLeft = &TableTopLeft;
+	mBigTableTopRight = &TableTopRight;
+	mTableBottomLeft = &rlBigTableBottomLeft;
+	mTableBottomRight = &rlBigTableBottomRight;
 	mComputerTable1 = &rlComputerTable1;
 	mComputerTable2 = &rlComputerTable2;
 	mTableBook1 = &rlTableBook1;
 	mTableBook2 = &rlTableBook2;
-	mTableBottomLeft = &rlTableBottomLeft;
-	mTableBottomRight = &rlTableBottomRight;
-	mBookshelf1 = &rlBookshelf1;
-	mBookshelf2 = &rlBookshelf2;
+	mBookshelf1 = &Bookshelf1_1;
+	mBookshelf2 = &Bookshelf1_2;
 	mExit = &rlExit;
 	mFloor = &rlFloor;
 	mFlyer = &rlFlyer;

@@ -1,13 +1,13 @@
 #ifndef _POKEMONLEAGUE_H
 #define _POKEMONLEAGUE_H
 
-#include "gameEntity.h"
+#include "mapsLoader.h"
 
-class PokemonLeague : public GameEntity {
+class PokemonLeague : public MapsLoader {
 private:
 
 	Texture
-		*mCarpet1, *mCarpet2, *mDoor, *mFloor, *mStatue1, *mStatue2, *mStatue3, *mWall;
+		**mCarpet1, **mCarpet2, **mDoor, **mFloor, **mStatue1, **mStatue2, **mStatue3, **mWall;
 
 	int map[8][10] = 
 	{

@@ -7,13 +7,13 @@ RedHouse::RedHouse(float x, float y) {
 	mBookshelf2_1 = &Bookshelf2_1;
 	mBookshelf2_2 = &Bookshelf2_2;
 	mChair = &Chair;
-	mExit = &rhExit;
+	mExit = &psExit;
 	mFloor = &Floor;
 	mFlower1 = &Flower1;
 	mFlower2 = &Flower2;
-	mPicture = &rhPicture;
-	mTable1 = &rhTable1;
-	mTable2 = &rhTable2;
+	mPicture = &Picture;
+	mTable1 = &TableTopLeft;
+	mTable2 = &TableTopRight;
 	mTable3 = &Bottom_Table_Left;
 	mTable4 = &Bottom_Table_Right;
 	mWall = &Wall;

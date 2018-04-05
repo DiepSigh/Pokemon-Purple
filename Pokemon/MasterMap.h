@@ -1,17 +1,16 @@
 #ifndef _MASTERMAP_h
 #define _MASTERMAP_H
 
-#include "animatedTexture.h"
-#include "gameEntity.h"
+#include "mapsLoader.h"
 
 
-class MasterMap : public GameEntity {
+class MasterMap : public MapsLoader {
 
 private:
 	int PosX;
 	int PosY;
 
-	Texture *mMap;
+	Texture **mMap;
 	Graphics* mGraphics;
 	void DrawMap();
 
