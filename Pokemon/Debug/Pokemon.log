@@ -1,17 +1,2 @@
-﻿  mapsLoader.cpp
-  Generating Code...
-  Compiling...
-  viridianCityHouse.cpp
-  startRoom.cpp
-  researchLab.cpp
-  redHouse.cpp
-  pokemonSchool.cpp
-  pokemonMart.cpp
-  pokemonLeague.cpp
-  pokemonCenter.cpp
-  playerHouse.cpp
-  gameManager.cpp
-  Pokemon.cpp
-  MasterMap.cpp
-  Generating Code...
+﻿  MasterMap.cpp
   Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe

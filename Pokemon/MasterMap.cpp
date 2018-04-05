@@ -25,13 +25,13 @@ void MasterMap::Render() {
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
-	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
+	
 	
 }
 
 void MasterMap::Update() {
 
-		SetPosX(-1800);
+		SetPosX(-1780);
 		SetPosY(-5800);
 
 		DrawMap();
