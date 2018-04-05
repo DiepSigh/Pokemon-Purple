@@ -1,6 +1,23 @@
+//Stephen
 #include "battle.h"
 
 battle::battle() {
+	playerBound = false;
+	aiBound = false;
+	playerConfuse = false;
+	aiConfuse = false;
+	playerFlinch = false;
+	aiFlinch = false;
+	playerSeed = false;
+	aiSeed=false;
+	attPlayer=0;
+	attAI=0;
+	defPlayer=0;
+	defAI=0;
+	spdPlayer=0;
+	spdAI=0;
+	spePlayer = 0;
+	speAI = 0;
 	accPlayer = 100;
 	accAI = 100;
 	evaPlayer = 100;
@@ -8,28 +25,50 @@ battle::battle() {
 }
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
+	battle();
+	using namespace std;
+	active.setSide(PLAYER);
+	opposing.setSide(AI);
+	std::cout << "Commence battle.\n";
+	do {
+		active.displayStats();
+		opposing.displayStats();
+		int input = 0;
+		int playerMove = 0;
+		std::cout << "Choose move 1-4;\n\n";
+		std::cin >> input;
+		switch (input) {
+		case 0:
+			//playerMove = active.getMove(input).getMoveID();
+			break;
+		case 1:
+			//playerMove = active.getMove(input).getMoveID();
+			break;
+		case 2:
+			//playerMove = active.getMove(input).getMoveID();
+			break;
+		case 3:
+			//playerMove = active.getMove(input).getMoveID();
+			break;
+		}
 
-	int input = 0;
-	int playerMove = 0;
-	
-	switch (input) {
-	case 0:
-		//playerMove = active.getMove(input).getMoveID();
-		break;
-	case 1:
-		//playerMove = active.getMove(input).getMoveID();
-		break;
-	case 2:
-		//playerMove = active.getMove(input).getMoveID();
-		break;
-	case 3:
-		//playerMove = active.getMove(input).getMoveID();
-		break;
+		int aiMove = AIChoice(opposing);
+		int attacker = firstAttack(active, input-1, opposing, aiMove);
+		if (!faintCheck(active, opposing)) {
+			if (attacker == PLAYER) {
+				secondAttack(opposing, active, aiMove);
+			}
+			else {
+				secondAttack(active, opposing, input-1);
+			}
+		}
+	} while (!faintCheck(active, opposing));
+	if (active.getFainted()) {
+		cout << active.getName() << " has fainted.";
 	}
-	
-	int aiMove = AIChoice(opposing);
-	firstAttack(active, input, opposing, aiMove);
-
+	else {
+		cout << opposing.getFainted() << " has fainted.";
+	}
 }
 
 int battle::AIChoice(Pokemon &ai) {
@@ -41,6 +80,9 @@ int battle::AIChoice(Pokemon &ai) {
 		//if move is not empty
 		if (ai.getMove(k).getMoveID() != 0) {
 			moveCount++;
+			if (moveCount == 4) {
+				done = true;
+			}
 		}
 		else {
 			done = true;
@@ -53,8 +95,11 @@ int battle::AIChoice(Pokemon &ai) {
 	return move;
 }
 
-void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
+int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
 	bool playerFirst = false;
+	aiFlinch = false;
+	playerFlinch = false;
+	int damage = 0;
 	//Compare priority
 	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
 		playerFirst = true;
@@ -78,27 +123,191 @@ void battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int
 			if (active.getMove(playerMove).getCat() == STATUS) {
 				//check if status effect or stat change
 				if (active.getMove(playerMove).getEffect() > 0) {
-					
+					//check if volatile or non-volatile
+					if (active.getMove(playerMove).getEffect() >= 7) {
+						nvStatusChange(AI, active.getMove(playerMove).getEffect());
+					}else{
+						vStatusChange(opposing, active.getMove(playerMove).getEffect());
+					}
 				}else{
 					statChange(PLAYER, active.getMove(playerMove).getMoveID());
 				}
+
 			}
-			//player attacks
+			else {
+				//player attacks
+				damage = damageCalculation(active, opposing, playerMove);
+				opposing.hurt(damage);
+				//statChange(AI, active.getMove(playerMove).getMoveID());
+				std::cout << active.getName() << " used " << active.getMove(playerMove).returnMove() << std::endl;
+				std::cout << "It did " << damage << " damage!\n";
+			}
+		}else{
+			//attack missed
+			std::cout << "Attack missed.\n";
+			
 		}
 	}
 	else {
-		//ai attacks
+		//accuracy check
+		if (!attackMissed(opposing.getMove(aiMove).getAcc(), accAI, evaPlayer)) {
+			//check if damaging move or status move
+			if (opposing.getMove(aiMove).getCat() == STATUS) {
+				//check if status effect or stat change
+				if (opposing.getMove(aiMove).getEffect() > 0) {
+					//check if volatile or non-volatile
+					if (opposing.getMove(aiMove).getEffect() >= 7) {
+						nvStatusChange(AI, opposing.getMove(aiMove).getEffect());
+					}
+					else {
+						vStatusChange(active, opposing.getMove(aiMove).getEffect());
+					}
+				}
+				else {
+					statChange(AI, opposing.getMove(aiMove).getMoveID());
+				}
+
+			}
+			else {
+				//AI attacks
+				damage = damageCalculation(opposing, active, aiMove);
+				active.hurt(damage);
+				std::cout << opposing.getName() << " used " << opposing.getMove(aiMove).returnMove() << std::endl;
+				std::cout << "It did " << damage << " damage!\n";
+			}
+		}
+		else {
+			//attack missed
+			std::cout << "Attack missed.\n";
+			
+		}
+	}
+
+	if (playerFirst) {
+		return PLAYER;
+	}
+	else {
+		return AI;
+	}
+
+}
+
+void battle::secondAttack(Pokemon &attacking, Pokemon &defending, int move) {
+	int damage = 0;
+	int accAttack = 0;
+	int evaDefend = 0;
+	if (attacking.getSide() == PLAYER) {
+		accAttack = accPlayer;
+		evaDefend = evaAI;
+	}
+	else {
+		accAttack = accAI;
+		evaDefend = evaPlayer;
+	}
+		//accuracy check
+		if (!attackMissed(attacking.getMove(move).getAcc(), accAttack, evaDefend)) {
+			//check if damaging move or status move
+			if (attacking.getMove(move).getCat() == STATUS) {
+				//check if status effect or stat change
+				if (attacking.getMove(move).getEffect() > 0) {
+					//check if volatile or non-volatile
+					if (attacking.getMove(move).getEffect() >= 7) {
+						nvStatusChange(attacking.getSide(), attacking.getMove(move).getEffect());
+					}
+					else {
+						vStatusChange(attacking, defending.getMove(move).getEffect());
+					}
+				}
+				else {
+					statChange(attacking.getSide(), attacking.getMove(move).getMoveID());
+				}
+
+			}
+			else {
+				//AI attacks
+				damage = damageCalculation(attacking, defending, move);
+				attacking.hurt(damage);
+				std::cout << attacking.getName() << " used " << attacking.getMove(move).returnMove() << std::endl;
+				std::cout << "It did " << damage << " damage!\n";
+			}
+		}
+		else {
+			//attack missed
+			std::cout << "Attack missed.\n";
+
+		}
+}
+
+bool battle::faintCheck(Pokemon &player, Pokemon &ai) {
+	int fainted = false;
+	if (player.getHP() <= 0) {
+		player.fainted();
+		fainted = true;
+	}
+	if (ai.getHP() <= 0) {
+		ai.fainted();
+		fainted = true;
+	}
+	return fainted;
+}
+
+void battle::nvStatusChange(int affected, int effect) {
+	if (affected == AI) {
+		switch (effect) {
+		case BOUND:
+			//to be completed
+			break;
+		case CONFUSE:
+			if (!aiConfuse) {
+				aiConfuse = true;
+			}
+			break;
+		case FLINCH:
+			aiFlinch = true;
+			break;
+		case LEECH:
+			if (!aiSeed) {
+				aiSeed = true;
+			}
+			break;
+		}
+	}
+}
+
+void battle::vStatusChange(Pokemon &affected, int effect) {
+	//only occurs if Pokemon isn't already effected
+	if (affected.getStatus() == 0) {
+		switch (effect) {
+		case PARALYSIS:
+			affected.setStatus(PARALYZED);
+			break;
+		case POISON:
+			affected.setStatus(POISONED);
+			break;
+		case BAD_POISON:
+			affected.setStatus(BADLY_POISONED);
+			break;
+		case SLEEP:
+			affected.setStatus(ASLEEP);
+			break;
+		}
+	}else {
+		//it has no effect or failed
 	}
 }
 
 void battle::statChange(int user, int move) {
 
-	enum stat {att, def, spd, spe, eva};
+	enum stat {att, def, spd, spe, acc, eva};
 	int stat = 0;
 	int change = 0;
 
 	switch (move) {
-		//attack 
+		//attack
+	case GROWL:
+		stat = att;
+		change -= 1;
+		break;
 	case MEDITATE: case SHARPEN: //case RAGE:
 		stat = att;
 		change += 1;
@@ -108,6 +317,14 @@ void battle::statChange(int user, int move) {
 		change += 2;
 		break;
 		//defence
+	case LEER: case TAIL_WHIP:
+		stat = def;
+		change -= 1;
+		break;
+	case SCREECH:
+		stat = def;
+		change -= 2;
+		break;
 	case DEFENSE_CURL: case HARDEN: case WITHDRAW:
 		stat = def;
 		change += 1;
@@ -117,11 +334,15 @@ void battle::statChange(int user, int move) {
 		change += 2;
 		break;
 		//speed
+	case STRING_SHOT:
+		stat = spd;
+		change -= 2;
+		break;
 	case AGILITY:
 		stat = spd;
 		change += 2;
 		break;
-		//special 
+		//special	
 	case GROWTH:
 		stat = spe;
 		change += 1;
@@ -129,6 +350,11 @@ void battle::statChange(int user, int move) {
 	case AMNESIA:
 		stat = spe;
 		change += 2;
+		break;
+		//accuracy
+	case FLASH: case KINESIS: case SAND_ATTACK: case SMOKESCREEN:
+		stat = acc;
+		change -= 1;
 		break;
 		//evasion
 	case DOUBLE_TEAM:
@@ -140,7 +366,7 @@ void battle::statChange(int user, int move) {
 		change += 2;
 		break;
 	}
-	if (user == PLAYER) {
+	if (user == PLAYER && change > 0 || user == AI && change < 0) {
 		switch (stat) {
 		case att:
 			attPlayer += change;
@@ -154,12 +380,15 @@ void battle::statChange(int user, int move) {
 		case spe:
 			spePlayer += change;
 			break;
+		case acc:
+			accPlayer += change;
+			break;
 		case eva:
 			evaPlayer += change;
 			break;
 		}
 	}
-	else if (user == AI) {
+	else if (user == AI && change > 0 || user == PLAYER && change < 0) {
 		switch (stat) {
 		case att:
 			attAI += change;
@@ -172,6 +401,9 @@ void battle::statChange(int user, int move) {
 			break;
 		case spe:
 			speAI += change;
+			break;
+		case acc:
+			accPlayer += change;
 			break;
 		case eva:
 			evaAI += change;
@@ -203,15 +435,15 @@ bool battle::attackMissed(int baseAcc, int accuracy, int evasion) {
 	}
 }
 
-int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int num_move) {
+int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int move) {
 	// ((((((2*Level)/5) + 2) * Power * A/D) / 50) + 2) x Modifier
 	double damage = 0;
-	int moveType = attacking.getMove(num_move).getMoveType();
+	int moveType = attacking.getMove(move).getMoveType();
 	int level = attacking.getLevel();
 	//Critical Hit?
 	bool crit = false;
-	double t = attacking.getSpe() * 0.5;
-	switch (num_move) {
+	double t = attacking.getSpd() * 0.5;
+	switch (move) {
 		//high crit rate
 	case CRABHAMMER: case KARATE_CHOP: case RAZOR_LEAF: case SLASH:
 		t *= 8;
@@ -225,14 +457,14 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int num_mo
 		}
 	}
 
-	int power = attacking.getMove(num_move).getPower();
+	int power = attacking.getMove(move).getPower();
 
-	int a = 0;
-	int d = 0;
-	if (attacking.getMove(num_move).getCat() == PHYSICAL) {
+	int a = 1;
+	int d = 1;
+	if (attacking.getMove(move).getCat() == PHYSICAL) {
 		a = attacking.getAtk();
 		d = defending.getDef();
-	}else if (attacking.getMove(num_move).getCat() == SPECIAL ) {
+	}else if (attacking.getMove(move).getCat() == SPECIAL ) {
 		a = attacking.getSpe();
 		d = defending.getSpe();
 	}
@@ -244,7 +476,7 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int num_mo
 	//Type Effectiveness
 	float type = 1;
 	type *= typeEffectiveness(moveType, defending.getType1());
-	if (defending.getType2() != 0) {
+	if (defending.getType2() != BLANK) {
 		type *= typeEffectiveness(moveType, defending.getType2());;
 	}
 
@@ -265,6 +497,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier = 0;
 			break;
 		}
+		break;
 	case FIGHTING:
 		switch (pokemon) {
 		case NORMAL: case ROCK: case ICE:
@@ -277,6 +510,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier = 0;
 			break;
 		}
+		break;
 	case FLYING:
 		switch (pokemon) {
 		case POISON: case BUG: case GRASS:
@@ -286,6 +520,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case POISON:
 		switch (pokemon) {
 		case BUG: case GRASS:
@@ -295,6 +530,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case GROUND:
 		switch (pokemon) {
 		case POISON: case ROCK: case FIRE: case ELECTRIC:
@@ -307,6 +543,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier = 0;
 			break;
 		}
+		break;
 	case ROCK:
 		switch (pokemon) {
 		case FLYING: case BUG: case FIRE: case ICE:
@@ -316,6 +553,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case BUG:
 		switch (pokemon) {
 		case POISON: case GRASS: case PSYCHC:
@@ -325,6 +563,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case GHOST:
 		switch (pokemon) {
 		case GHOST:
@@ -334,6 +573,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier = 0;
 			break;
 		}
+		break;
 	case FIRE:
 		switch (pokemon) {
 		case BUG: case GRASS: case ICE:
@@ -343,6 +583,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case WATER:
 		switch (pokemon) {
 		case GROUND: case ROCK: case FIRE:
@@ -352,6 +593,7 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
+		break;
 	case GRASS:
 		switch (pokemon) {
 		case GROUND: case ROCK: case WATER:
@@ -361,42 +603,46 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 0.5;
 			break;
 		}
-		case ELECTRIC:
-			switch (pokemon) {
-			case FLYING: case WATER:
-				multiplier *= 2;
-				break;
-			case GRASS: case ELECTRIC: case DRAGON:
-				multiplier *= 0.5;
-				break;
-			case GROUND:
-				multiplier = 0;
-				break;
-			}
+		break;
+	case ELECTRIC:
+		switch (pokemon) {
+		case FLYING: case WATER:
+			multiplier *= 2;
+			break;
+		case GRASS: case ELECTRIC: case DRAGON:
+			multiplier *= 0.5;
+			break;
+		case GROUND:
+			multiplier = 0;
+			break;
+		}
+		break;
+	case PSYCHC:
+		switch (pokemon) {
+		case FIGHTING: case POISON:
+			multiplier *= 2;
+			break;
 		case PSYCHC:
-			switch (pokemon) {
-			case FIGHTING: case POISON:
-				multiplier *= 2;
-				break;
-			case PSYCHC:
-				multiplier *= 0.5;
-				break;
-			}
-		case ICE:
-			switch (pokemon) {
-			case FLYING: case GROUND: case GRASS: case DRAGON:
-				multiplier *= 2;
-				break;
-			case WATER: case ICE:
-				multiplier *= 0.5;
-				break;
-			}
+			multiplier *= 0.5;
+			break;
+		}
+		break;
+	case ICE:
+		switch (pokemon) {
+		case FLYING: case GROUND: case GRASS: case DRAGON:
+			multiplier *= 2;
+			break;
+		case WATER: case ICE:
+			multiplier *= 0.5;
+			break;
+		}
+		break;
+	case DRAGON:
+		switch (pokemon) {
 		case DRAGON:
-			switch (pokemon) {
-			case DRAGON:
-				multiplier *= 2;
-				break;
-			}
+			multiplier *= 2;
+			break;
+		}
 	}
 
 	return multiplier;

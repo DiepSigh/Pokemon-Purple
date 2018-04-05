@@ -2,7 +2,7 @@
 //
 #include "gameManager.h"
 #include "Pokemon.h"
-#include <time.h>
+#include "battle.h"
 int main(int argc, char *argv[])
 {
 	//GameManager* game = GameManager::Instance();
@@ -10,15 +10,14 @@ int main(int argc, char *argv[])
 	//GameManager::Release();
 	//game = nullptr;
 
-	Pokemon Encounter(CHARMANDER, 50);
-
-	Pokemon *test;
-	test = new Pokemon(BULBASAUR, 50);
+	Pokemon *rivalStarter;
+	rivalStarter = new Pokemon(BULBASAUR, 20);
 	Pokemon *starter;
-	starter = new Pokemon(SQUIRTLE, 50);
-	test->displayStats();
-	Encounter.displayStats();
-	starter->displayStats();
+	starter = new Pokemon(CHARMANDER, 20);
+	//rivalStarter->displayStats();
+	//starter->displayStats();
+	battle encounter;
+	encounter.fight(*rivalStarter, *starter);
     return 0;
 }
 

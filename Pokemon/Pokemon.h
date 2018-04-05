@@ -32,6 +32,9 @@ enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
 
 const int MAX_EV = 65535;
 
+//TO DO:
+//Pokemon into array
+//
 class Pokemon {
 public:
 	Pokemon();
@@ -41,25 +44,41 @@ public:
 	void getMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
-	void setStats(); //Sets stats of Pokemon based IV's, current EV's, and level
+	void setStats(); //Sets stats of Pokemon based on IV's, current EV's, and level
 	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
 	void setMoves(int pokemon, int level); //Sets 4 learnables moves based on level or less
+	void displayMoves();
 	void displayStats();
 
 	//Getters
-	Move getMove(int k) { return move[k]; }
-	int getLevel() { return m_level; }
-	int getAtk() { return m_atk; }
-	int getDef() { return m_def; }
-	int getSpd() { return m_spd; }
-	int getSpe() { return m_spe; }
-	int getType1() { return m_type1; }
-	int getType2() { return m_type2; }
+	inline std::string getName() { return m_nickname; }
+	inline Move getMove(int k) { return move[k]; }
+	inline int getLevel() { return m_level; }
+	inline int getStatus() { return m_status; }
+	inline bool getFainted() { return m_fainted; }
+	inline int getHP() { return m_hp; }
+	inline int getMaxHP() { return m_maxHP; }
+	inline int getAtk() { return m_atk; }
+	inline int getDef() { return m_def; }
+	inline int getSpd() { return m_spd; }
+	inline int getSpe() { return m_spe; }
+	inline int getType1() { return m_type1; }
+	inline int getType2() { return m_type2; }
+	inline int getSide() { return m_side; }
+
+	//Setters
+	inline void setStatus(int status) { m_status = status; }
+	inline void hurt(int damage) { m_hp -= damage; }
+	inline void setSide(int side) { m_side = side; }
+	inline void fainted() { m_fainted = true; m_hp = 0; }
+	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
+
 protected:
 	int m_pokedex; //stores # in pokedex
 	std::string m_nickname; //stores nickname if any
 	int m_level;
 	int m_status;
+	bool m_fainted;
 	int m_exp;
 	Move move[4];
 	
@@ -75,6 +94,7 @@ protected:
 	int m_numMoves; //number of moves they can learn from leveing
 	int m_learnLevel[10]; //levels moves will be learned
 	int m_moveToLearn[10]; //moves to be learnt
+	int m_side; //used for battles
 
 	//description
 	std::string m_kind;
@@ -82,6 +102,7 @@ protected:
 	float m_weight;
 	std::string m_description;
 
+	int m_maxHP;
 	//dynamic stats
 	int m_hp;
 	int m_atk;

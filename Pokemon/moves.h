@@ -31,25 +31,24 @@ enum moves { ABSORB=1, ACID, ACID_ARMOR, AGILITY, AMNESIA, AURORA_BEAM, BARRAGE,
 enum move_category { PHYSICAL=1, SPECIAL=2, STATUS=3};
 
 enum volatile_effect {BURN=1, PARALYSIS=2, /*POISON=3,*/ BAD_POISON=4, FREEZE=5, SLEEP=6 };
-enum non_volatile_effect {BOUND=7, CONFUSE=8, FLINCH=9, LEECH=10};
-
+//non_volatile_effect { BOUND = 7, CONFUSE = 8, FLINCH = 9, LEECH = 10 }; battle.h
 class Move {
 public:
 	Move();
 	void getMove(int move); //gets move from CSV file
-	std::string returnMove() { return m_moveName; }
 
 	friend int typeConvert(std::string &t); //takes string and converts to enum ("NORMAL" becomes 0 which is NORMAL)
 	friend int randomGen(int low, int high); //returns number based on range
 
 	//Getters
-	int getMoveID() { return m_moveID; }
-	int getMoveType() { return m_moveType; }
-	int getPower() { return m_movePower; }
-	int getCat() { return m_moveCat; }
-	int getAcc() { return m_moveAcc; }
-	int getEffect() { return m_moveEffect; }
-	int getPriority() { return m_movePriority; }
+	inline int getMoveID() { return m_moveID; }
+	std::string returnMove() { return m_moveName; }
+	inline int getMoveType() { return m_moveType; }
+	inline int getPower() { return m_movePower; }
+	inline int getCat() { return m_moveCat; }
+	inline int getAcc() { return m_moveAcc; }
+	inline int getEffect() { return m_moveEffect; }
+	inline int getPriority() { return m_movePriority; }
 protected:
 	int m_moveID;
 	std::string m_moveName;
