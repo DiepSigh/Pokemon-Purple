@@ -35,7 +35,6 @@ Camera::~Camera() {
 }
 
 void Camera::UpdatePos(Characters &mPlayer) {
-
 	//GetCamXPos()->SetCamXPos(mPlayerXPos);
 
 	//if (mMainCamera.x < 0) { mMainCamera.x = 0; }
@@ -43,6 +42,7 @@ void Camera::UpdatePos(Characters &mPlayer) {
 	//if (mMainCamera.x > mMainCamera.w) { mMainCamera.x = mMainCamera.w; }
 	//if (mMainCamera.y > mMainCamera.h) { mMainCamera.y = mMainCamera.h; }	
 }
+
 void Camera::Render() {
 	Vector2 pos = Pos(LOCAL);
 	GetmTex()->SetRenderRectX((int)(mMainCamera.x));

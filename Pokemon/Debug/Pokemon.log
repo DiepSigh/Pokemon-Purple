@@ -1,6 +1,8 @@
-﻿  levelManager.cpp
+﻿  camera.cpp
 c:\users\mike\documents\github\pokemon\pokemon\camera.h(25): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\camera.h(26): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\camera.h(32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\camera.h(33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\camera.cpp(27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
