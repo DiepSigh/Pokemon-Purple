@@ -7,6 +7,11 @@ class TextManager : public TextScreen{
 public:
 	TextManager();
 	~TextManager();
+	void Release();
+
+	static TextManager* sInstance;
+	static TextManager* Instance();
+
 	void Render();
 	void Update();
 

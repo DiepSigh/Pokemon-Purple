@@ -20,7 +20,7 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 	mLevelManager = LevelManager::Instance();
-	mTextManager = new TextManager();
+	mTextManager = TextManager::Instance();
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}

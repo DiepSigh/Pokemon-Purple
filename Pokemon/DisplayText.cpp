@@ -18,6 +18,7 @@ TextScreen::TextScreen(int x, int y, string name) {
 	mPos.x = x;
 	mPos.y = y;
 	Talk(name);
+	//Speech();
 	mTex = new Texture(mSpeech, "PKMNSOLID.ttf", 40);
 }
 
@@ -26,12 +27,13 @@ TextScreen::~TextScreen()
 }
 
 string TextScreen::Talk(string NPC){
+	
 	string Name;
 	bool Found = false;
 	
 	std::ifstream src("../Debug/Assets/pokemonblue_text.csv");
 	if (!src.is_open()) {
-		std::cout << "Couldn't open file: pokemonblue_text.csv" << std::endl;
+		cout << "Couldn't open file: pokemonblue_text.csv" << endl;
 	} 
 	else {
 		do {
@@ -40,19 +42,26 @@ string TextScreen::Talk(string NPC){
 				Found = true;
 				do {
 					getline(src, mSpeech, ',');
+					/*if (mSpeech == "$$$") {
+						cout << "Test" << endl;
+						src.close();
+						break;
+						
+					}*/
 					Dialouge.push_back(mSpeech);
-					cout << mSpeech;
-				} while (mSpeech != "\n");
-				
+					/*for (int i = 0; i < Dialouge.size(); i++){
+						cout << Dialouge[i] << std::endl;
+					}*/
+					cout << mSpeech << std::endl;
+				} while (mSpeech != "$$$");
 			}
 			else {
 				src.ignore(500, '\n');
-				src.ignore(500, '\n');
 			}
-		} while (!Found || src.eof());
+		} while (!Found && !src.eof());
 	} 
 	src.close();
-	return mSpeech;
+	return Dialouge[0];
 }
 
 void TextScreen::Update()
@@ -69,5 +78,7 @@ void TextScreen::Render()
 }
 
 void TextScreen::Speech() {
-
+	//for (int i = 0; i < Dialouge.size(); i++){
+		//cout << Dialouge[i] << std::endl;
+	//}
 }

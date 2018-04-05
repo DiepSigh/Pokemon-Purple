@@ -1,14 +1,27 @@
 #include "TextManager.h"
 
+TextManager* TextManager::sInstance = nullptr;
 
-TextManager::TextManager() {
-	mTextScreen = new TextScreen(0, 0, "OAK");
-	mTextScreen->SetPosX(130);
-	mTextScreen->SetPosY(450);
+TextManager* TextManager::Instance() {
+	if (sInstance == nullptr) {
+		sInstance = new TextManager();
+	}
+	return sInstance;
 }
 
-TextManager::~TextManager()
-{
+TextManager::TextManager() {
+	mTextScreen = new TextScreen(0, 0, "OAK 8");
+	mTextScreen->SetPosX(130);
+	mTextScreen->SetPosY(450);
+	mTextScreen->Speech();
+}
+void TextManager::Release() {
+	delete mTextScreen;
+	mTextScreen = NULL;
+}
+
+TextManager::~TextManager(){
+
 }
 
 void TextManager::Render()
@@ -19,3 +32,5 @@ void TextManager::Render()
 void TextManager::Update()
 {
 }
+
+
