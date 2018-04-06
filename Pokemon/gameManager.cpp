@@ -41,8 +41,8 @@ GameManager::GameManager() {
 	//mViridianCityHouse = new ViridianCityHouse(0, 0);
 	//mPokemonLeague = new PokemonLeague(0, 0);
 
-	mAudioMgr = AudioManager::Instance();
-	mAudioMgr->PalletTownSound();
+	//mAudioMgr = AudioManager::Instance();
+	//mAudioMgr->PalletTownSound();
 	
 	// <--------- By Canados
 }

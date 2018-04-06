@@ -4,7 +4,7 @@
 MapsLoader::MapsLoader() {
 	
 	//masterMap
-	masterMap = new Texture("maps/MasterMap.png", 0, 0, 3100, 6400);
+	masterMap = new Texture("maps/MasterMap.png", 0, 0, 2592, 5504);
 
 	//common
 	Curtains = new Texture("maps/curtains.png", 0, 0, 32, 32);
