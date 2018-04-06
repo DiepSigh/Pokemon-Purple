@@ -33,3 +33,4 @@
 .vs/Pokemon/v15/.suo
 *.ipch
 *.tlog
+*.db*
