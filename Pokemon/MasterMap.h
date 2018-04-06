@@ -21,7 +21,7 @@ public:
 	MasterMap(float, float);
 	~MasterMap();
 	void Render();
-	void Update(Camera*,float);
+	void Update();
 
 };
 

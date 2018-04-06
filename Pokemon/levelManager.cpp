@@ -27,10 +27,11 @@ LevelManager::LevelManager() {
 	mCamera = Camera::Instance();
 	mCamera->SetXPos(Graphics::SCREEN_WIDTH * 0.5f);
 	mCamera->SetYPos(Graphics::SCREEN_HEIGHT * 0.5f);
-	mCamera->SetSpeed(0.01f);
+	mCamera->SetSpeed(5);
 
 	mPlayer = new Characters();
-	mPlayer->SetPosX(150);
+	mPlayer->SetPosX(400);
+	mPlayer->SetPosY(300);
 	mPlayer->SetSpeed(2);
 
 	mStartRoom = new StartRoom(0, 0);
@@ -90,55 +91,147 @@ void LevelManager::Update() {
 }
 
 void LevelManager::Render(float t) {
-	mMasterMap->Update(mCamera, t);
+	///LEVEL LOAD TEST
+	switch (activeLevel)
+	{
+	case NONE :
+		break;
+
+	case PLAYERHOUSE :
+		mPlayerHouse->Update();
+
+		break;
+	case MASTERMAP :
+		mMasterMap->Update();
+
+		break;
+
+	default:
+		break;
+	}
+	//mPlayerHouse->isActive = true;
+	
 	mPlayer->Render();
 }
 
 void LevelManager::moveLeft() {
+
+	switch (activeLevel)
+	{
+	case NONE:
+		break;
+
+	case PLAYERHOUSE:
+		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+
+		break;
+	case MASTERMAP:
+		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+		break;
+
+	default:
+		break;
+	}
 	//mPlayer->SetPosX(mPlayer->GetPosX() - mPlayer->GetSpeed());
 	//mCamera->SetVel(2);
-	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	if (mCamera->GetSpeed() > 0.01f) {
-		mCamera->SetSpeed(0.01f);
-	}
-	mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
 	//cout << mCamera->GetXPos() << endl;
 }
 
 void LevelManager::moveRight() {
-	//mPlayer->SetPosX(mPlayer->GetPosX() + mPlayer->GetSpeed());
+
+
+	switch (activeLevel)
+	{
+	case NONE:
+		break;
+
+	case PLAYERHOUSE:
+		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() - mCamera->GetSpeed());
+		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+
+		break;
+	case MASTERMAP:
+		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
+		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+		break;
+
+	default:
+		break;
+	}	//mPlayer->SetPosX(mPlayer->GetPosX() + mPlayer->GetSpeed());
 	//mCamera->SetVel(2);
-	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	if (mCamera->GetSpeed() > 0.01f) {
-		mCamera->SetSpeed(0.01f);
-	}
-	mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 	//cout << mCamera->GetXPos() <<endl;
 
 }
 
 void LevelManager::moveUp() {
-	//mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
+
+
+	switch (activeLevel)
+	{
+	case NONE:
+		break;
+
+	case PLAYERHOUSE:
+		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() + mCamera->GetSpeed());
+		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+
+		break;
+	case MASTERMAP:
+		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
+		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+		break;
+
+	default:
+		break;
+	}	//mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
 	//mCamera->SetVel(2);
-	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	if (mCamera->GetSpeed() > 0.01f) {
-		mCamera->SetSpeed(0.01f);
-	}
-	mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 	//cout << mCamera->GetYPos() << endl;
 
 }
 
 void LevelManager::moveDown() {
-	//mPlayer->SetPosY(mPlayer->GetPosY() + mPlayer->GetSpeed());
-	//mCamera->SetVel(2);
-	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	if (mCamera->GetSpeed() > 0.01f) {
-		mCamera->SetSpeed(0.01f);
-	}
-	mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
-	//cout << mCamera->GetYPos() << endl;
 
+
+	switch (activeLevel)
+	{
+	case NONE:
+		break;
+
+	case PLAYERHOUSE:
+		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() - mCamera->GetSpeed());
+		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+
+		break;
+	case MASTERMAP:
+		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
+		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+		break;
+
+	default:
+		break;
+	}	//mCamera->SetVel(2);
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+	//cout << mCamera->GetYPos() << endl;
 }
 
 void LevelManager::NormalizeVel() {

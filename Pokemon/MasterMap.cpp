@@ -16,7 +16,6 @@ MasterMap::MasterMap(float x, float y) {
 MasterMap::~MasterMap() {
 	delete mMap;
 	mMap = NULL;
-
 }
 
 void MasterMap::Render() {
@@ -27,11 +26,9 @@ void MasterMap::Render() {
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
-void MasterMap::Update(Camera* cam,float t) {
-		SetPosX(GetPosX() - 0.001f);
+void MasterMap::Update() {
+		SetPosX(GetPosX());
 		SetPosY(GetPosY());
-
-		cout << GetPosX() << endl;
 		DrawMap();
 }
 

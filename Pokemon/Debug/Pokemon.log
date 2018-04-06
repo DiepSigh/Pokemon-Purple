@@ -1,3 +1,6 @@
-﻿  MasterMap.cpp
+﻿  levelManager.cpp
 c:\users\mike\documents\github\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\levelmanager.cpp(28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\levelmanager.cpp(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe

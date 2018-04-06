@@ -7,7 +7,7 @@ MenuManager* MenuManager::sInstance = nullptr;
 MenuManager::MenuManager() {
 	mMenu = new Menu();
 	//Start Menu Activation
-	StrtMnuisActive = true;
+	StrtMnuisActive = false;
 	mGraphics = Graphics::Instance();
 }
 
