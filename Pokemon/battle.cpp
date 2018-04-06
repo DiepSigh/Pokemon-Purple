@@ -95,11 +95,11 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 		playerFirst = true;
 	}
 	//Compare speed
-	else if (active.getSpd() > opposing.getSpd()) {
+	else if ((active.getSpd() * stageConversion(active.getSpdStage())) > (opposing.getSpd() * stageConversion(opposing.getSpdStage()))) {
 		playerFirst = true;
 	}
 	//50/50 for same speed
-	else if (active.getSpd() == opposing.getSpd()) {
+	else {
 		int rng = randomGen(1, 2);
 		if (rng == 1) {
 			playerFirst = true;

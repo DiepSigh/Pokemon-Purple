@@ -1,14 +1,12 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "graphics.h"
 #include "assetManager.h"
-#include "gameEntity.h"
 
-class Texture : public GameEntity {
+class Texture{
 protected:
-	SDL_Texture *mTex;
 	Graphics *mGraphics;
+	SDL_Texture *SDLTex;
 
 	int mWidth;
 	int mHeight;
@@ -18,12 +16,16 @@ protected:
 	SDL_Rect mClipRect;
 
 public:
+	Texture();
 	Texture(std::string, int, int, int, int);
 	~Texture();
+
 	virtual void Render();
 	virtual void Update();
 
-	SDL_Texture *GetmTex() { return mTex; }
+	Texture(std::string text, std::string fontPath, int size);
+
+	SDL_Texture *GetSDLTex() { return SDLTex; }
 	Graphics *GetmGraphics() { return mGraphics; }
 	int GetWidth() { return mWidth; }
 	int GetHeight() { return mHeight; }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -88,13 +88,16 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SDL2_mixer-2.0.2\include;..\SDL2-2.0.8\include;..\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDL2_mixer-2.0.2\lib\x86;..\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,28 +150,74 @@
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="battle.h" />
+    <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
-    <ClInclude Include="mathHelper.h" />
     <ClInclude Include="moves.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="pokemonLeague.h" />
+    <ClInclude Include="pokemonMart.h" />
+    <ClInclude Include="MasterMap.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="characters.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="items.h" />
+    <ClInclude Include="levelManager.h" />
+    <ClInclude Include="mathHelper.h" />
+    <ClInclude Include="startRoom.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="menuManager.h" />
+    <ClInclude Include="PkmnState.h" />
+    <ClInclude Include="PokeDex.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="userInput.h" />
+    <ClInclude Include="playerHouse.h" />
+    <ClInclude Include="pokemonCenter.h" />
+    <ClInclude Include="pokemonSchool.h" />
+    <ClInclude Include="redHouse.h" />
+    <ClInclude Include="reserchLab.h" />
+    <ClInclude Include="viridianCityHouse.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="battle.cpp" />
+    <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
-    <ClCompile Include="graphics.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MasterMap.cpp" />
+    <ClCompile Include="menuManager.cpp" />
+    <ClCompile Include="menuStart.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="characters.cpp" />
+    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Items.cpp" />
+    <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="moves.cpp" />
+    <ClCompile Include="Options.cpp" />
+    <ClCompile Include="PkmnState.cpp" />
+    <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="pokemonLeague.cpp" />
+    <ClCompile Include="pokemonMart.cpp" />
+    <ClCompile Include="playerHouse.cpp" />
+    <ClCompile Include="pokemonCenter.cpp" />
+    <ClCompile Include="pokemonSchool.cpp" />
+    <ClCompile Include="redHouse.cpp" />
+    <ClCompile Include="reserchLab.cpp" />
+    <ClCompile Include="startRoom.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="userInput.cpp" />
+    <ClCompile Include="viridianCityHouse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

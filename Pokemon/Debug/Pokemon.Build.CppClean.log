@@ -1,43 +1,42 @@
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\vc141.pdb
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\vc141.pdb
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\vc141.idb
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\animatedtexture.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\assetmanager.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\battle.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\gameentity.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\gamemanager.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\graphics.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\main.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\pokemon.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\texture.obj
-c:\users\stephen diep\desktop\pokemon\pokemon\debug\timer.obj
-c:\users\stephen.diep\desktop\pokemon\debug\pokemon.exe
-c:\users\stephen.diep\desktop\pokemon\debug\pokemon.ilk
-c:\users\stephen.diep\desktop\pokemon\debug\pokemon.pdb
-c:\users\stephen diep\desktop\pokemon\debug\pokemon.ilk
-c:\users\stephen diep\desktop\pokemon\debug\pokemon.exe
-c:\users\stephen diep\desktop\pokemon\debug\pokemon.pdb
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\animatedtexture.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\assetmanager.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\battle.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\gameenitiy.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\gameenity.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\gameentity.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\gamemanager.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\grahics.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\graphics.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\main.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\stdafx.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\texture.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\timer.obj
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\main.obj.enc
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.obj.enc
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.pch
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\vc141.idb
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\cl.command.1.tlog
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\cl.read.1.tlog
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\cl.write.1.tlog
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\link.command.1.tlog
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\link.read.1.tlog
-c:\users\stephen.diep\desktop\pokemon\pokemon\debug\pokemon.tlog\link.write.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\vc141.pdb
+c:\users\rbere\documents\github\pokemon\pokemon\debug\vc141.idb
+c:\users\rbere\documents\github\pokemon\pokemon\debug\characters.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\graphics.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\inventory.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\items.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\levelmanager.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pkmnstate.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokedex.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemonleague.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemonmart.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\playerhouse.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemoncenter.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemonschool.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\redhouse.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\reserchlab.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\startroom.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\texture.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\timer.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\userinput.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\viridiancityhouse.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\animatedtexture.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\assetmanager.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\audiomanager.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\displaytext.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\gameentity.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\gamemanager.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\mastermap.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\menumanager.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\menustart.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\camera.obj
+c:\users\rbere\documents\github\pokemon\pokemon\debug\options.obj
+c:\users\rbere\documents\github\pokemon\debug\pokemon.exe
+c:\users\rbere\documents\github\pokemon\debug\pokemon.ilk
+c:\users\rbere\documents\github\pokemon\debug\pokemon.pdb
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\cl.command.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\cl.read.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\cl.write.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\link.command.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\link.read.1.tlog
+c:\users\rbere\documents\github\pokemon\pokemon\debug\pokemon.tlog\link.write.1.tlog

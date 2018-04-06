@@ -3,6 +3,7 @@
 #include "gameManager.h"
 #include "Pokemon.h"
 #include "battle.h"
+
 int main(int argc, char *argv[])
 {
 	//GameManager* game = GameManager::Instance();

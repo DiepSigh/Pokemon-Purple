@@ -2,21 +2,31 @@
 #define GAMEENTITY_H
 
 #include "mathHelper.h"
+#include "animatedTexture.h"
 
 class GameEntity {
-public:
-	enum SPACE {LOCAL = 0, WORLD = 1};
+protected:
+	Texture* mTex;
+	AnimatedTexture* mAtex;
+	Vector2 mPos;
 
 private:
-	Vector2 mPos;
 	float  mRotation;
 	bool mActive;
 	GameEntity* mParent;
 
 public:
+	Texture* GetmTex() { return mTex; }
+	void SetmTex(Texture* tex) {mTex = tex;}
 	GameEntity(float x = 0.0f, float y = 0.0f);
-	~GameEntity();
+	~GameEntity();	
+	enum SPACE {LOCAL = 0, WORLD = 1};
+	float GetPosX() { return mPos.x; }
+	float GetPosY() { return mPos.y; }
+	void SetPosX(float x) { mPos.x = x; }
+	void SetPosY(float y) { mPos.y = y; }
 
+	AnimatedTexture* GetmAtex() { return mAtex; }
 	void Pos(Vector2 pos);
 	Vector2 Pos(SPACE space = WORLD);
 	void Rotation(float rotation);
@@ -26,8 +36,11 @@ public:
 	void Parent(GameEntity*);
 	GameEntity* Parent();
 
+
 	virtual void Update();
 	virtual void Render();
+
+
 };
-#endif
+#endif // !GAMEENTITY_H
 

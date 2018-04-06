@@ -19,7 +19,7 @@ Move::Move() {
 void Move::getMove(int move_index){
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	Move();
-	std::ifstream src("moves.csv");
+	std::ifstream src("../Debug/Assets/moves.csv");
 	
 	if (!src.is_open()) {
 		std::cout << "Could not open file.";
