@@ -20,6 +20,7 @@ GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
+	mBattle = battle::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -28,7 +29,7 @@ GameManager::GameManager() {
 	mTimer = Timer::Instance();
 	mLevelManager = LevelManager::Instance();
 	mPlayerControls = new UserInput();
-	
+
 	// By Canados
 	
 	mStartRoom = new StartRoom(0, 0);
@@ -60,6 +61,9 @@ GameManager::~GameManager() {
 
 	AudioManager::Release();
 	mAudioMgr = NULL;
+
+	battle::release();
+	mBattle = NULL;
 
 	delete mTex;
 	mTex = NULL;
@@ -113,10 +117,12 @@ void GameManager::Run() {
 
 
 			//UPDATES!!!!
-			mLevelManager->Update();
+			//mLevelManager->Update();
 			mMenuManager->Update();
-			//RENDERS!!!!!
+			////RENDERS!!!!!
 			mGraphics->ClearBackBuffer();
+
+			mBattle->startBattle();
 
 			//mMasterMap->Update();
 			//mStartRoom->Update();
@@ -130,12 +136,13 @@ void GameManager::Run() {
 			//mPokemonLeague->Update();
 
 			//Player Controller
-			mLevelManager->Render();
+			//mLevelManager->Render();
 			//Menu Controller
-			mMenuManager->Render();
+			//mMenuManager->Render();
 
 			mGraphics->Render();
 			mTimer->Reset();
+			
 		}
 	}
 }

@@ -10,7 +10,48 @@ battle::battle() {
 	aiFlinch = false;
 	playerSeed = false;
 	aiSeed=false;
+	//7,90
+	m_battleScreen = new battle(0,0, new Texture("battle_screen.png", 7,90, 162, 146));
+	//m_battleScreen = new battle(0, 0, new AnimatedTexture("battle_screen.png", 0, 0, 500, 500, 1, 1, 0) new Texture("battle_screen.png", 0, 0, 162, 146));
+	m_battleScreen->SetPosX(100);
+	m_battleScreen->SetPosY(100);
 }
+
+battle::battle(int x, int y, Texture* tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+
+	mPos.x = x;
+	mPos.y = y;
+	mTex = tex;
+}
+
+void battle::startBattle() {
+	m_battleScreen->Render();
+}
+
+void battle::Render() {
+	GetmTex()->SetRenderRectX(GetPosX());
+	GetmTex()->SetRenderRectY(GetPosY());
+
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+}
+
+battle* battle::sInstance = nullptr;
+
+battle*battle::Instance() {
+	if (sInstance == nullptr) {
+		sInstance = new battle();
+	}
+
+	return sInstance;
+}
+
+void battle::release() {
+	delete sInstance;
+	sInstance = nullptr;
+}
+
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
 	battle();

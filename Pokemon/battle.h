@@ -1,9 +1,10 @@
 //Stephen
 #ifndef BATTLE_H
 #define BATTLE_H
+
 #include "Pokemon.h"
 
-struct battle{
+struct battle : public GameEntity{
 	enum side { PLAYER = 1, AI = 2 };
 	enum non_volatile_effect { BOUND = 7, CONFUSE = 8, FLINCH = 9, LEECH = 10 };
 
@@ -28,6 +29,15 @@ struct battle{
 	void switchOut(Pokemon &, Pokemon &);
 	void items(Pokemon &, Pokemon &);
 	void flee(Pokemon &, Pokemon &);
+
+	//Rendering
+	battle(int, int, Texture*);
+	void startBattle();
+	void Render();
+	static battle* sInstance;
+	static battle* Instance();
+	static void release();
+
 protected:
 	//counter for moves
 	int playerCounter;
@@ -42,6 +52,12 @@ protected:
 	bool aiFlinch;
 	bool playerSeed;
 	bool aiSeed;
+
+	battle * m_battleScreen = nullptr;
+	//Graphics * m_graphics = nullptr;
+	//AssetManager * m_aManager = nullptr;
+	Graphics* mGraphics;
+	AssetManager* mAssetManager;
 };
 
 #endif

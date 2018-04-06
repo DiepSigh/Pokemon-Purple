@@ -2,6 +2,7 @@
 #ifndef MOVES_H
 #define MOVES_H
 
+#include "gameEntity.h"
 #include <string>
 #include <iostream>
 #include <fstream>

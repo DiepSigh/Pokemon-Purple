@@ -1,14 +1,13 @@
 //Stephen
-#ifndef POKEMON_H
-#define POKEMON_H
 
 //Resources:
 //Data Structure: https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_data_structure_in_Generation_I
 //Base Stats: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_I)
 //EXP Yield: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_effort_value_yield_(Generation_III-IV)
 //Catch Rate: https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_catch_rate
+#ifndef POKEMON_H
+#define POKEMON_H
 
-// Base of Pokémon
 #include "moves.h"
 #include <math.h>
 //#include <iostream>
@@ -35,7 +34,7 @@ const int MAX_EV = 65535;
 //TO DO:
 //Pokemon into array
 //
-class Pokemon {
+class Pokemon : public GameEntity {
 public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
