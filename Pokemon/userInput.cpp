@@ -15,20 +15,24 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 			switch (events.key.keysym.sym) {
 
 			case SDLK_LEFT:
+				// Option Menu Left
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorLeft();
+				}
 				//World Control
-				if (menuM->StrtMnuisActive == false) {
+				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveLeft();
 				}
 				break;
 
 			case SDLK_RIGHT:
+				//Option Menu Right
+				if (menuO->OptsMnuisActive) {
+
+				}
 				//World Control
 				if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveRight();
-				}
-				//Option Menu Right
-				if (menuO->OptsMnuisActive == true) {
-
 				}
 				//printf("You pressed right arrow\n");
 				break;
@@ -38,13 +42,13 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				if (menuM->StrtMnuisActive) {
 					menuM->CursorMoveUp();
 				}
-				//World Control
+				// Options Menu Up
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorUp();
+				}
+				//World Control Up
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveUp();
-				}
-				// Options Menu Up
-				else if (menuM->StrtMnuisActive == false && menuO->OptsMnuisActive == true) {
-
 				}
 				break;
 
@@ -55,9 +59,9 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				}
 				//Options Menu Down
 				if (menuM->OptsMnuisActive) {
-					menuO->oCursorDown();
+					menuM->mOptions->oCursorDown();
 				}
-				//World Control
+				//World Control Down
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveDown();
 				}

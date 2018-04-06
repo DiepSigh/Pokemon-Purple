@@ -1,2 +1,4 @@
-﻿  userInput.cpp
+﻿  Options.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\options.cpp(75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\options.cpp(76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
