@@ -29,6 +29,7 @@
 *.app
 .vs/Pokemon/v15/.suo
 .vs/Pokemon/v15/Browse.VC.opendb
-.log
+*.log
 .vs/Pokemon/v15/.suo
 *.ipch
+*.tlog
