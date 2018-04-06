@@ -155,6 +155,7 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="pokemonLeague.cpp" />

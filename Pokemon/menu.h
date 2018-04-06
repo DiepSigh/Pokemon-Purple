@@ -4,7 +4,6 @@
 #include "SDL.h"
 #include <string>
 #include <vector>
-#include  "texture.h"
 #include "gameEntity.h"
 #include <iostream>
 
@@ -21,6 +20,7 @@ public:
 	bool StrtMnuisActive = true;
 	void Update();
 	void Render();
+
 	Menu* menu;
 	Menu* menu1;
 	Menu* menu2;
@@ -29,6 +29,12 @@ public:
 	Menu* menu5;
 	Menu* menu6;
 	Menu* Cursor;
+	Menu* Pokemon;
+
+	void DrawPokemon();
+
+	void CursorMoveDown();
+	void CursorMoveUp();
 
 private:
 	MenuStates menuState;
@@ -37,5 +43,4 @@ private:
 	AssetManager* mAssetManager;
 protected:
 };
-
 #endif // !MENU_H

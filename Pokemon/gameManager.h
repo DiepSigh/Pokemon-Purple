@@ -8,16 +8,6 @@
 #include "levelmanager.h"
 #include "camera.h"
 #include "userInput.h"
-#include "startRoom.h"
-#include "playerHouse.h"
-#include "redHouse.h"
-#include "reserchLab.h"
-#include "pokemonMart.h"
-#include "pokemonCenter.h"
-#include "pokemonSchool.h"
-#include "viridianCityHouse.h"
-#include "pokemonLeague.h"
-#include "MasterMap.h"
 #include "AudioManager.h"
 
 class GameManager {
@@ -32,20 +22,12 @@ private:
 	Texture* mTex;
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
-	Camera* mCamera;
 	UserInput* mPlayerControls;
-	static SDL_Rect Camera;
-	StartRoom* mStartRoom;
-	PlayerHouse* mPlayerHouse;
-	RedHouse* mRedHouse;
-	ReserchLab* mReserchLab;
-	PokemonMart* mPokemonMart;
-	PokemonCenter* mPokemonCenter;
-	PokemonSchool* mPokemonSchool;
-	ViridianCityHouse* mViridianCityHouse;
-	PokemonLeague* mPokemonLeague;
-	MasterMap* mMasterMap;
 	AudioManager* mAudioMgr;
+	PkmnState* mPokeState;
+	Camera* mCamera;
+	GameManager();
+	~GameManager();
 
 public:
 	static GameManager* Instance();
@@ -53,10 +35,6 @@ public:
 	void Run();
 	bool GetIsPlaying() { return isPlaying; }
 	void SetIsPlaying(bool playing) { isPlaying = playing; }
-
-private:
-	GameManager();
-	~GameManager();
 };
 
 #endif // !GAMEMANAGER_H

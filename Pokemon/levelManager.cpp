@@ -1,6 +1,8 @@
 #include "levelmanager.h"
 #include <iostream>
+
 using namespace std;
+
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
 
@@ -22,18 +24,61 @@ bool LevelManager::Initialized() {
 }
 
 LevelManager::LevelManager() {
+	mCamera = Camera::Instance();
+	mCamera->SetXPos(Graphics::SCREEN_WIDTH * 0.5f);
+	mCamera->SetYPos(Graphics::SCREEN_HEIGHT * 0.5f);
+	mCamera->SetSpeed(0.01f);
+
 	mPlayer = new Characters();
 	mPlayer->SetPosX(150);
 	mPlayer->SetSpeed(2);
-	
-	mCamera = new Camera(500,100);
-	mCamera->SetPosX(10000);
-	mCamera->SetPosY(500);
+
+	mStartRoom = new StartRoom(0, 0);
+	mPlayerHouse = new PlayerHouse(0, 0);
+	mRedHouse = new RedHouse(0, 0);
+	mReserchLab = new ReserchLab(0, 0);
+	mPokemonMart = new PokemonMart(0, 0);
+	mPokemonCenter = new PokemonCenter(0, 0);
+	mPokemonSchool = new PokemonSchool(0, 0);
+	mViridianCityHouse = new ViridianCityHouse(0, 0);
+	mPokemonLeague = new PokemonLeague(0, 0);
+	mMasterMap = new MasterMap(0, 0);
+
 	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
 	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
 
 LevelManager::~LevelManager() {
+	delete mStartRoom;
+	mStartRoom = NULL;
+
+	delete mPlayerHouse;
+	mPlayerHouse = NULL;
+
+	delete mRedHouse;
+	mRedHouse = NULL;
+
+	delete mReserchLab;
+	mReserchLab = NULL;
+
+	delete mPokemonMart;
+	mPokemonMart = NULL;
+
+	delete mPokemonCenter;
+	mPokemonCenter = NULL;
+
+	delete mPokemonSchool;
+	mPokemonSchool = NULL;
+
+	delete mViridianCityHouse;
+	mViridianCityHouse = NULL;
+
+	delete mPokemonLeague;
+	mPokemonLeague = NULL;
+
+	delete mMasterMap;
+	mMasterMap = NULL;
+	
 	//delete map1;
 	//map1 = nullptr;
 }
@@ -44,29 +89,62 @@ void LevelManager::Update() {
 	//mPlayer->SetPosX(mPlayer->GetPosX() + 0.1f);
 }
 
-void LevelManager::Render() {
-	//map1->Render();
-	
+void LevelManager::Render(float t) {
+	mMasterMap->Update(mCamera, t);
 	mPlayer->Render();
-	mCamera->Render();
 }
 
 void LevelManager::moveLeft() {
-	mPlayer->SetPosX(mPlayer->GetPosX() - mPlayer->GetSpeed());
+	//mPlayer->SetPosX(mPlayer->GetPosX() - mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	if (mCamera->GetSpeed() > 0.01f) {
+		mCamera->SetSpeed(0.01f);
+	}
+	mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+	//cout << mCamera->GetXPos() << endl;
 }
 
 void LevelManager::moveRight() {
-	mPlayer->SetPosX(mPlayer->GetPosX() + mPlayer->GetSpeed());
+	//mPlayer->SetPosX(mPlayer->GetPosX() + mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	if (mCamera->GetSpeed() > 0.01f) {
+		mCamera->SetSpeed(0.01f);
+	}
+	mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+	//cout << mCamera->GetXPos() <<endl;
+
 }
 
 void LevelManager::moveUp() {
-	mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
+	//mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	if (mCamera->GetSpeed() > 0.01f) {
+		mCamera->SetSpeed(0.01f);
+	}
+	mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+	//cout << mCamera->GetYPos() << endl;
+
 }
 
 void LevelManager::moveDown() {
-	mPlayer->SetPosY(mPlayer->GetPosY() + mPlayer->GetSpeed());
+	//mPlayer->SetPosY(mPlayer->GetPosY() + mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	if (mCamera->GetSpeed() > 0.01f) {
+		mCamera->SetSpeed(0.01f);
+	}
+	mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+	//cout << mCamera->GetYPos() << endl;
+
 }
 
+void LevelManager::NormalizeVel() {
+	mCamera->SetVel(0);
+	mCamera->SetSpeed(mCamera->GetSpeed() * mCamera->GetVel());
+}
 void LevelManager::buttonA() {}
 
 void LevelManager::buttonS() {}

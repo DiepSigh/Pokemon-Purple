@@ -1,18 +1,19 @@
 #include "MasterMap.h"
 
+using namespace std;
 
 MasterMap::MasterMap(float x, float y) {
-
+	//mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
 	mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+	SetPosX(-800);
+	SetPosY(-2900);
 }
 
-
 MasterMap::~MasterMap() {
-
 	delete mMap;
 	mMap = NULL;
 
@@ -23,21 +24,18 @@ void MasterMap::Render() {
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
-	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
-void MasterMap::Update() {
+void MasterMap::Update(Camera* cam,float t) {
+		SetPosX(GetPosX() - 0.001f);
+		SetPosY(GetPosY());
 
-		SetPosX(-700);
-		SetPosY(-2800);
-
+		cout << GetPosX() << endl;
 		DrawMap();
-
 }
 
 void MasterMap::DrawMap() {
-	
 	mTex = mMap;
 	Render();
 

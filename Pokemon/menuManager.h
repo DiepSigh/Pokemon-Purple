@@ -3,28 +3,24 @@
 
 #include "menu.h"
 #include "PokeDex.h"
+#include "PkmnState.h"
 
-class MenuManager : public Menu {
+class MenuManager : public Menu{
 public:
 	static void Release();
 	Graphics* mGraphics;
 	static MenuManager* sInstance;
 	static MenuManager* Instance();
+
 	void StartMenu();
 
-
-	void CursorMoveDown();
-	void CursorMoveUp();
-
+	Menu* mMenu;
 	void MenuState();
 
 	void Update();
 	void Render();
-
 private:
 	MenuManager();
-	MenuManager(int, int, Texture*);
 	~MenuManager();
 };
 #endif // !MENUMANAGER_H
-

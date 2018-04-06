@@ -1,10 +1,10 @@
 c:\users\mike\documents\github\pokemon\pokemon\debug\vc141.pdb
 c:\users\mike\documents\github\pokemon\pokemon\debug\vc141.idb
-c:\users\mike\documents\github\pokemon\pokemon\debug\playerhouse.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemonmart.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemonleague.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokedex.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pkmnstate.obj
+c:\users\mike\documents\github\pokemon\pokemon\debug\options.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\levelmanager.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\items.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\inventory.obj
@@ -30,8 +30,9 @@ c:\users\mike\documents\github\pokemon\pokemon\debug\redhouse.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemonschool.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemoncenter.obj
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemon.obj
-c:\users\mike\documents\github\pokemon\debug\pokemon.exe
+c:\users\mike\documents\github\pokemon\pokemon\debug\playerhouse.obj
 c:\users\mike\documents\github\pokemon\debug\pokemon.ilk
+c:\users\mike\documents\github\pokemon\debug\pokemon.exe
 c:\users\mike\documents\github\pokemon\debug\pokemon.pdb
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemon.tlog\cl.command.1.tlog
 c:\users\mike\documents\github\pokemon\pokemon\debug\pokemon.tlog\cl.read.1.tlog

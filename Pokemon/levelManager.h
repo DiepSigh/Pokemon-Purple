@@ -3,18 +3,37 @@
 
 #include "characters.h"
 #include "camera.h"
-
+#include "startRoom.h"
+#include "playerHouse.h"
+#include "redHouse.h"
+#include "reserchLab.h"
+#include "pokemonMart.h"
+#include "pokemonCenter.h"
+#include "pokemonSchool.h"
+#include "viridianCityHouse.h"
+#include "pokemonLeague.h"
+#include "MasterMap.h"
 class LevelManager {
 
 private:
 	static LevelManager* sInstance;
 	static bool sInitialized;
+	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
 
 public:
 	static LevelManager* Instance();
 	static void Release();
 	static bool Initialized();
-	void Render();
+	void Render(float);
 	void Update();
 	void moveLeft();
 	void moveRight();
@@ -23,12 +42,13 @@ public:
 	void buttonA();
 	void buttonS();
 	void buttonC();
+	Camera* mCamera;
+	void NormalizeVel();
 
 private:
 	LevelManager();
 	~LevelManager();
 	Characters* mPlayer;
-	Camera* mCamera;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
