@@ -12,8 +12,10 @@ struct battle{
 	//Fighting
 	void fight(Pokemon &, Pokemon &);
 	int AIChoice(Pokemon &); //returns a random number from 0 to amount of moves learned
-	int firstAttack(Pokemon &, int Pmove, Pokemon &, int Amove); //determines who attacks first and attacks
+	int firstAttack(Pokemon &, int Pmove, Pokemon &, int Amove); //first attack
 	void secondAttack(Pokemon &, Pokemon &, int move); //second attack if neither Pokemon have fainted
+	bool playerFirst(Pokemon &, int Pmove, Pokemon &, int Amove); //checks to see if player attacks first. returns false if not
+	void statusCheck(Pokemon &, Pokemon &); //cause and effect for Pokemon status
 	bool faintCheck(Pokemon &, Pokemon &); //returns true if one of the Pokemon has fainted
 	void nvStatusChange(int affected, int effect); //called when non-volatile affects a Pokemon
 	void vStatusChange(Pokemon &affected, int effect); //called when Pokemon status change occurs from a move

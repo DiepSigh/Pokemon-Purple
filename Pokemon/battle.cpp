@@ -86,27 +86,13 @@ int battle::AIChoice(Pokemon &ai) {
 }
 
 int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
-	bool playerFirst = false;
+	bool pFirst = false;
 	aiFlinch = false;
 	playerFlinch = false;
 	int damage = 0;
-	//Compare priority
-	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
-		playerFirst = true;
-	}
-	//Compare speed
-	else if ((active.getSpd() * stageConversion(active.getSpdStage())) > (opposing.getSpd() * stageConversion(opposing.getSpdStage()))) {
-		playerFirst = true;
-	}
-	//50/50 for same speed
-	else {
-		int rng = randomGen(1, 2);
-		if (rng == 1) {
-			playerFirst = true;
-		}
-	}
 
-	if (playerFirst) {
+	pFirst = playerFirst(active, playerMove, opposing, aiMove);
+	if (pFirst) {
 		//accuracy check
 		if (!attackMissed(active.getMove(playerMove).getAcc(), active.getAccStage(), opposing.getEvaStage())) {
 			//check if damaging move or status move
@@ -135,7 +121,6 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 		}else{
 			//attack missed
 			std::cout << "Attack missed.\n";
-			
 		}
 	}
 	else {
@@ -173,7 +158,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 		}
 	}
 
-	if (playerFirst) {
+	if (pFirst) {
 		return PLAYER;
 	}
 	else {
@@ -217,6 +202,29 @@ void battle::secondAttack(Pokemon &attacking, Pokemon &defending, int move) {
 			std::cout << "Attack missed.\n";
 
 		}
+}
+
+bool battle::playerFirst(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
+	//Compare priority
+	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
+		return true;
+	}
+	//Compare speed
+	else if ((active.getSpd() * stageConversion(active.getSpdStage())) > (opposing.getSpd() * stageConversion(opposing.getSpdStage()))) {
+		return true;
+	}
+	//50/50 for same speed
+	else {
+		int rng = randomGen(1, 2);
+		if (rng == 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void battle::statusCheck(Pokemon &player, Pokemon &ai) {
+
 }
 
 bool battle::faintCheck(Pokemon &player, Pokemon &ai) {
