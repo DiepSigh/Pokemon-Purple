@@ -30,12 +30,10 @@ void MasterMap::Render() {
 }
 
 void MasterMap::Update() {
-
 		SetPosX(-1504);
-		SetPosY(-4900);
+		SetPosY(-4896);
 
 		DrawMap();
-
 }
 
 void MasterMap::DrawMap() {

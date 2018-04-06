@@ -2,7 +2,7 @@
 
 ViridianCityHouse::ViridianCityHouse(float x, float y) {
 
-	mBookshelf1_1 = &Bookshelf1_1 ;
+	mBookshelf1_1 = &Bookshelf1_1;
 	mBookshelf1_2 = &Bookshelf1_2;
 	mBookshelf2_1 = &Bookshelf2_1;
 	mBookshelf2_2 = &Bookshelf2_2;

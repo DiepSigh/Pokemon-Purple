@@ -18,6 +18,8 @@
 #include "pokemonLeague.h"
 #include "MasterMap.h"
 #include "AudioManager.h"
+#include "CollisionBoxes.h"
+
 
 class GameManager {
 private:
@@ -33,6 +35,7 @@ private:
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
 	static SDL_Rect Camera;
+	MapsLoader* mapsLoader;
 	StartRoom* mStartRoom;
 	PlayerHouse* mPlayerHouse;
 	RedHouse* mRedHouse;
@@ -44,6 +47,7 @@ private:
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
 	AudioManager* mAudioMgr;
+
 	
 public:
 	static GameManager* Instance();

@@ -40,10 +40,8 @@ GameManager::GameManager() {
 	//mPokemonSchool = new PokemonSchool(0, 0);
 	//mViridianCityHouse = new ViridianCityHouse(0, 0);
 	//mPokemonLeague = new PokemonLeague(0, 0);
-
 	//mAudioMgr = AudioManager::Instance();
 	//mAudioMgr->PalletTownSound();
-	
 	// <--------- By Canados
 }
 
@@ -61,10 +59,11 @@ GameManager::~GameManager() {
 	delete mTex;
 	mTex = NULL;
 
+
 	// By Canados --------->
 	AudioManager::Release(); 
-	mAudioMgr = NULL;         
-	
+	mAudioMgr = NULL;    
+
 	delete mStartRoom; 
 	mStartRoom = NULL;
 
@@ -113,19 +112,16 @@ void GameManager::Run() {
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 
 			//UPDATES!!!!
-						
-			//MenuManager->Update();
 
 			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
-		
 			//RENDERS!!!!!			
 		
 			//mMenuManager->Render();  
-			
 
 			// By Canados --------->
 			mMasterMap->Update();
+
 			//mStartRoom->Update(); 
 			//mPlayerHouse->Update(); 
 			//mRedHouse->Update(); 

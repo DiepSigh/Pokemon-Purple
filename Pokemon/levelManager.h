@@ -1,6 +1,7 @@
 #ifndef LEVELMANAGER_H
 #define LEVELMANAGER_H
 #include "characters.h"
+#include "CollisionBoxes.h"
 
 class LevelManager {
 
@@ -26,6 +27,7 @@ private:
 	LevelManager();
 	~LevelManager();
 	Characters* mPlayer;
+	CollisionBox* mCollisionBoxes;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;

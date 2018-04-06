@@ -1,5 +1,6 @@
 #include "levelmanager.h"
 
+
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
 
@@ -22,6 +23,7 @@ bool LevelManager::Initialized() {
 }
 
 LevelManager::LevelManager() {
+	mCollisionBoxes = CollisionBox::Instance();
 	mPlayer = new Characters();
 	mPlayer->SetPosX(150);
 	mPlayer->SetSpeed(2);
@@ -39,7 +41,7 @@ void LevelManager::Update() {
 
 void LevelManager::Render() {
 	//map1->Render();
-
+	mCollisionBoxes->DrawCollisions();
 	mPlayer->Render();
 }
 
