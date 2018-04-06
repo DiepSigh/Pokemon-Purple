@@ -13,7 +13,6 @@ public:
 	void Player();
 	void Render();
 	void Update();
-	void NPC();
 	inline float GetSpeed() { return SPEED; }
 	void SetSpeed(float s) { SPEED = s; }
 	void DisplayText();

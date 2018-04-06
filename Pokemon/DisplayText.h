@@ -27,11 +27,11 @@ public:
 
 private:
 	std::string Display;
-	
 	Graphics* mGraphics;
 	AssetManager* mAssetManager;
 	Vector2 mPos;
 	std::vector <std::string> Dialouge;
+	
 };
 
 #endif // !DISPLAYTEXT_H

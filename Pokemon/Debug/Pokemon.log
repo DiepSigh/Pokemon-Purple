@@ -1,2 +1,16 @@
-﻿  TextManager.cpp
+﻿  characters.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  DisplayText.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameManager.cpp
+  levelManager.cpp
+  NPC.cpp
+  Pokemon.cpp
+  TextManager.cpp
+  userInput.cpp
+  Generating Code...
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe

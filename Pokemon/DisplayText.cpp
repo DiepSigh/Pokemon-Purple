@@ -5,21 +5,16 @@ using namespace std;
 TextScreen::TextScreen(){
 	mGraphics = Graphics::Instance();
 	mAssetManager = AssetManager::Instance();
-	//Talk("OAK");
-	//mNPCtext = new TextScreen(0, 0, new Texture(mSpeech, "PKMNSOLID.ttf", 60));
-	//mNPCtext->SetPosY(10);
-	//mNPCtext->SetPosX(10);
 }
 
 TextScreen::TextScreen(int x, int y, string name) {
 	mGraphics = Graphics::Instance();
 	mAssetManager = AssetManager::Instance();
-
 	mPos.x = x;
 	mPos.y = y;
 	Talk(name);
-	//Speech();
-	mTex = new Texture(mSpeech, "PKMNSOLID.ttf", 40);
+	Speech();
+	mTex = new Texture(Dialouge[0], "PKMNSOLID.ttf", 25);
 }
 
 TextScreen::~TextScreen()
@@ -42,16 +37,7 @@ string TextScreen::Talk(string NPC){
 				Found = true;
 				do {
 					getline(src, mSpeech, ',');
-					/*if (mSpeech == "$$$") {
-						cout << "Test" << endl;
-						src.close();
-						break;
-						
-					}*/
 					Dialouge.push_back(mSpeech);
-					/*for (int i = 0; i < Dialouge.size(); i++){
-						cout << Dialouge[i] << std::endl;
-					}*/
 					cout << mSpeech << std::endl;
 				} while (mSpeech != "$$$");
 			}

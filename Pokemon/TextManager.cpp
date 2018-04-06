@@ -10,7 +10,7 @@ TextManager* TextManager::Instance() {
 }
 
 TextManager::TextManager() {
-	mTextScreen = new TextScreen(0, 0, "OAK 8");
+	mTextScreen = new TextScreen(0, 0, "SPEAROW");
 	mTextScreen->SetPosX(130);
 	mTextScreen->SetPosY(450);
 	mTextScreen->Speech();
