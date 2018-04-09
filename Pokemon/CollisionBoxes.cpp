@@ -12,12 +12,8 @@ CollisionBox* CollisionBox::Instance() {
 
 
 CollisionBox::CollisionBox() {
-	
-	
+		
 	Rect1 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 384, 32));
-	//Rect1 ->SetPosX(masterMap->GetPointerMap
-	//Rect1->SetPosX(GetMmap()Update() + Rect1->GetPosX() + 352);
-	//Rect1->SetPosY(mMap.Update() + Rect1->GetPosY() + 576);
 	Rect1->SetPosX(352);
 	Rect1->SetPosY(576);
 

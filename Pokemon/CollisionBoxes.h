@@ -1,8 +1,7 @@
 #ifndef _COLLISIONBOXES_H
 #define _COLLISIONBOXES_H
 
-//#include "gameEntity.h"
-#include "MapsLoader.h"
+#include "mapsLoader.h"
 
 
 class CollisionBox : public MapsLoader {

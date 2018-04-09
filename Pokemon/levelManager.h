@@ -38,7 +38,7 @@ private:
 	LevelManager();
 	~LevelManager();
 	Characters* mPlayer;
-	CollisionBox* mCollisionBoxes;
+	CollisionBox *mCollisionBoxes;
 	MapsLoader* mapsLoader;
 	StartRoom* mStartRoom;
 	PlayerHouse* mPlayerHouse;
