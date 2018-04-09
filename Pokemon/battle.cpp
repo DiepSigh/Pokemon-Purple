@@ -95,7 +95,7 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 		cout << opposing.getFainted() << " has fainted.";
 	}
 	//set to normal poison after battle ends
-	if (active.getStatus == BADLY_POISONED) {
+	if (active.getStatus() == BADLY_POISONED) {
 		active.setStatus(POISONED);
 	}
 }
@@ -195,10 +195,10 @@ bool battle::playerFirst(Pokemon &active, int playerMove, Pokemon &opposing, int
 		//Compare speed
 		int activeSpeed = active.getSpd() * stageConversion(active.getSpdStage());
 		int opposingSpeed = opposing.getSpd() * stageConversion(opposing.getSpdStage());
-		if (active.getStatus == PARALYZED) {
+		if (active.getStatus() == PARALYZED) {
 			activeSpeed *= 0.25;
 		}
-		if (opposing.getStatus == PARALYZED) {
+		if (opposing.getStatus() == PARALYZED) {
 			opposingSpeed *= 0.25;
 		}
 		if (activeSpeed > opposingSpeed) {
@@ -250,7 +250,7 @@ bool battle::statusCheck1(Pokemon &pokemon) {
 			pokemon.asleep();
 			attack = false;
 			//wakes up after 1-7 turns
-			if (pokemon.getSleepCount > randomGen(1, 7)) {
+			if (pokemon.getSleepCount() > randomGen(1, 7)) {
 				pokemon.awake();
 			}
 			break;
@@ -296,7 +296,7 @@ void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
 		pokemon.poison();
 		break;
 	}
-	if (pokemon.getSeeded) {
+	if (pokemon.getSeeded()) {
 		int drain = pokemon.getMaxHP() * 0.0625;
 		pokemon.hurt(drain);
 		other.heal(drain);

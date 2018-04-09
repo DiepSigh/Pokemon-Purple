@@ -159,6 +159,7 @@
     <ClInclude Include="moves.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="PokemonBase.h" />
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="PokemonBase.cpp" />
     <ClCompile Include="pokemonLeague.cpp" />
     <ClCompile Include="pokemonMart.cpp" />
     <ClCompile Include="playerHouse.cpp" />
