@@ -56,7 +56,7 @@ private:
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	ActiveLevel activeLevel = MASTERMAP;
+	ActiveLevel activeLevel = PLAYERHOUSE;
 
 };
 
