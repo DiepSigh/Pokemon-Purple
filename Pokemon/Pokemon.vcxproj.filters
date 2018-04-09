@@ -103,7 +103,7 @@
     <ClCompile Include="battle.cpp">
       <Filter>Source Files\Pokemon // Battles</Filter>
     </ClCompile>
-    <ClCompile Include="PokemonBase.cpp">
+    <ClCompile Include="PokeBase.cpp">
       <Filter>Source Files\Pokemon // Battles</Filter>
     </ClCompile>
   </ItemGroup>
@@ -210,7 +210,7 @@
     <ClInclude Include="battle.h">
       <Filter>Source Files\Pokemon // Battles</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonBase.h">
+    <ClInclude Include="PokeBase.h">
       <Filter>Source Files\Pokemon // Battles</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
-#ifndef POKEMONBASE_H
-#define POKEMONBASE_H
+#ifndef PokeBase_H
+#define PokeBase_H
 
 #include "moves.h"
 
@@ -19,14 +19,18 @@ enum pokemon {
 
 enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };
 
-class PokemonBase {
+class PokeBase {
 public:
-	PokemonBase();
+	PokeBase();
 	void populatePokemon();
-
+	friend class Pokemon;
 	//getters
 	inline int getbaseSpd(int n) { return mP_baseSpd[n]; }
-protected:
+
+	static PokeBase* sInstance;
+	static PokeBase* Instance();
+	static void Release();
+private:
 	int count = 0;
 	int mP_pokedex[151]; //stores # in pokedex
 	std::string mP_name[151]; //stores nickname if any

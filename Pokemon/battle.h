@@ -40,7 +40,7 @@ struct battle : public GameEntity{
 	void Render();
 	static battle* sInstance;
 	static battle* Instance();
-	static void release();
+	static void Release();
 
 protected:
 	//count for bound moves

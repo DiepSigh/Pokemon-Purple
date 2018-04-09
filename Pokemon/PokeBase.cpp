@@ -1,10 +1,25 @@
-#include "PokemonBase.h"
+#include "PokeBase.h"
 
-PokemonBase::PokemonBase() {
+PokeBase::PokeBase() {
 	populatePokemon();
 }
 
-void PokemonBase::populatePokemon() {
+PokeBase* PokeBase::sInstance = nullptr;
+
+PokeBase*PokeBase::Instance() {
+	if (sInstance == nullptr) {
+		sInstance = new PokeBase();
+	}
+
+	return sInstance;
+}
+
+void PokeBase::Release() {
+	delete sInstance;
+	sInstance = nullptr;
+}
+
+void PokeBase::populatePokemon() {
 	//Pokedex CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	std::ifstream src("../Debug/Assets/Pokedex.csv");
 	if (!src.is_open()) {

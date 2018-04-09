@@ -8,7 +8,7 @@
 #ifndef POKEMON_H
 #define POKEMON_H
 
-#include "PokemonBase.h"
+#include "PokeBase.h"
 //#include "moves.h"
 #include <math.h>
 //#include <iostream>
@@ -41,7 +41,7 @@ public:
 	Pokemon(int pokemon, int level);
 	~Pokemon();
 	//void setPokemonStats(int pokemon); 
-	void openPokemon(int pokemon); //Grabs Pokemon data from CSV based on Pokedex passed in
+	void retrievePokemon(int pokemon); //Grabs data from PokeBase class to Pokemon variables
 	void openMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
@@ -52,6 +52,18 @@ public:
 	void displayMoves();
 	void displayStats();
 	void displayStats2();
+
+	//Battle
+	void hurt(int damage);
+	void heal(int amount);
+	inline void awake() { m_status = OK; m_sleepCount = 0; }
+	inline void asleep() { m_sleepCount++; }
+	inline void cured() { m_status = OK; m_poisonCount = 0; }
+	inline void poison() { m_poisonCount++; }
+	inline void resetConfused() { setConfused(false); m_confusedCount = 0; }
+	inline void confused() { m_confusedCount++; }
+	inline void fainted() { m_fainted = true; m_hp = 0; m_status = OK; }
+	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
 
 	//Getters
 	inline std::string getName() { return m_nickname; }
@@ -79,6 +91,7 @@ public:
 
 	inline bool getBounded() { return m_bounded; }
 	inline bool getConfused() { return m_confused; }
+	inline int getConfusedCount() { return m_confusedCount; }
 	inline bool getFlinched() { return m_flinched; }
 	inline bool getSeeded() { return m_seeded; }
 
@@ -87,10 +100,6 @@ public:
 
 	//Setters
 	inline void setStatus(int status) { m_status = status; }
-	inline void hurt(int damage) { m_hp -= damage; }
-	inline void heal(int amount) { m_hp += amount; if (m_hp > m_maxHP) { m_hp = m_maxHP; } }
-	inline void fainted() { m_fainted = true; m_hp = 0; m_status = OK; }
-	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
 
 	inline void setAtkStage(int stage) { m_atkStage += stage; }
 	inline void setDefStage(int stage) { m_defStage += stage; }
@@ -104,12 +113,8 @@ public:
 	inline void setFlinched(bool state) { m_flinched = state; }
 	inline void setSeeded(bool state) { m_seeded = state; }
 
-	inline void awake() { m_status = OK; m_sleepCount = 0; }
-	inline void asleep() { m_sleepCount++; }
-	inline void cured() { m_status = OK; m_poisonCount = 0; }
-	inline void poison() { m_poisonCount++; }
-
 protected:
+	PokeBase *Pokebase;
 	int m_pokedex; //stores # in pokedex
 	std::string m_nickname; //stores nickname if any
 	int m_level;

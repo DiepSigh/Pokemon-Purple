@@ -18,7 +18,9 @@
 #include "pokemonLeague.h"
 #include "MasterMap.h"
 #include "AudioManager.h"
+//Stephen's
 #include "battle.h"
+#include "PokeBase.h"
 
 class GameManager {
 private:
@@ -48,6 +50,7 @@ private:
 	PkmnState* mPokeState;
 
 	battle* mBattle;
+	PokeBase* mPokebase;
 public:
 	static GameManager* Instance();
 	static void Release();

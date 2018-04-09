@@ -40,7 +40,7 @@ battle*battle::Instance() {
 	return sInstance;
 }
 
-void battle::release() {
+void battle::Release() {
 	delete sInstance;
 	sInstance = nullptr;
 }
@@ -57,7 +57,6 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 	do {
 		active.displayStats();
 		opposing.displayStats2();
-		m_message = "";
 		int input = 0;
 		int playerMove = 0;
 		std::cout << "Choose move 1-4;\n\n";
@@ -78,8 +77,9 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 		}
 
 		int aiMove = AIChoice(opposing);
-		
+		m_message = "";
 		int attacker = firstAttack(active, input-1, opposing, aiMove);
+		m_message = "";
 		if (!faintCheck(active, opposing)) {
 			if (attacker == PLAYER) {
 				attack(opposing, active, aiMove);
@@ -169,6 +169,10 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 			else {
 				//player attacks
 				damage = damageCalculation(attacking, defending, move);
+				//damage is halved if attacking pokemon is burned and uses a physical move.
+				if (moveUsed.getCat() == PHYSICAL && attacking.getStatus() == BURNED) {
+					damage *= 0.5;
+				}
 				defending.hurt(damage);
 				//chance to inflict status
 				chanceState(attacking, defending, moveUsed.getMoveID(), moveUsed.getEffect(), moveUsed.getChance());
@@ -246,24 +250,33 @@ bool battle::statusCheck1(Pokemon &pokemon) {
 			attack = false;
 			break;
 		case ASLEEP:
-			m_message = pokemon.getName() + " is fast asleep.\n";
-			pokemon.asleep();
-			attack = false;
 			//wakes up after 1-7 turns
 			if (pokemon.getSleepCount() > randomGen(1, 7)) {
 				pokemon.awake();
+				m_message = pokemon.getName() + " woke up.\n";
+			}else {
+				m_message = pokemon.getName() + " is fast asleep.\n";
+				pokemon.asleep();
+				attack = false;
 			}
 			break;
 		default:
 			//CONFUSED
 			if (pokemon.getConfused()) {
-				m_message = pokemon.getName() + " is confused.\n";
-				//50% chance of hitting self with 40 power typeless physical
-				if (randomGen(1, 2) == 1) {
-					int damage = damageCalculation(pokemon, pokemon, CONFUSED);
-					pokemon.hurt(damage);
-					m_message += "It hurt itself in confusion.\n";
-					attack = false;
+				//confused for 1-4 turns
+				if (pokemon.getConfusedCount() > randomGen(1, 4)) {
+					pokemon.resetConfused();
+					m_message = pokemon.getName() + " is no longer confused.\n";
+				}else {
+					m_message = pokemon.getName() + " is confused.\n";
+					pokemon.confused();
+					//50% chance of hitting self with 40 power typeless physical
+					if (randomGen(1, 2) == 1) {
+						int damage = damageCalculation(pokemon, pokemon, CONFUSED);
+						pokemon.hurt(damage);
+						m_message += "It hurt itself in confusion.\n";
+						attack = false;
+					}
 				}
 			}
 			//PARALYZED
@@ -306,12 +319,10 @@ void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
 
 bool battle::faintCheck(Pokemon &player, Pokemon &ai) {
 	int fainted = false;
-	if (player.getHP() <= 0) {
-		player.fainted();
+	if (player.getFainted()) {
 		fainted = true;
 	}
-	if (ai.getHP() <= 0) {
-		ai.fainted();
+	if (ai.getFainted()) {
 		fainted = true;
 	}
 	return fainted;
@@ -324,12 +335,14 @@ void battle::resetStates(Pokemon &player, Pokemon &ai) {
 	player.setSeeded(false);
 	player.awake();
 	player.cured();
+	player.resetConfused();
 	ai.setBounded(false);
 	ai.setConfused(false);
 	ai.setFlinched(false);
 	ai.setSeeded(false);
 	ai.awake();
 	ai.cured();
+	ai.resetConfused();
 }
 
 void battle::chanceState(Pokemon &attacking, Pokemon &defending, int move, int effect, int chance) {
@@ -470,46 +483,60 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		break;
 	}
 	if (change > 0) {
+		m_message += user.getName() + "'s ";
 		switch (stat) {
 		case att:
 			user.setAtkStage(change);
+			m_message += "attack rose.\n";
 			break;
 		case def:
 			user.setDefStage(change);
+			m_message += "defense rose.\n";
 			break;
 		case spd:
 			user.setSpdStage(change);
+			m_message += "speed rose.\n";
 			break;
 		case spe:
 			user.setSpeStage(change);
+			m_message += "special rose.\n";
 			break;
 		case acc:
 			user.setAccStage(change);
+			m_message += "accuracy rose.\n";
 			break;
 		case eva:
 			user.setEvaStage(change);
+			m_message += "evasion rose.\n";
 			break;
 		}
 	}
 	else if (change < 0) {
+		m_message += opposing.getName() + "'s ";
 		switch (stat) {
 		case att:
 			opposing.setAtkStage(change);
+			m_message += "attack fell.\n";
 			break;
 		case def:
 			opposing.setDefStage(change);
+			m_message += "defense fell.\n";
 			break;
 		case spd:
 			opposing.setSpdStage(change);
+			m_message += "speed fell.\n";
 			break;
 		case spe:
 			opposing.setSpeStage(change);
+			m_message += "special fell.\n";
 			break;
 		case acc:
 			opposing.setAccStage(change);
+			m_message += "accuracy fell.\n";
 			break;
 		case eva:
 			opposing.setEvaStage(change);
+			m_message += "evasion fell.\n";
 			break;
 		}
 	}

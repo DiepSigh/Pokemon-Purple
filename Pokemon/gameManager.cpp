@@ -21,6 +21,7 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 	mBattle = battle::Instance();
+	mPokebase = PokeBase::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -62,7 +63,7 @@ GameManager::~GameManager() {
 	AudioManager::Release();
 	mAudioMgr = NULL;
 
-	battle::release();
+	battle::Release();
 	mBattle = NULL;
 
 	delete mTex;
