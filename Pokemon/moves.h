@@ -27,28 +27,29 @@ enum moves { ABSORB=1, ACID, ACID_ARMOR, AGILITY, AMNESIA, AURORA_BEAM, BARRAGE,
 	SPORE, STOMP, STRENGTH, STRING_SHOT, STRUGGLE, STUN_SPORE, SUBMISSION, SUBSTITUTE, SUPER_FANG, SUPERSONIC,
 	SURF, SWIFT, SWORDS_DANCE, TACKLE, TAIL_WHIP, TAKE_DOWN, TELEPORT, THRASH, THUNDER, THUNDER_PUNCH,
 	THUNDER_SHOCK, THUNDER_WAVE, THUNDERBOLT, TOXIC, TRANSFORM, TRI_ATTACK, TWINEEDLE, VICE_GRIP, VINE_WHIP, WATER_GUN,
-	WATERFALL, WHIRLWIND, WING_ATTACK, WITHDRAW, WRAP};
+	WATERFALL, WHIRLWIND, WING_ATTACK, WITHDRAW, WRAP, CONFUSED};
 
 enum move_category { PHYSICAL=1, SPECIAL=2, STATUS=3};
 
-enum volatile_effect {BURN=1, PARALYSIS=2, /*POISON=3,*/ BAD_POISON=4, FREEZE=5, SLEEP=6 };
-//non_volatile_effect { BOUND = 7, CONFUSE = 8, FLINCH = 9, LEECH = 10 }; battle.h
+enum non_volatile_effect {BURN=1, PARALYSIS=2, /*POISON=3,*/ BAD_POISON=4, FREEZE=5, SLEEP=6 };
+enum volatile_effect { BOUND = 7, CONFUSE = 8, FLINCH = 9, LEECH = 10 };
 class Move {
 public:
 	Move();
-	void getMove(int move); //gets move from CSV file
+	void populateMove(int move); //gets move from CSV file
 
 	friend int typeConvert(std::string &t); //takes string and converts to enum ("NORMAL" becomes 0 which is NORMAL)
 	friend int randomGen(int low, int high); //returns number based on range
 
 	//Getters
 	inline int getMoveID() { return m_moveID; }
-	std::string returnMove() { return m_moveName; }
+	std::string getMoveName() { return m_moveName; }
 	inline int getMoveType() { return m_moveType; }
 	inline int getPower() { return m_movePower; }
 	inline int getCat() { return m_moveCat; }
 	inline int getAcc() { return m_moveAcc; }
 	inline int getEffect() { return m_moveEffect; }
+	inline int getChance() { return m_moveChance; }
 	inline int getPriority() { return m_movePriority; }
 protected:
 	int m_moveID;

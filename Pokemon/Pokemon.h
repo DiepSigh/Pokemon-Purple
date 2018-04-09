@@ -8,39 +8,41 @@
 #ifndef POKEMON_H
 #define POKEMON_H
 
-#include "moves.h"
+#include "PokemonBase.h"
+//#include "moves.h"
 #include <math.h>
 //#include <iostream>
 //#include <fstream>
 
-enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
-	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
-	  NIDORAN_F, NIDORINA, NIDOQUEEN, NIDORAN_M, NIDORINO, NIDOKING, CLEFAIRY, CLEFABLE, VULPIX, NINETALES, JIGGLYPUFF, WIGGLYTUFF, ZUBAT, GOLBAT,  
-	  ODDISH, GLOOM, VILEPLUME, PARAS, PARASECT, VENONAT, VENOMOTH, DIGLETT, DUGTRIO, MEOWTH, PERSIAN, PSYDUCK, GOLDUCK, MANKEY, PRIMEAPE, GROWLITHE,  
-	  ARCANINE, POLIWAG, POLIWHIRL, POLIWRATH, ABRA, KADABRA, ALAKAZAM, MACHOP, MACHOKE, MACHAMP, BELLSPROUT, WEEPINBELL, VICTREEBEL, TENTACOOL,  
-	  TENTACRUEL, GEODUDE, GRAVELER, GOLEM, PONYTA, RAPIDASH, SLOWPOKE, SLOWBRO, MAGNEMITE, MAGNETON, FARFETCHD, DODUO, DODRIO, SEEL, DEWGONG,  
-	  GRIMER, MUK, SHELLDER, CLOYSTER, GASTLY, HAUNTER, GENGAR, ONIX, DROWZEE, HYPNO, KRABBY, KINGLER, VOLTORB, ELECTRODE, EXEGGCUTE, EXEGGUTOR,  
-	  CUBONE, MAROWAK, HITMONLEE, HITMONCHAN, LICKITUNG, KOFFING, WEEZING, RHYHORN, RHYDON, CHANSEY, TANGELA, KANGASKHAN, HORSEA, SEADRA, GOLDEEN,  
-	  SEAKING, STARYU, STARMIE, MR_MIME, SCYTHER, JYNX, ELECTABUZZ, MAGMAR, PINSIR, TAUROS, MAGIKARP, GYARADOS, LAPRAS, DITTO, EEVEE, VAPOREON,  
-	  JOLTEON, FLAREON, PORYGON, OMANYTE, OMASTAR, KABUTO, KABUTOPS, AERODACTYL, SNORLAX, ARTICUNO, ZAPDOS, MOLTRES, DRATINI, DRAGONAIR, DRAGONITE,  
-	  MEWTWO, MEW};
+//enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
+//	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
+//	  NIDORAN_F, NIDORINA, NIDOQUEEN, NIDORAN_M, NIDORINO, NIDOKING, CLEFAIRY, CLEFABLE, VULPIX, NINETALES, JIGGLYPUFF, WIGGLYTUFF, ZUBAT, GOLBAT,  
+//	  ODDISH, GLOOM, VILEPLUME, PARAS, PARASECT, VENONAT, VENOMOTH, DIGLETT, DUGTRIO, MEOWTH, PERSIAN, PSYDUCK, GOLDUCK, MANKEY, PRIMEAPE, GROWLITHE,  
+//	  ARCANINE, POLIWAG, POLIWHIRL, POLIWRATH, ABRA, KADABRA, ALAKAZAM, MACHOP, MACHOKE, MACHAMP, BELLSPROUT, WEEPINBELL, VICTREEBEL, TENTACOOL,  
+//	  TENTACRUEL, GEODUDE, GRAVELER, GOLEM, PONYTA, RAPIDASH, SLOWPOKE, SLOWBRO, MAGNEMITE, MAGNETON, FARFETCHD, DODUO, DODRIO, SEEL, DEWGONG,  
+//	  GRIMER, MUK, SHELLDER, CLOYSTER, GASTLY, HAUNTER, GENGAR, ONIX, DROWZEE, HYPNO, KRABBY, KINGLER, VOLTORB, ELECTRODE, EXEGGCUTE, EXEGGUTOR,  
+//	  CUBONE, MAROWAK, HITMONLEE, HITMONCHAN, LICKITUNG, KOFFING, WEEZING, RHYHORN, RHYDON, CHANSEY, TANGELA, KANGASKHAN, HORSEA, SEADRA, GOLDEEN,  
+//	  SEAKING, STARYU, STARMIE, MR_MIME, SCYTHER, JYNX, ELECTABUZZ, MAGMAR, PINSIR, TAUROS, MAGIKARP, GYARADOS, LAPRAS, DITTO, EEVEE, VAPOREON,  
+//	  JOLTEON, FLAREON, PORYGON, OMANYTE, OMASTAR, KABUTO, KABUTOPS, AERODACTYL, SNORLAX, ARTICUNO, ZAPDOS, MOLTRES, DRATINI, DRAGONAIR, DRAGONITE,  
+//	  MEWTWO, MEW};
+//
+//enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };
 
 enum pokemon_status { OK=0, BURNED=1, FROZEN=2, PARALYZED=3, POISONED=4, BADLY_POISONED=5, ASLEEP=6 };
-
-enum experience_group { SLOW=1, MED_SLOW=2, MED_FAST=3, FAST=4 };
 
 const int MAX_EV = 65535;
 
 //TO DO:
 //Pokemon into array
-//
+
 class Pokemon : public GameEntity {
 public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
 	~Pokemon();
-	void getPokemon(int pokemon); //Grabs Pokemon data from CSV based on Pokedex passed in
-	void getMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
+	//void setPokemonStats(int pokemon); 
+	void openPokemon(int pokemon); //Grabs Pokemon data from CSV based on Pokedex passed in
+	void openMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
 	void setStats(); //Sets stats of Pokemon based on IV's, current EV's, and level
@@ -49,6 +51,7 @@ public:
 	void resetStatStages(); //Resets stages of stats for battles
 	void displayMoves();
 	void displayStats();
+	void displayStats2();
 
 	//Getters
 	inline std::string getName() { return m_nickname; }
@@ -64,7 +67,8 @@ public:
 	inline int getSpe() { return m_spe; }
 	inline int getType1() { return m_type1; }
 	inline int getType2() { return m_type2; }
-	inline int getSide() { return m_side; }
+
+	inline int getBaseSpd() { return m_baseSpd; }
 
 	inline int getAtkStage() { return m_atkStage; }
 	inline int getDefStage() { return m_defStage; }
@@ -73,11 +77,19 @@ public:
 	inline int getAccStage() { return m_accStage; }
 	inline int getEvaStage() { return m_evaStage; }
 
+	inline bool getBounded() { return m_bounded; }
+	inline bool getConfused() { return m_confused; }
+	inline bool getFlinched() { return m_flinched; }
+	inline bool getSeeded() { return m_seeded; }
+
+	inline int getSleepCount() { return m_sleepCount; }
+	inline int getPoisonCount() { return m_poisonCount; }
+
 	//Setters
 	inline void setStatus(int status) { m_status = status; }
 	inline void hurt(int damage) { m_hp -= damage; }
-	inline void setSide(int side) { m_side = side; }
-	inline void fainted() { m_fainted = true; m_hp = 0; }
+	inline void heal(int amount) { m_hp += amount; if (m_hp > m_maxHP) { m_hp = m_maxHP; } }
+	inline void fainted() { m_fainted = true; m_hp = 0; m_status = OK; }
 	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
 
 	inline void setAtkStage(int stage) { m_atkStage += stage; }
@@ -86,6 +98,16 @@ public:
 	inline void setSpeStage(int stage) { m_speStage += stage; }
 	inline void setAccStage(int stage) { m_accStage += stage; }
 	inline void setEvaStage(int stage) { m_evaStage += stage; }
+
+	inline void setBounded(bool state) { m_bounded = state; }
+	inline void setConfused(bool state) { m_confused = state; }
+	inline void setFlinched(bool state) { m_flinched = state; }
+	inline void setSeeded(bool state) { m_seeded = state; }
+
+	inline void awake() { m_status = OK; m_sleepCount = 0; }
+	inline void asleep() { m_sleepCount++; }
+	inline void cured() { m_status = OK; m_poisonCount = 0; }
+	inline void poison() { m_poisonCount++; }
 
 protected:
 	int m_pokedex; //stores # in pokedex
@@ -103,18 +125,19 @@ protected:
 	std::string m_type2_str;
 	int m_catchRate;
 	int m_expYield;
-	int m_expGroup;
+	int m_expGroup; //part of one of four exp groups
 	int m_evolve; //level Pokemon evolves at
-	int m_numMoves; //number of moves they can learn from leveing
-	int m_learnLevel[10]; //levels moves will be learned
-	int m_moveToLearn[10]; //moves to be learnt
-	int m_side; //used for battles
 
 	//description
 	std::string m_kind;
 	std::string m_height;
 	float m_weight;
 	std::string m_description;
+
+	//moves
+	int m_numMoves; //number of moves they can learn from leveing
+	int m_learnLevel[10]; //levels moves will be learned
+	int m_moveToLearn[10]; //moves to be learnt
 
 	int m_maxHP;
 	//dynamic stats
@@ -152,6 +175,16 @@ protected:
 	int m_speStage;
 	int m_accStage;
 	int m_evaStage;
+
+	//more battle stuff
+	bool m_bounded;
+	bool m_confused;
+	int m_confusedCount;
+	bool m_flinched;
+	bool m_seeded;
+
+	int m_sleepCount;
+	int m_poisonCount;
 };
 
 #endif // !POKEMON_H

@@ -16,7 +16,7 @@ Move::Move() {
 	m_movePPCurrent = 0;
 }
 
-void Move::getMove(int move_index){
+void Move::populateMove(int move_index){
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	Move();
 	std::ifstream src("../Debug/Assets/moves.csv");
