@@ -20,13 +20,14 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 	mLevelManager = LevelManager::Instance();
-	mTextManager = TextManager::Instance();
+	mTextDisplay = Dialouge::Instance();
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
 	mTimer = Timer::Instance();
 	mPlayerControls = new UserInput();
 	mNPCtext = new TextScreen();
+
 }
 
 GameManager::~GameManager() {
@@ -46,9 +47,6 @@ GameManager::~GameManager() {
 
 	delete mNPCtext;
 	mNPCtext = NULL;
-
-	delete mTextManager;
-	mTextManager = NULL;
 }
 
 void GameManager::Run() {
@@ -70,8 +68,7 @@ void GameManager::Run() {
 			//mMenuManager->menu->Render();
 			mLevelManager->Update();
 			mLevelManager->Render();
-			mTextManager->Render();
-		
+			mNPCtext->Render(0,0);
 			mGraphics->Render();
 			mTimer->Reset();
 		}

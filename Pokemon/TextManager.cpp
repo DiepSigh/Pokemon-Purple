@@ -10,10 +10,10 @@ TextManager* TextManager::Instance() {
 }
 
 TextManager::TextManager() {
-	mTextScreen = new TextScreen(0, 0, "SPEAROW");
-	mTextScreen->SetPosX(130);
-	mTextScreen->SetPosY(450);
-	mTextScreen->Speech();
+	//mTextScreen = new TextScreen(0, 0, "OAK");
+	//mTextScreen->SetPosX(130);
+	//mTextScreen->SetPosY(450);
+	//mTextScreen->Speech();
 }
 void TextManager::Release() {
 	delete mTextScreen;
@@ -26,7 +26,7 @@ TextManager::~TextManager(){
 
 void TextManager::Render()
 {
-	mTextScreen->Render();
+	//mTextScreen->Render();
 }
 
 void TextManager::Update()

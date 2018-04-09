@@ -4,10 +4,6 @@ NPC::NPC()
 {
 }
 
-NPC::NPC(std::string){
-
-}
-
 NPC::~NPC()
 {
 }

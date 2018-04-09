@@ -63,6 +63,9 @@
     <ClInclude Include="NPC.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dialouge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pokemon.cpp">
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="NPC.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialouge.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

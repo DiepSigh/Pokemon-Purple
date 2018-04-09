@@ -9,6 +9,7 @@
 #include "levelManager.h"
 #include "DisplayText.h"
 #include "TextManager.h"
+#include "Dialouge.h"
 
 class GameManager {
 private:
@@ -23,8 +24,8 @@ private:
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
-	TextManager* mTextManager;
 	TextScreen* mNPCtext;
+	Dialouge* mTextDisplay;
 	
 public:
 	static GameManager* Instance();

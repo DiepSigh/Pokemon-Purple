@@ -10,11 +10,11 @@ using namespace std;
 class NPC : public Characters {
 public:
 	NPC();
-	NPC(std::string);
 	~NPC();
 
 private:
-	std::string Name;
+	vector <string> Talk;
+	
 };
 
 #endif // !NPC_H

@@ -7,55 +7,26 @@ TextScreen::TextScreen(){
 	mAssetManager = AssetManager::Instance();
 }
 
-TextScreen::TextScreen(int x, int y, string name) {
+TextScreen::TextScreen(int x, int y) {
 	mGraphics = Graphics::Instance();
 	mAssetManager = AssetManager::Instance();
+	mDialouge = Dialouge::Instance();
 	mPos.x = x;
 	mPos.y = y;
-	Talk(name);
-	Speech();
-	mTex = new Texture(Dialouge[0], "PKMNSOLID.ttf", 25);
+	mTex = new Texture(mDialouge->GetNPCtext(70, 0), "PKMNSOLID.ttf", 25);
 }
 
 TextScreen::~TextScreen()
 {
 }
 
-string TextScreen::Talk(string NPC){
-	
-	string Name;
-	bool Found = false;
-	
-	std::ifstream src("../Debug/Assets/pokemonblue_text.csv");
-	if (!src.is_open()) {
-		cout << "Couldn't open file: pokemonblue_text.csv" << endl;
-	} 
-	else {
-		do {
-			getline(src, Name, ',');
-			if (NPC == Name) {
-				Found = true;
-				do {
-					getline(src, mSpeech, ',');
-					Dialouge.push_back(mSpeech);
-					cout << mSpeech << std::endl;
-				} while (mSpeech != "$$$");
-			}
-			else {
-				src.ignore(500, '\n');
-			}
-		} while (!Found && !src.eof());
-	} 
-	src.close();
-	return Dialouge[0];
-}
-
 void TextScreen::Update()
 {
 }
 
-void TextScreen::Render()
+void TextScreen::Render(int r, int c)
 {
+	Speech(r,c);//Calls Function to set X/Y pos and mTex
 	GetmTex()->SetRenderRectX(GetPosX());
 	GetmTex()->SetRenderRectY(GetPosY());
 
@@ -63,8 +34,11 @@ void TextScreen::Render()
 
 }
 
-void TextScreen::Speech() {
-	//for (int i = 0; i < Dialouge.size(); i++){
-		//cout << Dialouge[i] << std::endl;
-	//}
+void TextScreen::Speech(int r, int c) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+	mDialouge = Dialouge::Instance();
+	SetPosX(100);
+	SetPosY(500);
+	mTex = new Texture(mDialouge->GetNPCtext(r,c), "PKMNSOLID.ttf", 25);
 }
