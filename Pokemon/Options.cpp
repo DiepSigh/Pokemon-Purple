@@ -57,13 +57,6 @@ Options::Options(float x, float y, Texture* tex) {
 	SetPosX(x);
 	SetPosY(y);
 	mTex = tex;
-
-	//SetmTex(tex);
-	/*
-	mPos.x = x;
-	mPos.y = y;
-	mTex = tex;
-	*/
 }
 
 
@@ -85,70 +78,144 @@ void Options::Update() {
 
 //Have to set x,y to be exact only. use both x,y. if not it will break..... FIXXXXXXXXXXXXXXXX
 void Options::oCursorDown() {
-	if (CursorO->GetPosY() == Fast->GetPosY() - 5) {
+	
+	if (CursorO->GetPosY() == Fast->GetPosY() - 5 && CursorO->GetPosX() == Fast->GetPosX() - 40) {
 		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
 	}
-	else if (CursorO->GetPosY() == On->GetPosY() - 5) {
+	else if (CursorO->GetPosY() == On->GetPosY() - 5 && CursorO->GetPosX() == On->GetPosX() -40) {
 		CursorO->SetPosY(Shift->GetPosY() - 5);
+		CursorO->SetPosX(Shift->GetPosX() - 40);
 	}
-	else if (CursorO->GetPosY() == Shift->GetPosY() - 5) {
+	else if (CursorO->GetPosY() == Shift->GetPosY() - 5 && CursorO->GetPosX() == Shift->GetPosX() - 40) {
 		CursorO->SetPosY(Cancel->GetPosY() - 5);
-	}
-	else if (CursorO->GetPosY() == Cancel->GetPosY() - 5) {
-		CursorO->SetPosY(Fast->GetPosY() - 5);
-	}
-	else if (CursorO->GetPosY() == Off->GetPosY()) {
-		CursorO->SetPosY(Set->GetPosY());
-	}
-	else if (CursorO->GetPosX() == Set->GetPosX() && CursorO->GetPosY() == Set->GetPosY()) {
 		CursorO->SetPosX(Cancel->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Cancel->GetPosY() - 5 && CursorO->GetPosX() == Cancel->GetPosX() - 40) {
+		CursorO->SetPosY(Fast->GetPosY() - 5);
+		CursorO->SetPosX(Fast->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Off->GetPosY() -5 && CursorO->GetPosX() == Off->GetPosX() - 40) {
+		CursorO->SetPosY(Shift->GetPosY() - 5);
+		CursorO->SetPosX(Shift->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Set->GetPosY() -5 && CursorO->GetPosX() == Set->GetPosX() - 40) {
 		CursorO->SetPosY(Cancel->GetPosY() - 5);
+		CursorO->SetPosX(Cancel->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Medium->GetPosY() - 5 && CursorO->GetPosX() == Medium->GetPosX() - 40) {
+		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Slow->GetPosY() - 5 && CursorO->GetPosX() == Slow->GetPosX() - 40) {
+		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
 	}
 }
 
 void Options::oCursorUp() {
-	if (CursorO->GetPosY() == Fast->GetPosY() - 5) {
+	if (CursorO->GetPosY() == Fast->GetPosY() - 5 && CursorO->GetPosX() == Fast->GetPosX() - 40) {
 		CursorO->SetPosY(Cancel->GetPosY() - 5);
+		CursorO->SetPosX(Cancel->GetPosX() - 40);
 	}
-	else if (CursorO->GetPosY() == Cancel->GetPosY() - 5) {
+	else if (CursorO->GetPosY() == Cancel->GetPosY() - 5 && CursorO->GetPosX() == Cancel->GetPosX() - 40) {
 		CursorO->SetPosY(Shift->GetPosY() - 5);
+		CursorO->SetPosX(Shift->GetPosX() - 40);
 	}
-	else if (CursorO->GetPosY() == Shift->GetPosY() - 5) {
+	else if (CursorO->GetPosY() == Shift->GetPosY() - 5 && CursorO->GetPosX() == Shift->GetPosX() - 40) {
 		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
 	}
-	else if (CursorO->GetPosY() == On->GetPosY() - 5) {
+	else if (CursorO->GetPosY() == On->GetPosY() - 5 && CursorO->GetPosX() == On->GetPosX() - 40) {
 		CursorO->SetPosY(Fast->GetPosY() - 5);
+		CursorO->SetPosX(Fast->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Medium->GetPosY() - 5 && CursorO->GetPosX() == Medium->GetPosX() - 40) {
+		CursorO->SetPosY(Cancel->GetPosY() - 5);
+		CursorO->SetPosX(Cancel->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Slow->GetPosY() - 5 && CursorO->GetPosX() == Slow->GetPosX() - 40) {
+		CursorO->SetPosY(Cancel->GetPosY() - 5);
+		CursorO->SetPosX(Cancel->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Off->GetPosY() - 5 && CursorO->GetPosX() == Off->GetPosX() - 40) {
+		CursorO->SetPosY(Fast->GetPosY() - 5);
+		CursorO->SetPosX(Fast->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Set->GetPosY() - 5 && CursorO->GetPosX() == Set->GetPosX() - 40) {
+		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
 	}
 }
 
 void Options::oCursorLeft() {
 	//Text speed left
-	if (CursorO->GetPosX() == Slow->GetPosX() - 40) {
+	if (CursorO->GetPosX() == Slow->GetPosX() - 40 && CursorO->GetPosY() == Slow->GetPosY() - 5) {
 		CursorO->SetPosX(Medium->GetPosX() - 40);
+		CursorO->SetPosY(Medium->GetPosY() - 5);
 	}
-	else if (CursorO->GetPosX() == Medium->GetPosX() - 40) {
+	else if (CursorO->GetPosX() == Medium->GetPosX() - 40 && CursorO->GetPosY() == Medium->GetPosY() - 5) {
 		CursorO->SetPosX(Fast->GetPosX() - 40);
+		CursorO->SetPosY(Fast->GetPosY() - 5);
 	}
-	else if (CursorO->GetPosX() == Fast->GetPosX() - 40) {
+	else if (CursorO->GetPosX() == Fast->GetPosX() - 40 && CursorO->GetPosY() == Fast->GetPosY() - 5) {
 		CursorO->SetPosX(Slow->GetPosX() - 40);
+		CursorO->SetPosY(Slow->GetPosY() - 5);
 	}
 
 	//Battle Animation left
-	else if (CursorO->GetPosX() == On->GetPosX() - 40) {
+	else if (CursorO->GetPosX() == On->GetPosX() - 40 && CursorO->GetPosY() == On->GetPosY() - 5) {
 		CursorO->SetPosX(Off->GetPosX() - 40);
+		CursorO->SetPosY(Off->GetPosY() - 5);
 	}
-	else if (CursorO->GetPosX() == Off->GetPosX() - 40){
+	else if (CursorO->GetPosX() == Off->GetPosX() - 40 && CursorO->GetPosY() == Off->GetPosY() - 5){
 		CursorO->SetPosX(On->GetPosX() - 40);
+		CursorO->SetPosY(On->GetPosY() - 5);
 	}
 	//Battle Style
-	else if (CursorO->GetPosX() == Shift->GetPosX() - 40) {
+	else if (CursorO->GetPosX() == Shift->GetPosX() - 40 && CursorO->GetPosY() == Shift->GetPosY() - 5) {
 		CursorO->SetPosX(Set->GetPosX() - 40);
+		CursorO->SetPosY(Set->GetPosY() - 5);
 	}
-	else if(Cursor->GetPosX() == Set->GetPosX() - 40){
+	else if(CursorO->GetPosX() == Set->GetPosX() - 40 && CursorO->GetPosY() == Set->GetPosY() - 5){
 		CursorO->SetPosX(Shift->GetPosX() - 40);
+		CursorO->SetPosY(Shift->GetPosY() - 5);
 	}
 }
 
 void Options::oCursorRight() {
+	if (CursorO->GetPosX() == Fast->GetPosX() - 40 && CursorO->GetPosY() == Fast->GetPosY() - 5) {
+		CursorO->SetPosX(Medium->GetPosX() - 40);
+		CursorO->SetPosY(Medium->GetPosY() - 5);
+	}
+	else if (CursorO->GetPosY() == Medium->GetPosY() - 5 && CursorO->GetPosX() == Medium->GetPosX() - 40) {
+		CursorO->SetPosY(Slow->GetPosY() - 5);
+		CursorO->SetPosX(Slow->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Slow->GetPosY() - 5 && CursorO->GetPosX() == Slow->GetPosX() - 40) {
+		CursorO->SetPosY(Fast->GetPosY() - 5);
+		CursorO->SetPosX(Fast->GetPosX() - 40);
+	}
+	//
+	else if (CursorO->GetPosY() == On->GetPosY() - 5 && CursorO->GetPosX() == On->GetPosX() - 40) {
+		CursorO->SetPosY(Off->GetPosY() - 5);
+		CursorO->SetPosX(Off->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Off->GetPosY() - 5 && CursorO->GetPosX() == Off->GetPosX() - 40) {
+		CursorO->SetPosY(On->GetPosY() - 5);
+		CursorO->SetPosX(On->GetPosX() - 40);
+	}
+	//
+	else if (CursorO->GetPosY() == Shift->GetPosY() - 5 && CursorO->GetPosX() == Shift->GetPosX() - 40) {
+		CursorO->SetPosY(Set->GetPosY() - 5);
+		CursorO->SetPosX(Set->GetPosX() - 40);
+	}
+	else if (CursorO->GetPosY() == Set->GetPosY() - 5 && CursorO->GetPosX() == Set->GetPosX() - 40) {
+		CursorO->SetPosY(Shift->GetPosY() - 5);
+		CursorO->SetPosX(Shift->GetPosX() - 40);
+	}
+}
 
+void Options::OptionsState() {
+	
 }

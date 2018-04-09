@@ -119,17 +119,6 @@ void GameManager::Run() {
 			//RENDERS!!!!!
 			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
-			//mMasterMap->Update();
-			//mStartRoom->Update();
-			//mPlayerHouse->Update();
-			//mRedHouse->Update();
-			//mReserchLab->Update();
-			//mPokemonMart->Update();
-			//mPokemonCenter->Update();
-			//mPokemonSchool->Update();
-			//mViridianCityHouse->Update();
-			//mPokemonLeague->Update();
-
 			//Player Controller
 			mLevelManager->Render();
 			//Menu Controller

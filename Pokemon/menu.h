@@ -22,6 +22,8 @@ public:
 	void CheckState();
 	bool StrtMnuisActive = true;
 	bool OptsMnuisActive = false;
+	bool PlayerMnuisActive = false;
+	bool PokedexisActive = false;
 	void Update();
 	void Render();
 

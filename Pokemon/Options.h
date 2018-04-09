@@ -22,6 +22,8 @@ public:
 	Options* Set;
 	Options* CursorO;
 
+	void OptionsState();
+
 	void Render();
 	void Update();
 

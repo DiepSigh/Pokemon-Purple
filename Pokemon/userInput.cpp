@@ -27,14 +27,13 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 
 			case SDLK_RIGHT:
 				//Option Menu Right
-				if (menuO->OptsMnuisActive) {
-
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorRight();
 				}
 				//World Control
-				if (menuM->StrtMnuisActive == false) {
+				if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive == false) {
 					mLevelManager->moveRight();
 				}
-				//printf("You pressed right arrow\n");
 				break;
 
 			case SDLK_UP:
@@ -87,6 +86,13 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 					if (menuM->StrtMnuisActive) {
 						menuM->MenuState();
 					}
+					else if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive) {
+						//menuM->mOptions->OptionsState();
+						if (menuM->mOptions->CursorO->GetPosY() == menuM->mOptions->Cancel->GetPosY() - 5 && menuM->mOptions->CursorO->GetPosX() == menuM->mOptions->Cancel->GetPosX() - 40) {
+							menuM->OptsMnuisActive = false;
+							menuM->StrtMnuisActive = true;
+						}
+					}
 					//World Control
 					break;
 
@@ -94,6 +100,14 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 					//Opens Menu
 					if (menuM->StrtMnuisActive == false) {
 						printf("Opening menu");
+						menuM->StrtMnuisActive = true;
+					}
+					if (menuM->OptsMnuisActive == true) {
+						menuM->OptsMnuisActive = false;
+						menuM->StrtMnuisActive = true;
+					}
+					if (menuM->PlayerMnuisActive = true) {
+						menuM->PlayerMnuisActive = false;
 						menuM->StrtMnuisActive = true;
 					}
 					break;
