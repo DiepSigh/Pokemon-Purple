@@ -16,20 +16,6 @@
 
 class LevelManager {
 
-private:
-	static LevelManager* sInstance;
-	static bool sInitialized;
-	StartRoom* mStartRoom;
-	PlayerHouse* mPlayerHouse;
-	RedHouse* mRedHouse;
-	ReserchLab* mReserchLab;
-	PokemonMart* mPokemonMart;
-	PokemonCenter* mPokemonCenter;
-	PokemonSchool* mPokemonSchool;
-	ViridianCityHouse* mViridianCityHouse;
-	PokemonLeague* mPokemonLeague;
-	MasterMap* mMasterMap;
-
 public:
 	static LevelManager* Instance();
 	static void Release();
@@ -52,6 +38,18 @@ public:
 private:
 	LevelManager();
 	~LevelManager();
+	static LevelManager* sInstance;
+	static bool sInitialized;
+	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
 	Characters* mPlayer;
 	int mMapId;
 	float mNewPlayerXPos;
