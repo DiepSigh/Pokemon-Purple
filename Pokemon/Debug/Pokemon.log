@@ -1,2 +1,18 @@
 ﻿  CollisionBoxes.cpp
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+  gameManager.cpp
+  mapsLoader.cpp
+  MasterMap.cpp
+  levelManager.cpp
+  pokemonLeague.cpp
+  pokemonMart.cpp
+  playerHouse.cpp
+  Pokemon.cpp
+  pokemonCenter.cpp
+  pokemonSchool.cpp
+  redHouse.cpp
+  researchLab.cpp
+  startRoom.cpp
+  userInput.cpp
+  viridianCityHouse.cpp
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe

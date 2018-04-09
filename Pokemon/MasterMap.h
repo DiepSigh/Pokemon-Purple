@@ -7,9 +7,7 @@
 class MasterMap : public MapsLoader {
 
 private:
-	int PosX;
-	int PosY;
-
+	
 	Texture **mMap;
 	Graphics* mGraphics;
 	void DrawMap();
@@ -19,6 +17,8 @@ public:
 	~MasterMap();
 	void Render();
 	void Update();
+
+	
 
 };
 

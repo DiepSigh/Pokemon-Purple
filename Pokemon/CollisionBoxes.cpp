@@ -12,18 +12,22 @@ CollisionBox* CollisionBox::Instance() {
 
 
 CollisionBox::CollisionBox() {
-
-	Rect1 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 384,32));
+	
+	
+	Rect1 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 384, 32));
+	//Rect1 ->SetPosX(masterMap->GetPointerMap
+	//Rect1->SetPosX(GetMmap()Update() + Rect1->GetPosX() + 352);
+	//Rect1->SetPosY(mMap.Update() + Rect1->GetPosY() + 576);
 	Rect1->SetPosX(352);
 	Rect1->SetPosY(576);
 
-	// Rect1->SetPosX(MasterMap->GetPosX() + );
+	
 	Rect2 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 32, 512));
 	Rect2->SetPosX(704);
 	Rect2->SetPosY(64);
 
-	Rect3 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 32, 540));
-	Rect3->SetPosX(92);
+	Rect3 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 32, 544));
+	Rect3->SetPosX(96);
 	Rect3->SetPosY(64);
 
 	Rect4 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 288, 32));
@@ -31,28 +35,78 @@ CollisionBox::CollisionBox() {
 	Rect4->SetPosY(64);
 
 	Rect5 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 228, 32));
-	Rect5->SetPosX(476);
+	Rect5->SetPosX(480);
 	Rect5->SetPosY(64);
 
-	Rect6 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 32));
-	Rect6->SetPosX(0);
-	Rect6->SetPosY(0);
+	Rect6 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 64, 32));
+	Rect6->SetPosX(288);
+	Rect6->SetPosY(192);
 
-	Rect7 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 92, 32));
+	Rect7 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 96, 32));
 	Rect7->SetPosX(124);
 	Rect7->SetPosY(576);
 
 	Rect8 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 64, 32));
 	Rect8->SetPosX(448);
-	Rect8->SetPosY(188);
+	Rect8->SetPosY(192);
 
 	Rect9 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 64, 32));
-	Rect9->SetPosX(188);
-	Rect9->SetPosY(188);
+	Rect9->SetPosX(192);
+	Rect9->SetPosY(192);
 
 	Rect10 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 124, 32));
 	Rect10->SetPosX(224);
 	Rect10->SetPosY(320);
+
+	Rect11 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 124, 64));
+	Rect11->SetPosX(224);
+	Rect11->SetPosY(128);
+
+	Rect12 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 64, 32));
+	Rect12->SetPosX(416);
+	Rect12->SetPosY(384);
+
+	Rect13 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 192, 96));
+	Rect13->SetPosX(416);
+	Rect13->SetPosY(288);
+
+	Rect14 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 192, 32));
+	Rect14->SetPosX(416);
+	Rect14->SetPosY(448);
+
+	Rect15 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 124, 64));
+	Rect15->SetPosX(480);
+	Rect15->SetPosY(128);
+
+	Rect16 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 64, 32));
+	Rect16->SetPosX(544);
+	Rect16->SetPosY(192);
+
+	Rect17 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 92, 32));
+	Rect17->SetPosX(512);
+	Rect17->SetPosY(384);
+
+	Rect18 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 124, 32));
+	Rect18->SetPosX(224);
+	Rect18->SetPosY(480);
+
+	Rect19 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 92));
+	Rect19->SetPosX(224);
+	Rect19->SetPosY(512);
+
+	Rect20 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 92));
+	Rect20->SetPosX(316);
+	Rect20->SetPosY(512);
+
+	Rect21 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 64));
+	Rect21->SetPosX(384);
+	Rect21->SetPosY(0);
+
+	Rect22 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 92));
+	Rect22->SetPosX(480);
+	Rect22->SetPosY(0);
+
+
 }
 
 CollisionBox::CollisionBox(float x, float y, Texture* rect) {
@@ -85,7 +139,30 @@ CollisionBox::~CollisionBox() {
 	Rect9 = NULL;
 	delete Rect10;
 	Rect10 = NULL;
-
+	delete Rect11;
+	Rect11 = NULL;
+	delete Rect12;
+	Rect12 = NULL;
+	delete Rect13;
+	Rect13 = NULL;
+	delete Rect14;
+	Rect14 = NULL;
+	delete Rect15;
+	Rect15 = NULL;
+	delete Rect16;
+	Rect16 = NULL;
+	delete Rect17;
+	Rect17 = NULL;
+	delete Rect18;
+	Rect18 = NULL;
+	delete Rect19;
+	Rect19 = NULL;
+	delete Rect20;
+	Rect20 = NULL;
+	delete Rect21;
+	Rect21 = NULL;
+	delete Rect22;
+	Rect22 = NULL;
 }
 
 void CollisionBox::DrawCollisions() {
@@ -100,6 +177,18 @@ void CollisionBox::DrawCollisions() {
 	Rect8->Render();
 	Rect9->Render();
 	Rect10->Render();
+	Rect11->Render();
+	Rect12->Render();
+	Rect13->Render();
+	Rect14->Render();
+	Rect15->Render();
+	Rect16->Render();
+	Rect17->Render();
+	Rect18->Render();
+	Rect19->Render();
+	Rect20->Render();
+	Rect21->Render();
+	Rect22->Render();
 }
 
 void CollisionBox::Render() {
