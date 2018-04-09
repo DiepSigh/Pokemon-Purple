@@ -17,7 +17,7 @@ public:
 	MenuStates GetMenuState() { return menuState; }
 	void SetMenuState(MenuStates state) { menuState = state; }
 	void CheckState();
-	bool StrtMnuisActive = true;
+	bool StrtMnuisActive = false;
 	void Update();
 	void Render();
 

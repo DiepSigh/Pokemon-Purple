@@ -103,7 +103,6 @@ void UserInput::Input(){
 			
 			case SDLK_LEFT:
 				mLevelManager->moveLeft();
-				printf("You pressed left arrow\n");
 				break;
 
 			case SDLK_RIGHT:
@@ -144,6 +143,25 @@ void UserInput::Input(){
 
 			case SDLK_c:
 				//printf("You pressed 'c'\n");
+				break;
+
+			case SDLK_UP:
+				mLevelManager->NormalizeVel();
+				break;
+
+			case SDLK_DOWN:
+				mLevelManager->NormalizeVel();
+
+				break;
+
+			case SDLK_LEFT:
+				mLevelManager->NormalizeVel();
+
+				break;
+
+			case SDLK_RIGHT:
+				mLevelManager->NormalizeVel();
+
 				break;
 
 			}

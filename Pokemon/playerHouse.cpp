@@ -20,6 +20,8 @@ PlayerHouse::PlayerHouse(float x, float y) {
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+	SetPosX(350);
+	SetPosY(200);
 }
 
 PlayerHouse::~PlayerHouse() {
@@ -50,7 +52,6 @@ PlayerHouse::~PlayerHouse() {
 	mWall = NULL;
 	delete mWindow;
 	mWindow = NULL;
-
 }
 
 void PlayerHouse::Render() {
@@ -60,35 +61,39 @@ void PlayerHouse::Render() {
 
 	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+
 }
 
 void PlayerHouse::Update() {
 
-	SetPosY(0);
-	SetPosX(260);
+	SetPosY(GetPosY());
+	SetPosX(GetPosX());
+	
 
 	for (int i = 0; i < 8; i++) {
-
+		//ROWS
 		if (i != 0) {
-			SetPosX(260);
+			SetPosX(GetPosX()-224);
+			//SetPosX(GetPosX()-32 * i);
 			SetPosY(GetPosY() + 32);
-
 		}
 
 		for (int j = 0; j < 8; j++) {
+			
 			if (j != 0) {
 				SetPosX(GetPosX() + 32);
+				//COLLUMS
 			}
-
 			DrawMap(map[i][j]);
 
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(260);
+	SetPosY(GetPosY() - 224);
+	SetPosX(GetPosX() - 224);
 
 }
+
 
 void PlayerHouse::DrawMap(int tile) {
 	

@@ -1,18 +1,21 @@
 #include "MasterMap.h"
 
+using namespace std;
 
 MasterMap::MasterMap(float x, float y) {
+	//mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
 	mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+	SetPosX(-800);
+	SetPosY(-2900);
 }
 
 MasterMap::~MasterMap() {
 	delete mMap;
 	mMap = NULL;
-
 }
 
 void MasterMap::Render() {
@@ -24,9 +27,8 @@ void MasterMap::Render() {
 }
 
 void MasterMap::Update() {
-		SetPosX(-700);
-		SetPosY(-2800);
-
+		SetPosX(GetPosX());
+		SetPosY(GetPosY());
 		DrawMap();
 }
 
