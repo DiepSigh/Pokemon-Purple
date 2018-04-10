@@ -6,8 +6,12 @@ MenuManager* MenuManager::sInstance = nullptr;
 
 MenuManager::MenuManager() {
 	mMenu = new Menu();
+	mOptions = new Options();
+	mPlayerMenu = new PlayerMenu();
+	mPokeDex = new PokeDex();
 	//Start Menu Activation
-	StrtMnuisActive = false;
+	StrtMnuisActive = true;
+	OptsMnuisActive = false;
 	mGraphics = Graphics::Instance();
 }
 
@@ -41,6 +45,16 @@ void MenuManager::Render() {
 
 		StartMenu();
 	}
+
+	if (OptsMnuisActive) {
+		LoadOptions();
+	}
+	if (PlayerMnuisActive) {
+		LoadPlayerM();
+	}
+	if (PokedexisActive) {
+		LoadPokeDex();
+	}
 }
 
 void MenuManager::StartMenu() {
@@ -59,13 +73,14 @@ void MenuManager::MenuState() {
 	case 30:
 		if ((int)Cursor->GetPosY() == menu->GetPosY()) {
 			printf("Entering Pokedex");
+			PokedexisActive = true;
 		}
 		break;
 	case 80:
 		//Load POKEMON
 		if ((int)Cursor->GetPosY() == menu1->GetPosY()) {
 			//Use Pokemon Render function
-			Pokemon->Render();
+			//Pokemon->Render();
 			printf("Entering Pokemon");
 		}
 		break;
@@ -78,6 +93,7 @@ void MenuManager::MenuState() {
 	case 180:
 		if ((int)Cursor->GetPosY() == menu3->GetPosY()) {
 			printf("Entering Player");
+			PlayerMnuisActive = true;
 		}
 		//Load PLAYER
 		break;
@@ -90,12 +106,50 @@ void MenuManager::MenuState() {
 	case 280:
 		if ((int)Cursor->GetPosY() == menu5->GetPosY()) {
 			printf("Entering Options");
+			OptsMnuisActive = true;
+			StrtMnuisActive = false;
 		}
-		//Load OPTIONS
 		break;
 	case 330:
 		StrtMnuisActive = false;
 		//Load EXIT
 		break;
 	}
+}
+
+void MenuManager::LoadOptions() {
+	mOptions->textSpeed->Render();
+	mOptions->btlAnimation->Render();
+	mOptions->btlStyle->Render();
+	mOptions->Cancel->Render();
+	mOptions->Fast->Render();
+	mOptions->Medium->Render();
+	mOptions->Slow->Render();
+	mOptions->On->Render();
+	mOptions->Off->Render();
+	mOptions->Shift->Render();
+	mOptions->Set->Render();
+	mOptions->CursorO->Render();
+}
+
+void MenuManager::LoadPlayerM() {
+	mPlayerMenu->MenuP->Render();
+	mPlayerMenu->Name->Render();
+	mPlayerMenu->Money->Render();
+	mPlayerMenu->Time->Render();
+	mPlayerMenu->PlayerName->Render();
+	mPlayerMenu->PlayerMoney->Render();
+	mPlayerMenu->GameTime->Render();
+}
+
+void MenuManager::LoadPokeDex() {
+	mPokeDex->PkDex->Render();
+	mPokeDex->Contents->Render();
+	mPokeDex->Seen->Render();
+	mPokeDex->Caught->Render();
+	mPokeDex->Data->Render();
+	mPokeDex->Cry->Render();
+	mPokeDex->Area->Render();
+	mPokeDex->Quit->Render();
+
 }

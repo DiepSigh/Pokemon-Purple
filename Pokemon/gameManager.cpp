@@ -20,6 +20,7 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 	mCamera = Camera::Instance();
+	mOptions = Options::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -62,7 +63,7 @@ void GameManager::Run() {
 
 	while (!mQuit) {
 		mTimer->Update();
-		mPlayerControls->Input(mMenuManager);
+		mPlayerControls->Input(mMenuManager, mOptions);
 
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
@@ -73,13 +74,19 @@ void GameManager::Run() {
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
 			
 			mGraphics->ClearBackBuffer();
-			
 			//UPDATES!!!!
 			//mLevelManager->Update();		
 
 			//RENDERS!!!!!	
 			mMenuManager->Update();
 			mLevelManager->Render(mTimer->DeltaTime());
+
+			//UPDATES!!!!
+			
+			mMenuManager->Update();
+			//RENDERS!!!!!
+			mGraphics->ClearBackBuffer();
+			mLevelManager->Update();
 			//Player Controller
 		
 			//Menu Controller

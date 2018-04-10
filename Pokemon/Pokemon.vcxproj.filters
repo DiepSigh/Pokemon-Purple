@@ -255,6 +255,7 @@
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
     <ClCompile Include="Options.cpp" />
+    <ClCompile Include="PlayerMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -288,5 +289,6 @@
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
     <ClInclude Include="Options.h" />
+    <ClInclude Include="PlayerMenu.h" />
   </ItemGroup>
 </Project>

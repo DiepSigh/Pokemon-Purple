@@ -28,6 +28,7 @@ private:
 	Camera* mCamera;
 	GameManager();
 	~GameManager();
+	Options* mOptions;
 
 public:
 	static GameManager* Instance();

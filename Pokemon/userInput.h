@@ -11,7 +11,7 @@ class UserInput : public Menu{
 public:
 	UserInput();
 	void Input();
-	void Input(MenuManager*);
+	void Input(MenuManager*, Options*);
 
 private:
 	SDL_Event events;

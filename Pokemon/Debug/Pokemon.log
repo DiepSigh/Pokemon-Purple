@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  main.cpp
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)
@@ -17,3 +18,9 @@ c:\users\mike\documents\github\pokemon\pokemon\camera.h(18): warning C4244: '=':
   Generating Code...
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
 >>>>>>> MIKE
+=======
+﻿  PokeDex.cpp
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+>>>>>>> rickNew
