@@ -2,233 +2,236 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="viridianCityHouse.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="reserchLab.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="pokemonCenter.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="pokemonLeague.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="pokemonMart.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="pokemonSchool.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="startRoom.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="redHouse.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="MasterMap.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="playerHouse.cpp">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClCompile>
     <ClCompile Include="AudioManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="AssetManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="gameManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="levelManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="menuManager.cpp">
-      <Filter>Source Files\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="animatedTexture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="characters.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DisplayText.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Inventory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Items.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="menuStart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Options.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PkmnState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PokeDex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="userInput.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="moves.cpp">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClCompile>
     <ClCompile Include="Pokemon.cpp">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClCompile>
     <ClCompile Include="battle.cpp">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClCompile>
     <ClCompile Include="PokeBase.cpp">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
+    </ClCompile>
+    <ClCompile Include="userInput.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="characters.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayText.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameEntity.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menuStart.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Options.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PkmnState.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PokeDex.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="animatedTexture.cpp">
+      <Filter>Project\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pokemonSchool.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="pokemonCenter.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="pokemonLeague.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="pokemonMart.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="viridianCityHouse.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="playerHouse.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="startRoom.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="reserchLab.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="redHouse.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="MasterMap.h">
-      <Filter>Source Files\Maps</Filter>
+      <Filter>Project\Maps</Filter>
     </ClInclude>
     <ClInclude Include="AudioManager.h">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClInclude>
     <ClInclude Include="assetManager.h">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClInclude>
     <ClInclude Include="gameManager.h">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClInclude>
     <ClInclude Include="levelManager.h">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClInclude>
     <ClInclude Include="menuManager.h">
-      <Filter>Source Files\Managers</Filter>
+      <Filter>Project\Managers</Filter>
     </ClInclude>
     <ClInclude Include="userInput.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="animatedTexture.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="camera.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="characters.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="DisplayText.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="gameEntity.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="graphics.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="items.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="mathHelper.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Options.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="PkmnState.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="PokeDex.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="texture.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">
-      <Filter>Source Files\Headers</Filter>
+      <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="moves.h">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClInclude>
     <ClInclude Include="Pokemon.h">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClInclude>
     <ClInclude Include="battle.h">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClInclude>
     <ClInclude Include="PokeBase.h">
-      <Filter>Source Files\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon // Battles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Source Files">
+    <Filter Include="Project">
       <UniqueIdentifier>{1c7774be-713f-4797-8a9a-e120edcb3838}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Maps">
+    <Filter Include="Project\Maps">
       <UniqueIdentifier>{5bb695c3-413a-454c-a606-fc06014e0d2a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Managers">
+    <Filter Include="Project\Managers">
       <UniqueIdentifier>{80da92a1-fbac-439b-b7eb-6f8acb0e3a35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Pokemon // Battles">
+    <Filter Include="Project\Pokemon // Battles">
       <UniqueIdentifier>{4e271276-e92b-4808-a83a-11f43f32096a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Headers">
+    <Filter Include="Project\Headers">
       <UniqueIdentifier>{c98fefc3-f72f-4277-a9de-01c5493913f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Source Files">
+      <UniqueIdentifier>{2892e181-ed85-42e6-9876-73a9d81ed18d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

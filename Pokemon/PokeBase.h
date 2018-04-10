@@ -1,7 +1,10 @@
 #ifndef PokeBase_H
 #define PokeBase_H
 
-#include "moves.h"
+#include <random>
+#include <string>
+#include <iostream>
+#include <fstream>
 
 enum pokemon {
 	MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
@@ -21,17 +24,22 @@ enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };
 
 class PokeBase {
 public:
+	friend class Pokemon;
+	friend class Move;
+	friend class PokeDex;
 	PokeBase();
 	void populatePokemon();
-	friend class Pokemon;
-	//getters
-	inline int getbaseSpd(int n) { return mP_baseSpd[n]; }
+	void populateMoves();
+	void populateLearningMoves();
 
 	static PokeBase* sInstance;
 	static PokeBase* Instance();
 	static void Release();
 private:
-	int count = 0;
+	int mP_Pokemon = 151; //amount to loop/populate
+	int mP_Moves = 166;
+
+	//POKEMON
 	int mP_pokedex[151]; //stores # in pokedex
 	std::string mP_name[151]; //stores nickname if any
 
@@ -51,17 +59,29 @@ private:
 	float mP_weight[151];
 	std::string mP_description[151];
 
-	//moves
-	int mP_numMoves[151]; //number of moves they can learn from leveing
-	int mP_learnLevel[151][10]; //levels moves will be learned
-	int mP_moveToLearn[151][10]; //moves to be learnt
-
 	//static stats
 	int mP_baseHP[151];
 	int mP_baseAtk[151];
 	int mP_baseDef[151];
 	int mP_baseSpd[151];
 	int mP_baseSpe[151];
+
+	//MOVES
+	int mP_moveID[166];
+	std::string mP_moveName[166];
+	int mP_moveType[166];		//Normal, Fire, etc.
+	std::string mP_moveType_str[166];
+	int mP_moveCat[166];		//Physical, Special or Status
+	int mP_movePower[166];		//Base Power
+	int mP_moveAcc[166];		//Accuracy
+	int mP_movePPMax[166];		//Max PP of move
+	int mP_moveEffect[166];		//Status effect
+	int mP_moveChance[166];		//Chance for status
+	int mP_movePriority[166];
+
+	int mP_numMoves[151]; //number of moves they can learn from leveing
+	int mP_learnLevel[151][10]; //levels moves will be learned
+	int mP_moveToLearn[151][10]; //moves to be learnt
 };
 
 #endif

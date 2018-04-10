@@ -16,7 +16,7 @@ Move::Move() {
 	m_movePPCurrent = 0;
 }
 
-void Move::populateMove(int move_index){
+void Move::populateMove(int index){
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	Move();
 	std::ifstream src("../Debug/Assets/moves.csv");
@@ -26,7 +26,7 @@ void Move::populateMove(int move_index){
 	}
 	else {
 		//Determines which row to fetch data from based on move_index
-		for (int k = 0; k < move_index; k++) {
+		for (int k = 0; k < index; k++) {
 			src.ignore(500, '\n'); //ignore the first 500 characters, or until first \n. skips headers
 		}
 
@@ -54,6 +54,27 @@ void Move::populateMove(int move_index){
 		
 		src.close();
 	}
+
+	/*Pokebase = PokeBase::Instance();
+
+	m_moveName = Pokebase->mP_moveName[index];
+	m_moveType_str = Pokebase->mP_moveType_str[index];
+	m_moveType = Pokebase->mP_moveType[index];
+
+	m_moveCat= Pokebase->mP_moveCat[index];
+
+	m_movePower= Pokebase->mP_movePower[index];
+
+	m_moveAcc=Pokebase->mP_moveAcc[index];
+
+	m_movePPMax = Pokebase->mP_movePPMax[index];
+	m_movePPCurrent = m_movePPMax;
+
+	m_moveEffect = Pokebase->mP_moveEffect[index];
+
+	m_moveChance = Pokebase->mP_moveChance[index];
+
+	m_movePriority = Pokebase->mP_movePriority[index];*/
 }
 
 int typeConvert(std::string &t) {

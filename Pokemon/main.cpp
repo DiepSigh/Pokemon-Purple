@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 	//GameManager::Release();
 	//game = nullptr;
 
-	//PokeBase *Pokedex = new PokeBase();
-	//Pokedex->populatePokemon();
+	PokeBase *Pokedex = new PokeBase();
+	Pokedex->populatePokemon();
 
 	Pokemon *rivalStarter;
 	rivalStarter = new Pokemon(BULBASAUR, 20);

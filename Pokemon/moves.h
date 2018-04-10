@@ -2,11 +2,7 @@
 #ifndef MOVES_H
 #define MOVES_H
 
-#include "gameEntity.h"
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <random>
+#include "PokeBase.h"
 
 enum pokemon_type { NORMAL=0, FIGHTING=1, FLYING=2, POISON=3, GROUND=4, ROCK=5, BUG=7, GHOST=8,
 	BLANK=9, FIRE=14, WATER=15, GRASS=16, ELECTRIC=17, PSYCHC=18, ICE=19, DRAGON=20 };
@@ -35,6 +31,7 @@ enum non_volatile_effect {BURN=1, PARALYSIS=2, /*POISON=3,*/ BAD_POISON=4, FREEZ
 enum volatile_effect { BOUND = 7, CONFUSE = 8, FLINCH = 9, LEECH = 10 };
 class Move {
 public:
+	friend class PokeBase;
 	Move();
 	void populateMove(int move); //gets move from CSV file
 
@@ -52,6 +49,7 @@ public:
 	inline int getChance() { return m_moveChance; }
 	inline int getPriority() { return m_movePriority; }
 protected:
+	PokeBase *Pokebase;
 	int m_moveID;
 	std::string m_moveName;
 	int m_moveType;			//Normal, Fire, etc.

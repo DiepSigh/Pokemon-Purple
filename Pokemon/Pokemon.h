@@ -9,12 +9,13 @@
 #define POKEMON_H
 
 #include "PokeBase.h"
-//#include "moves.h"
+#include "gameEntity.h"
+#include "moves.h"
 #include <math.h>
 //#include <iostream>
 //#include <fstream>
 
-//enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
+/*enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
 //	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
 //	  NIDORAN_F, NIDORINA, NIDOQUEEN, NIDORAN_M, NIDORINO, NIDOKING, CLEFAIRY, CLEFABLE, VULPIX, NINETALES, JIGGLYPUFF, WIGGLYTUFF, ZUBAT, GOLBAT,  
 //	  ODDISH, GLOOM, VILEPLUME, PARAS, PARASECT, VENONAT, VENOMOTH, DIGLETT, DUGTRIO, MEOWTH, PERSIAN, PSYDUCK, GOLDUCK, MANKEY, PRIMEAPE, GROWLITHE,  
@@ -24,11 +25,11 @@
 //	  CUBONE, MAROWAK, HITMONLEE, HITMONCHAN, LICKITUNG, KOFFING, WEEZING, RHYHORN, RHYDON, CHANSEY, TANGELA, KANGASKHAN, HORSEA, SEADRA, GOLDEEN,  
 //	  SEAKING, STARYU, STARMIE, MR_MIME, SCYTHER, JYNX, ELECTABUZZ, MAGMAR, PINSIR, TAUROS, MAGIKARP, GYARADOS, LAPRAS, DITTO, EEVEE, VAPOREON,  
 //	  JOLTEON, FLAREON, PORYGON, OMANYTE, OMASTAR, KABUTO, KABUTOPS, AERODACTYL, SNORLAX, ARTICUNO, ZAPDOS, MOLTRES, DRATINI, DRAGONAIR, DRAGONITE,  
-//	  MEWTWO, MEW};
-//
-//enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };
+	  MEWTWO, MEW};
 
-enum pokemon_status { OK=0, BURNED=1, FROZEN=2, PARALYZED=3, POISONED=4, BADLY_POISONED=5, ASLEEP=6 };
+enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };*/
+
+enum pokemon_status { OK=0, FROZEN=1, PARALYZED=2, POISONED=3, BADLY_POISONED=4, BURNED = 5, ASLEEP=6 };
 
 const int MAX_EV = 65535;
 
@@ -42,7 +43,7 @@ public:
 	~Pokemon();
 	//void setPokemonStats(int pokemon); 
 	void retrievePokemon(int pokemon); //Grabs data from PokeBase class to Pokemon variables
-	void openMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
+	void retrieveMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
 	void setStats(); //Sets stats of Pokemon based on IV's, current EV's, and level
@@ -54,8 +55,8 @@ public:
 	void displayStats2();
 
 	//Battle
-	inline void hurt(int damage);
-	inline void heal(int amount);
+	void hurt(int damage);
+	void heal(int amount);
 	inline void awake() { m_status = OK; m_sleepCount = 0; }
 	inline void asleep() { m_sleepCount++; }
 	inline void cured() { m_status = OK; m_poisonCount = 0; }

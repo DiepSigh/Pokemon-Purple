@@ -180,7 +180,7 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 		}
 		else {
 			//attack missed
-			std::cout << "Attack missed.\n";
+			m_message += "Attack missed.\n";
 		}
 		std::cout << attacking.getName() << " used " << moveUsed.getMoveName() << std::endl;
 		if (damage != 0) {
@@ -299,7 +299,7 @@ void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
 		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
 		m_message = pokemon.getName() + " is hurt by burn.\n";
 		break;
-	case POISON:
+	case POISONED:
 		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
 		m_message = pokemon.getName() + " is hurt by poison.\n";
 		break;
