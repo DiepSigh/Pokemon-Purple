@@ -8,10 +8,11 @@
 #include "menuManager.h"
 
 class UserInput : public Menu{
+
 public:
 	UserInput();
-	void Input();
-	void Input(MenuManager*);
+	void Input(float dt);
+	void Input(MenuManager*, float);
 
 private:
 	SDL_Event events;

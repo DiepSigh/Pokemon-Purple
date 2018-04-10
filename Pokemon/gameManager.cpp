@@ -57,13 +57,11 @@ GameManager::~GameManager() {
 	
 }
 
-
 void GameManager::Run() {
 
 	while (!mQuit) {
 		mTimer->Update();
-		mPlayerControls->Input(mMenuManager);
-
+		mPlayerControls->Input(mMenuManager,mTimer->DeltaTime());
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
 				mQuit = true;
@@ -71,20 +69,17 @@ void GameManager::Run() {
 		}
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-			
-			mGraphics->ClearBackBuffer();
-			
-			//UPDATES!!!!
-			//mLevelManager->Update();		
 
+//			std::cout << mTimer->DeltaTime() << std::endl;
+			mGraphics->ClearBackBuffer();			
+			//UPDATES!!!!
+			//mLevelManager->Update();	
 			//RENDERS!!!!!	
 			mMenuManager->Update();
 			mLevelManager->Render(mTimer->DeltaTime());
-			//Player Controller
-		
+			//Player Controller		
 			//Menu Controller
 			//mMenuManager->Render();
-
 			mGraphics->Render();
 			mTimer->Reset();
 		}

@@ -7,23 +7,23 @@ public:
 	void Update();
 	void Release();
 
-	int GetXPos() { return mPosX; }
-	void SetXPos(int newxpos) { mPosX = newxpos; }
-	int GetYPos() { return mPosY; }
-	void SetYPos(int newypos) { mPosY = newypos; }
+	float GetXPos() { return mPosX; }
+	void SetXPos(float newxpos) { mPosX = newxpos; }
+	float GetYPos() { return mPosY; }
+	void SetYPos(float newypos) { mPosY = newypos; }
 
-	int GetSpeed() { return Speed; }
+	float GetSpeed() { return Speed; }
 	void SetSpeed(float s) { Speed = s; }
 
-	int GetVel() { return Vel; }
-	void SetVel(int vel) { Vel = vel; }
+	float GetVel() { return Vel; }
+	void SetVel(float vel) { Vel = vel; }
 	
 private:
 	static Camera* sInstance;
-	int mPosX;
-	int mPosY;
-	int Speed;
-	int Vel;
+	float mPosX;
+	float mPosY;
+	float Speed;
+	float Vel;
 	static float SreenWidth;
 	static float SreenHeight;
 	Camera();

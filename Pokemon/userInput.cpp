@@ -5,7 +5,7 @@ UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
 }
 
-void UserInput::Input(MenuManager* menuM) {
+void UserInput::Input(MenuManager* menuM, float dt) {
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
 				//mQuit = true;
@@ -17,14 +17,14 @@ void UserInput::Input(MenuManager* menuM) {
 			case SDLK_LEFT:
 				//World Control
 				if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveLeft();
+					mLevelManager->moveLeft(dt);
 				}
 				break;
 
 			case SDLK_RIGHT:
 				//World Control
 				if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveRight();
+					mLevelManager->moveRight(dt);
 				}
 				//printf("You pressed right arrow\n");
 				break;
@@ -35,7 +35,7 @@ void UserInput::Input(MenuManager* menuM) {
 				}
 				//World Control
 				else if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveUp();
+					mLevelManager->moveUp(dt);
 				}
 				break;
 
@@ -45,7 +45,7 @@ void UserInput::Input(MenuManager* menuM) {
 				}
 				//World Control
 				else if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveDown();
+					mLevelManager->moveDown(dt);
 				}
 				break;
 
@@ -88,7 +88,7 @@ void UserInput::Input(MenuManager* menuM) {
 
 
 //Not needed anymore..... 
-void UserInput::Input(){
+void UserInput::Input(float dt){
 		
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
@@ -102,23 +102,22 @@ void UserInput::Input(){
 			switch (events.key.keysym.sym) {
 			
 			case SDLK_LEFT:
-				mLevelManager->moveLeft();
+				mLevelManager->moveLeft(dt);
 				break;
 
 			case SDLK_RIGHT:
-				mLevelManager->moveRight();
-				//printf("You pressed right arrow\n");
+				mLevelManager->moveRight(dt);
 				break;
 
 			case SDLK_UP:
-				//mLevelManager->moveUp();
+				mLevelManager->moveUp(dt);
 				//Cursor->CursorMoveUp();
 				mMenu->Cursor->CursorMoveUp();
 				//printf("You pressed up arrow\n");
 				break;
 
 			case SDLK_DOWN:
-				//mLevelManager->moveDown();
+				mLevelManager->moveDown(dt);
 				//Cursor->CursorMoveDown();
 				mMenu->Cursor->CursorMoveDown();
 				//printf("You pressed down arrow\n");

@@ -1,3 +1,2 @@
-﻿  MasterMap.cpp
-c:\users\mike\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+﻿  levelManager.cpp
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe

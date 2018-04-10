@@ -22,10 +22,10 @@ public:
 	static bool Initialized();
 	void Render(float);
 	void Update();
-	void moveLeft();
-	void moveRight();
-	void moveUp();
-	void moveDown();
+	void moveLeft(float);
+	void moveRight(float);
+	void moveUp(float);
+	void moveDown(float);
 	void buttonA();
 	void buttonS();
 	void buttonC();
@@ -51,11 +51,11 @@ private:
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
 	Characters* mPlayer;
+	Timer* mTimer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
 	ActiveLevel activeLevel = PLAYERHOUSE;
-
 };
 
 
