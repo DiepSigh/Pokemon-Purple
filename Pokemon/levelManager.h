@@ -13,6 +13,8 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
+#include "CollisionBoxes.h"
+#include "AudioManager.h"
 
 class LevelManager {
 
@@ -50,11 +52,14 @@ private:
 	ViridianCityHouse* mViridianCityHouse;
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
+	CollisionBox* mCollisionBox;
+	AudioManager* mAudioMgr;
+	
 	Characters* mPlayer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	ActiveLevel activeLevel = PLAYERHOUSE;
+	ActiveLevel activeLevel = MASTERMAP;
 
 };
 

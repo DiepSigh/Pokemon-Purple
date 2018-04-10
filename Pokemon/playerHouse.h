@@ -1,7 +1,9 @@
 #ifndef _PLAYERROOM_H
 #define _PLAYERROOM_H
 
+#include "gameEntity.h"
 #include "mapsLoader.h"
+#include "camera.h"
 
 class PlayerHouse : public MapsLoader {
 private:
@@ -25,13 +27,14 @@ private:
 	Graphics* mGraphics;
 	int tile;
 	void DrawMap(int);
+	float startYPos;
 
 public:
 	PlayerHouse(float, float);
 	~PlayerHouse();
 	void Render();
 	void Update();
-
+	bool isActive;
 		
 };
 

@@ -102,7 +102,7 @@ CollisionBox::CollisionBox() {
 	Rect22->SetPosX(480);
 	Rect22->SetPosY(0);
 
-
+	
 }
 
 CollisionBox::CollisionBox(float x, float y, Texture* rect) {
@@ -159,6 +159,7 @@ CollisionBox::~CollisionBox() {
 	Rect21 = NULL;
 	delete Rect22;
 	Rect22 = NULL;
+	
 }
 
 void CollisionBox::DrawCollisions() {
@@ -185,6 +186,7 @@ void CollisionBox::DrawCollisions() {
 	Rect20->Render();
 	Rect21->Render();
 	Rect22->Render();
+	
 }
 
 void CollisionBox::Render() {
