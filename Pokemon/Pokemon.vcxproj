@@ -158,6 +158,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="moves.h" />
     <ClInclude Include="Options.h" />
+    <ClInclude Include="PlayerMenu.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PokeBase.h" />
     <ClInclude Include="pokemonLeague.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="moves.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
+    <ClCompile Include="PlayerMenu.cpp" />
     <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="PokeBase.cpp" />

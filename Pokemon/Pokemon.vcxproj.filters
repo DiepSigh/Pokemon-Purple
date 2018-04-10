@@ -106,6 +106,9 @@
     <ClCompile Include="animatedTexture.cpp">
       <Filter>Project\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerMenu.cpp">
+      <Filter>Project\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pokemonSchool.h">
@@ -212,6 +215,9 @@
     </ClInclude>
     <ClInclude Include="PokeBase.h">
       <Filter>Project\Pokemon // Battles</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMenu.h">
+      <Filter>Project\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

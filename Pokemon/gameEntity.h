@@ -36,7 +36,6 @@ public:
 	void Parent(GameEntity*);
 	GameEntity* Parent();
 
-
 	virtual void Update();
 	virtual void Render();
 

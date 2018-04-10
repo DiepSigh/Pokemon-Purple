@@ -2,40 +2,36 @@
 #define CAMERA_H
 
 
-class Camera {
 
+class Camera {
+public:
+	static Camera* Instance();	
+	void Update();
+	void Release();
+
+	int GetXPos() { return mPosX; }
+	void SetXPos(int newxpos) { mPosX = newxpos; }
+	int GetYPos() { return mPosY; }
+	void SetYPos(int newypos) { mPosY = newypos; }
+
+	int GetSpeed() { return Speed; }
+	void SetSpeed(float s) { Speed = s; }
+
+	int GetVel() { return Vel; }
+	void SetVel(int vel) { Vel = vel; }
+	
 private:
 	static Camera* sInstance;
-	static bool sInitialized;
-
-public:
-	static Camera* Instance();
-	static bool Initialized();
-	void UpdatePos();
-
-	//GETTERS
-	float GetPlayerXPos() { return mPlayerXPos; }
-	float GetPlayerYPos() { return mPlayerYPos; }
-	float GetCamXPos() { return mCamXPos; }
-	float GetCamYPos() { return mCamYPos; }
-
-	//SETTERS
-	void SetPlayerXPos(int playerx) { mPlayerXPos = playerx; }
-	void SetPlayerYPos(int playery) { mPlayerYPos = playery; }	
-	void SetCamXPos(int camx) { mPlayerXPos = camx; }
-	void SetCamYPos(int camy) { mPlayerYPos = camy; }
-
-
-private:
+	int mPosX;
+	int mPosY;
+	int Speed;
+	int Vel;
+	static float SreenWidth;
+	static float SreenHeight;
 	Camera();
 	~Camera();
 
-	float mPlayerXPos;
-	float mPlayerYPos;	
-	float mCamXPos;
-	float mCamYPos;
 };
-
 
 #endif // !CAMERA_H
 

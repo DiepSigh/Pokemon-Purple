@@ -3,6 +3,8 @@
 
 #include "animatedTexture.h"
 #include "gameEntity.h"
+#include "camera.h"
+#include <iostream>
 
 
 class MasterMap : public GameEntity {

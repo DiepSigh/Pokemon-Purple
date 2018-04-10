@@ -2,6 +2,7 @@
 #define _PLAYERROOM_H
 
 #include "gameEntity.h"
+#include "camera.h"
 #include <iostream>
 
 class PlayerHouse : public GameEntity {
@@ -26,16 +27,14 @@ private:
 	Graphics* mGraphics;
 	int tile;
 	void DrawMap(int);
+	float startYPos;
 
 public:
 	PlayerHouse(float, float);
 	~PlayerHouse();
 	void Render();
-	void Update();
-
-		
+	void Update();		
+	bool isActive;
 };
-
-
 
 #endif // !_PLAYERROOM_H
