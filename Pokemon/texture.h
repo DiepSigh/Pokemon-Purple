@@ -34,6 +34,8 @@ public:
 	SDL_Rect GetmClipRect() { return mClipRect; }
 	void SetRenderRectX(int x) { mRenderRect.x = x; }
 	void SetRenderRectY(int y) { mRenderRect.y = y; }
+	void SetRenderRectW(int w) {mRenderRect.w = w;}
+	void SetRenderRectH(int h) { mRenderRect.w = h; }
 };
 #endif // !TEXTURE_H
 

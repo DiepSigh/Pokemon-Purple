@@ -4,21 +4,20 @@ CollisionBox* CollisionBox::sInstance = nullptr;
 
 CollisionBox* CollisionBox::Instance() {
 	if (sInstance == nullptr) {
-		sInstance = new CollisionBox();
+		sInstance = new CollisionBox(0,0);
 	}
 
 	return sInstance;
 }
 
+CollisionBox::CollisionBox() {}
 
-CollisionBox::CollisionBox() {
-		
-	Rect1 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 384, 32));
-	Rect1->SetPosX(352);
-	Rect1->SetPosY(576);
-
+CollisionBox::CollisionBox(float x, float y) {
+	mTex = new Texture("collisionBox.png", 0, 0, 384, 32);
+	SetPosX(x);
+	SetPosY(y);
 	
-	Rect2 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 32, 512));
+	/*Rect2 = new CollisionBox(0,0, new Texture("collisionBox.png", 0, 0, 32, 512));
 	Rect2->SetPosX(704);
 	Rect2->SetPosY(64);
 
@@ -101,23 +100,30 @@ CollisionBox::CollisionBox() {
 	Rect22 = new CollisionBox(0, 0, new Texture("collisionBox.png", 0, 0, 32, 92));
 	Rect22->SetPosX(480);
 	Rect22->SetPosY(0);
+	*/
 
-	
+	mGraphics = Graphics::Instance();
+
+	mPos.x = x;
+	mPos.y = y;
+		
 }
 
-CollisionBox::CollisionBox(float x, float y, Texture* rect) {
+CollisionBox::CollisionBox(float x, float y, Texture* box) {
+
+		
 	mGraphics = Graphics::Instance();
 	
 	mPos.x = x;
 	mPos.y = y;
-	mTex = rect;
+	mTex = box;
 }
 
 CollisionBox::~CollisionBox() {
 
 	delete Rect1;
 	Rect1 = NULL;
-	delete Rect2;
+/*	delete Rect2;
 	Rect2 = NULL;
 	delete Rect3;
 	Rect3 = NULL;
@@ -159,13 +165,21 @@ CollisionBox::~CollisionBox() {
 	Rect21 = NULL;
 	delete Rect22;
 	Rect22 = NULL;
+	*/
 	
 }
 
-void CollisionBox::DrawCollisions() {
-
-	Rect1->Render();
-	Rect2->Render();
+void CollisionBox::DrawCollisions(Camera* cam) {
+	
+	mTex->SetRenderRectW(20);
+	mTex->SetRenderRectH(20);
+	SetPosX(50 + cam->GetXPos());
+	SetPosY(100 + cam->GetYPos());
+	Render();
+	SetPosX(50 + cam->GetXPos());
+	SetPosY(300 + cam->GetYPos());
+	Render();
+/*	Rect2->Render();
 	Rect3->Render();
 	Rect4->Render();
 	Rect5->Render();
@@ -186,7 +200,7 @@ void CollisionBox::DrawCollisions() {
 	Rect20->Render();
 	Rect21->Render();
 	Rect22->Render();
-	
+	*/
 }
 
 void CollisionBox::Render() {

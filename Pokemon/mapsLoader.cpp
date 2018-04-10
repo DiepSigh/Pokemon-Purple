@@ -1,7 +1,6 @@
 #include "mapsLoader.h"
 
 
-
 MapsLoader::MapsLoader() {
 	
 	//masterMap

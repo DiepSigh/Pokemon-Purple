@@ -19,8 +19,7 @@ GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
-	mCamera = Camera::Instance();
-
+	
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
@@ -29,11 +28,6 @@ GameManager::GameManager() {
 	mLevelManager = LevelManager::Instance();
 	mPlayerControls = new UserInput();
 
-	// By Canados
-
-	mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
-	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
 
 }
 
@@ -47,13 +41,8 @@ GameManager::~GameManager() {
 	Timer::Release();
 	mTimer = NULL;
 
-	AudioManager::Release();
-	mAudioMgr = NULL;
-
 	delete mTex;
 	mTex = NULL;
-
-
 
 }
 
@@ -78,7 +67,7 @@ void GameManager::Run() {
 			//mLevelManager->Update();		
 
 			//RENDERS!!!!!	
-			mMenuManager->Update();
+			//mMenuManager->Update();
 			mLevelManager->Render(mTimer->DeltaTime());
 			//Player Controller
 

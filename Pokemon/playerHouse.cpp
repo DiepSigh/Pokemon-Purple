@@ -20,6 +20,8 @@ PlayerHouse::PlayerHouse(float x, float y) {
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+	SetPosX(350);
+	SetPosY(200);
 }
 
 PlayerHouse::~PlayerHouse() {
@@ -63,13 +65,13 @@ void PlayerHouse::Render() {
 
 void PlayerHouse::Update() {
 
-	SetPosY(140);
-	SetPosX(250);
+	SetPosY(GetPosY());
+	SetPosX(GetPosX());
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(250);
+			SetPosX(GetPosX() - 224);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -84,8 +86,8 @@ void PlayerHouse::Update() {
 		}
 
 	}
-	SetPosY(140);
-	SetPosX(250);
+	SetPosY(GetPosY() - 224);
+	SetPosX(GetPosX() - 224);
 
 }
 

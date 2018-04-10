@@ -1,5 +1,6 @@
 #include "MasterMap.h"
 
+MasterMap::MasterMap() {}
 
 MasterMap::MasterMap(float x, float y) {
 

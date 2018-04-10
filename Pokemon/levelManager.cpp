@@ -31,14 +31,23 @@ LevelManager::LevelManager() {
 	mCamera->SetSpeed(5);
 
 	mPlayer = new Characters();
-	mPlayer->SetPosX(350);
+	mPlayer->SetPosX(400);
 	mPlayer->SetPosY(300);
 	mPlayer->SetSpeed(2);
 
 	mCollisionBox = CollisionBox::Instance();
+	mCollisionBox->SetPosY(100);
+
+	cout << mCollisionBox->GetPosX() << mCollisionBox->GetPosY() << endl;
+	
+
+
 	//mAudioMgr = AudioManager::Instance();
 	//mAudioMgr->PalletTownSound();
 	mMasterMap = new MasterMap(0, 0);
+
+	cout << mMasterMap->GetPosX() << mMasterMap->GetPosY() << endl;
+
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -110,11 +119,11 @@ void LevelManager::Render(float t) {
 
 	case PLAYERHOUSE:
 		mPlayerHouse->Update();
-
+		
 		break;
 	case MASTERMAP:
 		mMasterMap->Update();
-		mCollisionBox->DrawCollisions();
+		mCollisionBox->DrawCollisions(mCamera);
 		
 		break;
 
@@ -142,7 +151,9 @@ void LevelManager::moveLeft() {
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
-		mCollisionBox->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
+		mCollisionBox->SetPosX(mCollisionBox->GetPosX() + mCamera->GetSpeed());
+		
+
 		
 		
  		break;
@@ -175,8 +186,14 @@ void LevelManager::moveRight() {
 		break;
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+
 		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
-		mCollisionBox->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
+
+		mCollisionBox->SetPosX((mMasterMap->GetPosX() - mCollisionBox->GetPosX()) + mCamera->GetSpeed());
+
+
+		
+
 		
 		
 		break;
@@ -213,6 +230,8 @@ void LevelManager::moveUp() {
 		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
 		mCollisionBox->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
 		
+
+		
 		
 		break;
 
@@ -247,6 +266,8 @@ void LevelManager::moveDown() {
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
 		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
 		mCollisionBox->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
+		
+
 		
 		
 		break;

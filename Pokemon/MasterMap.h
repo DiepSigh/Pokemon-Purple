@@ -19,6 +19,8 @@ private:
 	void DrawMap();
 
 public:
+
+	MasterMap();
 	MasterMap(float, float);
 	~MasterMap();
 	void Render();

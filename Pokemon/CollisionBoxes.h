@@ -1,18 +1,22 @@
 #ifndef _COLLISIONBOXES_H
 #define _COLLISIONBOXES_H
 
-#include "mapsLoader.h"
+#include "gameEntity.h"
+#include "camera.h"
 
-class CollisionBox : public MapsLoader {
+
+
+class CollisionBox : public GameEntity {
 private:
 
 	Graphics* mGraphics;
+	
 		
 public:	
 	static CollisionBox* sInstance;
 	static CollisionBox* Instance();
 
-	void DrawCollisions();
+	void DrawCollisions(Camera*);
 	
 	CollisionBox* Rect1;
 	CollisionBox* Rect2;
@@ -38,6 +42,7 @@ public:
 	CollisionBox* Rect22;
 
 	CollisionBox(float x, float y, Texture* tex);
+	CollisionBox(float, float);
 	CollisionBox();
 	~CollisionBox();
 	void Render();

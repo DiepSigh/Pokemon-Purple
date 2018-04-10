@@ -1,13 +1,7 @@
-﻿  Pokemon.cpp
-c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  gameManager.cpp
-c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  levelManager.cpp
-c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(267): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  userInput.cpp
-c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  CollisionBoxes.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxes.cpp(180): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxes.cpp(181): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxes.cpp(183): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxes.cpp(184): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
