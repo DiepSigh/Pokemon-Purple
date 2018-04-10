@@ -54,8 +54,8 @@ public:
 	void displayStats2();
 
 	//Battle
-	void hurt(int damage);
-	void heal(int amount);
+	inline void hurt(int damage);
+	inline void heal(int amount);
 	inline void awake() { m_status = OK; m_sleepCount = 0; }
 	inline void asleep() { m_sleepCount++; }
 	inline void cured() { m_status = OK; m_poisonCount = 0; }
@@ -112,7 +112,6 @@ public:
 	inline void setConfused(bool state) { m_confused = state; }
 	inline void setFlinched(bool state) { m_flinched = state; }
 	inline void setSeeded(bool state) { m_seeded = state; }
-
 protected:
 	PokeBase *Pokebase;
 	int m_pokedex; //stores # in pokedex

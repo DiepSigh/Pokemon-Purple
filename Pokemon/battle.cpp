@@ -187,6 +187,7 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 			std::cout << "It did " << damage << " damage!\n";
 		}
 	}
+	statusCheck2(attacking, defending);
 	std::cout << m_message;
 }
 
@@ -347,7 +348,7 @@ void battle::resetStates(Pokemon &player, Pokemon &ai) {
 
 void battle::chanceState(Pokemon &attacking, Pokemon &defending, int move, int effect, int chance) {
 	if (chance > 0) {
-		if (chance > randomGen(0, 100)) {
+		if (chance >= randomGen(1, 100)) {
 			nvStatusChange(defending, effect);
 			vStatusChange(defending, effect);
 			statChange(attacking, defending, move);
@@ -417,7 +418,7 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		stat = att;
 		change -= 1;
 		break;
-	case MEDITATE: case SHARPEN: //case RAGE:
+	case MEDITATE: case SHARPEN: case RAGE:
 		stat = att;
 		change += 1;
 		break;
