@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "PokeBase.h"
 
 class PokeDex : public Menu {
 public:
@@ -21,16 +22,30 @@ public:
 	PokeDex* Quit;
 	PokeDex* CursorP;
 
+	PokeDex* PkmnName[151];
+
+	PokeBase* mPokeBase;
+
+	void CursorPMoveDown();
+	void CheckDraw();
+
+	bool DexCheck = false;
 
 	void Update();
 	void Render();
 
-	PokeDex* contents;
+	int GetValueR() { return r; }
+	int GetValueT() { return t; }
+	void SetValueR(int R) { r = R; }
+	void SetValueT(int T) { t = T; }
 
 private:
 	PokedexState PkDexState;
 	Graphics * mGraphics;
 	AssetManager* mAssetManager;
+	float Counter;
+	int j;
 
-
+	int r = 0;
+	int t = 7;
 };

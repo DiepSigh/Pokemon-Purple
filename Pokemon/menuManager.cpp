@@ -151,5 +151,8 @@ void MenuManager::LoadPokeDex() {
 	mPokeDex->Cry->Render();
 	mPokeDex->Area->Render();
 	mPokeDex->Quit->Render();
-
+	mPokeDex->CursorP->Render();
+	for (int i = mPokeDex->GetValueR(); i < mPokeDex->GetValueT(); i++){
+		mPokeDex->PkmnName[i]->Render();
+	}
 }

@@ -60,6 +60,9 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				if (menuM->OptsMnuisActive) {
 					menuM->mOptions->oCursorDown();
 				}
+				if (menuM->PokedexisActive) {
+					menuM->mPokeDex->CursorPMoveDown();
+				}
 				//World Control Down
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveDown();

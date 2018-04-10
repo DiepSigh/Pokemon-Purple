@@ -9,6 +9,7 @@
 #include "camera.h"
 #include "userInput.h"
 #include "AudioManager.h"
+#include "PokeBase.h"
 
 class GameManager {
 private:
@@ -29,6 +30,7 @@ private:
 	GameManager();
 	~GameManager();
 	Options* mOptions;
+	PokeBase* mPokeBase;
 
 public:
 	static GameManager* Instance();

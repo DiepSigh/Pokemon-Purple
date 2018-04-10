@@ -21,6 +21,8 @@ GameManager::GameManager() {
 	mMenuManager = MenuManager::Instance();
 	mCamera = Camera::Instance();
 	mOptions = Options::Instance();
+	mPokeBase = PokeBase::Instance();
+
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -90,7 +92,7 @@ void GameManager::Run() {
 			//Player Controller
 		
 			//Menu Controller
-			//mMenuManager->Render();
+			mMenuManager->Render();
 
 			mGraphics->Render();
 			mTimer->Reset();
