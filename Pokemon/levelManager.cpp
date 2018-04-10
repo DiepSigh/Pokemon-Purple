@@ -25,6 +25,9 @@ LevelManager::LevelManager() {
 	mPlayer = new Characters();
 	mPlayer->SetPosX(150);
 	mPlayer->SetSpeed(2);
+	mOak = new Oak;
+	mOak->SetPosX(250);
+	mOak->SetPosY(250);
 	//map1 = new Map1();
 }
 
@@ -41,6 +44,7 @@ void LevelManager::Update() {
 void LevelManager::Render() {
 	//map1->Render();
 	mPlayer->Render();
+	mOak->Render();//Renders .png image
 }
 
 void LevelManager::moveLeft() {

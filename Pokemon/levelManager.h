@@ -2,6 +2,7 @@
 #define LEVELMANAGER_H
 
 #include "characters.h"
+#include "Oak.h"
 
 
 class LevelManager {
@@ -30,6 +31,7 @@ private:
 	LevelManager();
 	~LevelManager();
 	Characters* mPlayer;
+	Oak* mOak;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;

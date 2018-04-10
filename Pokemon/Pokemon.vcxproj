@@ -158,6 +158,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="NPC.h" />
+    <ClInclude Include="Oak.h" />
     <ClInclude Include="TextManager.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
     <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Oak.cpp" />
     <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="texture.cpp" />

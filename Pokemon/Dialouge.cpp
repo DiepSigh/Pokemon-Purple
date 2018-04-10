@@ -15,7 +15,7 @@ Dialouge::Dialouge() {
 }
 
 void Dialouge::textDisplay(){
-	//DONT TOUCH
+	//DON'T TOUCH
 	/*
 	Opens CSV file, stores the data into a mutlidimension array of NPCtext
 	Use NPCtext array to get strings of NPC dialouge 
@@ -27,8 +27,7 @@ void Dialouge::textDisplay(){
 		std::cout << "Couldn't open file: pokemonblue_text.csv" << std::endl;
 	} 
 	
-
-	//two for loops to cycle the Rows(r) and Column (c) to store string data into NPCtext
+	//two for loops to cycle the Rows(r) and Columns (c) to store string data into NPCtext
 	for (int r = 0; r < 188; r++) {
 		for (int c = 0; c < 27; c++) {
 			getline(src, NPCtext[r][c], ',');

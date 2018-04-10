@@ -5,15 +5,36 @@ using namespace std;
 
 #include "characters.h"
 #include "DisplayText.h"
-#include <vector>
+#include "graphics.h"
+#include "assetManager.h"
+
 
 class NPC : public Characters {
-public:
-	NPC();
-	~NPC();
+protected:
+	Graphics * mGraphics;
+	AssetManager* mAssetManager;
 
 private:
-	vector <string> Talk;
+	int mRow;
+	int mCol;
+	bool mTalk;
+	bool mWalkRoute;
+	bool misTrainer;
+	bool mLoseBattle;
+
+public:
+	NPC();
+	void Render();
+	int GetRow() { return mRow; }
+	int GetCol() { return mCol; }
+	void SetRow(int r) { mRow = r; }
+	void SetCol(int c) { mCol = c; }
+	bool Talk();
+	bool WalkRoute();
+	bool isTrainer();
+	bool LoseBattle();
+	~NPC();
+	
 	
 };
 

@@ -7,7 +7,7 @@
 #include "DisplayText.h"
 #include <vector>
 
-class Characters : public GameEntity{
+class Characters : public GameEntity {
 public:
 	Characters();
 	void Player();

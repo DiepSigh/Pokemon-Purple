@@ -1,12 +1,15 @@
 #ifndef DIALOUGE_H
 #define DIALOUGE_H
 
+#include "gameEntity.h"
+#include"graphics.h"
+#include "texture.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
 
-class Dialouge {
+class Dialouge : public GameEntity {
 private:
 	static Dialouge* sInstance;
 	std::string NPCtext[188][27];
@@ -20,6 +23,8 @@ public:
 	~Dialouge();
 
 private:
+	Graphics* mGraphics;
+	Texture* mTextBox;
 	
 };
 

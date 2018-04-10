@@ -68,7 +68,7 @@ void GameManager::Run() {
 			//mMenuManager->menu->Render();
 			mLevelManager->Update();
 			mLevelManager->Render();
-			mNPCtext->Render(0,0);
+			//mNPCtext->Render(0,0);
 			mGraphics->Render();
 			mTimer->Reset();
 		}

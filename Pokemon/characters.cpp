@@ -8,7 +8,6 @@ Characters::Characters(){
 }
 
 void Characters::Player() {
-
 }
 
 void Characters::Render() {

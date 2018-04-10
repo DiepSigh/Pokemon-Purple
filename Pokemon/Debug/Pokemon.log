@@ -1,2 +1,30 @@
-﻿  Dialouge.cpp
+﻿  animatedTexture.cpp
+  AssetManager.cpp
+  characters.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Dialouge.cpp
+  DisplayText.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  gameManager.cpp
+  graphics.cpp
+  levelManager.cpp
+  menuManager.cpp
+  menuStart.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  NPC.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Oak.cpp
+  Pokemon.cpp
+  TextManager.cpp
+  texture.cpp
+  timer.cpp
+  userInput.cpp
+  Generating Code...
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe
