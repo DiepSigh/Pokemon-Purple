@@ -1,31 +1,30 @@
 #include "camera.h"
+#include <iostream>
 
 Camera* Camera::sInstance = nullptr;
-bool Camera::sInitialized = false;
 
-Camera* Camera::Instance()
-{
+Camera* Camera::Instance() {
+
+	int mPosX = 0;
+	int mPosY = 0;
+
 	if (sInstance == nullptr) {
 		sInstance = new Camera();
 	}
 	return sInstance;
 }
 
-bool Camera::Initialized() {
-	return sInitialized;
-}
-
 Camera::Camera() {
-	//map1 = new Map1();
-}
 
+}
+void Camera::Release() {
+	delete sInstance;
+	sInstance = nullptr;
+}
 Camera::~Camera() {
-	//delete map1;
-	//map1 = nullptr;
+
 }
 
-void Camera::UpdatePos() {
-	//GetCamXPos() + GetCamYPos() / 2 == (GetPlayerXPos() + GetPlayerYPos()) / 2;
-//SET THESE VALUSE^
-}
+void Camera::Update() {
 
+}

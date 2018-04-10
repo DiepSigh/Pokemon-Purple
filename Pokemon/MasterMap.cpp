@@ -8,6 +8,8 @@ MasterMap::MasterMap(float x, float y) {
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+	SetPosX(-800);
+	SetPosY(-2900);
 }
 
 
@@ -30,8 +32,8 @@ void MasterMap::Render() {
 }
 
 void MasterMap::Update() {
-		SetPosX(-1504);
-		SetPosY(-4896);
+	SetPosX(GetPosX());
+	SetPosY(GetPosY());
 
 		DrawMap();
 }

@@ -1,20 +1,17 @@
-﻿  CollisionBoxes.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  timer.cpp
-  texture.cpp
-  menuStart.cpp
-  menuManager.cpp
-  graphics.cpp
-  gameEntity.cpp
-  characters.cpp
-  camera.cpp
-  animatedTexture.cpp
+﻿  PkmnState.cpp
   PokeDex.cpp
-  PkmnState.cpp
-  Items.cpp
-  Inventory.cpp
-  DisplayText.cpp
-  AudioManager.cpp
-  AssetManager.cpp
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+c:\users\zver\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  gameManager.cpp
+c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  menuManager.cpp
+c:\users\zver\documents\github\pokemon\pokemon\menumanager.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  menuStart.cpp
+c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  userInput.cpp
+c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe

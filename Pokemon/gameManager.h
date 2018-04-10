@@ -6,9 +6,9 @@
 #include "animatedTexture.h"
 #include "menuManager.h"
 #include "levelmanager.h"
+#include "camera.h"
 #include "userInput.h"
-
-
+#include "AudioManager.h"
 
 class GameManager {
 private:
@@ -23,20 +23,17 @@ private:
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
-	static SDL_Rect Camera;
+	AudioManager* mAudioMgr;
+	Camera* mCamera;
+	GameManager();
+	~GameManager();
 
-	
 public:
 	static GameManager* Instance();
 	static void Release();
 	void Run();
 	bool GetIsPlaying() { return isPlaying; }
 	void SetIsPlaying(bool playing) { isPlaying = playing; }
-
-private:
-	GameManager();
-	~GameManager();
 };
 
 #endif // !GAMEMANAGER_H
-

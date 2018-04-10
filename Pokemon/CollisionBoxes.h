@@ -3,7 +3,6 @@
 
 #include "mapsLoader.h"
 
-
 class CollisionBox : public MapsLoader {
 private:
 

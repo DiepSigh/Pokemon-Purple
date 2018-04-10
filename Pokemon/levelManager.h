@@ -1,6 +1,8 @@
 #ifndef LEVELMANAGER_H
 #define LEVELMANAGER_H
+
 #include "characters.h"
+#include "camera.h"
 #include "startRoom.h"
 #include "playerHouse.h"
 #include "redHouse.h"
@@ -11,20 +13,14 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
-#include "AudioManager.h"
-#include "CollisionBoxes.h"
 
 class LevelManager {
-
-private:
-	static LevelManager* sInstance;
-	static bool sInitialized;
 
 public:
 	static LevelManager* Instance();
 	static void Release();
 	static bool Initialized();
-	void Render();
+	void Render(float);
 	void Update();
 	void moveLeft();
 	void moveRight();
@@ -33,13 +29,17 @@ public:
 	void buttonA();
 	void buttonS();
 	void buttonC();
+	Camera* mCamera;
+	void NormalizeVel();
+	enum ActiveLevel { NONE, MASTERMAP, PLAYERHOUSE };
+	ActiveLevel GetLevelName() { return activeLevel; }
+	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
 
 private:
 	LevelManager();
 	~LevelManager();
-	Characters* mPlayer;
-	CollisionBox *mCollisionBoxes;
-	MapsLoader* mapsLoader;
+	static LevelManager* sInstance;
+	static bool sInitialized;
 	StartRoom* mStartRoom;
 	PlayerHouse* mPlayerHouse;
 	RedHouse* mRedHouse;
@@ -50,14 +50,13 @@ private:
 	ViridianCityHouse* mViridianCityHouse;
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
-	AudioManager* mAudioMgr;
-
+	Characters* mPlayer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	//Map1* map1;
+	ActiveLevel activeLevel = PLAYERHOUSE;
+
 };
 
 
 #endif // !LEVELMANAGER_H
-
