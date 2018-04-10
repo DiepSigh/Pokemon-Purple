@@ -25,7 +25,6 @@ PokeDex::PokeDex() {
 	Quit = new PokeDex(0, 0, new Texture("QUIT", "PKMNSOLID.ttf", 30));
 	Quit->SetPosX(650);
 	Quit->SetPosY(520);
-
 }
 
 PokeDex::PokeDex(float x, float y, Texture* tex) {
