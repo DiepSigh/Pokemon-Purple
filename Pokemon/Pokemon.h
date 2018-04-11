@@ -64,6 +64,8 @@ public:
 	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
 
 	//Getters
+	inline bool getSeen() { return m_seen; }
+	inline int getSeenCount() { return m_seenCount; }
 	inline std::string getName() { return m_nickname; }
 	inline Move getMove(int k) { return move[k]; }
 	inline int getLevel() { return m_level; }
@@ -129,13 +131,15 @@ protected:
 	AssetManager *mAssetManager = nullptr;
 
 	int m_pokedex; //stores # in pokedex
+	bool m_seen;
+	int m_seenCount = 0;
 	std::string m_nickname; //stores nickname if any
 	int m_level;
 	int m_status; //poisoned, paralyzed, non-volatile status
 	bool m_fainted;
 	int m_exp; //current amount of exp
 	Move move[4];
-	
+
 	//Other
 	int m_type1;
 	int m_type2;
