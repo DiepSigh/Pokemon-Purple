@@ -88,13 +88,21 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+
       <AdditionalIncludeDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>..\SDL2_mixer-2.0.2\include;..\SDL2-2.0.8\include;..\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+
+      <AdditionalIncludeDirectories>..\SDL2-2.0.8\include;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\include;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\include;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_ttf-2.0.14\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+
       <AdditionalLibraryDirectories>C:\Users\Mike\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+
+      <AdditionalLibraryDirectories>..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_ttf-2.0.14\lib\x86;C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\SDL2_ttf-2.0.14\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\SDL2_mixer-2.0.2\lib\x86;..\SDL2_ttf-2.0.14\lib\x86;..\SDL2-2.0.8\lib\x86;D:\School\_Projects\GameDev\C++\SDL\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -150,12 +158,18 @@
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
+
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="battle.h" />
+
+    <ClInclude Include="characters.h" />
+    <ClInclude Include="Dialouge.h" />
+
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+
     <ClInclude Include="moves.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
@@ -164,7 +178,6 @@
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="camera.h" />
-    <ClInclude Include="characters.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="levelManager.h" />
@@ -183,6 +196,11 @@
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="Oak.h" />
+    <ClInclude Include="TextManager.h" />
+
+
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedTexture.cpp" />
@@ -220,6 +238,11 @@
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
+    <ClCompile Include="Dialouge.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Oak.cpp" />
+    <ClCompile Include="TextManager.cpp" />
+
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

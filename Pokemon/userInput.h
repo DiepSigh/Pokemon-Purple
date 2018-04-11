@@ -17,6 +17,7 @@ private:
 	SDL_Event events;
 	LevelManager* mLevelManager;
 	MenuManager* mMenu;
+
 };
 
 #endif

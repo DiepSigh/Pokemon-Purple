@@ -13,9 +13,9 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
+#include "Oak.h"
 
 class LevelManager {
-
 private:
 	static LevelManager* sInstance;
 	static bool sInitialized;
@@ -57,7 +57,7 @@ private:
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
 	ActiveLevel activeLevel = PLAYERHOUSE;
-
+	Oak* mOak;
 };
 
 

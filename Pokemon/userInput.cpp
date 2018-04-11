@@ -120,14 +120,15 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 
 
 //Not needed anymore..... 
+
+		//Example of keyboard/mouse functionality
+
 void UserInput::Input(){
-		
-	while (SDL_PollEvent(&events) != 0) {
+		while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
 			//mQuit = true;
 		}
-
-		//Example of keyboard/mouse functionality
+		//Keyboard functionality
 
 		switch (events.type) {
 		case SDL_KEYDOWN:
@@ -135,6 +136,7 @@ void UserInput::Input(){
 			
 			case SDLK_LEFT:
 				mLevelManager->moveLeft();
+				printf("You pressed left arrow\n");
 				break;
 
 			case SDLK_RIGHT:

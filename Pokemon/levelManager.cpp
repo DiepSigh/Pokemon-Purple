@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
 
@@ -45,6 +46,10 @@ LevelManager::LevelManager() {
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
 
+	mOak = new Oak;
+	mOak->SetPosX(250);
+	mOak->SetPosY(250);
+	//map1 = new Map1();
 	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
 	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
@@ -79,13 +84,10 @@ LevelManager::~LevelManager() {
 
 	delete mMasterMap;
 	mMasterMap = NULL;
-	
-	//delete map1;
-	//map1 = nullptr;
+
 }
 
 void LevelManager::Update() {
-
 	//map1->Update();
 	//mPlayer->SetPosX(mPlayer->GetPosX() + 0.1f);
 }
@@ -112,6 +114,7 @@ void LevelManager::Render(float t) {
 	//mPlayerHouse->isActive = true;
 	
 	mPlayer->Render();
+	mOak->Render();//Renders .png image
 }
 
 void LevelManager::moveLeft() {
@@ -238,6 +241,7 @@ void LevelManager::NormalizeVel() {
 	mCamera->SetVel(0);
 	mCamera->SetSpeed(mCamera->GetSpeed() * mCamera->GetVel());
 }
+
 void LevelManager::buttonA() {}
 
 void LevelManager::buttonS() {}
