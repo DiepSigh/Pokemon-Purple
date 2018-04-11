@@ -3,22 +3,38 @@
 using namespace std;
 
 StartScreen::StartScreen() {
-	mTex = new Texture("StartScreen.png",0,0,800,600);
-	SetPosX(0);
-	SetPosY(0);
-	mGraphics = Graphics::Instance();
-	mIntro = AudioManager::Instance();
+	//mTex = new Texture("StartScreen.png", 0, 0, 800, 600);
+	BGStartScreen = new StartScreen(0, 0, new Texture("StartScreen.png", 0, 0, 800, 600));
+	BGStartScreen->SetPosX(0);
+	BGStartScreen->SetPosY(0);
+	
 	isPlaying = false;
 }
 
-StartScreen::~StartScreen() {
+StartScreen::StartScreen(float x, float y, Texture *tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+	mIntro = AudioManager::Instance();
+	SetPosX(x);
+	SetPosY(y);
+	//mPos.x = x;
+	//mPos.y = y;
+	mTex = tex;
+	//Render();
+	//Update();
+}
 
+
+
+StartScreen::~StartScreen() {
+	delete BGStartScreen;
+	BGStartScreen = NULL;
 }
 
 void StartScreen::Render() {
-	mTex->SetRenderRectX((int)(GetPosX()));
-	mTex->SetRenderRectY((int)(GetPosY()));
-	mGraphics->DrawTexture(mTex->GetSDLTex(), (mTex->GetClipped()) ? &mTex->GetmClipRect() : NULL, &mTex->GetmRenderRect());
+	GetmTex()->SetRenderRectX(GetPosX());
+	GetmTex()->SetRenderRectY(GetPosY());
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
 void StartScreen::Update() {

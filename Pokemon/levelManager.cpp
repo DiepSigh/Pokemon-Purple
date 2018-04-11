@@ -98,7 +98,7 @@ void LevelManager::Render(float dt) {
 		break;
 
 	case START:
-		mStartScreen->Update();
+		//mStartScreen->BGStartScreen->Update();
 		mStartScreen->Render();
 		
 		break;

@@ -72,10 +72,10 @@ void GameManager::Run() {
 			//mLevelManager->Update();	
 			//RENDERS!!!!!	
 			mMenuManager->Update();
-			mLevelManager->Render(mTimer->DeltaTime());
+			//mLevelManager->Render(mTimer->DeltaTime());
 			//Player Controller		
 			//Menu Controller
-			//mMenuManager->Render();
+			mMenuManager->Render();
 			mGraphics->Render();
 			mTimer->Reset();
 		}
