@@ -33,9 +33,6 @@ enum pokemon_status { OK=0, FROZEN=1, PARALYZED=2, POISONED=3, BADLY_POISONED=4,
 
 const int MAX_EV = 65535;
 
-//TO DO:
-//Pokemon into array
-
 class Pokemon : public GameEntity {
 public:
 	Pokemon();
@@ -113,14 +110,30 @@ public:
 	inline void setConfused(bool state) { m_confused = state; }
 	inline void setFlinched(bool state) { m_flinched = state; }
 	inline void setSeeded(bool state) { m_seeded = state; }
+
+	//Rendering
+	//56x56
+	Pokemon(int, int, Texture*);
+	Pokemon* getFront() { return m_frontSprite; }
+	Pokemon* getBack() { return m_backSprite; }
+	void Render();
 protected:
-	PokeBase *Pokebase;
+	Pokemon *m_frontSprite = nullptr;
+	int m_frontX;
+	int m_frontY;
+	Pokemon *m_backSprite = nullptr;
+	int m_backX;
+	int m_backY;
+	PokeBase *Pokebase = nullptr;
+	Graphics *mGraphics = nullptr;
+	AssetManager *mAssetManager = nullptr;
+
 	int m_pokedex; //stores # in pokedex
 	std::string m_nickname; //stores nickname if any
 	int m_level;
-	int m_status;
+	int m_status; //poisoned, paralyzed, non-volatile status
 	bool m_fainted;
-	int m_exp;
+	int m_exp; //current amount of exp
 	Move move[4];
 	
 	//Other
@@ -129,7 +142,7 @@ protected:
 	std::string m_type1_str;
 	std::string m_type2_str;
 	int m_catchRate;
-	int m_expYield;
+	int m_expYield; //used for calculating how much exp they give
 	int m_expGroup; //part of one of four exp groups
 	int m_evolve; //level Pokemon evolves at
 

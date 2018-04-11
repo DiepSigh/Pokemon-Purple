@@ -1,8 +1,10 @@
-﻿  main.cpp
+﻿  gameManager.cpp
 c:\users\stephen.diep\desktop\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  gameManager.cpp
-c:\users\stephen.diep\desktop\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
-  LINK : C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe not found or not built by the last incremental link; performing full link
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)

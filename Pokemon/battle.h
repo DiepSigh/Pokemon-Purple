@@ -15,7 +15,7 @@ struct battle : public GameEntity{
 	int firstAttack(Pokemon &, int Pmove, Pokemon &, int Amove); //first attack to determine who attacks second
 	void attack(Pokemon &, Pokemon &, int move); //procedures for attacking
 	bool playerFirst(Pokemon &, int Pmove, Pokemon &, int Amove); //checks to see if player attacks first. returns false if not
-	//multihit attacks case BARRAGE: case COMET_PUNCH: case DOUBLE_KICK: case FURY_ATTACK: case FURY_SWIPES: case PIN_MISSILE: case SPIKE_CANNON: case TWINEEDLE:
+	/*multihit attacks case BARRAGE: case COMET_PUNCH: case DOUBLE_KICK: case FURY_ATTACK: case FURY_SWIPES: case PIN_MISSILE: case SPIKE_CANNON: case TWINEEDLE:
 	//unique effect moves case CONVERSION: case COUNTER: case DISABLE: case DRAGON_RAGE: case DREAM_EATER: case FOCUS_ENERGY: 
 	//case HAZE: case HIGH_JUMP_KICK: case JUMP_KICK: case METRONOME: case MIMIC: case MIRROR_MOVE: case MIST: case NIGHT_SHADE: case PAY_DAY
 	//case PETAL_DANCE: case PSYWAVE: case RAGE: case ROAR: case SEISMIC_TOSS: case SONIC_BOOM: case SPLASH: case STRUGGLE:
@@ -26,7 +26,7 @@ struct battle : public GameEntity{
 	//suicide case EXPLOSION: case SELF_DESTRUCT
 	//2 turn attacks case BIDE: case DIG: case FLY: case HYPER_BEAM case RAZOR_WIND: case SKULL_BASH: case SKY_ATTACK: case SOLAR_BEAM:
 	//related to above attacks case EARTHQUAKE: case GUST:
-	//recoil case DOUBLE_EDGE: case SUBMISSION: case TAKE_DOWN:
+	//recoil case DOUBLE_EDGE: case SUBMISSION: case TAKE_DOWN:*/
 	bool statusCheck1(Pokemon &); //checks for status before Pokemon attacks. returns false if Pokemon can't attack. checks for if bound, confused, paralyzed, frozen, asleep
 	void statusCheck2(Pokemon &, Pokemon &); //checks for status after Pokemon attacks. takes damage if poisoned, burned, or seeded
 	bool faintCheck(Pokemon &, Pokemon &); //returns true if one of the Pokemon has fainted
@@ -44,10 +44,10 @@ struct battle : public GameEntity{
 	void switchOut(Pokemon &, Pokemon &);
 	void items(Pokemon &, Pokemon &);
 	void flee(Pokemon &, Pokemon &);
-
+	
 	//Rendering
 	battle(int, int, Texture*);
-	void startBattle();
+	void startBattle(Pokemon &one, Pokemon &two);
 	void Render();
 	static battle* sInstance;
 	static battle* Instance();
@@ -56,14 +56,14 @@ struct battle : public GameEntity{
 protected:
 	//count for bound moves
 	int m_boundCount;
-
+	//holder for battle text
 	std::string m_message;
 
-	battle * m_battleScreen = nullptr;
-	//Graphics * m_graphics = nullptr;
-	//AssetManager * m_aManager = nullptr;
-	Graphics* mGraphics;
-	AssetManager* mAssetManager;
+	battle *m_battleScreen = nullptr;
+	Pokemon *frontSprite = nullptr;
+	Pokemon *backSprite = nullptr;
+	Graphics *mGraphics = nullptr;
+	AssetManager *mAssetManager = nullptr;
 };
 
 #endif

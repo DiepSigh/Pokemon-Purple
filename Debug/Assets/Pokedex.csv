@@ -1,5 +1,5 @@
 m_pokedex,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_type2,m_catchRate,m_expYield,m_expGroup,m_evolve,m_kind,m_height,m_weight,m_description
-1,BULBASAUR,45,49,49,45,65,GRASS,POISON,45,64,2,16,Seed,"2'04""",15.2,A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
+,BULBASAUR,45,49,49,45,65,GRASS,POISON,45,64,2,16,Seed,"2'04""",15.2,A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
 2,IVYSAUR,60,62,63,60,80,GRASS,POISON,45,142,2,32,Seed,"3'03""",28.7,"When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
 3,VENUSAUR,80,82,83,80,100,GRASS,POISON,45,236,2,0,Seed,"6'07""",220.5,The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.
 4,CHARMANDER,39,52,43,65,50,FIRE,,45,62,2,16,Lizard,"2'00""",18.7,"The flame on its tail indicates Charmander's life force. If it is healthy, the flame burns brightly."
@@ -8,9 +8,9 @@ m_pokedex,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_t
 7,SQUIRTLE,44,48,65,43,50,WATER,,45,63,2,16,Tiny Turtle,"1'08""",19.8,"After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth."
 8,WARTORTLE,59,63,80,58,65,WATER,,45,142,2,36,Turtle,"3'03""",49.6,"It is said to live 10,000 years. Its furry tail is popular as a symbol of longevity."
 9,BLASTOISE,79,83,100,78,85,WATER,,45,239,2,0,Shellfish,"5'03""",188.5,A brutal Pokémon with pressurized water jets on its shell. They are used for high speed tackles.
-10,CATERPIE,45,30,35,45,20,BUG,,255,53,,,,,,
-11,METAPOD,50,20,55,30,25,BUG,,120,72,,,,,,
-12,BUTTERFREE,60,45,50,70,80,BUG,FLYING,45,160,,,,,,
+10,CATERPIE,45,30,35,45,20,BUG,,255,53,3,7,Worm,"1'00""",6.4,Its feet have suction cups designed to stick to any surface. It tenaciously climbs trees to forage.
+11,METAPOD,50,20,55,30,25,BUG,,120,72,3,10,Cocoon,"2'04""",21.8,"This Pokémon is vulnerable to attack while its shell is soft, exposing its weak and tender body."
+12,BUTTERFREE,60,45,50,70,80,BUG,FLYING,45,160,3,0,Butterfly,"3'07""",70.5,It loves the honey of flowers and can locate flower patches that have even tiny amounts of pollen.
 13,WEEDLE,40,35,30,50,20,BUG,POISON,255,52,,,,,,
 14,KAKUNA,45,25,50,35,25,BUG,POISON,120,71,,,,,,
 15,BEEDRILL,65,80,40,75,45,BUG,POISON,45,159,,,,,,

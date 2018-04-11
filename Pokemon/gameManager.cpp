@@ -92,7 +92,7 @@ void GameManager::Run() {
 			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
 			//Player Controller
-		
+			mBattle->startBattle(Pokemon(SQUIRTLE,5), Pokemon(CHARIZARD,5));
 			//Menu Controller
 			//mMenuManager->Render();
 

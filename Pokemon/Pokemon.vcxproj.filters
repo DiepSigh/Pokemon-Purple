@@ -47,16 +47,16 @@
       <Filter>Project\Managers</Filter>
     </ClCompile>
     <ClCompile Include="moves.cpp">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClCompile>
     <ClCompile Include="Pokemon.cpp">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClCompile>
     <ClCompile Include="battle.cpp">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClCompile>
     <ClCompile Include="PokeBase.cpp">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClCompile>
     <ClCompile Include="userInput.cpp">
       <Filter>Project\Source Files</Filter>
@@ -205,16 +205,16 @@
       <Filter>Project\Headers</Filter>
     </ClInclude>
     <ClInclude Include="moves.h">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClInclude>
     <ClInclude Include="Pokemon.h">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClInclude>
     <ClInclude Include="battle.h">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClInclude>
     <ClInclude Include="PokeBase.h">
-      <Filter>Project\Pokemon // Battles</Filter>
+      <Filter>Project\Pokemon n Battles</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMenu.h">
       <Filter>Project\Headers</Filter>
@@ -230,14 +230,14 @@
     <Filter Include="Project\Managers">
       <UniqueIdentifier>{80da92a1-fbac-439b-b7eb-6f8acb0e3a35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Project\Pokemon // Battles">
-      <UniqueIdentifier>{4e271276-e92b-4808-a83a-11f43f32096a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Project\Headers">
       <UniqueIdentifier>{c98fefc3-f72f-4277-a9de-01c5493913f8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Project\Source Files">
       <UniqueIdentifier>{2892e181-ed85-42e6-9876-73a9d81ed18d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Pokemon n Battles">
+      <UniqueIdentifier>{4e271276-e92b-4808-a83a-11f43f32096a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

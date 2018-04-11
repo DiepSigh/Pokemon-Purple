@@ -5,7 +5,8 @@ battle::battle() {
 	//7,90, 162, 146
 	//m_battleScreen = new battle(0,0, new Texture("battle_screen.png", 28, 370, 648, 600));
 	//m_battleScreen = new battle(0, 0, new AnimatedTexture("battle_screen.png", 28, 360, 162*4, 152*4, 1, 1.0f ,AnimatedTexture::HORIZONTAL));
-	m_battleScreen = new battle(0, 0, new Texture("battle_screen.png", 28+648+4, 370, 648, 600));
+	m_battleScreen = new battle(0, 0, new Texture("battle/battle_screen.png", 28 + 648 + 4, 370, 648, 600));
+	//+648+4
 	m_battleScreen->SetPosX(80);
 	m_battleScreen->SetPosY(0);
 }
@@ -19,8 +20,10 @@ battle::battle(int x, int y, Texture* tex) {
 	mTex = tex;
 }
 
-void battle::startBattle() {
+void battle::startBattle(Pokemon &one, Pokemon &two) {
 	m_battleScreen->Render();
+	two.getFront()->Render();
+	one.getBack()->Render();
 }
 
 void battle::Render() {
@@ -44,7 +47,6 @@ void battle::Release() {
 	delete sInstance;
 	sInstance = nullptr;
 }
-
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
 	battle();
@@ -77,9 +79,7 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 		}
 
 		int aiMove = AIChoice(opposing);
-		m_message = "";
 		int attacker = firstAttack(active, input-1, opposing, aiMove);
-		m_message = "";
 		if (!faintCheck(active, opposing)) {
 			if (attacker == PLAYER) {
 				attack(opposing, active, aiMove);
@@ -87,6 +87,8 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 				attack(active, opposing, input-1);
 			}
 		}
+		statusCheck2(active, opposing);
+		statusCheck2(opposing, active);
 	} while (!faintCheck(active, opposing));
 	if (active.getFainted()) {
 		cout << active.getName() << " has fainted.";
@@ -144,6 +146,7 @@ int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int 
 }
 
 void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
+	m_message = "";
 	if (statusCheck1(attacking)) {
 		double damage = 0;
 		Move moveUsed = attacking.getMove(move);
@@ -183,11 +186,10 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 			m_message += "Attack missed.\n";
 		}
 		std::cout << attacking.getName() << " used " << moveUsed.getMoveName() << std::endl;
-		if (damage != 0) {
-			std::cout << "It did " << damage << " damage!\n";
-		}
+		//if (damage != 0) {
+		//	std::cout << "It did " << damage << " damage!\n";
+		//}
 	}
-	statusCheck2(attacking, defending);
 	std::cout << m_message;
 }
 
@@ -293,20 +295,22 @@ bool battle::statusCheck1(Pokemon &pokemon) {
 }
 
 void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
+	m_message = "";
+
 	switch (pokemon.getStatus()) {
 	case BURN:
 		//takes 1/16 of max hp as damage
 		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
-		m_message = pokemon.getName() + " is hurt by burn.\n";
+		m_message += pokemon.getName() + " is hurt by burn.\n";
 		break;
 	case POISONED:
 		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
-		m_message = pokemon.getName() + " is hurt by poison.\n";
+		m_message += pokemon.getName() + " is hurt by poison.\n";
 		break;
 	case BADLY_POISONED:
 		//adds 1/16 of max hp as damage every turn
 		pokemon.hurt((pokemon.getMaxHP() * 0.0625) * pokemon.getPoisonCount());
-		m_message = pokemon.getName() + " is hurt by poison.\n";
+		m_message += pokemon.getName() + " is hurt by poison.\n";
 		pokemon.poison();
 		break;
 	}
@@ -314,8 +318,10 @@ void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
 		int drain = pokemon.getMaxHP() * 0.0625;
 		pokemon.hurt(drain);
 		other.heal(drain);
-		m_message = pokemon.getName() + " got its HP sapped.\n";
+		m_message += pokemon.getName() + " got its HP sapped.\n";
 	}
+
+	std::cout << m_message;
 }
 
 bool battle::faintCheck(Pokemon &player, Pokemon &ai) {
@@ -813,6 +819,16 @@ float battle::typeEffectiveness(int move, int pokemon) {
 			multiplier *= 2;
 			break;
 		}
+	}
+
+	if (multiplier == 2) {
+		m_message += "It was super effective.\n";
+	}
+	else if (multiplier == 0.5) {
+		m_message += "it wasn't very effective...\n";
+	}
+	else if (multiplier == 0) {
+		m_message += "It had no effect.\n";
 	}
 
 	return multiplier;

@@ -6,22 +6,19 @@
 
 int main(int argc, char *argv[])
 {
-	//GameManager* game = GameManager::Instance();
-	//game->Run();
-	//GameManager::Release();
-	//game = nullptr;
+	GameManager* game = GameManager::Instance();
+	game->Run();
+	GameManager::Release();
+	game = nullptr;
 
-	PokeBase *Pokedex = new PokeBase();
-	Pokedex->populatePokemon();
-
-	Pokemon *rivalStarter;
-	rivalStarter = new Pokemon(BULBASAUR, 20);
-	Pokemon *starter;
-	starter = new Pokemon(CHARMANDER, 20);
-	//rivalStarter->displayStats();
-	//starter->displayStats();
-	battle encounter;
-	encounter.fight(*rivalStarter, *starter);
+	//Pokemon *rivalStarter;
+	//rivalStarter = new Pokemon(BULBASAUR, 20);
+	//Pokemon *starter;
+	//starter = new Pokemon(CHARMANDER, 20);
+	////rivalStarter->displayStats();
+	////starter->displayStats();
+	//battle encounter;
+	//encounter.fight(*rivalStarter, *starter);
     return 0;
 }
 
