@@ -45,6 +45,9 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				if (menuM->OptsMnuisActive) {
 					menuM->mOptions->oCursorUp();
 				}
+				if (menuM->PokedexisActive) {
+					menuM->mPokeDex->CursorPMoveUp();
+				}
 				//World Control Up
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveUp();
@@ -82,6 +85,19 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 					if (menuM->StrtMnuisActive) {
 						menuM->StrtMnuisActive = false;
 					}
+					if (menuM->OptsMnuisActive) {
+						menuM->OptsMnuisActive = false;
+						menuM->StrtMnuisActive = true;
+					}
+					if (menuM->PokedexisActive) {
+						if (menuM->mPokeDex->Selected) {
+							menuM->mPokeDex->PokeDeselect();
+						}
+						else {
+							menuM->PokedexisActive = false;
+							menuM->StrtMnuisActive = true;
+						}
+					}
 					//World Control
 					break;
 
@@ -90,20 +106,26 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						menuM->MenuState();
 					}
 					else if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive) {
-						//menuM->mOptions->OptionsState();
 						if (menuM->mOptions->CursorO->GetPosY() == menuM->mOptions->Cancel->GetPosY() - 5 && menuM->mOptions->CursorO->GetPosX() == menuM->mOptions->Cancel->GetPosX() - 40) {
 							menuM->OptsMnuisActive = false;
 							menuM->StrtMnuisActive = true;
 						}
 					}
+					if (menuM->PokedexisActive) {
+						menuM->StrtMnuisActive = false;
+						menuM->mPokeDex->PokemonSelected();
+					}
+
 					//World Control
 					break;
 
 				case SDLK_c:
 					//Opens Menu
 					if (menuM->StrtMnuisActive == false) {
-						printf("Opening menu");
 						menuM->StrtMnuisActive = true;
+					}
+					else if (menuM->StrtMnuisActive) {
+						menuM->StrtMnuisActive = false;
 					}
 					if (menuM->OptsMnuisActive == true) {
 						menuM->OptsMnuisActive = false;
@@ -113,8 +135,8 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						menuM->PlayerMnuisActive = false;
 						menuM->StrtMnuisActive = true;
 					}
-					break;
 
+					break;
 				}
 				break;
 		}

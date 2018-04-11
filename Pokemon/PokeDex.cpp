@@ -1,9 +1,19 @@
 #include "PokeDex.h"
 
+PokeDex* PokeDex::sInstance = nullptr;
+
+PokeDex* PokeDex::Instance() {
+	if (sInstance == NULL) {
+		sInstance = new PokeDex();
+	}
+
+	return sInstance;
+}
+
 PokeDex::PokeDex() {
 	mPokeBase = PokeBase::Instance();
-	Counter = 40;
 	j = 0;
+	CursorCount = 0;
 	PkDex = new PokeDex(0, 0, new Texture("PokeDexMenu.png", 0, 0, 800, 600));
 	PkDex->SetPosX(0);
 	PkDex->SetPosY(0);
@@ -31,22 +41,40 @@ PokeDex::PokeDex() {
 	CursorP = new PokeDex(0, 0, new Texture("arrowPKMN.png", 0, 0, 40, 40));
 	CursorP->SetPosX(100);
 	CursorP->SetPosY(95);
+	SeenCount = 0;
+	for (int i = 0; i < 7; i++) {
+		if (i == 0) {
+			DexPosY[i] = Counter;
+		}
+		else {
+			DexPosY[i] = Counter;
+		}
+		Counter += 70;
+	}
+
+	for (int i = 0; i < 151; i++) {
+		isSeen[i] = false;
+	}
+
 	for (int i = 0; i < 3; i++) {
 		std::cout << mPokeBase->mP_name[i] << std::endl;
-		std::cout << "----------------------------------\n" << std::endl;
-		PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[i], "PKMNSOLID.ttf", 30));
+		if (isSeen[i]) {
+			PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[i], "PKMNSOLID.ttf", 30));
+			isSeen[i] = true;
+		}
+		else {
+			PkmnName[i] = new PokeDex(0, 0, new Texture("------------", "PKMNSOLID.ttf", 30));
+		}
 		PkmnName[i]->SetPosX(140);
-		PkmnName[i]->SetPosY(60 + Counter);
-		Counter += 70;
+		PkmnName[i]->SetPosY(DexPosY[i]);
 	}
 
 	for (int i = 3; i < 7; i++) {
 		std::cout << mPokeBase->mP_name[j] << std::endl;
-		std::cout << "----------------------------------\n" << std::endl;
 		PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[j], "PKMNSOLID.ttf", 30));
 		PkmnName[i]->SetPosX(140);
-		PkmnName[i]->SetPosY(60 + Counter);
-		Counter += 70;
+		PkmnName[i]->SetPosY(DexPosY[i]);
+		isSeen[i] = true;
 		j++;
 		if (j == 3) {
 			j = 0;
@@ -55,16 +83,24 @@ PokeDex::PokeDex() {
 
 	for (int i = 7; i < 11; i++) {
 		std::cout << mPokeBase->mP_name[j] << std::endl;
-		std::cout << "----------------------------------\n" << std::endl;
 		PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[j], "PKMNSOLID.ttf", 30));
 		PkmnName[i]->SetPosX(140);
-		PkmnName[i]->SetPosY(60 + Counter);
-		Counter += 70;
+		PkmnName[i]->SetPosY(820);
+		isSeen[i] = true;
 		j++;
 		if (j == 3) {
 			j = 0;
 		}
 	}
+
+	for (int i = 0; i < 151; i++) {
+		if (isSeen[i]) {
+			SeenCount++;
+		}
+	}
+	SeenCounter = new PokeDex(0, 0, new Texture(std::to_string(SeenCount), "PKMNSOLID.ttf", 30));
+	SeenCounter->SetPosX(670);
+	SeenCounter->SetPosY(100);
 }
 
 PokeDex::PokeDex(float x, float y, Texture* tex) {
@@ -76,8 +112,38 @@ PokeDex::PokeDex(float x, float y, Texture* tex) {
 	mTex = tex;
 }
 
+
 PokeDex::~PokeDex() {
-	
+	delete PkDex;
+	PkDex = NULL;
+
+	delete Seen;
+	Seen = NULL;
+
+	delete Caught;
+	Caught = NULL;
+
+	delete Contents;
+	Contents = NULL;
+
+	delete Data;
+	Data = NULL;
+
+	delete Cry;
+	Cry = NULL;
+
+	delete Area;
+	Area = NULL;
+
+	delete Quit;
+	Quit = NULL;
+
+	delete CursorP;
+	Quit = NULL;
+}
+
+void PokeDex::Release() {
+	PokeDex::~PokeDex();
 }
 
 void PokeDex::Update() {
@@ -114,32 +180,29 @@ void PokeDex::CheckDexState() {
 }
 
 void PokeDex::CursorPMoveDown() {
+	CursorCount++;
+	if (CursorCount >= 151) {
+		CursorCount = 151;
+	}
 	if (CursorP->GetPosY() == 95) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(165);
 	}
 	else if (CursorP->GetPosY() == 165) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(235);
 	}
 	else if (CursorP->GetPosY() == 235) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(305);
 	}
 	else if (CursorP->GetPosY() == 305) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(375);
 	}
 	else if (CursorP->GetPosY() == 375) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(445);
 	}
 	else if (CursorP->GetPosY() == 445) {
-		std::cout << CursorP->GetPosY();
 		CursorP->SetPosY(515);
 	}
 	else if (CursorP->GetPosY() == 515) {
-		std::cout << CursorP->GetPosY();
 		if (DexCheck) {
 			SetValueR(GetValueR() + 1);
 			SetValueT(GetValueT() + 1);
@@ -149,8 +212,78 @@ void PokeDex::CursorPMoveDown() {
 	}
 }
 
-void PokeDex::CheckDraw() {
-	for (int i = GetValueR(); i < GetValueT(); i++) {
-		PkmnName[i]->SetPosY(PkmnName[i]->GetPosY() - 70);
+void PokeDex::CursorPMoveUp() {
+	CursorCount--;
+	if (CursorCount <= 0) {
+		CursorCount = 0;
+	}
+	if (CursorP->GetPosY() == 515) {
+		CursorP->SetPosY(445);
+	}
+	else if (CursorP->GetPosY() == 445) {
+		DexCheck = false;
+		CursorP->SetPosY(375);
+	}
+	else if (CursorP->GetPosY() == 375) {
+		CursorP->SetPosY(305);
+	}
+	else if (CursorP->GetPosY() == 305) {
+		CursorP->SetPosY(235);
+	}
+	else if (CursorP->GetPosY() == 235) {
+		CursorP->SetPosY(165);
+	}
+	else if (CursorP->GetPosY() == 165) {
+		CursorP->SetPosY(95);
+	}
+	else if (CursorP->GetPosY() == 95) {
+		if (DexCheck) {
+			SetValueR(GetValueR() - 1);
+			SetValueT(GetValueT() - 1);
+			if (GetValueR() <= 0) {
+				SetValueR(0);
+			}
+			if (GetValueT() <= 7) {
+				SetValueT(7);
+			}
+			CheckDraw();
+		}
+		DexCheck = true;
 	}
 }
+
+void PokeDex::CheckDraw() {
+	int j = 0;
+	for (int i = GetValueR(); i < GetValueT(); i++) {
+		std::cout << DexPosY[j] << std::endl;
+		PkmnName[i]->SetPosY(DexPosY[j]);
+		j++;
+	}
+}
+
+void PokeDex::PokemonSelected() {
+	if (Selected) {
+		CX = CursorP->GetPosX();
+		CY = CursorP->GetPosY();
+		PkmnName[CursorCount];
+		CursorP->SetPosX(610);
+		CursorP->SetPosY(315);
+	}
+	else {
+		Selected = true;
+	}
+	DeSelected = true;
+}
+
+void PokeDex::PokeDeselect() {
+	if(Selected) {
+		CursorP->SetPosX(CX);
+		CursorP->SetPosY(CY);
+	}
+	if (Selected == false) {
+		CursorP->SetPosX(100);
+		CursorP->SetPosY(95);
+	}
+	Selected = false;
+}
+
