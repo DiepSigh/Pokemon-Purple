@@ -51,10 +51,7 @@ GameManager::~GameManager() {
 	mAudioMgr = NULL;
 
 	delete mTex;
-	mTex = NULL;
-
-	
-	
+	mTex = NULL;	
 }
 
 void GameManager::Run() {
@@ -69,7 +66,6 @@ void GameManager::Run() {
 		}
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-
 //			std::cout << mTimer->DeltaTime() << std::endl;
 			mGraphics->ClearBackBuffer();			
 			//UPDATES!!!!

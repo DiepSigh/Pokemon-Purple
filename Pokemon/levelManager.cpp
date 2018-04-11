@@ -34,6 +34,7 @@ LevelManager::LevelManager() {
 	mPlayer->SetPosY(300);
 	mPlayer->SetSpeed(5);
 
+	mStartScreen = new StartScreen();
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -93,15 +94,24 @@ void LevelManager::Render(float dt) {
 	///LEVEL LOAD TEST
 	switch (activeLevel)
 	{
-	case NONE :
+	case NONE:
+		break;
+
+	case START:
+		mStartScreen->Update();
+		mStartScreen->Render();
+		
 		break;
 
 	case PLAYERHOUSE :
 		mPlayerHouse->Update();
+		mPlayer->Render();
 
 		break;
 	case MASTERMAP :
 		mMasterMap->Update();
+		mPlayer->Render();
+
 
 		break;
 
@@ -110,7 +120,6 @@ void LevelManager::Render(float dt) {
 	}
 	//mPlayerHouse->isActive = true;
 	
-	mPlayer->Render();
 }
 
 void LevelManager::moveLeft(float dt) {
@@ -121,15 +130,17 @@ void LevelManager::moveLeft(float dt) {
 		break;
 
 	case PLAYERHOUSE:		
-		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed()* dt);
-		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed() * dt);
-		cout << mPlayerHouse->GetPosX() + mCamera->GetSpeed() * dt * 500<< endl;
-
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
+		cout << mPlayerHouse->GetPosX() + mCamera->GetSpeed() << endl;
+		mPlayer->Render();
 
 		break;
 	case MASTERMAP:		
 		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
+		mPlayer->Render();
+
 		break;
 
 	default:
@@ -146,14 +157,18 @@ void LevelManager::moveRight(float dt) {
 		break;
 
 	case PLAYERHOUSE:		
-		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed()*dt * 1000);
-		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() - mCamera->GetSpeed()*dt * 1000);
-		cout << mPlayerHouse->GetPosX() - mCamera->GetSpeed()* dt * 1000<< endl;
+		//Check if player is walking into collider by accsessing collision script and checking for a collider at players position
+		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() - mCamera->GetSpeed());
+		cout << mPlayerHouse->GetPosX() - mCamera->GetSpeed()<< endl;
+		mPlayer->Render();
 
 		break;
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
 		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
+		mPlayer->Render();
+
 		break;
 
 	default:
@@ -172,11 +187,15 @@ void LevelManager::moveUp(float dt) {
 	case PLAYERHOUSE:
 		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() + mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+		mPlayer->Render();
+
 
 		break;
 	case MASTERMAP:
 		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+		mPlayer->Render();
+
 		break;
 
 	default:
@@ -203,22 +222,20 @@ void LevelManager::moveDown(float dt) {
 	case PLAYERHOUSE:
 		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() - mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+		mPlayer->Render();
+
 
 		break;
 	case MASTERMAP:
 		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+		mPlayer->Render();
+
 		break;
 
 	default:
 		break;
-	}	//mCamera->SetVel(2);
-	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	//if (mCamera->GetSpeed() > 0.01f) {
-	//	mCamera->SetSpeed(0.01f);
-	//}
-	//mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
-	//cout << mCamera->GetYPos() << endl;
+	}	
 }
 
 void LevelManager::NormalizeVel() {

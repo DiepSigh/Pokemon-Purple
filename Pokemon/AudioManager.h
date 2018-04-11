@@ -20,6 +20,7 @@ public:
 
 	void PlaySFX(std::string filename, int loops = 0, int channel = 0);
 
+	void IntroSound();
 	void PalletTownSound();
 	void ViridianCitySound();
 

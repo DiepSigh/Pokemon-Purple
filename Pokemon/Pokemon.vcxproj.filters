@@ -16,6 +16,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PokeDex.cpp" />
     <ClCompile Include="pokemonLeague.cpp" />
@@ -31,10 +32,7 @@
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
-<<<<<<< HEAD
-=======
-    <ClCompile Include="Options.cpp" />
->>>>>>> master
+    <ClCompile Include="StartScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -44,6 +42,7 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
@@ -67,9 +66,6 @@
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
-<<<<<<< HEAD
-=======
-    <ClInclude Include="Options.h" />
->>>>>>> master
+    <ClInclude Include="StartScreen.h" />
   </ItemGroup>
 </Project>

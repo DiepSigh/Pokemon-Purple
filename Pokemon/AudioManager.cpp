@@ -71,3 +71,8 @@ void AudioManager::ViridianCitySound() {
 
 
 }
+void AudioManager::IntroSound() {
+
+	PlayMusic("PokemonOpening.mp3", 0);
+
+}

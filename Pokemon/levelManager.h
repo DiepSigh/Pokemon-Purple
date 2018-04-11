@@ -3,6 +3,7 @@
 
 #include "characters.h"
 #include "camera.h"
+#include "StartScreen.h"
 #include "startRoom.h"
 #include "playerHouse.h"
 #include "redHouse.h"
@@ -31,7 +32,7 @@ public:
 	void buttonC();
 	Camera* mCamera;
 	void NormalizeVel();
-	enum ActiveLevel{NONE, MASTERMAP, PLAYERHOUSE};
+	enum ActiveLevel{NONE,START, MASTERMAP, PLAYERHOUSE};
 	ActiveLevel GetLevelName(){ return activeLevel; }
 	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
 
@@ -40,6 +41,7 @@ private:
 	~LevelManager();
 	static LevelManager* sInstance;
 	static bool sInitialized;
+	StartScreen* mStartScreen;
 	StartRoom* mStartRoom;
 	PlayerHouse* mPlayerHouse;
 	RedHouse* mRedHouse;
@@ -55,7 +57,7 @@ private:
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	ActiveLevel activeLevel = PLAYERHOUSE;
+	ActiveLevel activeLevel = START;
 };
 
 
