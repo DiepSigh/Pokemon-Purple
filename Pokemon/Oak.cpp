@@ -2,7 +2,7 @@
 
 Oak::Oak(){
 	mGraphics = Graphics::Instance();
-	mOak = new Texture("OAK.png", 0, 0, 51, 54);
+	mOak = new Texture("OAK.png", 0, 0, 32, 32);
 	mTex = mOak;
 }
 

@@ -49,6 +49,9 @@ LevelManager::LevelManager() {
 	mOak = new Oak;
 	mOak->SetPosX(250);
 	mOak->SetPosY(250);
+	mMom = new Mom;
+	mMom->SetPosX(375);
+	mMom->SetPosY(375);
 	//map1 = new Map1();
 	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
 	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
@@ -115,6 +118,7 @@ void LevelManager::Render(float t) {
 	
 	mPlayer->Render();
 	mOak->Render();//Renders .png image
+	mMom->Render();
 }
 
 void LevelManager::moveLeft() {
