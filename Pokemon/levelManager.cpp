@@ -31,15 +31,21 @@ LevelManager::LevelManager() {
 	mCamera->SetSpeed(5);
 
 	mPlayer = new Characters();
-	mPlayer->SetPosX(400);
+	mPlayer->SetPosX(350);
 	mPlayer->SetPosY(300);
-	mPlayer->SetSpeed(2);
 
-	mCollisionBox = CollisionBox::Instance();
+	mPlayer->SetWPosX(0);
+	mPlayer->SetWPosY(0);
 	
 
-	//mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PalletTownSound();
+	mPlayer->SetSpeed(2);
+
+	mCollisionBoxMM = CollisionBoxMM::Instance();
+	mCollisionBoxPH = CollisionBoxPH::Instance();
+	
+	mAudioMgr = AudioManager::Instance();
+	mAudioMgr->PalletTownSound();
+
 	mMasterMap = new MasterMap(0, 0);
 		
 	mStartRoom = new StartRoom(0, 0);
@@ -59,8 +65,11 @@ LevelManager::LevelManager() {
 
 LevelManager::~LevelManager() {
 
-	delete mCollisionBox;
-	mCollisionBox = NULL;
+	delete mCollisionBoxMM;
+	mCollisionBoxMM = NULL;
+
+	delete mCollisionBoxPH;
+	mCollisionBoxPH = NULL;
 
 	mAudioMgr = NULL;
 
@@ -113,11 +122,12 @@ void LevelManager::Render(float t) {
 
 	case PLAYERHOUSE:
 		mPlayerHouse->Update();
+		mCollisionBoxPH->DrawCollisions(mCamera);
 		
 		break;
 	case MASTERMAP:
 		mMasterMap->Update();
-		mCollisionBox->DrawCollisions(mCamera);
+		mCollisionBoxMM->DrawCollisions(mCamera);
 		
 		break;
 
@@ -145,11 +155,14 @@ void LevelManager::moveLeft() {
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
-		mCollisionBox->SetPosX(mCollisionBox->GetPosX() + mCamera->GetSpeed());
+
+		mPlayer->SetWPosX(mPlayer->GetWPosX() + mCamera->GetSpeed());
+		std::cout << mPlayer->GetWPosX();
 		
 
+		//mCollisionBoxMM->SetPosX(mCollisionBoxMM->GetPosX() + mCamera->GetSpeed());
 		
-		
+				
  		break;
 
 	default:
@@ -180,10 +193,12 @@ void LevelManager::moveRight() {
 		break;
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
-
 		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
 
-		mCollisionBox->SetPosX((mMasterMap->GetPosX() - mCollisionBox->GetPosX()) + mCamera->GetSpeed());
+		mPlayer->SetWPosX(mPlayer->GetWPosX() - mCamera->GetSpeed());
+		std::cout << mPlayer->GetWPosX();
+
+		//mCollisionBoxMM->SetPosX(mCollisionBoxMM->GetPosX() + mCamera->GetSpeed());
 
 		
 		
@@ -219,7 +234,7 @@ void LevelManager::moveUp() {
 	case MASTERMAP:
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
-		mCollisionBox->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
+		//mCollisionBoxMM->SetPosY(mCollisionBoxMM->GetPosX() + mCamera->GetSpeed());
 		
 
 		
@@ -256,7 +271,7 @@ void LevelManager::moveDown() {
 	case MASTERMAP:
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
 		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
-		mCollisionBox->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
+		//mCollisionBoxMM->SetPosY(mCollisionBoxMM->GetPosX() - mCamera->GetSpeed());
 		
 
 		

@@ -1,53 +1,31 @@
-#ifndef _COLLISIONBOXES_H
-#define _COLLISIONBOXES_H
+#ifndef _COLLISIONBOXESMM_H
+#define _COLLISIONBOXESMM_H
 
 #include "gameEntity.h"
 #include "camera.h"
 
 
-
-class CollisionBox : public GameEntity {
+class CollisionBoxMM : public GameEntity {
 private:
 
 	Graphics* mGraphics;
+	Texture mCollisionBoxes[46];
 	
 		
 public:	
-	static CollisionBox* sInstance;
-	static CollisionBox* Instance();
+	static CollisionBoxMM* sInstance;
+	static CollisionBoxMM* Instance();
 
 	void DrawCollisions(Camera*);
 	
-	CollisionBox* Rect1;
-	CollisionBox* Rect2;
-	CollisionBox* Rect3;
-	CollisionBox* Rect4;
-	CollisionBox* Rect5;
-	CollisionBox* Rect6;
-	CollisionBox* Rect7;
-	CollisionBox* Rect8;
-	CollisionBox* Rect9;
-	CollisionBox* Rect10;
-	CollisionBox* Rect11;
-	CollisionBox* Rect12;
-	CollisionBox* Rect13;
-	CollisionBox* Rect14;
-	CollisionBox* Rect15;
-	CollisionBox* Rect16;
-	CollisionBox* Rect17;
-	CollisionBox* Rect18;
-	CollisionBox* Rect19;
-	CollisionBox* Rect20;
-	CollisionBox* Rect21;
-	CollisionBox* Rect22;
+	Texture GetCollisons() { return mCollisionBoxes[46]; }
 
-	//CollisionBox(float x, float y, Texture* tex);
-	CollisionBox(float, float);
-	CollisionBox();
-	~CollisionBox();
+	CollisionBoxMM(float, float);
+	CollisionBoxMM();
+	~CollisionBoxMM();
 	void Render();
 
 };
 
-#endif // !_COLLISIONBOXES_H
+#endif // !_COLLISIONBOXESMM_H
 

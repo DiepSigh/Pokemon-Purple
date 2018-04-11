@@ -18,6 +18,7 @@ protected:
 public:
 	Texture();
 	Texture(std::string, int, int, int, int);
+	Texture(float, float, float, float);
 	~Texture();
 
 	virtual void Render();
@@ -36,6 +37,12 @@ public:
 	void SetRenderRectY(int y) { mRenderRect.y = y; }
 	void SetRenderRectW(int w) { mRenderRect.w = w; }
 	void SetRenderRectH(int h) { mRenderRect.h = h; }
+
+private:
+	float PosX;
+	float PosY;
+	float Width;
+	float Height;
 };
 #endif // !TEXTURE_H
 

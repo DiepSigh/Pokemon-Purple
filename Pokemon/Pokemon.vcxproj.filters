@@ -33,6 +33,7 @@
     <ClCompile Include="mapsLoader.cpp" />
     <ClCompile Include="researchLab.cpp" />
     <ClCompile Include="CollisionBoxesMM.cpp" />
+    <ClCompile Include="CollisionBoxesPH.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -67,5 +68,6 @@
     <ClInclude Include="mapsLoader.h" />
     <ClInclude Include="researchLab.h" />
     <ClInclude Include="CollisionBoxesMM.h" />
+    <ClInclude Include="CollisionBoxesPH.h" />
   </ItemGroup>
 </Project>

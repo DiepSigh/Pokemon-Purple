@@ -14,6 +14,7 @@
 #include "pokemonLeague.h"
 #include "MasterMap.h"
 #include "CollisionBoxesMM.h"
+#include "CollisionBoxesPH.h"
 #include "AudioManager.h"
 
 class LevelManager {
@@ -52,7 +53,8 @@ private:
 	ViridianCityHouse* mViridianCityHouse;
 	PokemonLeague* mPokemonLeague;
 	MasterMap* mMasterMap;
-	CollisionBox* mCollisionBox;
+	CollisionBoxMM* mCollisionBoxMM;
+	CollisionBoxPH* mCollisionBoxPH;
 	AudioManager* mAudioMgr;
 	
 	Characters* mPlayer;
