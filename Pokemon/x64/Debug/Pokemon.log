@@ -1,29 +1,131 @@
-﻿  userInput.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\userinput.cpp(68): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  timer.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\timer.cpp(48): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  texture.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\texture.cpp(56): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  Pokemon.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pokemon.cpp(15): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  menuStart.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(56): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  menuManager.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menumanager.cpp(38): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  levelManager.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(68): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  graphics.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\graphics.cpp(127): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  gameManager.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\gamemanager.cpp(81): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  gameEntity.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\gameentity.cpp(67): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  DisplayText.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(35): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  characters.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(29): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+﻿  animatedTexture.cpp
   AssetManager.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\assetmanager.cpp(84): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
-  animatedTexture.cpp
-c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\animatedtexture.cpp(46): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  AudioManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): warning C4778: 'printf' : unterminated format string '%\n'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  battle.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(401): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(403): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(405): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(409): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(433): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(438): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(479): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(480): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(482): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(483): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  DisplayText.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  gameManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  MasterMap.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  menuManager.cpp
+  menuStart.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  camera.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  characters.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  graphics.cpp
+  Inventory.cpp
+  Items.cpp
+  levelManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(242): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  moves.cpp
+  Options.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\options.cpp(68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\options.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PkmnState.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pkmnstate.cpp(11): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pkmnstate.cpp(12): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
+  Compiling...
+  PlayerMenu.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\playermenu.cpp(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\playermenu.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PokeDex.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pokedex.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pokedex.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+  pokemonLeague.cpp
+  pokemonMart.cpp
+  playerHouse.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  pokemonCenter.cpp
+  pokemonSchool.cpp
+  redHouse.cpp
+  reserchLab.cpp
+  startRoom.cpp
+  texture.cpp
+  timer.cpp
+  userInput.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  viridianCityHouse.cpp
+  Dialouge.cpp
+  NPC.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Oak.cpp
+  TextManager.cpp
+  Generating Code...
+AssetManager.obj : error LNK2019: unresolved external symbol SDL_GetError referenced in function "public: struct _Mix_Music * __cdecl AssetManager::GetMusic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?GetMusic@AssetManager@@QEAAPEAU_Mix_Music@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+AudioManager.obj : error LNK2001: unresolved external symbol SDL_GetError
+graphics.obj : error LNK2001: unresolved external symbol SDL_GetError
+AssetManager.obj : error LNK2019: unresolved external symbol SDL_RWFromFile referenced in function "public: struct Mix_Chunk * __cdecl AssetManager::GetSFX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?GetSFX@AssetManager@@QEAAPEAUMix_Chunk@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+AssetManager.obj : error LNK2019: unresolved external symbol SDL_GetBasePath referenced in function "private: struct _TTF_Font * __cdecl AssetManager::GetFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?GetFont@AssetManager@@AEAAPEAU_TTF_Font@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
+AssetManager.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "private: __cdecl AssetManager::~AssetManager(void)" (??1AssetManager@@AEAA@XZ)
+AssetManager.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "private: struct _TTF_Font * __cdecl AssetManager::GetFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?GetFont@AssetManager@@AEAAPEAU_TTF_Font@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
+AssetManager.obj : error LNK2019: unresolved external symbol TTF_CloseFont referenced in function "private: __cdecl AssetManager::~AssetManager(void)" (??1AssetManager@@AEAA@XZ)
+AssetManager.obj : error LNK2019: unresolved external symbol Mix_LoadWAV_RW referenced in function "public: struct Mix_Chunk * __cdecl AssetManager::GetSFX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?GetSFX@AssetManager@@QEAAPEAUMix_Chunk@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+AssetManager.obj : error LNK2019: unresolved external symbol Mix_LoadMUS referenced in function "public: struct _Mix_Music * __cdecl AssetManager::GetMusic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?GetMusic@AssetManager@@QEAAPEAU_Mix_Music@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_Quit referenced in function "private: __cdecl AudioManager::~AudioManager(void)" (??1AudioManager@@AEAA@XZ)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_OpenAudio referenced in function "private: __cdecl AudioManager::AudioManager(void)" (??0AudioManager@@AEAA@XZ)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_PlayChannelTimed referenced in function "public: void __cdecl AudioManager::PlaySFX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int)" (?PlaySFX@AudioManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_PlayMusic referenced in function "public: void __cdecl AudioManager::PlayMusic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?PlayMusic@AudioManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_PauseMusic referenced in function "public: void __cdecl AudioManager::PauseMusic(void)" (?PauseMusic@AudioManager@@QEAAXXZ)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_ResumeMusic referenced in function "public: void __cdecl AudioManager::ResumeMusic(void)" (?ResumeMusic@AudioManager@@QEAAXXZ)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_PausedMusic referenced in function "public: void __cdecl AudioManager::ResumeMusic(void)" (?ResumeMusic@AudioManager@@QEAAXXZ)
+AudioManager.obj : error LNK2019: unresolved external symbol Mix_PlayingMusic referenced in function "public: void __cdecl AudioManager::PauseMusic(void)" (?PauseMusic@AudioManager@@QEAAXXZ)
+gameManager.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl GameManager::Run(void)" (?Run@GameManager@@QEAAXXZ)
+userInput.obj : error LNK2001: unresolved external symbol SDL_PollEvent
+graphics.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: struct SDL_Texture * __cdecl Graphics::CreateTextTexture(struct _TTF_Font *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?CreateTextTexture@Graphics@@QEAAPEAUSDL_Texture@@PEAU_TTF_Font@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+graphics.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_GetWindowSurface referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "public: __cdecl Graphics::~Graphics(void)" (??1Graphics@@QEAA@XZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: struct SDL_Texture * __cdecl Graphics::CreateTextTexture(struct _TTF_Font *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?CreateTextTexture@Graphics@@QEAAPEAUSDL_Texture@@PEAU_TTF_Font@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+graphics.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "public: void __cdecl Graphics::ClearBackBuffer(void)" (?ClearBackBuffer@Graphics@@QEAAXXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: void __cdecl Graphics::DrawTexture(struct SDL_Texture *,struct SDL_Rect *,struct SDL_Rect *)" (?DrawTexture@Graphics@@QEAAXPEAUSDL_Texture@@PEAUSDL_Rect@@1@Z)
+graphics.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "public: void __cdecl Graphics::Render(void)" (?Render@Graphics@@QEAAXXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "public: __cdecl Graphics::~Graphics(void)" (??1Graphics@@QEAA@XZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "public: __cdecl Graphics::~Graphics(void)" (??1Graphics@@QEAA@XZ)
+graphics.obj : error LNK2019: unresolved external symbol IMG_Init referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol IMG_Quit referenced in function "public: __cdecl Graphics::~Graphics(void)" (??1Graphics@@QEAA@XZ)
+graphics.obj : error LNK2019: unresolved external symbol IMG_Load referenced in function "public: struct SDL_Texture * __cdecl Graphics::LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?LoadTexture@Graphics@@QEAAPEAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+graphics.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "private: bool __cdecl Graphics::Init(void)" (?Init@Graphics@@AEAA_NXZ)
+graphics.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: struct SDL_Texture * __cdecl Graphics::CreateTextTexture(struct _TTF_Font *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?CreateTextTexture@Graphics@@QEAAPEAUSDL_Texture@@PEAU_TTF_Font@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+graphics.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: __cdecl Graphics::~Graphics(void)" (??1Graphics@@QEAA@XZ)
+texture.obj : error LNK2019: unresolved external symbol SDL_QueryTexture referenced in function "public: __cdecl Texture::Texture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (??0Texture@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0H@Z)
+timer.obj : error LNK2019: unresolved external symbol SDL_GetTicks referenced in function "public: void __cdecl Timer::Reset(void)" (?Reset@Timer@@QEAAXXZ)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2-2.0.8\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2-2.0.8\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2-2.0.8\lib\x86\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\x64\Debug\Pokemon.exe : fatal error LNK1120: 39 unresolved externals
