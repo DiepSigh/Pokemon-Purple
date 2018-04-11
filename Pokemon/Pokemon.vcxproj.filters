@@ -32,7 +32,7 @@
     <ClCompile Include="viridianCityHouse.cpp" />
     <ClCompile Include="mapsLoader.cpp" />
     <ClCompile Include="researchLab.cpp" />
-    <ClCompile Include="CollisionBoxes.cpp" />
+    <ClCompile Include="CollisionBoxesMM.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -66,6 +66,6 @@
     <ClInclude Include="viridianCityHouse.h" />
     <ClInclude Include="mapsLoader.h" />
     <ClInclude Include="researchLab.h" />
-    <ClInclude Include="CollisionBoxes.h" />
+    <ClInclude Include="CollisionBoxesMM.h" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ MasterMap::MasterMap(float x, float y) {
 	mPos.x = x;
 	mPos.y = y;
 	SetPosX(-1504);
-	SetPosY(-4896);
+	SetPosY(-4910);
 }
 
 

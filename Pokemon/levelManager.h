@@ -13,7 +13,7 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
-#include "CollisionBoxes.h"
+#include "CollisionBoxesMM.h"
 #include "AudioManager.h"
 
 class LevelManager {

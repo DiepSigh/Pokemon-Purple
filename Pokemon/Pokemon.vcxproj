@@ -151,7 +151,7 @@
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
     <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="CollisionBoxes.h" />
+    <ClInclude Include="CollisionBoxesMM.h" />
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
@@ -185,7 +185,7 @@
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="CollisionBoxes.cpp" />
+    <ClCompile Include="CollisionBoxesMM.cpp" />
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />

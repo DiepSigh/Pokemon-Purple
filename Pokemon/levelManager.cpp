@@ -36,18 +36,12 @@ LevelManager::LevelManager() {
 	mPlayer->SetSpeed(2);
 
 	mCollisionBox = CollisionBox::Instance();
-	mCollisionBox->SetPosY(100);
-
-	cout << mCollisionBox->GetPosX() << mCollisionBox->GetPosY() << endl;
 	
-
 
 	//mAudioMgr = AudioManager::Instance();
 	//mAudioMgr->PalletTownSound();
 	mMasterMap = new MasterMap(0, 0);
-
-	cout << mMasterMap->GetPosX() << mMasterMap->GetPosY() << endl;
-
+		
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -190,9 +184,6 @@ void LevelManager::moveRight() {
 		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
 
 		mCollisionBox->SetPosX((mMasterMap->GetPosX() - mCollisionBox->GetPosX()) + mCamera->GetSpeed());
-
-
-		
 
 		
 		
