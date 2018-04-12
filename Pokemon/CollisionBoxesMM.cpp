@@ -17,11 +17,12 @@ CollisionBoxMM::CollisionBoxMM(float x, float y) {
 	mTex = new Texture("collisionBox_test.png", 0, 0, 32, 32);
 	
 	mGraphics = Graphics::Instance();
-
+	
 	mPos.x = x;
 	mPos.y = y;
-	mCollisionBoxes[0] = Texture(-174, 165, 124, 32);
-	mCollisionBoxes[1] = Texture(-174, 165, 32, 96);
+
+	mCollisionBoxes[0] = Texture(-174 + 400, 165 + 300, 124, 32);
+	mCollisionBoxes[1] = Texture(-174 + 400, 165 + 300, 32, 96);
 	mCollisionBoxes[2] = Texture(-80, 165, 32, 96);
 	mCollisionBoxes[3] = Texture(-46, 262, 352, 32);
 	mCollisionBoxes[4] = Texture(-273, 262, 96, 32);
@@ -67,6 +68,8 @@ CollisionBoxMM::CollisionBoxMM(float x, float y) {
 	mCollisionBoxes[44] = Texture(-18, -1312, 32, 188);
 	mCollisionBoxes[45] = Texture(48, -1626, 32, 32);
 
+	mCollisionBoxes[46] = Texture(-50+400,-50+300,32,32); // box for testing
+
 		
 }
 
@@ -80,13 +83,21 @@ CollisionBoxMM::~CollisionBoxMM() {
 
 void CollisionBoxMM::DrawCollisions(Camera* cam) {
 	
+	// TEST 
+	mTex->SetRenderRectW(32);
+	mTex->SetRenderRectH(32);
+	SetPosX(-50 + cam->GetXPos());
+	SetPosY(-50 + cam->GetYPos());
+	Render();
+
+
 	// **** LAKE TOP **** 
 	mTex->SetRenderRectW(124);
 	mTex->SetRenderRectH(32);
 	SetPosX(-174 + cam->GetXPos());
 	SetPosY(165 + cam->GetYPos());
 	Render();
-	// **** LAKE RIGHT SIDE ****
+/*	// **** LAKE RIGHT SIDE ****
 	mTex->SetRenderRectW(32);
 	mTex->SetRenderRectH(96);
 	SetPosX(-174 + cam->GetXPos());
@@ -365,7 +376,121 @@ void CollisionBoxMM::DrawCollisions(Camera* cam) {
 	SetPosX(48 + cam->GetXPos());
 	SetPosY(-1626 + cam->GetYPos());
 	Render();
+	*/
 }
+
+
+void CollisionBoxMM::CheckMoveRight(Characters* mPlayer, Camera* mCamera, AudioManager* mAudioMgr, CollisionBoxMM* mCollisionBoxMM) {
+	
+	
+	// ***** TESTING COLLISIONS RIGHT MOVE *****
+	mPlayer->SetWPosX(mPlayer->GetWPosX() + mCamera->GetSpeed());
+	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << std::endl;
+
+	// check box #46
+	if (mPlayer->GetWPosX() + mPlayer->GetPlSize() >= mCollisionBoxMM->GetCollisonX(46)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetCollisonX(46)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(46)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(46) + mCollisionBoxMM->GetCollisonH(46)
+		)
+	{
+
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, you can't go Right" << std::endl;
+	}
+	// check box #0
+	if (mPlayer->GetWPosX() + mPlayer->GetPlSize() >= mCollisionBoxMM->GetCollisonX(0)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetCollisonX(0)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(0)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(0) + mCollisionBoxMM->GetCollisonH(0)
+		)
+	{
+
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, you can't go Right" << std::endl;
+	}
+	
+}
+
+void CollisionBoxMM::CheckMoveLeft(Characters* mPlayer, Camera* mCamera, AudioManager* mAudioMgr, CollisionBoxMM* mCollisionBoxMM) {
+
+	// ***** TESTING COLLISIONS LEFT MOVE *****
+	mPlayer->SetWPosX(mPlayer->GetWPosX() - mCamera->GetSpeed());
+	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << std::endl;
+
+	// check box #46
+	if (mPlayer->GetWPosX() <= mCollisionBoxMM->GetCollisonX(46) + mCollisionBoxMM->GetCollisonW(46)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonX(46) + mCollisionBoxMM->GetCollisonW(46)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(46) + mCollisionBoxMM->GetCollisonH(46)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(46))
+	{
+
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, you can't Go Left..." << std::endl;
+	}
+	// check box #0
+	if (mPlayer->GetWPosX() <= mCollisionBoxMM->GetCollisonX(0) + mCollisionBoxMM->GetCollisonW(0)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonX(0) + mCollisionBoxMM->GetCollisonW(0)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(0) + mCollisionBoxMM->GetCollisonH(0)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(0))
+	{
+
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, you can't Go Left..." << std::endl;
+	}
+
+}
+
+void CollisionBoxMM::CheckMoveUp(Characters* mPlayer, Camera* mCamera, AudioManager* mAudioMgr, CollisionBoxMM* mCollisionBoxMM) {
+
+	// ***** TESTING COLLISIONS MOVE UP *****
+	mPlayer->SetWPosY(mPlayer->GetWPosY() - mCamera->GetSpeed());
+	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << std::endl;
+
+	// check box #46
+	if (mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(46) + mCollisionBoxMM->GetCollisonH(46)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(46) + mCollisionBoxMM->GetCollisonH(46)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetCollisonX(46) + mCollisionBoxMM->GetCollisonH(46)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonX(46)
+
+		)
+	{
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working You cant go up..." << std::endl;
+	}
+
+}
+
+void CollisionBoxMM::CheckMoveDown(Characters* mPlayer, Camera* mCamera, AudioManager* mAudioMgr, CollisionBoxMM* mCollisionBoxMM) {
+
+	// ***** TESTING COLLISIONS MOVE DOWN *****
+	mPlayer->SetWPosY(mPlayer->GetWPosY() + mCamera->GetSpeed());
+	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << std::endl;
+
+	// check box #46
+	if (mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(46)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(46)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonX(46)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetCollisonX(46) + mCollisionBoxMM->GetCollisonW(46)
+
+		)
+	{
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, You can't go down..." << std::endl;
+	}
+	// check box #0
+	if (mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonY(0)
+		&& mPlayer->GetWPosY() < mCollisionBoxMM->GetCollisonY(0)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetCollisonX(0)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetCollisonX(0) + mCollisionBoxMM->GetCollisonW(0)
+
+		)
+	{
+		mAudioMgr->BumpSFX();
+		std::cout << "It is working, You can't go down..." << std::endl;
+	}
+}
+
 
 void CollisionBoxMM::Render() {
 

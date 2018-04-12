@@ -33,16 +33,22 @@ public:
 	bool GetClipped() { return mClipped; }
 	SDL_Rect GetmRenderRect() { return mRenderRect; }
 	SDL_Rect GetmClipRect() { return mClipRect; }
+
 	void SetRenderRectX(int x) { mRenderRect.x = x; }
 	void SetRenderRectY(int y) { mRenderRect.y = y; }
 	void SetRenderRectW(int w) { mRenderRect.w = w; }
 	void SetRenderRectH(int h) { mRenderRect.h = h; }
 
+	float GetPosX() { return PosX; } // by Canados
+	float GetPosY() { return PosY; } // by Canados
+	float GetPosWidth() { return Width; } // by Canados
+	float GetPosHeight() { return Height; } // by Canados
+
 private:
-	float PosX;
-	float PosY;
-	float Width;
-	float Height;
+	float PosX;	// by Canados
+	float PosY; // by Canados
+	float Width; // by Canados
+	float Height; // by Canados
 };
 #endif // !TEXTURE_H
 

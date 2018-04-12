@@ -1,6 +1,9 @@
-﻿  levelManager.cpp
-c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(294): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  CollisionBoxesPH.cpp
+c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\zver\documents\github\pokemon\pokemon\collisionboxesph.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe

@@ -106,7 +106,7 @@ Mix_Chunk* AssetManager::GetSFX(std::string filename) {
 
 	if (mSFX[fullPath] == nullptr) {
 		mSFX[fullPath] = Mix_LoadWAV(fullPath.c_str());
-		if (mSFX[fullPath] = NULL) {
+		if (mSFX[fullPath] == NULL) {
 			printf("SFX Loading Error: File-%s Error-%s", filename.c_str(), Mix_GetError());
 		}
 
