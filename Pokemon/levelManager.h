@@ -42,7 +42,10 @@ private:
 	static LevelManager* sInstance;
 	static bool sInitialized;
 	StartScreen* mStartScreen;
+	StartScreen* mStartPokemon;
 	StartRoom* mStartRoom;
+	AnimatedTexture *mIntroChar;
+
 	PlayerHouse* mPlayerHouse;
 	RedHouse* mRedHouse;
 	ReserchLab* mReserchLab;

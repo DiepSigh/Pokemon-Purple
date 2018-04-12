@@ -4,7 +4,6 @@ using namespace std;
 
 MasterMap::MasterMap(float x, float y) {
 	mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
-
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;

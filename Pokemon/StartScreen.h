@@ -11,15 +11,20 @@ class StartScreen : public GameEntity {
 public:
 	StartScreen();
 	StartScreen(float, float, Texture*);
+	StartScreen(float, float, AnimatedTexture*);
 	~StartScreen();
 	void Render();
 	void Update();
 	StartScreen *BGStartScreen;
+	StartScreen *StartChar;
+	AnimatedTexture *mIntroChar;
+	StartScreen *StartPokemon;
+
 
 private:
 	Graphics *mGraphics;
 	AudioManager *mIntro;
-	
-	AssetManager *mAssetManager;
 	bool isPlaying;
+	AssetManager *mAssetManager;
+
 };

@@ -69,10 +69,10 @@ void GameManager::Run() {
 //			std::cout << mTimer->DeltaTime() << std::endl;
 			mGraphics->ClearBackBuffer();			
 			//UPDATES!!!!
-			//mLevelManager->Update();	
+			mLevelManager->Update();	
 			//RENDERS!!!!!	
 			mMenuManager->Update();
-			//mLevelManager->Render(mTimer->DeltaTime());
+			mLevelManager->Render(mTimer->DeltaTime());
 			//Player Controller		
 			//Menu Controller
 			mMenuManager->Render();

@@ -3,12 +3,8 @@
 using namespace std;
 
 StartScreen::StartScreen() {
-	//mTex = new Texture("StartScreen.png", 0, 0, 800, 600);
-	BGStartScreen = new StartScreen(0, 0, new Texture("StartScreen.png", 0, 0, 800, 600));
 	BGStartScreen->SetPosX(0);
-	BGStartScreen->SetPosY(0);
-	
-	isPlaying = false;
+	BGStartScreen->SetPosY(0);	
 }
 
 StartScreen::StartScreen(float x, float y, Texture *tex) {
@@ -17,14 +13,18 @@ StartScreen::StartScreen(float x, float y, Texture *tex) {
 	mIntro = AudioManager::Instance();
 	SetPosX(x);
 	SetPosY(y);
-	//mPos.x = x;
-	//mPos.y = y;
+	isPlaying = false;
 	mTex = tex;
-	//Render();
-	//Update();
+	StartChar = new StartScreen(320, 300, new AnimatedTexture("StartScreenChar.png", 0, 0, 130, 200, 2, 5, AnimatedTexture::HORIZONTAL));
 }
 
-
+StartScreen::StartScreen(float x, float y, AnimatedTexture *tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+	SetPosX(x);
+	SetPosY(y);
+	mTex = tex;
+}
 
 StartScreen::~StartScreen() {
 	delete BGStartScreen;
@@ -42,4 +42,5 @@ void StartScreen::Update() {
 		mIntro->IntroSound();
 		isPlaying = true;
 	}
+
 }

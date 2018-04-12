@@ -34,7 +34,8 @@ LevelManager::LevelManager() {
 	mPlayer->SetPosY(300);
 	mPlayer->SetSpeed(5);
 
-	mStartScreen = new StartScreen();
+	mStartScreen = new StartScreen(0, 0, new Texture("StartScreen.png", 0, 0, 800, 600));
+	//mStartPokemon = new StartScreen(0, 0, new Texture("arrowPKMN.png", 0, 0, 10, 10));
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -98,8 +99,10 @@ void LevelManager::Render(float dt) {
 		break;
 
 	case START:
-		//mStartScreen->BGStartScreen->Update();
+		mStartScreen->Update();
 		mStartScreen->Render();
+		mStartScreen->StartChar->GetmTex()->Update();
+		mStartScreen->StartChar->Render();
 		
 		break;
 
