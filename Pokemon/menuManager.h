@@ -30,6 +30,7 @@ public:
 	void LoadOptions();
 	void LoadPlayerM();
 	void LoadPokeDex();
+	void DataDraw();
 private:
 	MenuManager();
 	~MenuManager();

@@ -10,11 +10,7 @@ public:
 	static PokeDex* sInstance;
 	static PokeDex* Instance();
 
-	enum PokedexState { CONTENTS, DATA, CRY, AREA, QUIT };
-	PokedexState GetDexState() { return PkDexState; }
-	void SetDexState(PokedexState state) { PkDexState = state; }
 	bool PKDexActive = false;
-	void CheckDexState();
 
 	PokeDex* PkDex;
 	PokeDex* Seen;
@@ -26,6 +22,10 @@ public:
 	PokeDex* Quit;
 	PokeDex* CursorP;
 	PokeDex* SeenCounter;
+	PokeDex* DataDisplay;
+	PokeDex* Height;
+	PokeDex* Weight;
+	PokeDex* type;
 
 	PokeDex* PkmnName[151];
 
@@ -38,11 +38,14 @@ public:
 
 	void PokemonSelected();
 	void PokeDeselect();
+	void PokeDexReset();
+
+	void DexData();
 
 	bool DexCheck = false;
-
+	bool DataCheck = false;
 	bool Selected = false;
-	bool DeSelected = true;
+	bool DeSelected = false;
 
 	void Update();
 	void Render();
@@ -56,7 +59,6 @@ public:
 	void SetValueT(int T) { t = T; }
 
 private:
-	PokedexState PkDexState;
 	Graphics * mGraphics;
 	AssetManager* mAssetManager;
 	float Counter = 100;

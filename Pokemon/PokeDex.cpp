@@ -41,6 +41,9 @@ PokeDex::PokeDex() {
 	CursorP = new PokeDex(0, 0, new Texture("arrowPKMN.png", 0, 0, 40, 40));
 	CursorP->SetPosX(100);
 	CursorP->SetPosY(95);
+	DataDisplay = new PokeDex(0, 0, new Texture("Stats.png", 0, 0, 800, 600));
+	DataDisplay->SetPosX(0);
+	DataDisplay->SetPosY(0);
 	SeenCount = 0;
 	for (int i = 0; i < 7; i++) {
 		if (i == 0) {
@@ -147,7 +150,6 @@ void PokeDex::Release() {
 }
 
 void PokeDex::Update() {
-
 }
 
 void PokeDex::Render() {
@@ -156,31 +158,9 @@ void PokeDex::Render() {
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
-void PokeDex::CheckDexState() {
-	if (PKDexActive) {
-		switch (PkDexState) {
-		case CONTENTS:
-			//Pokemon Selection
-			break;
-		case DATA:
-			//Load Pokemon Data
-			break;
-		case CRY:
-			//Play Pokemon Cry
-			break;
-		case AREA:
-			//Load Map where pokemon is found
-			break;
-		case QUIT:
-			//Disable PokeDex
-			PKDexActive = false;
-			break;
-		}
-	}
-}
-
 void PokeDex::CursorPMoveDown() {
 	CursorCount++;
+	std::cout << CursorCount << std::endl;
 	if (CursorCount >= 151) {
 		CursorCount = 151;
 	}
@@ -214,6 +194,7 @@ void PokeDex::CursorPMoveDown() {
 
 void PokeDex::CursorPMoveUp() {
 	CursorCount--;
+	std::cout << CursorCount << std::endl;
 	if (CursorCount <= 0) {
 		CursorCount = 0;
 	}
@@ -262,28 +243,40 @@ void PokeDex::CheckDraw() {
 }
 
 void PokeDex::PokemonSelected() {
-	if (Selected) {
+	if (DeSelected) {
+		Selected = true;
 		CX = CursorP->GetPosX();
 		CY = CursorP->GetPosY();
 		PkmnName[CursorCount];
 		CursorP->SetPosX(610);
 		CursorP->SetPosY(315);
-	}
-	else {
-		Selected = true;
+		DeSelected = false;
 	}
 	DeSelected = true;
 }
 
 void PokeDex::PokeDeselect() {
-	if(Selected) {
+	Selected = false;
+	if(Selected == false) {
 		CursorP->SetPosX(CX);
 		CursorP->SetPosY(CY);
 	}
-	if (Selected == false) {
-		CursorP->SetPosX(100);
-		CursorP->SetPosY(95);
-	}
-	Selected = false;
+	DeSelected = true;
 }
 
+void PokeDex::PokeDexReset() {
+	CursorP->SetPosX(100);
+	CursorP->SetPosY(95);
+	CursorCount = 0;
+	SetValueR(0);
+	SetValueT(7);
+	
+	CX = 0;
+	CY = 0;
+
+	std::cout << CursorCount << std::endl;
+}
+
+void PokeDex::DexData() {
+
+}

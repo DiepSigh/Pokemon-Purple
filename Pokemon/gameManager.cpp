@@ -76,7 +76,7 @@ void GameManager::Run() {
 			
 			mGraphics->ClearBackBuffer();
 			//UPDATES!!!!
-			//mLevelManager->Update();		
+			//mLevelManager->Update();
 
 			//RENDERS!!!!!	
 			mMenuManager->Update();

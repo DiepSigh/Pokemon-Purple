@@ -93,9 +93,10 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						if (menuM->mPokeDex->Selected) {
 							menuM->mPokeDex->PokeDeselect();
 						}
-						else {
+						else if (menuM->mPokeDex->Selected == false){
 							menuM->PokedexisActive = false;
 							menuM->StrtMnuisActive = true;
+							menuM->mPokeDex->PokeDexReset();
 						}
 					}
 					//World Control
@@ -111,10 +112,15 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 							menuM->StrtMnuisActive = true;
 						}
 					}
+					if (menuM->PokedexisActive && menuM->mPokeDex->Selected) {
+						menuM->mPokeDex->DexData();
+					}
 					if (menuM->PokedexisActive) {
 						menuM->StrtMnuisActive = false;
 						menuM->mPokeDex->PokemonSelected();
 					}
+
+					
 
 					//World Control
 					break;
