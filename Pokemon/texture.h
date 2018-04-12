@@ -44,6 +44,9 @@ public:
 	float GetPosWidth() { return Width; } // by Canados
 	float GetPosHeight() { return Height; } // by Canados
 
+	void SetPosX(float posX) { PosX = posX; }
+	void SetPosY(float posY) { PosY = posY; }
+
 private:
 	float PosX;	// by Canados
 	float PosY; // by Canados

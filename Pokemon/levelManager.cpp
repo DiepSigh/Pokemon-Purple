@@ -44,15 +44,9 @@ LevelManager::LevelManager() {
 	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << endl; // cheking PlayerX world position
 
 	
-
 	mPlayer->SetSpeed(2);
 
 	mCollisionBoxMM = CollisionBoxMM::Instance();
-
-	std::cout << "Collision box X " << mCollisionBoxMM->GetCollisonX(46) << endl;
-	std::cout << "Collision box Y " << mCollisionBoxMM->GetCollisonY(46) << endl;
-	std::cout << "Collision box W " << mCollisionBoxMM->GetCollisonW(46) << endl;
-	std::cout << "Collision box H " << mCollisionBoxMM->GetCollisonH(46) << endl;
 
 	mCollisionBoxPH = CollisionBoxPH::Instance();
 	
@@ -154,6 +148,7 @@ void LevelManager::Render(float t) {
 
 void LevelManager::moveLeft() {
 
+	
 	switch (activeLevel)
 	{
 	case NONE:
@@ -184,7 +179,7 @@ void LevelManager::moveLeft() {
 
 void LevelManager::moveRight() {
 
-
+	
 	switch (activeLevel)
 	{
 	case NONE:
@@ -214,7 +209,7 @@ void LevelManager::moveRight() {
 
 void LevelManager::moveUp() {
 
-
+	
 	switch (activeLevel)
 	{
 	case NONE:
@@ -244,7 +239,7 @@ void LevelManager::moveUp() {
 
 void LevelManager::moveDown() {
 
-
+	
 	switch (activeLevel)
 	{
 	case NONE:

@@ -19,6 +19,7 @@ public:
 	static CollisionBoxPH* Instance();
 
 	void DrawCollisions(Camera*);
+	
 
 	void CheckMoveRight(Characters*, Camera*, AudioManager*, CollisionBoxPH*);
 	void CheckMoveLeft(Characters*, Camera*, AudioManager*, CollisionBoxPH*);
@@ -31,7 +32,7 @@ public:
 	float GetCollisonH(int num) { return mCollisionBoxes[num].GetPosHeight(); }
 
 
-	CollisionBoxPH(float, float);
+	CollisionBoxPH(float, float, Camera*);
 	CollisionBoxPH();
 	~CollisionBoxPH();
 	void Render();

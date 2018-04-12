@@ -13,7 +13,7 @@ class CollisionBoxMM : public GameEntity {
 private:
 
 	Graphics* mGraphics;
-	Texture mCollisionBoxes[47];
+	Texture mCollisionBoxes[44];
 	
 		
 public:	
@@ -32,7 +32,7 @@ public:
 	float GetCollisonW(int num) { return mCollisionBoxes[num].GetPosWidth(); }
 	float GetCollisonH(int num) { return mCollisionBoxes[num].GetPosHeight(); }
 
-	CollisionBoxMM(float, float);
+	CollisionBoxMM(float, float, Camera*);
 	CollisionBoxMM();
 	~CollisionBoxMM();
 	void Render();
