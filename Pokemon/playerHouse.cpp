@@ -22,6 +22,12 @@ PlayerHouse::PlayerHouse(float x, float y) {
 	mPos.y = y;
 	SetPosX(350);
 	SetPosY(200);
+
+	mMom = new Mom;
+	mMom->SetPosX(510);
+	mMom->SetPosY(320);
+
+	mCam = Camera::Instance();
 }
 
 PlayerHouse::~PlayerHouse() {
@@ -91,7 +97,23 @@ void PlayerHouse::Update() {
 	}
 	SetPosY(GetPosY() - 224);
 	SetPosX(GetPosX() - 224);
+	mMom->Render();
+}
 
+void PlayerHouse::momLeft() {
+	mMom->SetPosX(mMom->GetPosX() + mCam->GetSpeed());
+}
+
+void PlayerHouse::momRight() {
+	mMom->SetPosX(mMom->GetPosX() - mCam->GetSpeed());
+}
+
+void PlayerHouse::momUp() {
+	mMom->SetPosY(mMom->GetPosY() + mCam->GetSpeed());
+}
+
+void PlayerHouse::momDown() {
+	mMom->SetPosY(mMom->GetPosY() - mCam->GetSpeed());
 }
 
 

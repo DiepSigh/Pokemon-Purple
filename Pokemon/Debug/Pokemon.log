@@ -1,2 +1,3 @@
-﻿  Oak.cpp
+﻿  MasterMap.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe

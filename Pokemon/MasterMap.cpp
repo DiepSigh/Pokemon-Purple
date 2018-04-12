@@ -4,13 +4,19 @@ using namespace std;
 
 MasterMap::MasterMap(float x, float y) {
 	//mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
-	mMap = new Texture("MasterMap.png", 0, 0, 1550, 3200);
+	mMap = new Texture("MasterMap.png", 0, 0, 3100, 6400);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
-	SetPosX(-800);
-	SetPosY(-2900);
+	SetPosX(-1600);
+	SetPosY(-5800);
+
+	mNPC1 = new NPC1;
+	mNPC1->SetPosX(70);
+	mNPC1->SetPosY(70);
+	
+	mCam = Camera::Instance();
 }
 
 MasterMap::~MasterMap() {

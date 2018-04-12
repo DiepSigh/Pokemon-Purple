@@ -41,6 +41,7 @@
     <ClCompile Include="Oak.cpp" />
     <ClCompile Include="TextManager.cpp" />
     <ClCompile Include="Mom.cpp" />
+    <ClCompile Include="NPC1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -83,5 +84,6 @@
     <ClInclude Include="Oak.h" />
     <ClInclude Include="TextManager.h" />
     <ClInclude Include="Mom.h" />
+    <ClInclude Include="NPC1.h" />
   </ItemGroup>
 </Project>

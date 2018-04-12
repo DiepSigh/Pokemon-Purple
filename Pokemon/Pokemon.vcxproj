@@ -165,6 +165,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Mom.h" />
     <ClInclude Include="moves.h" />
+    <ClInclude Include="NPC1.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PlayerMenu.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="levelManager.cpp" />
     <ClCompile Include="Mom.cpp" />
     <ClCompile Include="moves.cpp" />
+    <ClCompile Include="NPC1.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PlayerMenu.cpp" />

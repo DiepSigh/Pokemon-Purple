@@ -11,6 +11,9 @@ void Mom::Text() {
 	SetCol(26);
 }
 
+void Mom::Update() {
+}
+
 Mom::~Mom()
 {
 }

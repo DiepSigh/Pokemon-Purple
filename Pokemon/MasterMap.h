@@ -4,6 +4,7 @@
 #include "animatedTexture.h"
 #include "gameEntity.h"
 #include "camera.h"
+#include "NPC1.h"
 #include <iostream>
 
 
@@ -16,6 +17,9 @@ private:
 	Texture *mMap;
 	Graphics* mGraphics;
 	void DrawMap();
+	NPC1* mNPC1;
+	Camera* mCam;
+	MasterMap* mMasterMap;
 
 public:
 	MasterMap(float, float);

@@ -14,7 +14,6 @@
 #include "pokemonLeague.h"
 #include "MasterMap.h"
 #include "Oak.h"
-#include "Mom.h"
 
 class LevelManager {
 private:
@@ -57,9 +56,8 @@ private:
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	ActiveLevel activeLevel = PLAYERHOUSE;
+	ActiveLevel activeLevel = MASTERMAP;
 	Oak* mOak;
-	Mom* mMom;
 };
 
 

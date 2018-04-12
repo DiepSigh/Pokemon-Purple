@@ -7,11 +7,10 @@ class Mom : public NPC {
 public:	
 	Mom();
 	void Text();
+	void Update();
 	~Mom();
-
 private:
 	Texture * mMom;
-
 };
 
 #endif // !MOM_H

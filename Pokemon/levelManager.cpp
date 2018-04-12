@@ -46,12 +46,10 @@ LevelManager::LevelManager() {
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
 
-	mOak = new Oak;
-	mOak->SetPosX(250);
-	mOak->SetPosY(250);
-	mMom = new Mom;
-	mMom->SetPosX(375);
-	mMom->SetPosY(375);
+	//mOak = new Oak;
+	//mOak->SetPosX(250);
+	//mOak->SetPosY(250);
+	
 	//map1 = new Map1();
 	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
 	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
@@ -102,23 +100,23 @@ void LevelManager::Render(float t) {
 	case NONE :
 		break;
 
-	case PLAYERHOUSE :
-		mPlayerHouse->Update();
-
-		break;
+	
 	case MASTERMAP :
 		mMasterMap->Update();
 
 		break;
 
+	case PLAYERHOUSE :
+		mPlayerHouse->Update();
+
+		break;
 	default:
 		break;
 	}
 	//mPlayerHouse->isActive = true;
 	
 	mPlayer->Render();
-	mOak->Render();//Renders .png image
-	mMom->Render();
+	//mOak->Render();//Renders .png image
 }
 
 void LevelManager::moveLeft() {
@@ -129,13 +127,14 @@ void LevelManager::moveLeft() {
 		break;
 
 	case PLAYERHOUSE:
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
-		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
-
+		mPlayerHouse->momLeft();
 		break;
+
 	case MASTERMAP:
-		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
 		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
 		break;
 
 	default:
@@ -159,13 +158,14 @@ void LevelManager::moveRight() {
 		break;
 
 	case PLAYERHOUSE:
+		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
 		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() - mCamera->GetSpeed());
-		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
-
+		mPlayerHouse->momRight();
 		break;
+
 	case MASTERMAP:
-		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
+		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
 		break;
 
 	default:
@@ -190,13 +190,14 @@ void LevelManager::moveUp() {
 		break;
 
 	case PLAYERHOUSE:
+		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() + mCamera->GetSpeed());
-		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
-
+		mPlayerHouse->momUp();
 		break;
+
 	case MASTERMAP:
-		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
+		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
 		break;
 
 	default:
@@ -209,25 +210,22 @@ void LevelManager::moveUp() {
 	//}
 	//mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 	//cout << mCamera->GetYPos() << endl;
-
 }
 
 void LevelManager::moveDown() {
-
-
 	switch (activeLevel)
 	{
 	case NONE:
 		break;
 
 	case PLAYERHOUSE:
-		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() - mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
-
+		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() - mCamera->GetSpeed());
+		mPlayerHouse->momDown();
 		break;
 	case MASTERMAP:
-		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
 		break;
 
 	default:
