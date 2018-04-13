@@ -1,10 +1,212 @@
-﻿  levelManager.cpp
-c:\users\zver\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\zver\documents\github\pokemon\pokemon\levelmanager.cpp(269): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Pokemon.vcxproj -> C:\Users\Zver\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+﻿  viridianCityHouse.cpp
+  userInput.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  timer.cpp
+  texture.cpp
+  startRoom.cpp
+  researchLab.cpp
+  redHouse.cpp
+  pokemonSchool.cpp
+  pokemonCenter.cpp
+  Pokemon.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  playerHouse.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  pokemonMart.cpp
+  pokemonLeague.cpp
+  PokeDex.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PkmnState.cpp
+  levelManager.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\levelmanager.cpp(273): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Items.cpp
+  Inventory.cpp
+  graphics.cpp
+  characters.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  camera.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  menuStart.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  menuManager.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\menumanager.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  MasterMap.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  mapsLoader.cpp
+  gameManager.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  DisplayText.cpp
+  CollisionBoxesPH.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(106): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesph.cpp(107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CollisionBoxesMM.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\camera.h(16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(119): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(120): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(130): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(131): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(142): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(143): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(148): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(149): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(154): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(155): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(160): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(161): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(166): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(167): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(172): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(178): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(179): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(184): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(185): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(190): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(191): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(196): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(197): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(202): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(208): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(209): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(214): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(215): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(220): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(221): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(226): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(227): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(232): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(233): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(238): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(239): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(244): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(245): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(253): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(254): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(259): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(260): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(265): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(266): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(271): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(272): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(277): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(278): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(283): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(284): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(290): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(291): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(296): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(297): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(302): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(303): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(308): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(309): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(314): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(315): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(320): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(321): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(326): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(327): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(332): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(333): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(338): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(339): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(344): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(345): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(350): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(351): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(356): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(357): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(362): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(363): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(368): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(369): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(374): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(375): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(380): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(381): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(386): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(387): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(392): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(393): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(398): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\collisionboxesmm.cpp(399): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  AudioManager.cpp
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4778: 'printf' : unterminated format string '%\n'
+c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\andrey.osokin\documents\github\pokemon\pokemon\audiomanager.cpp(27): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  AssetManager.cpp
+  animatedTexture.cpp
+  Generating Code...
+  Pokemon.vcxproj -> C:\Users\Andrey.Osokin\Documents\GitHub\Pokemon\Debug\Pokemon.exe

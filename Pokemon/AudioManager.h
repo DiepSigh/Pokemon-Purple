@@ -36,8 +36,6 @@ public:
 	void BattleVsWildPokemonSound();
 	void VictoryVsWildPokemon();
 
-private:
-
 	AudioManager();
 	~AudioManager();
 

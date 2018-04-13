@@ -12,6 +12,8 @@
 class CollisionBoxMM : public GameEntity {
 private:
 
+	bool AudioClick = false;
+
 	Graphics* mGraphics;
 	Texture *mBattle, *mDialog, *mCollisions, *mAudioSwitcher;
 	Texture mCollisionBoxes[46];
@@ -25,8 +27,8 @@ public:
 
 	void DrawCollisions(Camera*);
 	void DrawDialogBoxes(Camera*);
-	void DrawBattleBoxes(Camera*);
-	void DrawAudioSwitcherBoxes(Camera*);
+	void DrawBattleBoxes(Camera*, AudioManager*);
+	void DrawAudioSwitcherBoxes(Camera*, AudioManager*);
 
 	void CheckMoveRight(Characters*, Camera*, AudioManager*, CollisionBoxMM*);
 	void CheckMoveLeft(Characters*, Camera*, AudioManager*, CollisionBoxMM*);
@@ -48,8 +50,13 @@ public:
 	float GetDialogEventW(int num) { return mDialogBoxes[num].GetPosWidth(); }
 	float GetDialogEventH(int num) { return mDialogBoxes[num].GetPosHeight(); }
 
+	float GetAudioSwitcherX(int num) { return mAudioSwitcherBox[num].GetPosX(); }
 	float GetAudioSwitcherY(int num) { return mAudioSwitcherBox[num].GetPosY(); }
+	float GetAudioSwitcherW(int num) { return mAudioSwitcherBox[num].GetPosWidth(); }
+	float GetAudioSwitcherH(int num) { return mAudioSwitcherBox[num].GetPosHeight(); }
 
+	void SetAudioClick(bool click) { AudioClick = click; }
+	bool GetAudioClick() { return AudioClick; }
 
 	CollisionBoxMM(float, float, Camera*);
 	CollisionBoxMM();

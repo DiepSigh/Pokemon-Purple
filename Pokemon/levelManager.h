@@ -37,10 +37,14 @@ public:
 	enum ActiveLevel { NONE, MASTERMAP, PLAYERHOUSE };
 	ActiveLevel GetLevelName() { return activeLevel; }
 	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
-
-private:
 	LevelManager();
 	~LevelManager();
+
+	ActiveLevel GetActiveLevel() {	return activeLevel;	}
+	void SetActiveLevel(ActiveLevel lv) { activeLevel =lv;}
+
+
+private:
 	static LevelManager* sInstance;
 	static bool sInitialized;
 	StartRoom* mStartRoom;

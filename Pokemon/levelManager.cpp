@@ -37,8 +37,6 @@ LevelManager::LevelManager() {
 	mPlayer->SetWPosX(mCamera->GetXPos()); // by Canados
 	mPlayer->SetWPosY(mCamera->GetYPos()); // by Canados
 	
-	//std::cout << "Player X Y "  << mPlayer->GetPosX() << " " << mPlayer->GetPosY() << endl; // checking PlayerX position
-
 	std::cout << "Camera X Y " <<  mCamera->GetXPos() << " " << mCamera->GetYPos() << endl;
 
 	std::cout << "Player World X Y " << mPlayer->GetWPosX() << " " << mPlayer->GetWPosY() << endl; // cheking PlayerX world position
@@ -48,6 +46,9 @@ LevelManager::LevelManager() {
 
 	mCollisionBoxMM = CollisionBoxMM::Instance();
 	mCollisionBoxPH = CollisionBoxPH::Instance();
+
+	mAudioMgr = AudioManager::Instance();
+	mAudioMgr->PalletTownSound();
 	
 	mMasterMap = new MasterMap(0, 0);
 		
@@ -71,6 +72,7 @@ LevelManager::~LevelManager() {
 	delete mCollisionBoxPH;
 	mCollisionBoxPH = NULL;
 
+	delete mAudioMgr;
 	mAudioMgr = NULL;
 
 	delete mStartRoom;
@@ -115,6 +117,7 @@ void LevelManager::Update() {
 
 void LevelManager::Render(float t) {
 	///LEVEL LOAD TEST
+	
 	switch (activeLevel)
 	{
 	case NONE:
@@ -123,15 +126,16 @@ void LevelManager::Render(float t) {
 	case PLAYERHOUSE:
 		mPlayerHouse->Update();
 		mCollisionBoxPH->DrawCollisions(mCamera);
-		
-		
+		mCollisionBoxPH->DrawExitTile(mCamera);
+			
 		break;
 	case MASTERMAP:
 		mMasterMap->Update();
+		
 		mCollisionBoxMM->DrawCollisions(mCamera);
-		mCollisionBoxMM->DrawBattleBoxes(mCamera);
+		mCollisionBoxMM->DrawBattleBoxes(mCamera, mAudioMgr);
 		mCollisionBoxMM->DrawDialogBoxes(mCamera);
-	//	mCollisionBoxMM->DrawAudioSwitcherBoxes(mCamera);
+		mCollisionBoxMM->DrawAudioSwitcherBoxes(mCamera, mAudioMgr);
 		
 		
 		break;

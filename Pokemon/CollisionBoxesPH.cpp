@@ -14,11 +14,14 @@ CollisionBoxPH::CollisionBoxPH() {}
 
 CollisionBoxPH::CollisionBoxPH(float x, float y, Camera* cam) {
 
-	mTex = new Texture("collisionBox.png", 0, 0, 32, 32);
+	mCollisions = new Texture("collisionBox.png", 0, 0, 32, 32);
+	mExit = new Texture("exitBox.png", 0, 0, 32, 32);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
 	mPos.y = y;
+
+	mOutOfHouse[0] = Texture(180 + cam->GetXPos(), -78 + cam->GetYPos(), 32, 32); // uot of house
 
 	mCollisionBoxes[0] = Texture(-50 + cam->GetXPos(), -100 + cam->GetYPos(), 60, 60); // bookshelf 
 	mCollisionBoxes[1] = Texture(14 + cam->GetXPos(), -100 + cam->GetYPos(), 192, 32); // wall
@@ -35,11 +38,26 @@ CollisionBoxPH::~CollisionBoxPH() {
 
 	delete mTex;
 	mTex = NULL;
+	delete mCollisions;
+	mCollisions = NULL;
+	delete mExit;
+	mExit = NULL;
+	
+}
+
+void CollisionBoxPH::DrawExitTile(Camera* cam) {
+	mTex = mExit;
+	mTex->SetRenderRectW(32);
+	mTex->SetRenderRectH(32);
+	SetPosX(180 + cam->GetXPos());
+	SetPosY(-78 + cam->GetYPos());
+	Render();
 
 }
 
 void CollisionBoxPH::DrawCollisions(Camera* cam) {
 
+	mTex = mCollisions;
 	// **** BOOKSHELF #0 ****  
 	mTex->SetRenderRectW(64);
 	mTex->SetRenderRectH(64);
@@ -139,6 +157,16 @@ void CollisionBoxPH::CheckMoveRight(Characters* mPlayer, Camera* mCamera, AudioM
 		std::cout << "It is working, you can't go Right" << std::endl;
 		mCamera->SetSpeed(0);
 		
+	}
+
+	// check box out of house
+	if (mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxPH->GetExitTileX(0)
+		&& mPlayer->GetWPosX() < mCollisionBoxPH->GetExitTileX(0)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxPH->GetExitTileY(0)
+		&& mPlayer->GetWPosY() < mCollisionBoxPH->GetExitTileY(0) + mCollisionBoxPH->GetExitTileH(0)
+		)
+	{
+		std::cout << "It's working... \nYou get out of house..." << std::endl;
 	}
 }
 
@@ -255,6 +283,15 @@ void CollisionBoxPH::CheckMoveUp(Characters* mPlayer, Camera* mCamera, AudioMana
 		mAudioMgr->BumpSFX();
 		std::cout << "It is working You cant go up..." << std::endl;
 		mCamera->SetSpeed(0);
+		
+	}
+
+	if (mPlayer->GetWPosY() < mCollisionBoxPH->GetExitTileY(0) + mCollisionBoxPH->GetExitTileH(0)
+		&& mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxPH->GetExitTileY(0) + mCollisionBoxPH->GetExitTileH(0)
+		&& mPlayer->GetWPosX() < mCollisionBoxPH->GetExitTileX(0) + mCollisionBoxPH->GetExitTileW(0)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxPH->GetExitTileX(0))
+	{
+		std::cout << "It's working... \nYou get out of house..." << std::endl;
 		
 	}
 	

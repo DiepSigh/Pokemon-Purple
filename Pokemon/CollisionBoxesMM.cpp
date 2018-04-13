@@ -14,10 +14,10 @@ CollisionBoxMM::CollisionBoxMM() {}
 
 CollisionBoxMM::CollisionBoxMM(float x, float y, Camera* cam) {
 	
-	mCollisions = new Texture("collisionBox_test.png", 0, 0, 32, 32);
-	mDialog = new Texture("dialogBox_test.png", 0, 0, 32, 32);
-	mBattle = new Texture("battleBox_test.png", 0, 0, 32, 32);
-	mAudioSwitcher = new Texture("audioswitcherBox_test.png", 0, 0, 32, 32);
+	mCollisions = new Texture("collisionBox.png", 0, 0, 32, 32);
+	mDialog = new Texture("dialogBox.png", 0, 0, 32, 32);
+	mBattle = new Texture("battleBox.png", 0, 0, 32, 32);
+	mAudioSwitcher = new Texture("audioswitcherBox.png", 0, 0, 64, 32);
 		
 	mGraphics = Graphics::Instance();
 	
@@ -26,7 +26,7 @@ CollisionBoxMM::CollisionBoxMM(float x, float y, Camera* cam) {
 
 	mBattleBoxes[0] = Texture(17 + cam->GetXPos(), -378 + cam->GetYPos(), 64, 124);
 	mDialogBoxes[0] = Texture(-96 + cam->GetXPos(), 90 + cam->GetYPos(), 32, 32);
-	mAudioSwitcher[0] = Texture(17 + cam->GetXPos(), -300 + cam->GetYPos(), 32, 32);
+	mAudioSwitcherBox[0] = Texture(17 + cam->GetXPos(), -216 + cam->GetYPos(), 32, 32);
 
 	mCollisionBoxes[0] = Texture(-174 + cam->GetXPos(), 165 + cam->GetYPos(), 124, 32);
 	mCollisionBoxes[1] = Texture(-174 + cam->GetXPos(), 165 + cam->GetYPos(), 32, 96);
@@ -86,20 +86,22 @@ CollisionBoxMM::~CollisionBoxMM() {
 	mBattle = NULL;
 	delete mDialog;
 	mDialog = NULL;
+	delete mAudioSwitcher;
+	mAudioSwitcher = NULL;
 }
 
-void CollisionBoxMM::DrawAudioSwitcherBoxes(Camera* cam) {
+void CollisionBoxMM::DrawAudioSwitcherBoxes(Camera* cam, AudioManager* audio) {
 
 	mTex = mAudioSwitcher;
-	mAudioSwitcher->SetRenderRectW(32);
+	mAudioSwitcher->SetRenderRectW(64);
 	mAudioSwitcher->SetRenderRectH(32);
 	SetPosX(17 + cam->GetXPos());
-	SetPosY(-300 + cam->GetYPos());
+	SetPosY(-216 + cam->GetYPos());
 	Render();
 
 }
 
-void CollisionBoxMM::DrawBattleBoxes(Camera* cam) {
+void CollisionBoxMM::DrawBattleBoxes(Camera* cam, AudioManager* audio) {
 
 	mTex = mBattle;
 	mBattle->SetRenderRectW(64);
@@ -1027,10 +1029,19 @@ void CollisionBoxMM::CheckMoveUp(Characters* mPlayer, Camera* mCamera, AudioMana
 		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetBattleEventX(0)
 		)
 	{
-		
+
 		std::cout << "It is working Battle has began..." << std::endl;
-		
+
+		if (mCollisionBoxMM->GetAudioClick() == false)
+		{
+			mCollisionBoxMM->SetAudioClick(true);
+			std::cout << "<<<< Audio switcher is working...\nRoad to Viridian City From Palette theme should playing..." << std::endl;
+			mAudioMgr->RoadToViridianCitySound();
+		}
+
 	}
+
+
 
 	// Check dialog events move UP
 	if (mPlayer->GetWPosY() < mCollisionBoxMM->GetDialogEventY(0) + mCollisionBoxMM->GetDialogEventH(0)
@@ -1248,6 +1259,16 @@ void CollisionBoxMM::CheckMoveDown(Characters* mPlayer, Camera* mCamera, AudioMa
 
 		std::cout << "It is working, Hello my name is NPS!!!" << std::endl;
 		mCamera->SetSpeed(0);
+	}
+
+	if (mPlayer->GetWPosY() + mPlayer->GetPlSize() > mCollisionBoxMM->GetAudioSwitcherY(0)
+		&& mPlayer->GetWPosX() + mPlayer->GetPlSize() > mCollisionBoxMM->GetAudioSwitcherX(0)
+		&& mPlayer->GetWPosX() < mCollisionBoxMM->GetAudioSwitcherX(0) + mCollisionBoxMM->GetAudioSwitcherW(0)
+		&& mCollisionBoxMM->GetAudioClick() == true)
+	{
+		std::cout << "<<<<  Audio switcher turned back... \nPallet Town Theme Should Playing" << std::endl;
+		mAudioMgr->PalletTownSound();
+		mCollisionBoxMM->SetAudioClick(false);
 	}
 
 } // ***** TESTING COLLISIONS MOVE DOWN *****

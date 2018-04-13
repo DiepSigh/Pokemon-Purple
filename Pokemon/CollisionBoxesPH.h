@@ -12,14 +12,18 @@ class CollisionBoxPH : public GameEntity {
 private:
 
 	Graphics* mGraphics;
+	
+	Texture *mCollisions, *mExit;
 	Texture mCollisionBoxes[7];
+	Texture mOutOfHouse[1];
 	
 public:
 	static CollisionBoxPH* sInstance;
 	static CollisionBoxPH* Instance();
 
-	void DrawCollisions(Camera*);
 	
+	void DrawCollisions(Camera*);
+	void DrawExitTile(Camera*);
 
 	void CheckMoveRight(Characters*, Camera*, AudioManager*, CollisionBoxPH*);
 	void CheckMoveLeft(Characters*, Camera*, AudioManager*, CollisionBoxPH*);
@@ -30,6 +34,11 @@ public:
 	float GetCollisonY(int num) { return mCollisionBoxes[num].GetPosY(); }
 	float GetCollisonW(int num) { return mCollisionBoxes[num].GetPosWidth(); }
 	float GetCollisonH(int num) { return mCollisionBoxes[num].GetPosHeight(); }
+
+	float GetExitTileX(int num) { return mOutOfHouse[num].GetPosX(); }
+	float GetExitTileY(int num) { return mOutOfHouse[num].GetPosY(); }
+	float GetExitTileW(int num) { return mOutOfHouse[num].GetPosWidth(); }
+	float GetExitTileH(int num) { return mOutOfHouse[num].GetPosHeight(); }
 
 
 	CollisionBoxPH(float, float, Camera*);
