@@ -163,7 +163,9 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Mom.h" />
     <ClInclude Include="moves.h" />
+    <ClInclude Include="NPC1.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="PokeBase.h" />
     <ClInclude Include="Pokemon.h" />
@@ -213,7 +215,9 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="Mom.cpp" />
     <ClCompile Include="moves.cpp" />
+    <ClCompile Include="NPC1.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PlayerMenu.cpp" />

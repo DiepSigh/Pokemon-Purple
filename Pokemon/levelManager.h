@@ -60,8 +60,8 @@ private:
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-	ActiveLevel activeLevel = START;
-
+	ActiveLevel activeLevel = MASTERMAP;
+	Oak* mOak;
 
 };
 

@@ -3,6 +3,7 @@
 
 #include "gameEntity.h"
 #include "camera.h"
+#include "Mom.h"
 #include <iostream>
 
 class PlayerHouse : public GameEntity {
@@ -28,6 +29,9 @@ private:
 	int tile;
 	void DrawMap(int);
 	float startYPos;
+	Mom* mMom;
+	Camera* mCam;
+	PlayerHouse* mPlayerHouse;
 
 public:
 	PlayerHouse(float, float);
@@ -35,6 +39,10 @@ public:
 	void Render();
 	void Update();		
 	bool isActive;
+	void momLeft();
+	void momRight();
+	void momUp();
+	void momDown();
 };
 
 #endif // !_PLAYERROOM_H

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+﻿  MasterMap.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe
+=======
 ﻿  animatedTexture.cpp
   AssetManager.cpp
   AudioManager.cpp
@@ -58,6 +63,7 @@ c:\users\rick-trios\documents\github\pokemon\pokemon\options.cpp(69): warning C4
 c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.cpp(11): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\rick-trios\documents\github\pokemon\pokemon\pkmnstate.cpp(12): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
+<<<<<<< HEAD
   Compiling...
   PlayerMenu.cpp
 c:\users\rick-trios\documents\github\pokemon\pokemon\playermenu.cpp(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -102,3 +108,7 @@ c:\users\rick-trios\documents\github\pokemon\pokemon\npc.cpp(9): warning C4244: 
   Generating Code...
   LINK : C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe not found or not built by the last incremental link; performing full link
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+=======
+  Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
+>>>>>>> master
+>>>>>>> ERICKHOBBS3
