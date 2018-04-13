@@ -52,7 +52,6 @@ LevelManager::LevelManager() {
 	
 	mAudioMgr = AudioManager::Instance();
 	
-
 	mMasterMap = new MasterMap(0, 0);
 		
 	mStartRoom = new StartRoom(0, 0);
@@ -135,6 +134,8 @@ void LevelManager::Render(float t) {
 	case MASTERMAP:
 		mMasterMap->Update();
 		mCollisionBoxMM->DrawCollisions(mCamera);
+		mCollisionBoxMM->DrawBattleBoxes(mCamera);
+		mCollisionBoxMM->DrawDialogBoxes(mCamera);
 		
 		break;
 

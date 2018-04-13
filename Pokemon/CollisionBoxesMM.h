@@ -13,14 +13,18 @@ class CollisionBoxMM : public GameEntity {
 private:
 
 	Graphics* mGraphics;
-	Texture mCollisionBoxes[44];
-	
-		
+	Texture *mBattle, *mDialog, *mCollisions;
+	Texture mCollisionBoxes[46];
+	Texture mBattleBoxes[2];
+	Texture mDialogBoxes[2];
+			
 public:	
 	static CollisionBoxMM* sInstance;
 	static CollisionBoxMM* Instance();
 
 	void DrawCollisions(Camera*);
+	void DrawDialogBoxes(Camera*);
+	void DrawBattleBoxes(Camera*);
 
 	void CheckMoveRight(Characters*, Camera*, AudioManager*, CollisionBoxMM*);
 	void CheckMoveLeft(Characters*, Camera*, AudioManager*, CollisionBoxMM*);
@@ -31,6 +35,18 @@ public:
 	float GetCollisonY(int num) { return mCollisionBoxes[num].GetPosY(); }
 	float GetCollisonW(int num) { return mCollisionBoxes[num].GetPosWidth(); }
 	float GetCollisonH(int num) { return mCollisionBoxes[num].GetPosHeight(); }
+
+	float GetBattleEventX(int num) { return mBattleBoxes[num].GetPosX(); }
+	float GetBattleEventY(int num) { return mBattleBoxes[num].GetPosY(); }
+	float GetBattleEventW(int num) { return mBattleBoxes[num].GetPosWidth(); }
+	float GetBattleEventH(int num) { return mBattleBoxes[num].GetPosHeight(); }
+
+	float GetDialogEventX(int num) { return mDialogBoxes[num].GetPosX(); }
+	float GetDialogEventY(int num) { return mDialogBoxes[num].GetPosY(); }
+	float GetDialogEventW(int num) { return mDialogBoxes[num].GetPosWidth(); }
+	float GetDialogEventH(int num) { return mDialogBoxes[num].GetPosHeight(); }
+
+
 
 	CollisionBoxMM(float, float, Camera*);
 	CollisionBoxMM();

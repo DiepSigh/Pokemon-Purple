@@ -23,7 +23,7 @@ CollisionBoxPH::CollisionBoxPH(float x, float y, Camera* cam) {
 	mCollisionBoxes[0] = Texture(-50 + cam->GetXPos(), -100 + cam->GetYPos(), 60, 60); // bookshelf 
 	mCollisionBoxes[1] = Texture(14 + cam->GetXPos(), -100 + cam->GetYPos(), 192, 32); // wall
 	mCollisionBoxes[2] = Texture(48 + cam->GetXPos(), 28 + cam->GetYPos(), 60, 60); // table
-	mCollisionBoxes[3] = Texture(48 + cam->GetXPos(), -68 + cam->GetYPos(), 28, 28); // tv
+	mCollisionBoxes[3] = Texture(48 + cam->GetXPos(), -68 + cam->GetYPos(), 28, 32); // tv
 	mCollisionBoxes[4] = Texture(-82 + cam->GetXPos(), -100 + cam->GetYPos(), 32, 256); // left side
 	mCollisionBoxes[5] = Texture(-50 + cam->GetXPos(), 156 + cam->GetYPos(), 256, 32); // bottom side
 	mCollisionBoxes[6] = Texture(206 + cam->GetXPos(), -68 + cam->GetYPos(), 32, 224); // right side

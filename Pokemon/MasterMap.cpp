@@ -7,6 +7,7 @@ MasterMap::MasterMap(float x, float y) {
 	mMap = &masterMap;
 
 	mGraphics = Graphics::Instance();
+
 	mPos.x = x;
 	mPos.y = y;
 	SetPosX(-1504);
