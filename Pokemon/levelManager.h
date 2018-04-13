@@ -14,6 +14,7 @@
 #include "viridianCityHouse.h"
 #include "pokemonLeague.h"
 #include "MasterMap.h"
+#include "Oak.h"
 
 class LevelManager {
 
@@ -23,15 +24,14 @@ public:
 	static bool Initialized();
 	void Render(float);
 	void Update();
-	void moveLeft(float);
-	void moveRight(float);
-	void moveUp(float);
-	void moveDown(float);
+	void moveLeft();
+	void moveRight();
+	void moveUp();
+	void moveDown();
 	void buttonA();
 	void buttonS();
 	void buttonC();
 	Camera* mCamera;
-	void NormalizeVel();
 	enum ActiveLevel{NONE,START, MASTERMAP, PLAYERHOUSE};
 	ActiveLevel GetLevelName(){ return activeLevel; }
 	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
@@ -61,6 +61,8 @@ private:
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
 	ActiveLevel activeLevel = START;
+
+
 };
 
 

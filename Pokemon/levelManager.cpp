@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 LevelManager* LevelManager::sInstance = nullptr;
 bool LevelManager::sInitialized = false;
 
@@ -35,7 +36,6 @@ LevelManager::LevelManager() {
 	mPlayer->SetSpeed(5);
 
 	mStartScreen = new StartScreen(0, 0, new Texture("StartScreen.png", 0, 0, 800, 600));
-	//mStartPokemon = new StartScreen(0, 0, new Texture("arrowPKMN.png", 0, 0, 10, 10));
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -46,9 +46,6 @@ LevelManager::LevelManager() {
 	mViridianCityHouse = new ViridianCityHouse(0, 0);
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
-
-	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
-	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
 
 LevelManager::~LevelManager() {
@@ -81,9 +78,7 @@ LevelManager::~LevelManager() {
 
 	delete mMasterMap;
 	mMasterMap = NULL;
-	
-	//delete map1;
-	//map1 = nullptr;
+
 }
 
 void LevelManager::Update() {
@@ -91,7 +86,7 @@ void LevelManager::Update() {
 	//mPlayer->SetPosX(mPlayer->GetPosX() + 0.1f);
 }
 
-void LevelManager::Render(float dt) {
+void LevelManager::Render(float) {
 	///LEVEL LOAD TEST
 	switch (activeLevel)
 	{
@@ -120,12 +115,10 @@ void LevelManager::Render(float dt) {
 
 	default:
 		break;
-	}
-	//mPlayerHouse->isActive = true;
-	
+	}	
 }
 
-void LevelManager::moveLeft(float dt) {
+void LevelManager::moveLeft() {
 
 	switch (activeLevel)
 	{
@@ -135,7 +128,6 @@ void LevelManager::moveLeft(float dt) {
 	case PLAYERHOUSE:		
 		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
 		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
-		cout << mPlayerHouse->GetPosX() + mCamera->GetSpeed() << endl;
 		mPlayer->Render();
 
 		break;
@@ -151,7 +143,7 @@ void LevelManager::moveLeft(float dt) {
 	}
 }
 
-void LevelManager::moveRight(float dt) {
+void LevelManager::moveRight() {
 
 
 	switch (activeLevel)
@@ -163,7 +155,6 @@ void LevelManager::moveRight(float dt) {
 		//Check if player is walking into collider by accsessing collision script and checking for a collider at players position
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
 		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() - mCamera->GetSpeed());
-		cout << mPlayerHouse->GetPosX() - mCamera->GetSpeed()<< endl;
 		mPlayer->Render();
 
 		break;
@@ -179,7 +170,7 @@ void LevelManager::moveRight(float dt) {
 	}	
 }
 
-void LevelManager::moveUp(float dt) {
+void LevelManager::moveUp() {
 
 
 	switch (activeLevel)
@@ -203,18 +194,10 @@ void LevelManager::moveUp(float dt) {
 
 	default:
 		break;
-	}	//mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
-	//mCamera->SetVel(2);
-	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
-	//if (mCamera->GetSpeed() > 0.01f) {
-	//	mCamera->SetSpeed(0.01f);
-	//}
-	//mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
-	//cout << mCamera->GetYPos() << endl;
-
+	}
 }
 
-void LevelManager::moveDown(float dt) {
+void LevelManager::moveDown() {
 
 
 	switch (activeLevel)
@@ -241,10 +224,6 @@ void LevelManager::moveDown(float dt) {
 	}	
 }
 
-void LevelManager::NormalizeVel() {
-	mCamera->SetVel(0);
-	mCamera->SetSpeed(mCamera->GetSpeed() * mCamera->GetVel());
-}
 void LevelManager::buttonA() {}
 
 void LevelManager::buttonS() {}

@@ -11,13 +11,14 @@ class UserInput : public Menu{
 
 public:
 	UserInput();
-	void Input(float dt);
-	void Input(MenuManager*, float);
+	void Input();
+	void Input(MenuManager*, Options*);
 
 private:
 	SDL_Event events;
 	LevelManager* mLevelManager;
 	MenuManager* mMenu;
+
 };
 
 #endif

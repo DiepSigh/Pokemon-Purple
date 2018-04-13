@@ -19,22 +19,26 @@ GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
+
 	mCamera = Camera::Instance();
+	mOptions = Options::Instance();
+
+	mTextDisplay = Dialouge::Instance();
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
-	
 	mTimer = Timer::Instance();
+
 	mLevelManager = LevelManager::Instance();
-	mPlayerControls = new UserInput();
 	
 	// By Canados
 	
 	mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
-	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
 	
+	mPlayerControls = new UserInput();
+	mNPCtext = new TextScreen();
+
 }
 
 GameManager::~GameManager() {
@@ -51,14 +55,19 @@ GameManager::~GameManager() {
 	mAudioMgr = NULL;
 
 	delete mTex;
-	mTex = NULL;	
+	mTex = NULL;
+	delete mPlayerControls;
+	mPlayerControls = NULL;
+
+	delete mNPCtext;
+	mNPCtext = NULL;
 }
 
 void GameManager::Run() {
-
 	while (!mQuit) {
 		mTimer->Update();
-		mPlayerControls->Input(mMenuManager,mTimer->DeltaTime());
+		mPlayerControls->Input(mMenuManager, mOptions);
+
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
 				mQuit = true;
@@ -66,16 +75,17 @@ void GameManager::Run() {
 		}
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-//			std::cout << mTimer->DeltaTime() << std::endl;
+
 			mGraphics->ClearBackBuffer();			
 			//UPDATES!!!!
 			mLevelManager->Update();	
-			//RENDERS!!!!!	
 			mMenuManager->Update();
-			mLevelManager->Render(mTimer->DeltaTime());
-			//Player Controller		
-			//Menu Controller
+			
+
+			//RENDERS!!!!!
 			mMenuManager->Render();
+			mLevelManager->Render(mTimer->DeltaTime());
+
 			mGraphics->Render();
 			mTimer->Reset();
 		}

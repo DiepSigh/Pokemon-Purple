@@ -22,7 +22,6 @@ private:
 	bool mAnimationDone;
 
 public:
-	AnimatedTexture();
 	AnimatedTexture(std::string, int, int, int, int, int, float, ANIM_DIR);
 	~AnimatedTexture();
 	void WrapMode(WRAP_MODE);

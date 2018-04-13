@@ -3,12 +3,16 @@
 
 #include "graphics.h"
 #include "timer.h"
-#include "animatedTexture.h"
+//#include "animatedTexture.h"
 #include "menuManager.h"
 #include "levelmanager.h"
 #include "camera.h"
 #include "userInput.h"
 #include "AudioManager.h"
+#include "DisplayText.h"
+#include "TextManager.h"
+#include "Dialouge.h"
+
 
 class GameManager {
 private:
@@ -23,12 +27,17 @@ private:
 	MenuManager* mMenuManager;
 	LevelManager* mLevelManager;
 	UserInput* mPlayerControls;
+
 	AudioManager* mAudioMgr;
 	PkmnState* mPokeState;
 	Camera* mCamera;
 	GameManager();
 	~GameManager();
+	Options* mOptions;
 
+	TextScreen* mNPCtext;
+	Dialouge* mTextDisplay;
+	
 public:
 	static GameManager* Instance();
 	static void Release();

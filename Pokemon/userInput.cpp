@@ -5,7 +5,8 @@ UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
 }
 
-void UserInput::Input(MenuManager* menuM, float dt) {
+void UserInput::Input(MenuManager* menuM, Options* menuO) {
+
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
 				//mQuit = true;
@@ -15,37 +16,54 @@ void UserInput::Input(MenuManager* menuM, float dt) {
 			switch (events.key.keysym.sym) {
 
 			case SDLK_LEFT:
+				// Option Menu Left
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorLeft();
+				}
 				//World Control
-				if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveLeft(dt);
+				else if (menuM->StrtMnuisActive == false) {
+					mLevelManager->moveLeft();
 				}
 				break;
 
 			case SDLK_RIGHT:
-				//World Control
-				if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveRight(dt);
+				//Option Menu Right
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorRight();
 				}
-				//printf("You pressed right arrow\n");
+				//World Control
+				if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive == false) {
+					mLevelManager->moveRight();
+				}
 				break;
 
 			case SDLK_UP:
+				//Main Menu Up
 				if (menuM->StrtMnuisActive) {
 					menuM->CursorMoveUp();
 				}
-				//World Control
+				// Options Menu Up
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorUp();
+				}
+				//World Control Up
 				else if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveUp(dt);
+					mLevelManager->moveUp();
 				}
 				break;
 
 			case SDLK_DOWN:
+				//Main Menu Down
 				if (menuM->StrtMnuisActive) {
 					menuM->CursorMoveDown();
 				}
-				//World Control
+				//Options Menu Down
+				if (menuM->OptsMnuisActive) {
+					menuM->mOptions->oCursorDown();
+				}
+				//World Control Down
 				else if (menuM->StrtMnuisActive == false) {
-					mLevelManager->moveDown(dt);
+					mLevelManager->moveDown();
 				}
 				break;
 
@@ -69,6 +87,13 @@ void UserInput::Input(MenuManager* menuM, float dt) {
 					if (menuM->StrtMnuisActive) {
 						menuM->MenuState();
 					}
+					else if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive) {
+						//menuM->mOptions->OptionsState();
+						if (menuM->mOptions->CursorO->GetPosY() == menuM->mOptions->Cancel->GetPosY() - 5 && menuM->mOptions->CursorO->GetPosX() == menuM->mOptions->Cancel->GetPosX() - 40) {
+							menuM->OptsMnuisActive = false;
+							menuM->StrtMnuisActive = true;
+						}
+					}
 					//World Control
 					break;
 
@@ -76,6 +101,14 @@ void UserInput::Input(MenuManager* menuM, float dt) {
 					//Opens Menu
 					if (menuM->StrtMnuisActive == false) {
 						printf("Opening menu");
+						menuM->StrtMnuisActive = true;
+					}
+					if (menuM->OptsMnuisActive == true) {
+						menuM->OptsMnuisActive = false;
+						menuM->StrtMnuisActive = true;
+					}
+					if (menuM->PlayerMnuisActive = true) {
+						menuM->PlayerMnuisActive = false;
 						menuM->StrtMnuisActive = true;
 					}
 					break;
@@ -87,85 +120,3 @@ void UserInput::Input(MenuManager* menuM, float dt) {
 }
 
 
-//Not needed anymore..... 
-void UserInput::Input(float dt){
-		
-	while (SDL_PollEvent(&events) != 0) {
-		if (events.type == SDL_QUIT) {
-			//mQuit = true;
-		}
-
-		//Example of keyboard/mouse functionality
-
-		switch (events.type) {
-		case SDL_KEYDOWN:
-			switch (events.key.keysym.sym) {
-			
-			case SDLK_LEFT:
-				mLevelManager->moveLeft(dt);
-				break;
-
-			case SDLK_RIGHT:
-				mLevelManager->moveRight(dt);
-				break;
-
-			case SDLK_UP:
-				mLevelManager->moveUp(dt);
-				//Cursor->CursorMoveUp();
-				mMenu->Cursor->CursorMoveUp();
-				//printf("You pressed up arrow\n");
-				break;
-
-			case SDLK_DOWN:
-				mLevelManager->moveDown(dt);
-				//Cursor->CursorMoveDown();
-				mMenu->Cursor->CursorMoveDown();
-				//printf("You pressed down arrow\n");
-				break;
-
-			case SDLK_ESCAPE:
-				//mQuit = true;
-				break;
-			}
-			break;
-
-		case SDL_KEYUP:
-			switch (events.key.keysym.sym) {
-
-			case SDLK_a:
-				//printf("You pressed 'a'\n");
-				break;
-
-			case SDLK_s:
-				//printf("You pressed 's'\n");
-				break;
-
-			case SDLK_c:
-				//printf("You pressed 'c'\n");
-				break;
-
-			case SDLK_UP:
-				mLevelManager->NormalizeVel();
-				break;
-
-			case SDLK_DOWN:
-				mLevelManager->NormalizeVel();
-
-				break;
-
-			case SDLK_LEFT:
-				mLevelManager->NormalizeVel();
-
-				break;
-
-			case SDLK_RIGHT:
-				mLevelManager->NormalizeVel();
-
-				break;
-
-			}
-			break;
-		}
-
-	}
-}

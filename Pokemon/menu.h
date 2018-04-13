@@ -9,6 +9,9 @@
 
 
 class Menu : public GameEntity {
+protected:
+	
+
 public:
 	Menu();
 	Menu(float, float, Texture*);
@@ -17,9 +20,14 @@ public:
 	MenuStates GetMenuState() { return menuState; }
 	void SetMenuState(MenuStates state) { menuState = state; }
 	void CheckState();
-	bool StrtMnuisActive = false;
+	bool StrtMnuisActive = true;
+	bool OptsMnuisActive = false;
+	bool PlayerMnuisActive = false;
+	bool PokedexisActive = false;
 	void Update();
 	void Render();
+
+
 
 	Menu* menu;
 	Menu* menu1;

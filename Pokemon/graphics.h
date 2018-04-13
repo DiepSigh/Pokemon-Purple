@@ -13,11 +13,9 @@ public:
 	static const int SCREEN_HEIGHT = 600;
 	SDL_Texture* CreateTextTexture(TTF_Font* font, std::string text);
 
-
 private:
 	static Graphics* sInstance;
 	static bool sInitialized;
-
 	SDL_Window* mWindow;
 	SDL_Surface* mBackBuffer;
 	SDL_Renderer* mRenderer;
@@ -33,7 +31,6 @@ public:
 	Graphics();
 	~Graphics();
 	
-
 private:
 	
 	bool Init();
