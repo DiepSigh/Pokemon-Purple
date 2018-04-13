@@ -6,9 +6,11 @@
 
 struct battle : public GameEntity{
 	enum side { PLAYER = 1, AI = 2 };
+	enum battle_state {ENCOUNTER, MENU, MOVES, ATTACK, OVER, CLOSE};
 
 	battle();
-	void battleMenu();
+	~battle();
+	void battleMenu(Pokemon &, Pokemon &);
 	//Fighting
 	void fight(Pokemon &, Pokemon &);
 	int AIChoice(Pokemon &); //returns a random number from 0 to amount of moves learned
@@ -43,23 +45,94 @@ struct battle : public GameEntity{
 
 	void switchOut(Pokemon &, Pokemon &);
 	void items(Pokemon &, Pokemon &);
-	void flee(Pokemon &, Pokemon &);
+	bool flee(Pokemon &, Pokemon &, int);
 	
+	//Getter
+	bool battle_getActive() { return m_active; }
+	int battle_getState() { return m_battleState; }
+
+	void battle_setState(int state) { m_battleState = state; }
 	//Rendering
 	battle(int, int, Texture*);
-	void startBattle(Pokemon &one, Pokemon &two);
+	void battleActive(Pokemon &one, Pokemon &two);
+	void Update(Pokemon &, Pokemon &);
 	void Render();
+	void displayStats(Pokemon &, Pokemon &);
+	void displayMoves(Pokemon &);
+	void displayMove(Pokemon &, int);
+	void displayText(std::string);
 	static battle* sInstance;
 	static battle* Instance();
 	static void Release();
 
+	void screenChange();
+	void right(); //right arrow key
+	void left(); //left arrow key
+
+	//Controls going around the battle
+	void encounter_continue(bool);
+	void menu_continue(bool);
+	void moves_continue(bool);
+	void moves_return(bool);
+	void attack_continue(bool);
+
 protected:
 	//count for bound moves
 	int m_boundCount;
-	//holder for battle text
-	std::string m_message;
+	int m_fleeCount = 0;
 
-	battle *m_battleScreen = nullptr;
+	int m_battleState;
+	bool m_encounterContinue = false;
+	bool m_menuContinue = false;
+	bool m_movesContinue = false;
+	bool m_movesReturn = false;
+	bool m_attackContinue = false;
+	bool m_active;
+
+	//holder for battle text
+	int m_displayCount = 0;
+	int m_messageCount = 0;
+	std::string m_message;
+	std::string m_attack_str;
+	std::string m_Rmessage[6];
+	battle *pOutput;
+	int m_textX = 120;
+	int m_textY = 440;
+
+	//Screens
+	battle *m_battleScreen = nullptr; //points to other screens
+	battle *m_encounter = nullptr;
+	battle *m_battleMenu = nullptr;
+	battle *m_battleMoves = nullptr;
+	battle *m_battleDisplay = nullptr;
+
+	//cursor
+	battle *m_cursor = nullptr;
+	int m_cursorPos;
+	int m_cursorX;
+	int m_cursorY;
+
+	//stats
+	battle *m_name = nullptr;
+	battle *m_level = nullptr;
+	battle *m_currHP = nullptr;
+	battle *m_maxHP = nullptr;
+	battle *m_status = nullptr;
+
+	battle *m_nameAI = nullptr;
+	battle *m_levelAI = nullptr;
+	battle *m_HP_AI = nullptr;
+
+	//moves
+	battle *m_move1 = nullptr;
+	battle *m_move2 = nullptr;
+	battle *m_move3 = nullptr;
+	battle *m_move4 = nullptr;
+
+	battle *m_moveType = nullptr;
+	battle *m_currPP = nullptr;
+	battle *m_maxPP = nullptr;
+
 	Pokemon *frontSprite = nullptr;
 	Pokemon *backSprite = nullptr;
 	Graphics *mGraphics = nullptr;
@@ -67,8 +140,3 @@ protected:
 };
 
 #endif
-
-//Texture * mPokemon
-//mTex = image.jpg
-
-//&GetmTex()->GetmRenderRect; (position drawn)

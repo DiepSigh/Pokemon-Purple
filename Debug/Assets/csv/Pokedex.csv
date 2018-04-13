@@ -1,0 +1,151 @@
+m_pokedex,m_pokemon,m_baseHP,m_baseAtk,m_baseDef,m_baseSpd,m_baseSpe,m_type1,m_type2,m_catchRate,m_expYield,m_expGroup,m_evolve,m_kind,m_height,m_weight,m_description
+1,BULBASAUR,45,49,49,45,65,GRASS,POISON,45,64,2,16,Seed,"2'04""",15.2,A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
+2,IVYSAUR,60,62,63,60,80,GRASS,POISON,45,142,2,32,Seed,"3'03""",28.7,"When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs."
+3,VENUSAUR,80,82,83,80,100,GRASS,POISON,45,236,2,0,Seed,"6'07""",220.5,The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.
+4,CHARMANDER,39,52,43,65,50,FIRE,,45,62,2,16,Lizard,"2'00""",18.7,"The flame on its tail indicates Charmander's life force. If it is healthy, the flame burns brightly."
+5,CHARMELEON,58,64,58,80,65,FIRE,,45,142,2,36,Flame,"3'07""",41.9,"When it swings its burning tail, it elevates the air temperature to unbearably high levels."
+6,CHARIZARD,78,84,78,100,85,FIRE,FLYING,45,240,2,0,Flame,"5'07""",90.5,It is said that Charizard's fire burns hotter if it has experienced harsh battles.
+7,SQUIRTLE,44,48,65,43,50,WATER,,45,63,2,16,Tiny Turtle,"1'08""",19.8,"After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth."
+8,WARTORTLE,59,63,80,58,65,WATER,,45,142,2,36,Turtle,"3'03""",49.6,"It is said to live 10,000 years. Its furry tail is popular as a symbol of longevity."
+9,BLASTOISE,79,83,100,78,85,WATER,,45,239,2,0,Shellfish,"5'03""",188.5,A brutal Pokémon with pressurized water jets on its shell. They are used for high speed tackles.
+10,CATERPIE,45,30,35,45,20,BUG,,255,53,3,7,Worm,"1'00""",6.4,Its feet have suction cups designed to stick to any surface. It tenaciously climbs trees to forage.
+11,METAPOD,50,20,55,30,25,BUG,,120,72,3,10,Cocoon,"2'04""",21.8,"This Pokémon is vulnerable to attack while its shell is soft, exposing its weak and tender body."
+12,BUTTERFREE,60,45,50,70,80,BUG,FLYING,45,160,3,0,Butterfly,"3'07""",70.5,It loves the honey of flowers and can locate flower patches that have even tiny amounts of pollen.
+13,WEEDLE,40,35,30,50,20,BUG,POISON,255,52,3,7,Hairy Bug,"1'00""",7.1,"Often found in forests, eating leaves. It has a sharp venomous stinger on its head."
+14,KAKUNA,45,25,50,35,25,BUG,POISON,120,71,3,10,Cocoon,"2'00""",22,"Almost incapable of moving, this Pokémon can only harden its shell to protect itself from predators."
+15,BEEDRILL,65,80,40,75,45,BUG,POISON,45,159,3,0,Poison Bee,"3'03""",65,It has 3 poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.
+16,PIDGEY,40,45,40,56,35,NORMAL,FLYING,255,55,2,18,Tiny Bird,"1'00""",4,A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.
+17,PIDGEOTTO,63,60,55,71,50,NORMAL,FLYING,120,113,2,36,Bird,"3'07""",66.1,"Very protective of its sprawling territorial area, this Pokémon will fiercely peck at any intruder."
+18,PIDGEOT,83,80,75,91,70,NORMAL,FLYING,45,172,2,0,Bird,"4'11""",87.1,"When hunting, it skims the surface of water at high speed to pick off unwary prey such as Magikarp."
+19,RATTATA,30,56,35,72,25,NORMAL,,255,57,3,20,Mouse,"1'00""",7.7,"Cautious in the extreme, its hardy vitality lets it live in any kind of environment."
+20,RATICATE,55,81,60,97,50,NORMAL,,90,116,3,0,Mouse,"2'04""",40.8,It whittles its constantly growing fangs by gnawing on hard things. It can chew apart cinder walls.
+21,SPEAROW,40,60,30,70,31,NORMAL,FLYING,255,58,3,20,Tiny Bird,"1'00""",4.4,Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne.
+22,FEARAOW,65,90,65,100,61,NORMAL,FLYING,90,162,3,0,Beak,"3'11""",83.8,"With its huge and magnificent wings, it can keep aloft without ever having to land for rest."
+23,EKANS,35,60,44,55,40,POISON,,255,62,3,22,Snake,"6'07""",15.2,"Moving silently and stealthily, it eats the eggs of birds, such as Pidgey and Spearow, whole."
+24,ARBOK,60,85,69,80,65,POISON,,90,147,3,0,Cobra,"11'06""",143.3,The pattern on its belly is for intimidation. It constricts foes when they are frozen in fear.
+25,PIKACHU,35,55,30,90,50,ELECTRIC,,190,82,3,0,Mouse,"1'04""",13.2,"When several of these Pokémon gather, their electricity could build and cause lightning storms."
+26,RAICHU,60,90,55,100,90,ELECTRIC,,75,122,3,0,Mouse,"2'07""",66.1,"Its tail discharges electricity into the ground, protecting it from getting shocked."
+27,SANDSHREW,50,75,85,40,30,GROUND,,255,93,3,22,Mouse,"2'00""",26.5,"It burrows and lives underground. If threatened, it curls itself up into a ball for protection."
+28,SANDSLASH,75,100,110,65,55,GROUND,,90,163,3,0,Mouse,"3'03""",65,Curls up into a spiny ball when threatened. It can roll while curled up to attack or escape.
+29,NIDORAN♀,55,47,52,41,40,POISON,,235,59,2,16,Poison Pin,1'04,15.4,"Although small, its venomous barbs render this Pokémon dangerous. The female has smaller horns."
+30,NIDORINA,70,62,67,56,55,POISON,,120,117,2,0,Poison Pin,2'07,44.1,"When feeding its young, it first chews and tenderizes the food, then spits it out for the offspring."
+31,NIDOQUEEN,90,82,87,76,75,POISON,GROUND,45,197,2,0,Drill,"4'03""",132.3,Its entire body is armored with hard scales. It will protect the young in its burrow with its life.
+32,NIDORAN♂,46,57,40,50,40,POISON,,235,60,2,16,Poison Pin,1'08,19.8,It scans its surroundings by raising its ears out of the grass. Its toxic horn is for protection.
+33,NIDORINO,61,72,57,65,55,POISON,,120,118,2,0,Poison Pin,"2'11""",43,An aggressive Pokémon that is quick to attack. The horn on its head secretes a powerful venom.
+34,NIDOKING,81,92,77,85,75,POISON,GROUND,45,195,2,0,Drill,"4'07""",136.7,One swing of its mighty tail can snap a telephone pole as if it were a matchstick.
+35,CLEFAIRY,,,,,,,,235,68,,,,,,
+36,CLEFABLE,,,,,,,,120,129,,,,,,
+37,VULPIX,,,,,,,,45,63,,,,,,
+38,NINTALES,,,,,,,,150,178,,,,,,
+39,JIGGLYPUFF,,,,,,,,25,76,,,,,,
+40,WIGGLYTUFF,,,,,,,,190,109,,,,,,
+41,ZUBAT,,,,,,,,75,54,,,,,,
+42,GOLBAT,,,,,,,,170,171,,,,,,
+43,ODDISH,,,,,,,,50,78,,,,,,
+44,GLOOM,,,,,,,,255,132,,,,,,
+45,VILEPLUME,,,,,,,,90,184,,,,,,
+46,PARAS,,,,,,,,255,70,,,,,,
+47,PARASECT,,,,,,,,120,128,,,,,,
+48,VENONAT,,,,,,,,45,75,,,,,,
+49,VENOMOTH,,,,,,,,190,138,,,,,,
+50,DIGLETT,,,,,,,,75,81,,,,,,
+51,DUGTRIO,,,,,,,,190,153,,,,,,
+52,MEOWTH,,,,,,,,75,69,,,,,,
+53,PERSIAN,,,,,,,,255,148,,,,,,
+54,PSYDUCK,,,,,,,,50,80,,,,,,
+55,GOLDUCK,,,,,,,,255,174,,,,,,
+56,MANKEY,,,,,,,,90,74,,,,,,
+57,PRIMEAPE,,,,,,,,190,149,,,,,,
+58,GROWLITHE,,,,,,,,75,91,,,,,,
+59,ARCANINE,,,,,,,,190,213,,,,,,
+60,POLIWAG,,,,,,,,75,77,,,,,,
+61,,,,,,,,,,,,,,,,
+62,,,,,,,,,,,,,,,,
+63,,,,,,,,,,,,,,,,
+64,,,,,,,,,,,,,,,,
+65,,,,,,,,,,,,,,,,
+66,,,,,,,,,,,,,,,,
+67,,,,,,,,,,,,,,,,
+68,,,,,,,,,,,,,,,,
+69,,,,,,,,,,,,,,,,
+70,,,,,,,,,,,,,,,,
+71,,,,,,,,,,,,,,,,
+72,,,,,,,,,,,,,,,,
+73,,,,,,,,,,,,,,,,
+74,,,,,,,,,,,,,,,,
+75,,,,,,,,,,,,,,,,
+76,,,,,,,,,,,,,,,,
+77,,,,,,,,,,,,,,,,
+78,,,,,,,,,,,,,,,,
+79,,,,,,,,,,,,,,,,
+80,,,,,,,,,,,,,,,,
+81,,,,,,,,,,,,,,,,
+82,,,,,,,,,,,,,,,,
+83,,,,,,,,,,,,,,,,
+84,,,,,,,,,,,,,,,,
+85,,,,,,,,,,,,,,,,
+86,,,,,,,,,,,,,,,,
+87,,,,,,,,,,,,,,,,
+88,,,,,,,,,,,,,,,,
+89,,,,,,,,,,,,,,,,
+90,,,,,,,,,,,,,,,,
+91,,,,,,,,,,,,,,,,
+92,,,,,,,,,,,,,,,,
+93,,,,,,,,,,,,,,,,
+94,,,,,,,,,,,,,,,,
+95,,,,,,,,,,,,,,,,
+96,,,,,,,,,,,,,,,,
+97,,,,,,,,,,,,,,,,
+98,,,,,,,,,,,,,,,,
+99,,,,,,,,,,,,,,,,
+100,,,,,,,,,,,,,,,,
+101,,,,,,,,,,,,,,,,
+102,,,,,,,,,,,,,,,,
+103,,,,,,,,,,,,,,,,
+104,,,,,,,,,,,,,,,,
+105,,,,,,,,,,,,,,,,
+106,,,,,,,,,,,,,,,,
+107,,,,,,,,,,,,,,,,
+108,,,,,,,,,,,,,,,,
+109,,,,,,,,,,,,,,,,
+110,,,,,,,,,,,,,,,,
+111,,,,,,,,,,,,,,,,
+112,,,,,,,,,,,,,,,,
+113,,,,,,,,,,,,,,,,
+114,,,,,,,,,,,,,,,,
+115,,,,,,,,,,,,,,,,
+116,,,,,,,,,,,,,,,,
+117,,,,,,,,,,,,,,,,
+118,,,,,,,,,,,,,,,,
+119,,,,,,,,,,,,,,,,
+120,,,,,,,,,,,,,,,,
+121,,,,,,,,,,,,,,,,
+122,,,,,,,,,,,,,,,,
+123,,,,,,,,,,,,,,,,
+124,,,,,,,,,,,,,,,,
+125,,,,,,,,,,,,,,,,
+126,,,,,,,,,,,,,,,,
+127,,,,,,,,,,,,,,,,
+128,,,,,,,,,,,,,,,,
+129,,,,,,,,,,,,,,,,
+130,,,,,,,,,,,,,,,,
+131,,,,,,,,,,,,,,,,
+132,,,,,,,,,,,,,,,,
+133,,,,,,,,,,,,,,,,
+134,,,,,,,,,,,,,,,,
+135,,,,,,,,,,,,,,,,
+136,,,,,,,,,,,,,,,,
+137,,,,,,,,,,,,,,,,
+138,,,,,,,,,,,,,,,,
+139,,,,,,,,,,,,,,,,
+140,,,,,,,,,,,,,,,,
+141,,,,,,,,,,,,,,,,
+142,,,,,,,,,,,,,,,,
+143,,,,,,,,,,,,,,,,
+144,,,,,,,,,,,,,,,,
+145,,,,,,,,,,,,,,,,
+146,,,,,,,,,,,,,,,,
+147,,,,,,,,,,,,,,,,
+148,,,,,,,,,,,,,,,,
+149,,,,,,,,,,,,,,,,
+150,,,,,,,,,,,,,,,,

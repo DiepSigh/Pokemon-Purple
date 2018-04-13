@@ -25,6 +25,8 @@ GameManager::GameManager() {
 	//Stephen's
 	mBattle = battle::Instance();
 	mPokebase = PokeBase::Instance();
+	starter = new Pokemon(SANDSLASH, 99);
+	rivalStarter = new Pokemon(VENUSAUR, 99);
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
@@ -67,7 +69,7 @@ void GameManager::Run() {
 
 	while (!mQuit) {
 		mTimer->Update();
-		mPlayerControls->Input(mMenuManager, mOptions);
+		mPlayerControls->Input(mMenuManager, mOptions, mBattle);
 
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
@@ -84,15 +86,13 @@ void GameManager::Run() {
 			//RENDERS!!!!!	
 			mMenuManager->Update();
 			mLevelManager->Render(mTimer->DeltaTime());
-
-			//UPDATES!!!!
-			
-			mMenuManager->Update();
 			//RENDERS!!!!!
 			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
 			//Player Controller
-			mBattle->startBattle(Pokemon(SQUIRTLE,5), Pokemon(CHARIZARD,5));
+			
+			mBattle->battleActive(*starter, *rivalStarter);
+			mBattle->Update(*starter, *rivalStarter);
 			//Menu Controller
 			//mMenuManager->Render();
 

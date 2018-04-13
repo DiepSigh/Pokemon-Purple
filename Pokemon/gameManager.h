@@ -35,6 +35,9 @@ private:
 	//Stephen's
 	battle* mBattle;
 	PokeBase* mPokebase;
+	Pokemon *rivalStarter;
+	Pokemon *starter;
+
 public:
 	static GameManager* Instance();
 	static void Release();

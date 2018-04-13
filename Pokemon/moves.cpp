@@ -19,10 +19,10 @@ Move::Move() {
 void Move::populateMove(int index){
 	//CSV: https://docs.google.com/spreadsheets/d/1J1R6JvNBhYi7kmQSRrePLh0hvVVZrVLmUItml668wBo/edit?usp=sharing
 	Move();
-	std::ifstream src("../Debug/Assets/moves.csv");
+	std::ifstream src("../Debug/Assets/csv/moves.csv");
 	
 	if (!src.is_open()) {
-		std::cout << "Could not open file.";
+		std::cout << "Could not open file moves.csv";
 	}
 	else {
 		//Determines which row to fetch data from based on move_index

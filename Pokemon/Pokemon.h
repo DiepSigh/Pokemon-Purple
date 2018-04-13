@@ -113,11 +113,12 @@ public:
 	inline void setFlinched(bool state) { m_flinched = state; }
 	inline void setSeeded(bool state) { m_seeded = state; }
 
-	//Rendering
-	//56x56
+	void useMove(int num) { move[num].useMove(); }
+	//Rendering / Sprites
+	
 	Pokemon(int, int, Texture*);
-	Pokemon* getFront() { return m_frontSprite; }
-	Pokemon* getBack() { return m_backSprite; }
+	Pokemon* getFront() { return m_frontSprite; } //112x112
+	Pokemon* getBack() { return m_backSprite; } //256x256
 	void Render();
 protected:
 	Pokemon *m_frontSprite = nullptr;
@@ -126,6 +127,7 @@ protected:
 	Pokemon *m_backSprite = nullptr;
 	int m_backX;
 	int m_backY;
+
 	PokeBase *Pokebase = nullptr;
 	Graphics *mGraphics = nullptr;
 	AssetManager *mAssetManager = nullptr;
