@@ -58,7 +58,7 @@ PokeDex::PokeDex() {
 	for (int i = 0; i < 151; i++) {
 		isSeen[i] = false;
 	}
-
+	/*
 	for (int i = 0; i < 3; i++) {
 		std::cout << mPokeBase->mP_name[i] << std::endl;
 		if (isSeen[i]) {
@@ -71,19 +71,24 @@ PokeDex::PokeDex() {
 		PkmnName[i]->SetPosX(140);
 		PkmnName[i]->SetPosY(DexPosY[i]);
 	}
-
-	for (int i = 3; i < 7; i++) {
+	*/
+	for (int i = 0; i < 35; i++) {
 		std::cout << mPokeBase->mP_name[j] << std::endl;
 		PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[j], "PKMNSOLID.ttf", 30));
 		PkmnName[i]->SetPosX(140);
 		PkmnName[i]->SetPosY(DexPosY[i]);
+		if (PkmnName[35]) {
+			PkmnName[i] = new PokeDex(0, 0, new Texture("------------", "PKMNSOLID.ttf", 30));
+			PkmnName[i]->SetPosX(140);
+			PkmnName[i]->SetPosY(DexPosY[i]);
+		}
 		isSeen[i] = true;
 		j++;
-		if (j == 3) {
+		if (j == 35) {
 			j = 0;
 		}
 	}
-
+	/*
 	for (int i = 7; i < 11; i++) {
 		std::cout << mPokeBase->mP_name[j] << std::endl;
 		PkmnName[i] = new PokeDex(0, 0, new Texture(mPokeBase->mP_name[j], "PKMNSOLID.ttf", 30));
@@ -95,7 +100,7 @@ PokeDex::PokeDex() {
 			j = 0;
 		}
 	}
-
+	*/
 	for (int i = 0; i < 151; i++) {
 		if (isSeen[i]) {
 			SeenCount++;
@@ -250,7 +255,6 @@ void PokeDex::PokemonSelected() {
 		PkmnName[CursorCount];
 		CursorP->SetPosX(610);
 		CursorP->SetPosY(315);
-		DeSelected = false;
 	}
 	DeSelected = true;
 }
@@ -262,6 +266,7 @@ void PokeDex::PokeDeselect() {
 		CursorP->SetPosY(CY);
 	}
 	DeSelected = true;
+	DataCheck = false;
 }
 
 void PokeDex::PokeDexReset() {
@@ -270,7 +275,7 @@ void PokeDex::PokeDexReset() {
 	CursorCount = 0;
 	SetValueR(0);
 	SetValueT(7);
-	
+
 	CX = 0;
 	CY = 0;
 
@@ -278,5 +283,9 @@ void PokeDex::PokeDexReset() {
 }
 
 void PokeDex::DexData() {
+	if (Selected && firstKeyDown) {
+		DataCheck = true;
+	}
 
+	firstKeyDown = true;
 }

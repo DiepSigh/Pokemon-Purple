@@ -2,27 +2,81 @@
 #include "battle.h"
 
 battle::battle() {
-	playerBound = false;
-	aiBound = false;
-	playerConfuse = false;
-	aiConfuse = false;
-	playerFlinch = false;
-	aiFlinch = false;
-	playerSeed = false;
-	aiSeed=false;
+	//7,90, 162, 146
+	//m_battleScreen = new battle(0,0, new Texture("battle_screen.png", 28, 370, 648, 600));
+	//m_battleScreen = new battle(0, 0, new AnimatedTexture("battle_screen.png", 28, 360, 162*4, 152*4, 1, 1.0f ,AnimatedTexture::HORIZONTAL));
+	m_battleScreen = new battle(0, 0, new Texture("battle/battle_screen.png", 28, 370, 648, 600));
+	//move to next screen +648+4
+	m_battleScreen->SetPosX(80);
+	m_battleScreen->SetPosY(0);
+}
+
+battle::battle(int x, int y, Texture* tex) {
+	mGraphics = Graphics::Instance();
+	mAssetManager = AssetManager::Instance();
+
+	mPos.x = x;
+	mPos.y = y;
+	mTex = tex;
+}
+
+battle::~battle() {}
+
+void battle::startBattle(Pokemon &one, Pokemon &two) {
+	m_battleState = ENCOUNTER;
+	m_battleScreen->Render();
+	two.getFront()->Render();
+	pOutput = new battle(120, 440, new Texture("A wild " + two.getName() + " appeared!", "PKMNSOLID.ttf", 20));
+	pOutput->Render();
+	m_battleContinue = false;
+	if (m_battleContinue) {
+		battleMenu(one, two);
+	}
+}
+
+void battle::Render() {
+	GetmTex()->SetRenderRectX(GetPosX());
+	GetmTex()->SetRenderRectY(GetPosY());
+
+	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+}
+
+battle* battle::sInstance = nullptr;
+
+battle*battle::Instance() {
+	if (sInstance == nullptr) {
+		sInstance = new battle();
+	}
+
+	return sInstance;
+}
+
+void battle::Release() {
+	delete sInstance;
+	sInstance = nullptr;
+}
+
+void battle::right() {
+
+}
+
+void battle::battleMenu(Pokemon &active, Pokemon &opposing) {
+	m_battleMenu = true;
+	m_battleScreen = new battle(0, 0, new Texture("battle/battle_screen.png", 28 + 648 + 4, 370, 648, 600));
+	
 }
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
 	battle();
 	active.resetStatStages();
 	opposing.resetStatStages();
+	resetStates(active, opposing);
 	using namespace std;
-	active.setSide(PLAYER);
-	opposing.setSide(AI);
+
 	std::cout << "Commence battle.\n";
 	do {
 		active.displayStats();
-		opposing.displayStats();
+		opposing.displayStats2();
 		int input = 0;
 		int playerMove = 0;
 		std::cout << "Choose move 1-4;\n\n";
@@ -46,18 +100,23 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 		int attacker = firstAttack(active, input-1, opposing, aiMove);
 		if (!faintCheck(active, opposing)) {
 			if (attacker == PLAYER) {
-				secondAttack(opposing, active, aiMove);
-			}
-			else {
-				secondAttack(active, opposing, input-1);
+				attack(opposing, active, aiMove);
+			}else {
+				attack(active, opposing, input-1);
 			}
 		}
+		statusCheck2(active, opposing);
+		statusCheck2(opposing, active);
 	} while (!faintCheck(active, opposing));
 	if (active.getFainted()) {
 		cout << active.getName() << " has fainted.";
 	}
 	else {
 		cout << opposing.getFainted() << " has fainted.";
+	}
+	//set to normal poison after battle ends
+	if (active.getStatus() == BADLY_POISONED) {
+		active.setStatus(POISONED);
 	}
 }
 
@@ -73,8 +132,7 @@ int battle::AIChoice(Pokemon &ai) {
 			if (moveCount == 4) {
 				done = true;
 			}
-		}
-		else {
+		}else {
 			done = true;
 		}
 		k++;
@@ -86,194 +144,289 @@ int battle::AIChoice(Pokemon &ai) {
 }
 
 int battle::firstAttack(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
-	bool playerFirst = false;
-	aiFlinch = false;
-	playerFlinch = false;
-	int damage = 0;
-	//Compare priority
-	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
-		playerFirst = true;
-	}
-	//Compare speed
-	else if ((active.getSpd() * stageConversion(active.getSpdStage())) > (opposing.getSpd() * stageConversion(opposing.getSpdStage()))) {
-		playerFirst = true;
-	}
-	//50/50 for same speed
-	else {
-		int rng = randomGen(1, 2);
-		if (rng == 1) {
-			playerFirst = true;
-		}
+	bool pFirst = false;
+	active.setFlinched(false);
+	opposing.setFlinched(false);
+
+	pFirst = playerFirst(active, playerMove, opposing, aiMove);
+	if (pFirst) {
+		attack(active, opposing, playerMove);
+	}else {
+		attack(opposing, active, aiMove);
 	}
 
-	if (playerFirst) {
-		//accuracy check
-		if (!attackMissed(active.getMove(playerMove).getAcc(), active.getAccStage(), opposing.getEvaStage())) {
-			//check if damaging move or status move
-			if (active.getMove(playerMove).getCat() == STATUS) {
-				//check if status effect or stat change
-				if (active.getMove(playerMove).getEffect() > 0) {
-					//check if volatile or non-volatile
-					if (active.getMove(playerMove).getEffect() >= 7) {
-						nvStatusChange(AI, active.getMove(playerMove).getEffect());
-					}else{
-						vStatusChange(opposing, active.getMove(playerMove).getEffect());
-					}
-				}else{
-					statChange(active, opposing, active.getMove(playerMove).getMoveID());
-				}
-
-			}
-			else {
-				//player attacks
-				damage = damageCalculation(active, opposing, playerMove);
-				opposing.hurt(damage);
-				//statChange(AI, active.getMove(playerMove).getMoveID());
-				std::cout << active.getName() << " used " << active.getMove(playerMove).returnMove() << std::endl;
-				std::cout << "It did " << damage << " damage!\n";
-			}
-		}else{
-			//attack missed
-			std::cout << "Attack missed.\n";
-			
-		}
-	}
-	else {
-		//accuracy check
-		if (!attackMissed(opposing.getMove(aiMove).getAcc(), opposing.getAccStage(), active.getEvaStage())) {
-			//check if damaging move or status move
-			if (opposing.getMove(aiMove).getCat() == STATUS) {
-				//check if status effect or stat change
-				if (opposing.getMove(aiMove).getEffect() > 0) {
-					//check if volatile or non-volatile
-					if (opposing.getMove(aiMove).getEffect() >= 7) {
-						nvStatusChange(AI, opposing.getMove(aiMove).getEffect());
-					}
-					else {
-						vStatusChange(active, opposing.getMove(aiMove).getEffect());
-					}
-				}
-				else {
-					statChange(opposing, active, opposing.getMove(aiMove).getMoveID());
-				}
-
-			}
-			else {
-				//AI attacks
-				damage = damageCalculation(opposing, active, aiMove);
-				active.hurt(damage);
-				std::cout << opposing.getName() << " used " << opposing.getMove(aiMove).returnMove() << std::endl;
-				std::cout << "It did " << damage << " damage!\n";
-			}
-		}
-		else {
-			//attack missed
-			std::cout << "Attack missed.\n";
-			
-		}
-	}
-
-	if (playerFirst) {
+	if (pFirst) {
 		return PLAYER;
-	}
-	else {
+	}else {
 		return AI;
 	}
 
 }
 
-void battle::secondAttack(Pokemon &attacking, Pokemon &defending, int move) {
-	int damage = 0;
-
+void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
+	m_message = "";
+	if (statusCheck1(attacking)) {
+		double damage = 0;
+		Move moveUsed = attacking.getMove(move);
 		//accuracy check
-		if (!attackMissed(attacking.getMove(move).getAcc(), attacking.getAccStage(), defending.getEvaStage())) {
+		if (!attackMissed(moveUsed.getAcc(), attacking.getAccStage(), defending.getEvaStage())) {
 			//check if damaging move or status move
-			if (attacking.getMove(move).getCat() == STATUS) {
+			if (moveUsed.getCat() == STATUS) {
 				//check if status effect or stat change
-				if (attacking.getMove(move).getEffect() > 0) {
+				if (moveUsed.getEffect() > 0) {
 					//check if volatile or non-volatile
-					if (attacking.getMove(move).getEffect() >= 7) {
-						nvStatusChange(attacking.getSide(), attacking.getMove(move).getEffect());
+					if (moveUsed.getEffect() >= BOUND) {
+						vStatusChange(defending, moveUsed.getEffect());
 					}
 					else {
-						vStatusChange(attacking, defending.getMove(move).getEffect());
+						nvStatusChange(defending, moveUsed.getEffect());
 					}
 				}
 				else {
-					statChange(attacking, defending, attacking.getMove(move).getMoveID());
+					statChange(attacking, defending, moveUsed.getMoveID());
 				}
 
 			}
 			else {
-				//AI attacks
+				//player attacks
 				damage = damageCalculation(attacking, defending, move);
-				attacking.hurt(damage);
-				std::cout << attacking.getName() << " used " << attacking.getMove(move).returnMove() << std::endl;
-				std::cout << "It did " << damage << " damage!\n";
+				//damage is halved if attacking pokemon is burned and uses a physical move.
+				if (moveUsed.getCat() == PHYSICAL && attacking.getStatus() == BURNED) {
+					damage *= 0.5;
+				}
+				defending.hurt(damage);
+				//chance to inflict status
+				chanceState(attacking, defending, moveUsed.getMoveID(), moveUsed.getEffect(), moveUsed.getChance());
 			}
 		}
 		else {
 			//attack missed
-			std::cout << "Attack missed.\n";
-
+			m_message += "Attack missed.\n";
 		}
+		std::cout << attacking.getName() << " used " << moveUsed.getMoveName() << std::endl;
+		//if (damage != 0) {
+		//	std::cout << "It did " << damage << " damage!\n";
+		//}
+	}
+	std::cout << m_message;
+}
+
+bool battle::playerFirst(Pokemon &active, int playerMove, Pokemon &opposing, int aiMove) {
+	//Compare priority
+	if (active.getMove(playerMove).getPriority() > opposing.getMove(aiMove).getPriority()) {
+		return true;
+	}
+	else {
+		//Compare speed
+		int activeSpeed = active.getSpd() * stageConversion(active.getSpdStage());
+		int opposingSpeed = opposing.getSpd() * stageConversion(opposing.getSpdStage());
+		if (active.getStatus() == PARALYZED) {
+			activeSpeed *= 0.25;
+		}
+		if (opposing.getStatus() == PARALYZED) {
+			opposingSpeed *= 0.25;
+		}
+		if (activeSpeed > opposingSpeed) {
+			return true;
+		}
+		//50/50 for same speed
+		else if (activeSpeed == opposingSpeed) {
+			int rng = randomGen(1, 2);
+			if (rng == 1) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+}
+
+bool battle::statusCheck1(Pokemon &pokemon) {
+	bool attack = true;
+	//BOUND
+	if (pokemon.getBounded()) {
+		//takes 1/16 of max hp as damage
+		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
+		m_message = "The attacks continues.\n";
+		m_boundCount++;
+		attack = false;
+		if (m_boundCount <= 3) {
+			//37.5% chance of lasting at turn 2 and 3
+			if (0.375 < randomGen(0, 100) * 0.01) {
+				pokemon.setBounded(false);
+			}
+		}else if (m_boundCount <= 5) {
+			//12.5% chance of lasting at turn 4 and 5
+			if (0.125 < randomGen(0, 100) * 0.01) {
+				pokemon.setBounded(false);
+			}
+		}else{
+			pokemon.setBounded(false);
+		}
+	}
+	else {
+		switch (pokemon.getStatus()) {
+		case FROZEN:
+			m_message = pokemon.getName() + " is frozen solid.\n";
+			attack = false;
+			break;
+		case ASLEEP:
+			//wakes up after 1-7 turns
+			if (pokemon.getSleepCount() > randomGen(1, 7)) {
+				pokemon.awake();
+				m_message = pokemon.getName() + " woke up.\n";
+			}else {
+				m_message = pokemon.getName() + " is fast asleep.\n";
+				pokemon.asleep();
+				attack = false;
+			}
+			break;
+		default:
+			//CONFUSED
+			if (pokemon.getConfused()) {
+				//confused for 1-4 turns
+				if (pokemon.getConfusedCount() > randomGen(1, 4)) {
+					pokemon.resetConfused();
+					m_message = pokemon.getName() + " is no longer confused.\n";
+				}else {
+					m_message = pokemon.getName() + " is confused.\n";
+					pokemon.confused();
+					//50% chance of hitting self with 40 power typeless physical
+					if (randomGen(1, 2) == 1) {
+						int damage = damageCalculation(pokemon, pokemon, CONFUSED);
+						pokemon.hurt(damage);
+						m_message += "It hurt itself in confusion.\n";
+						attack = false;
+					}
+				}
+			}
+			//PARALYZED
+			if (pokemon.getStatus() == PARALYZED) {
+				if (0.25 < randomGen(0, 100) * 0.01) {
+					m_message = pokemon.getName() + " cannot move.\n";
+					attack = false;
+				}
+			}
+		}
+	}
+	return attack;
+}
+
+void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
+	m_message = "";
+
+	switch (pokemon.getStatus()) {
+	case BURN:
+		//takes 1/16 of max hp as damage
+		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
+		m_message += pokemon.getName() + " is hurt by burn.\n";
+		break;
+	case POISONED:
+		pokemon.hurt(pokemon.getMaxHP() * 0.0625);
+		m_message += pokemon.getName() + " is hurt by poison.\n";
+		break;
+	case BADLY_POISONED:
+		//adds 1/16 of max hp as damage every turn
+		pokemon.hurt((pokemon.getMaxHP() * 0.0625) * pokemon.getPoisonCount());
+		m_message += pokemon.getName() + " is hurt by poison.\n";
+		pokemon.poison();
+		break;
+	}
+	if (pokemon.getSeeded()) {
+		int drain = pokemon.getMaxHP() * 0.0625;
+		pokemon.hurt(drain);
+		other.heal(drain);
+		m_message += pokemon.getName() + " got its HP sapped.\n";
+	}
+
+	std::cout << m_message;
 }
 
 bool battle::faintCheck(Pokemon &player, Pokemon &ai) {
 	int fainted = false;
-	if (player.getHP() <= 0) {
-		player.fainted();
+	if (player.getFainted()) {
 		fainted = true;
 	}
-	if (ai.getHP() <= 0) {
-		ai.fainted();
+	if (ai.getFainted()) {
 		fainted = true;
 	}
 	return fainted;
 }
 
-void battle::nvStatusChange(int affected, int effect) {
-	if (affected == AI) {
-		switch (effect) {
-		case BOUND:
-			//to be completed
-			break;
-		case CONFUSE:
-			if (!aiConfuse) {
-				aiConfuse = true;
-			}
-			break;
-		case FLINCH:
-			aiFlinch = true;
-			break;
-		case LEECH:
-			if (!aiSeed) {
-				aiSeed = true;
-			}
-			break;
+void battle::resetStates(Pokemon &player, Pokemon &ai) {
+	player.setBounded(false);
+	player.setConfused(false);
+	player.setFlinched(false);
+	player.setSeeded(false);
+	player.awake();
+	player.cured();
+	player.resetConfused();
+	ai.setBounded(false);
+	ai.setConfused(false);
+	ai.setFlinched(false);
+	ai.setSeeded(false);
+	ai.awake();
+	ai.cured();
+	ai.resetConfused();
+}
+
+void battle::chanceState(Pokemon &attacking, Pokemon &defending, int move, int effect, int chance) {
+	if (chance > 0) {
+		if (chance >= randomGen(1, 100)) {
+			nvStatusChange(defending, effect);
+			vStatusChange(defending, effect);
+			statChange(attacking, defending, move);
 		}
 	}
 }
 
 void battle::vStatusChange(Pokemon &affected, int effect) {
-	//only occurs if Pokemon isn't already effected
+	switch (effect) {
+	case BOUND:
+		affected.setBounded(true);
+		m_boundCount=1;
+		break;
+	case CONFUSE:
+		if (!affected.getConfused()) {
+			affected.setConfused(true);
+			m_message = affected.getName() + " is confused.\n";
+		}
+		break;
+	case FLINCH:
+		affected.setFlinched(true);
+		break;
+	case LEECH:
+		if (!affected.getSeeded()) {
+			affected.setSeeded(true);
+			m_message = affected.getName() + " is seeded.\n";
+		}
+		break;
+	}
+}
+
+void battle::nvStatusChange(Pokemon &affected, int effect) {
+	//only occurs if Pokemon isn't already affected
 	if (affected.getStatus() == 0) {
 		switch (effect) {
 		case PARALYSIS:
 			affected.setStatus(PARALYZED);
+			m_message = affected.getName() + " has been paralyzed.\n";
 			break;
 		case POISON:
 			affected.setStatus(POISONED);
+			m_message = affected.getName() + " has been poisoned.\n";
 			break;
 		case BAD_POISON:
 			affected.setStatus(BADLY_POISONED);
+			m_message = affected.getName() + " has been badly poisoned.\n";
 			break;
 		case SLEEP:
 			affected.setStatus(ASLEEP);
+			m_message = affected.getName() + " fell asleep.\n";
 			break;
 		}
 	}else {
-		//it has no effect or failed
+		//if a status category move, message = it failed
 	}
 }
 
@@ -285,11 +438,11 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 
 	switch (move) {
 		//attack
-	case GROWL:
+	case GROWL: case AURORA_BEAM:
 		stat = att;
 		change -= 1;
 		break;
-	case MEDITATE: case SHARPEN: //case RAGE:
+	case MEDITATE: case SHARPEN: case RAGE:
 		stat = att;
 		change += 1;
 		break;
@@ -298,7 +451,7 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		change += 2;
 		break;
 		//defence
-	case LEER: case TAIL_WHIP:
+	case LEER: case TAIL_WHIP: case ACID:
 		stat = def;
 		change -= 1;
 		break;
@@ -315,6 +468,10 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		change += 2;
 		break;
 		//speed
+	case BUBBLE: case BUBBLE_BEAM: case CONSTRICT:
+		stat = spd;
+		change -= 1;
+		break;
 	case STRING_SHOT:
 		stat = spd;
 		change -= 2;
@@ -323,7 +480,10 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		stat = spd;
 		change += 2;
 		break;
-		//special	
+		//special
+	case PSYCHIC:
+		stat = spe;
+		change -= 1;
 	case GROWTH:
 		stat = spe;
 		change += 1;
@@ -348,46 +508,60 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 		break;
 	}
 	if (change > 0) {
+		m_message += user.getName() + "'s ";
 		switch (stat) {
 		case att:
 			user.setAtkStage(change);
+			m_message += "attack rose.\n";
 			break;
 		case def:
 			user.setDefStage(change);
+			m_message += "defense rose.\n";
 			break;
 		case spd:
 			user.setSpdStage(change);
+			m_message += "speed rose.\n";
 			break;
 		case spe:
 			user.setSpeStage(change);
+			m_message += "special rose.\n";
 			break;
 		case acc:
 			user.setAccStage(change);
+			m_message += "accuracy rose.\n";
 			break;
 		case eva:
 			user.setEvaStage(change);
+			m_message += "evasion rose.\n";
 			break;
 		}
 	}
 	else if (change < 0) {
+		m_message += opposing.getName() + "'s ";
 		switch (stat) {
 		case att:
 			opposing.setAtkStage(change);
+			m_message += "attack fell.\n";
 			break;
 		case def:
 			opposing.setDefStage(change);
+			m_message += "defense fell.\n";
 			break;
 		case spd:
 			opposing.setSpdStage(change);
+			m_message += "speed fell.\n";
 			break;
 		case spe:
 			opposing.setSpeStage(change);
+			m_message += "special fell.\n";
 			break;
 		case acc:
 			opposing.setAccStage(change);
+			m_message += "accuracy fell.\n";
 			break;
 		case eva:
 			opposing.setEvaStage(change);
+			m_message += "evasion fell.\n";
 			break;
 		}
 	}
@@ -427,16 +601,19 @@ float battle::stageConversion(int stage) {
 }
 
 bool battle::attackMissed(int baseAcc, int accuracy, int evasion) {
+	//skip accuracy check if baseAcc is 0.
 	if (baseAcc != 0) {
 		float p = 1;
-
-		p = (baseAcc * 0.01) * (stageConversion(accuracy) / stageConversion(evasion));
+		//change baseAcc to percentage. change accuracy and evasion based on stages
+		p = float((baseAcc * 0.01) * (stageConversion(accuracy) / stageConversion(evasion)));
+		// p = baseAcc * accuracy / evasion
+		// if p is 100%, return false/attack hits
 		if (p >= 1) {
 			return false;
 		}
 		else {
-			float rng = randomGen(0, 1);
-			if (p > rng) {
+			int rng = randomGen(0, 100);
+			if (p > rng*0.01) {
 				return false;
 			}
 			else {
@@ -456,25 +633,28 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int move) 
 	int level = attacking.getLevel();
 	//Critical Hit?
 	bool crit = false;
-	double t = attacking.getSpd() * 0.5;
-	switch (move) {
-		//high crit rate
-	case CRABHAMMER: case KARATE_CHOP: case RAZOR_LEAF: case SLASH:
-		t *= 8;
-		if (t > 255) {
-			t = 255;
-		}
-	default:
-		if (randomGen(0, 255) < t) {
-			crit = true;
-			level *= 2;
+	//confused hit doesn't crit
+	if (move != CONFUSED) {
+		double t = attacking.getBaseSpd() * 0.5;
+		switch (move) {
+			//high crit rate
+		case CRABHAMMER: case KARATE_CHOP: case RAZOR_LEAF: case SLASH:
+			t *= 8;
+			if (t > 255) {
+				t = 255;
+			}
+		default:
+			if (randomGen(0, 255) < t) {
+				crit = true;
+				level *= 2;
+			}
 		}
 	}
-
 	int power = attacking.getMove(move).getPower();
 
 	int a = 1;
 	int d = 1;
+	//get appropriate stats according to category of move
 	if (attacking.getMove(move).getCat() == PHYSICAL) {
 		a = attacking.getAtk() * (stageConversion(attacking.getAtkStage()));
 		d = defending.getDef() * (stageConversion(defending.getDefStage()));
@@ -493,7 +673,7 @@ int battle::damageCalculation(Pokemon &attacking, Pokemon &defending, int move) 
 	if (defending.getType2() != BLANK) {
 		type *= typeEffectiveness(moveType, defending.getType2());;
 	}
-
+	//Build damage
 	double modifier = random * STAB * type;
 	damage = ((((((2 * level) / 5) + 2) * power * a/d) / 50) + 2) * modifier;
 	return int(damage);
@@ -659,5 +839,41 @@ float battle::typeEffectiveness(int move, int pokemon) {
 		}
 	}
 
+	if (multiplier == 2) {
+		m_message += "It was super effective.\n";
+	}
+	else if (multiplier == 0.5) {
+		m_message += "it wasn't very effective...\n";
+	}
+	else if (multiplier == 0) {
+		m_message += "It had no effect.\n";
+	}
+
 	return multiplier;
+}
+
+bool battle::flee(Pokemon &active, Pokemon &opposing, int fleeCount) {
+
+	int a = active.getSpd() * stageConversion(active.getSpdStage());
+	int b = (opposing.getSpd() * stageConversion(opposing.getSpdStage()) / 4);
+	b = b % 256;
+	fleeCount++;
+	int c = fleeCount;
+
+	double f = ((a * 32) / b) + 30 * c;
+	//if f is less than 255, escape
+	if (f > 255) {
+		return true;
+	}
+	//if random is less than f, escape
+	else if (randomGen(0, 255) < f){
+		return true;
+	}
+	if (b == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+	//the player loses their turn.
 }

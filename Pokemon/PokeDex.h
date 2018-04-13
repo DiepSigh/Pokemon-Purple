@@ -2,6 +2,8 @@
 #include "PokeBase.h"
 
 class PokeDex : public Menu {
+private:
+	bool firstKeyDown = false;
 public:
 	PokeDex();
 	PokeDex(float, float, Texture*);
@@ -57,6 +59,8 @@ public:
 	int GetValueT() { return t; }
 	void SetValueR(int R) { r = R; }
 	void SetValueT(int T) { t = T; }
+	void SetFirstKeyDown(bool keyDown) { firstKeyDown = keyDown; }
+
 
 private:
 	Graphics * mGraphics;
@@ -64,13 +68,14 @@ private:
 	float Counter = 100;
 
 	bool isSeen[151];
+	
 
 	int SeenCount;
 
 	int j;
 
 	int g;
-
+	
 	int r = 0;
 	int t = 7;
 

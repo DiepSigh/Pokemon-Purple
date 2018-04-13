@@ -93,7 +93,7 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						if (menuM->mPokeDex->Selected) {
 							menuM->mPokeDex->PokeDeselect();
 						}
-						else if (menuM->mPokeDex->Selected == false){
+						if (menuM->mPokeDex->Selected == false){
 							menuM->PokedexisActive = false;
 							menuM->StrtMnuisActive = true;
 							menuM->mPokeDex->PokeDexReset();
@@ -103,6 +103,14 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 					break;
 
 				case SDLK_s:
+					if (menuM->PokedexisActive && menuM->mPokeDex->CursorP->GetPosY() == 315) {
+						menuM->mPokeDex->DexData();
+					}
+
+					if (menuM->PokedexisActive) {
+						menuM->StrtMnuisActive = false;
+						menuM->mPokeDex->PokemonSelected();
+					}
 					if (menuM->StrtMnuisActive) {
 						menuM->MenuState();
 					}
@@ -112,15 +120,8 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 							menuM->StrtMnuisActive = true;
 						}
 					}
-					if (menuM->PokedexisActive && menuM->mPokeDex->Selected) {
-						menuM->mPokeDex->DexData();
-					}
-					if (menuM->PokedexisActive) {
-						menuM->StrtMnuisActive = false;
-						menuM->mPokeDex->PokemonSelected();
-					}
-
 					
+
 
 					//World Control
 					break;

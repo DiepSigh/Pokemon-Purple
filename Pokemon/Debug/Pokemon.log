@@ -1,9 +1,9 @@
 ﻿  PokeDex.cpp
 c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(50): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(156): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(157): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(240): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(161): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(162): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\rick-trios\documents\github\pokemon\pokemon\pokedex.cpp(245): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Pokemon.vcxproj -> C:\Users\Rick-TriOS\Documents\GitHub\Pokemon\Debug\Pokemon.exe
