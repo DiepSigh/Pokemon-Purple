@@ -17,6 +17,7 @@ CollisionBoxMM::CollisionBoxMM(float x, float y, Camera* cam) {
 	mCollisions = new Texture("collisionBox_test.png", 0, 0, 32, 32);
 	mDialog = new Texture("dialogBox_test.png", 0, 0, 32, 32);
 	mBattle = new Texture("battleBox_test.png", 0, 0, 32, 32);
+	mAudioSwitcher = new Texture("audioswitcherBox_test.png", 0, 0, 32, 32);
 		
 	mGraphics = Graphics::Instance();
 	
@@ -24,9 +25,8 @@ CollisionBoxMM::CollisionBoxMM(float x, float y, Camera* cam) {
 	mPos.y = y;
 
 	mBattleBoxes[0] = Texture(17 + cam->GetXPos(), -378 + cam->GetYPos(), 64, 124);
-
 	mDialogBoxes[0] = Texture(-96 + cam->GetXPos(), 90 + cam->GetYPos(), 32, 32);
-	
+	mAudioSwitcher[0] = Texture(17 + cam->GetXPos(), -300 + cam->GetYPos(), 32, 32);
 
 	mCollisionBoxes[0] = Texture(-174 + cam->GetXPos(), 165 + cam->GetYPos(), 124, 32);
 	mCollisionBoxes[1] = Texture(-174 + cam->GetXPos(), 165 + cam->GetYPos(), 32, 96);
@@ -87,6 +87,18 @@ CollisionBoxMM::~CollisionBoxMM() {
 	delete mDialog;
 	mDialog = NULL;
 }
+
+void CollisionBoxMM::DrawAudioSwitcherBoxes(Camera* cam) {
+
+	mTex = mAudioSwitcher;
+	mAudioSwitcher->SetRenderRectW(32);
+	mAudioSwitcher->SetRenderRectH(32);
+	SetPosX(17 + cam->GetXPos());
+	SetPosY(-300 + cam->GetYPos());
+	Render();
+
+}
+
 void CollisionBoxMM::DrawBattleBoxes(Camera* cam) {
 
 	mTex = mBattle;
@@ -100,8 +112,8 @@ void CollisionBoxMM::DrawBattleBoxes(Camera* cam) {
 void CollisionBoxMM::DrawDialogBoxes(Camera* cam) {
 
 	mTex = mDialog;
-	mBattle->SetRenderRectW(32);
-	mBattle->SetRenderRectH(32);
+	mDialog->SetRenderRectW(32);
+	mDialog->SetRenderRectH(32);
 	SetPosX(-96 + cam->GetXPos());
 	SetPosY(90 + cam->GetYPos());
 	Render();

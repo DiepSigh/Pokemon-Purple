@@ -47,10 +47,7 @@ LevelManager::LevelManager() {
 	mPlayer->SetSpeed(2);
 
 	mCollisionBoxMM = CollisionBoxMM::Instance();
-
 	mCollisionBoxPH = CollisionBoxPH::Instance();
-	
-	mAudioMgr = AudioManager::Instance();
 	
 	mMasterMap = new MasterMap(0, 0);
 		
@@ -64,9 +61,6 @@ LevelManager::LevelManager() {
 	mViridianCityHouse = new ViridianCityHouse(0, 0);
 	mPokemonLeague = new PokemonLeague(0, 0);
 
-
-	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
-	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
 
 LevelManager::~LevelManager() {
@@ -130,12 +124,15 @@ void LevelManager::Render(float t) {
 		mPlayerHouse->Update();
 		mCollisionBoxPH->DrawCollisions(mCamera);
 		
+		
 		break;
 	case MASTERMAP:
 		mMasterMap->Update();
 		mCollisionBoxMM->DrawCollisions(mCamera);
 		mCollisionBoxMM->DrawBattleBoxes(mCamera);
 		mCollisionBoxMM->DrawDialogBoxes(mCamera);
+	//	mCollisionBoxMM->DrawAudioSwitcherBoxes(mCamera);
+		
 		
 		break;
 
