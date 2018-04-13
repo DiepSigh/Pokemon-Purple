@@ -1,17 +1,17 @@
 #include "userInput.h"
 
 
-UserInput::UserInput() {
+UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
 }
 
 void UserInput::Input(MenuManager* menuM, Options* menuO) {
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
-			//mQuit = true;
-		}
+				//mQuit = true;
+			}
 		switch (events.type) {
-		case SDL_KEYDOWN:
+			case SDL_KEYDOWN:
 			switch (events.key.keysym.sym) {
 
 			case SDLK_LEFT:
@@ -72,10 +72,9 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 			}
 			break;
 
-		case SDL_KEYUP:
+			case SDL_KEYUP:
 
 			switch (events.key.keysym.sym) {
-<<<<<<< HEAD
 				case SDLK_a:
 					if (menuM->StrtMnuisActive) {
 						menuM->StrtMnuisActive = false;
@@ -112,49 +111,20 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						menuM->StrtMnuisActive = true;
 					}
 					break;
-=======
-			case SDLK_a:
-				if (menuM->StrtMnuisActive) {
-					menuM->StrtMnuisActive = false;
-				}
-				//World Control
-				break;
 
-			case SDLK_s:
-				if (menuM->StrtMnuisActive) {
-					menuM->MenuState();
-				}
-				//World Control
-				break;
->>>>>>> Andrey
-
-			case SDLK_c:
-				//Opens Menu
-				if (menuM->StrtMnuisActive == false) {
-					printf("Opening menu");
-					menuM->StrtMnuisActive = true;
 				}
 				break;
-
-			}
-			break;
 		}
 	}
 }
 
 
 //Not needed anymore..... 
-<<<<<<< HEAD
 
 		//Example of keyboard/mouse functionality
 
 void UserInput::Input(){
 		while (SDL_PollEvent(&events) != 0) {
-=======
-void UserInput::Input() {
-
-	while (SDL_PollEvent(&events) != 0) {
->>>>>>> Andrey
 		if (events.type == SDL_QUIT) {
 			//mQuit = true;
 		}
@@ -163,7 +133,7 @@ void UserInput::Input() {
 		switch (events.type) {
 		case SDL_KEYDOWN:
 			switch (events.key.keysym.sym) {
-
+			
 			case SDLK_LEFT:
 				mLevelManager->moveLeft();
 				printf("You pressed left arrow\n");

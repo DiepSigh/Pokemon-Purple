@@ -7,7 +7,7 @@
 #include "levelManager.h"
 #include "menuManager.h"
 
-class UserInput : public Menu {
+class UserInput : public Menu{
 public:
 	UserInput();
 	void Input();

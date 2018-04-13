@@ -6,7 +6,7 @@
 #include "startRoom.h"
 #include "playerHouse.h"
 #include "redHouse.h"
-#include "researchLab.h"
+#include "reserchLab.h"
 #include "pokemonMart.h"
 #include "pokemonCenter.h"
 #include "pokemonSchool.h"
@@ -14,15 +14,21 @@
 #include "pokemonLeague.h"
 #include "MasterMap.h"
 #include "Oak.h"
-#include "CollisionBoxesMM.h"
-#include "CollisionBoxesPH.h"
-#include "AudioManager.h"
-
 
 class LevelManager {
-
-class LevelManager {
-
+private:
+	static LevelManager* sInstance;
+	static bool sInitialized;
+	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
 
 public:
 	static LevelManager* Instance();
@@ -39,38 +45,21 @@ public:
 	void buttonC();
 	Camera* mCamera;
 	void NormalizeVel();
-	enum ActiveLevel { NONE, MASTERMAP, PLAYERHOUSE };
-	ActiveLevel GetLevelName() { return activeLevel; }
+	enum ActiveLevel{NONE, MASTERMAP, PLAYERHOUSE};
+	ActiveLevel GetLevelName(){ return activeLevel; }
 	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
 
 private:
 	LevelManager();
 	~LevelManager();
-	static LevelManager* sInstance;
-	static bool sInitialized;
-	StartRoom* mStartRoom;
-	PlayerHouse* mPlayerHouse;
-	RedHouse* mRedHouse;
-	ResearchLab* mResearchLab;
-	PokemonMart* mPokemonMart;
-	PokemonCenter* mPokemonCenter;
-	PokemonSchool* mPokemonSchool;
-	ViridianCityHouse* mViridianCityHouse;
-	PokemonLeague* mPokemonLeague;
-	MasterMap* mMasterMap;
-	CollisionBoxMM* mCollisionBoxMM;
-	CollisionBoxPH* mCollisionBoxPH;
-	AudioManager* mAudioMgr;
-	
 	Characters* mPlayer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
-
-	ActiveLevel activeLevel = MASTERMAP;
+	ActiveLevel activeLevel = PLAYERHOUSE;
 	Oak* mOak;
-
 };
 
 
 #endif // !LEVELMANAGER_H
+

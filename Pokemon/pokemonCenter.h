@@ -1,16 +1,16 @@
 #ifndef _POKEMONCENTER_H
 #define _POKEMONCANTER_H
 
-#include "mapsLoader.h"
+#include "gameEntity.h"
 
-class PokemonCenter : public MapsLoader {
+class PokemonCenter : public GameEntity {
 
 	private:
 
 		Texture
-			**mColumn1, **mColumn2, **mColumnEnd, **mComputer1, **mComputer2, **mExit, **mFloor, **mFloorShadow, **mFlower1, **mFlower2, **mLongDesk1, **mLongDesk2,
-			**mLongDesk3, **mLongDesk4, **mPicture1, **mPicture2, **mPokemonHeal1, **mPokemonHeal2, **mPokemonHeal3, **mPokemonHeal4, **mSofa1, **mSofa2,
-			**mSofaFloor1, **mSofaFloor2, **mWayBackRoom, **mWall;
+			*mColumn1, *mColumn2, *mColumnEnd, *mComputer1, *mComputer2, *mExit, *mFloor, *mFloorShadow, *mFlower1, *mFlower2, *mLongDesk1, *mLongDesk2,
+			*mLongDesk3, *mLongDesk4, *mPicture1, *mPicture2, *mPokemonHeal1, *mPokemonHeal2, *mPokemonHeal3, *mPokemonHeal4, *mSofa1, *mSofa2,
+			*mSofaFloor1, *mSofaFloor2, *mWayBackRoom, *mWall;
 
 		int map[8][14]
 		{

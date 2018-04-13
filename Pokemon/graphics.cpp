@@ -47,6 +47,7 @@ bool Graphics::Init() {
 	}
 
 	mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED);
+	
 
 	if (mRenderer == NULL) {
 		printf("Renderer Creation Error: %s\n", SDL_GetError());

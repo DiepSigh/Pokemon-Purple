@@ -20,21 +20,8 @@ public:
 
 	void PlaySFX(std::string filename, int loops = 0, int channel = 0);
 
-	//SFX
-	void BumpSFX();
-	void ExitSFX();
-
-	//Music
-	void StartGameSound();
-	void DialogWithOakSound();
 	void PalletTownSound();
-	void RoadToViridianCitySound();
 	void ViridianCitySound();
-	void ReserchLabSound();
-	void PokemonCenterSound();
-	void PokemonMartSound();
-	void BattleVsWildPokemonSound();
-	void VictoryVsWildPokemon();
 
 private:
 

@@ -1,18 +1,19 @@
 #ifndef _STARTROOM_H
 #define _STARTROOM_H
 
-#include "mapsLoader.h"
+#include "texture.h"
+#include "gameEntity.h"
 
-class StartRoom : public MapsLoader {
+class StartRoom : public GameEntity {
 
 private:
 
 	Texture
-	**mComputer1, **mComputer2, **mBed1, **mBed2, **mConsole, **mDownstairs, **mFloor,
-	**mFlower1, **mFlower2, **mTableWall1, **mTableWall2, **mTable1, **mTable2, **mTv,
-	**mWindow, **mWall;
+	*mComputer1, *mComputer2, *mBed1, *mBed2, *mConsole, *mDownstairs, *mFloor,
+	*mFlower1, *mFlower2, *mTableWall1, *mTableWall2, *mTable1, *mTable2, *mTv,
+	*mWindow, *mWall;
 
-	
+
 	int map[8][8] = 
 	{ 
 					{ 0,2,3,6,6,7,6,7 },
@@ -25,7 +26,6 @@ private:
 					{ 12,20,20,20,20,20,14,20 }, 
 	};
 
-	MapsLoader* mapsLoader;
 	Graphics* mGraphics;
 	int tile;
 	void DrawMap(int);

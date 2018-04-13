@@ -49,11 +49,11 @@ void Menu::CheckState() {
 Menu::~Menu() {
 }
 
-void Menu::Update() {
+void Menu::Update(){
 
 }
 
-void Menu::Render() {
+void Menu::Render(){
 	GetmTex()->SetRenderRectX(GetPosX());
 	GetmTex()->SetRenderRectY(GetPosY());
 

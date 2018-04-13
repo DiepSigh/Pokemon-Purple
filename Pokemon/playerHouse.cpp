@@ -3,19 +3,19 @@
 
 PlayerHouse::PlayerHouse(float x, float y) {
 
-	mBookshelf1 = &Bookshelf1_1;
-	mBookshelf2 = &Bookshelf1_2;
-	mChair = &Chair;
-	mExit = &phExit;
-	mFloor = &Floor;
-	mTable1 = &phTable1;
-	mTable2 = &phTable2;
-	mTable3 = &Bottom_Table_Left;
-	mTable4 = &Bottom_Table_Right;
-	mTv = &Tv;
-	mUpstairs = &phUpstairs;
-	mWall = &Wall;
-	mWindow = &Curtains;
+	mBookshelf1 = new Texture("playerHouse/bookshelf1.png", 0, 0, 32, 32);
+	mBookshelf2 = new Texture("playerHouse/bookshelf2.png", 0, 0, 32, 32);
+	mChair = new Texture("playerHouse/chair.png", 0, 0, 32, 32);
+	mExit = new Texture("playerHouse/exit.png", 0, 0, 32, 32);
+	mFloor = new Texture("playerHouse/floor.png", 0, 0, 32, 32);
+	mTable1 = new Texture("playerHouse/table1.png", 0, 0, 32, 32);
+	mTable2 = new Texture("playerHouse/table2.png", 0, 0, 32, 32);
+	mTable3 = new Texture("playerHouse/table3.png", 0, 0, 32, 32);
+	mTable4 = new Texture("playerHouse/table4.png", 0, 0, 32, 32);
+	mTv = new Texture("playerHouse/tv.png", 0, 0, 32, 32);
+	mUpstairs = new Texture("playerHouse/upstairs.png", 0, 0, 32, 32);
+	mWall = new Texture("playerHouse/wall.png", 0, 0, 32, 32);
+	mWindow = new Texture("playerHouse/window.png", 0, 0, 32, 32);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -52,7 +52,6 @@ PlayerHouse::~PlayerHouse() {
 	mWall = NULL;
 	delete mWindow;
 	mWindow = NULL;
-
 }
 
 void PlayerHouse::Render() {
@@ -60,27 +59,31 @@ void PlayerHouse::Render() {
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
+	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
+
 }
 
 void PlayerHouse::Update() {
 
 	SetPosY(GetPosY());
 	SetPosX(GetPosX());
+	
 
 	for (int i = 0; i < 8; i++) {
-
+		//ROWS
 		if (i != 0) {
-			SetPosX(GetPosX() - 224);
+			SetPosX(GetPosX()-224);
+			//SetPosX(GetPosX()-32 * i);
 			SetPosY(GetPosY() + 32);
-
 		}
 
 		for (int j = 0; j < 8; j++) {
+			
 			if (j != 0) {
 				SetPosX(GetPosX() + 32);
+				//COLLUMS
 			}
-
 			DrawMap(map[i][j]);
 
 		}
@@ -91,47 +94,48 @@ void PlayerHouse::Update() {
 
 }
 
+
 void PlayerHouse::DrawMap(int tile) {
 	
 	switch (tile) {
 	case 0:
-		mTex = *mBookshelf1;
+		mTex = mBookshelf1;
 		break;
 	case 1:
-		mTex = *mBookshelf2;
+		mTex = mBookshelf2;
 		break;
 	case 2:
-		mTex = *mChair;
+		mTex = mChair;
 		break;
 	case 3:
-		mTex = *mTable1;
+		mTex = mTable1;
 		break;
 	case 4:
-		mTex = *mTable2;
+		mTex = mTable2;
 		break;
 	case 5:
-		mTex = *mTable3;
+		mTex = mTable3;
 		break;
 	case 6:
-		mTex = *mTable4;
+		mTex = mTable4;
 		break;
 	case 7:
-		mTex = *mTv;
+		mTex = mTv;
 		break;
 	case 8:
-		mTex = *mUpstairs;
+		mTex = mUpstairs;
 		break;
 	case 9:
-		mTex = *mWall;
+		mTex = mWall;
 		break;
 	case 10:
-		mTex = *mWindow;
+		mTex = mWindow;
 		break;
 	case 11:
-		mTex = *mExit;
+		mTex = mExit;
 		break;
 	case 20:
-		mTex = *mFloor;
+		mTex = mFloor;
 		break;
 	}
 

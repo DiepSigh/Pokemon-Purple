@@ -1,8 +1,8 @@
 #include "menuManager.h"
+
 using namespace std;
 
 MenuManager* MenuManager::sInstance = nullptr;
-
 
 MenuManager::MenuManager() {
 	mMenu = new Menu();
@@ -12,20 +12,10 @@ MenuManager::MenuManager() {
 	//Start Menu Activation
 	StrtMnuisActive = true;
 	OptsMnuisActive = false;
-
-MenuManager::MenuManager(){
-	Menu::Menu();
-	PokeDex::PokeDex();
-	//Start Menu Activation
-	StrtMnuisActive = true;
-
-
 	mGraphics = Graphics::Instance();
 }
 
-MenuManager::MenuManager(int, int, Texture*){}
-
-MenuManager*MenuManager::Instance(){
+MenuManager*MenuManager::Instance() {
 	if (sInstance == nullptr) {
 		sInstance = new MenuManager();
 	}
@@ -38,11 +28,12 @@ void MenuManager::Release() {
 	sInstance = nullptr;
 }
 
-MenuManager::~MenuManager(){
+MenuManager::~MenuManager() {
 	MenuManager::Release();
 	Graphics::Release();
 	mGraphics = NULL;
 }
+
 
 void MenuManager::Update() {
 
@@ -50,34 +41,9 @@ void MenuManager::Update() {
 
 void MenuManager::Render() {
 	if (StrtMnuisActive) {
-		cout << ((int) Cursor->GetPosY());
+		//cout << ((int) Cursor->GetPosY());
+
 		StartMenu();
-		switch ((int)Cursor->GetPosY()) {
-		case 30:
-			//Activate PkDexActive
-			//Activate 	PkDexState = CONTENTS;
-			//Load POKEDEX
-			break;
-		case 80:
-			//Load POKEMON
-			break;
-		case 140:
-			// Load ITEMS
-			break;
-		case 190:
-			//Load PLAYER
-			break;
-		case 240:
-			//Load SAVE
-			break;
-		case 290:
-			//Load OPTIONS
-			break;
-		case 340:
-			//Load EXIT
-			StrtMnuisActive = false;
-			break;
-		}
 	}
 
 	if (OptsMnuisActive) {
@@ -99,9 +65,7 @@ void MenuManager::StartMenu() {
 	menu4->Render();
 	menu5->Render();
 	menu6->Render();
-	Cursor->SetPosY(Cursor->GetPosY() + 0.1);
 	Cursor->Render();
-
 }
 
 void MenuManager::MenuState() {
@@ -188,19 +152,4 @@ void MenuManager::LoadPokeDex() {
 	mPokeDex->Area->Render();
 	mPokeDex->Quit->Render();
 
-void MenuManager::CursorMoveDown(){
-	Cursor->SetPosY(Cursor->GetPosY() + 50);
-
-	if (Cursor->GetPosY() > 340) {
-		Cursor->SetPosY(30);
-	}
 }
-
-void MenuManager::CursorMoveUp() {
-	Cursor->SetPosY(Cursor->GetPosY() - 50);
-
-	if (Cursor->GetPosY() < 30) {
-		Cursor->SetPosY(340);
-	}
-}
-

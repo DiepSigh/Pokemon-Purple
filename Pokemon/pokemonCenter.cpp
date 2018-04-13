@@ -2,32 +2,32 @@
 
 PokemonCenter::PokemonCenter(float x, float y){
 
-	mColumn1 = &pcColumn1;
-	mColumn2 = &pcColumn2;
-	mColumnEnd = &pcColumnEnd;
-	mComputer1 = &pcComputer1;
-	mComputer2 = &pcComputer2;
-	mExit = &pcExit;
-	mFloor = &Floor2;
-	mFloorShadow = &Floor2Shadow;
-	mFlower1 = &Flower1;
-	mFlower2 = &Flower2;
-	mLongDesk1 = &pcLongDesk1;
-	mLongDesk2 = &pcLongDesk2;
-	mLongDesk3 = &pcLongDesk3;
-	mLongDesk4 = &pcLongDesk4;
-	mPicture1 = &pcPicture1;
-	mPicture2 = &pcPicture2;
-	mPokemonHeal1 = &pcPokemonHeal1;
-	mPokemonHeal2 = &pcPokemonHeal2;
-	mPokemonHeal3 = &pcPokemonHeal3;
-	mPokemonHeal4 = &pcPokemonHeal4;
-	mSofa1 = &pcSofa1;
-	mSofa2 = &pcSofa2;
-	mSofaFloor1 = &pcSofaFloor1;
-	mSofaFloor2 = &Floor2Shadow;
-	mWall = &pcWall;
-	mWayBackRoom = &pcWayBackRoom;
+	mColumn1 = new Texture("pokemonCenter/column1.png", 0, 0, 32, 32);
+	mColumn2 = new Texture("pokemonCenter/column2.png", 0, 0, 32, 32);
+	mColumnEnd = new Texture("pokemonCenter/column_end.png", 0, 0, 32, 32);
+	mComputer1 = new Texture("pokemonCenter/computer1.png", 0, 0, 32, 32);
+	mComputer2 = new Texture("pokemonCenter/computer2.png", 0, 0, 32, 32);
+	mExit = new Texture("pokemonCenter/exit.png", 0, 0, 32, 32);
+	mFloor = new Texture("pokemonCenter/floor.png", 0, 0, 32, 32);
+	mFloorShadow = new Texture("pokemonCenter/floor_shadow.png", 0, 0, 32, 32);
+	mFlower1 = new Texture("pokemonCenter/flower1.png", 0, 0, 32, 32);
+	mFlower2 = new Texture("pokemonCenter/flower2.png", 0, 0, 32, 32);
+	mLongDesk1 = new Texture("pokemonCenter/long_desk1.png", 0, 0, 32, 32);
+	mLongDesk2 = new Texture("pokemonCenter/long_desk2.png", 0, 0, 32, 32);
+	mLongDesk3 = new Texture("pokemonCenter/long_desk3.png", 0, 0, 32, 32);
+	mLongDesk4 = new Texture("pokemonCenter/long_desk4.png", 0, 0, 32, 32);
+	mPicture1 = new Texture("pokemonCenter/picture1.png", 0, 0, 32, 32);
+	mPicture2 = new Texture("pokemonCenter/picture2.png", 0, 0, 32, 32);
+	mPokemonHeal1 = new Texture("pokemonCenter/pokemon_heal1.png", 0, 0, 32, 32);
+	mPokemonHeal2 = new Texture("pokemonCenter/pokemon_heal2.png", 0, 0, 32, 32);
+	mPokemonHeal3 = new Texture("pokemonCenter/pokemon_heal3.png", 0, 0, 32, 32);
+	mPokemonHeal4 = new Texture("pokemonCenter/pokemon_heal4.png", 0, 0, 32, 32);
+	mSofa1 = new Texture("pokemonCenter/sofa1.png", 0, 0, 32, 32);
+	mSofa2 = new Texture("pokemonCenter/sofa2.png", 0, 0, 32, 32);
+	mSofaFloor1 = new Texture("pokemonCenter/sofa_floor1.png", 0, 0, 32, 32);
+	mSofaFloor2 = new Texture("pokemonCenter/sofa_floor2.png", 0, 0, 32, 32);
+	mWall = new Texture("pokemonCenter/wall.png", 0, 0, 32, 32);
+	mWayBackRoom = new Texture("pokemonCenter/way_back_room.png", 0, 0, 32, 32);
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -95,17 +95,18 @@ void PokemonCenter::Render() {
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
+	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
 void PokemonCenter::Update() {
-	SetPosY(140);
-	SetPosX(200);
+	SetPosY(0);
+	SetPosX(0);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(200);
+			SetPosX(0);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -120,8 +121,8 @@ void PokemonCenter::Update() {
 		}
 
 	}
-	SetPosY(140);
-	SetPosX(200);
+	SetPosY(0);
+	SetPosX(0);
 
 }
 
@@ -129,82 +130,82 @@ void PokemonCenter::DrawMap(int tile) {
 
 	switch (tile) {
 	case 0:
-		mTex = *mColumn1;
+		mTex = mColumn1;
 		break;
 	case 1:
-		mTex = *mColumn2;
+		mTex = mColumn2;
 		break;
 	case 2:
-		mTex = *mColumnEnd;
+		mTex = mColumnEnd;
 		break;
 	case 3:
-		mTex = *mComputer1;
+		mTex = mComputer1;
 		break;
 	case 4:
-		mTex = *mComputer2;
+		mTex = mComputer2;
 		break;
 	case 5:
-		mTex = *mExit;
+		mTex = mExit;
 		break;
 	case 6:
-		mTex = *mFloor;
+		mTex = mFloor;
 		break;
 	case 7:
-		mTex = *mFloorShadow;
+		mTex = mFloorShadow;
 		break;
 	case 8:
-		mTex = *mFlower1;
+		mTex = mFlower1;
 		break;
 	case 9:
-		mTex = *mFlower2;
+		mTex = mFlower2;
 		break;
 	case 10:
-		mTex = *mLongDesk1;
+		mTex = mLongDesk1;
 		break;
 	case 11:
-		mTex = *mLongDesk2;
+		mTex = mLongDesk2;
 		break;
 	case 12:
-		mTex = *mLongDesk3;
+		mTex = mLongDesk3;
 		break;
 	case 13:
-		mTex = *mLongDesk4;
+		mTex = mLongDesk4;
 		break;
 	case 14:
-		mTex = *mPicture1;
+		mTex = mPicture1;
 		break;
 	case 15:
-		mTex = *mPicture2;
+		mTex = mPicture2;
 		break;
 	case 17:
-		mTex = *mPokemonHeal1;
+		mTex = mPokemonHeal1;
 		break;
 	case 18:
-		mTex = *mPokemonHeal2;
+		mTex = mPokemonHeal2;
 		break;
 	case 19:
-		mTex = *mPokemonHeal3;
+		mTex = mPokemonHeal3;
 		break;
 	case 20:
-		mTex = *mPokemonHeal4;
+		mTex = mPokemonHeal4;
 		break;
 	case 21:
-		mTex = *mSofa1;
+		mTex = mSofa1;
 		break;
 	case 22:
-		mTex = *mSofa2;
+		mTex = mSofa2;
 		break;
 	case 23:
-		mTex = *mSofaFloor1;
+		mTex = mSofaFloor1;
 		break;
 	case 24:
-		mTex = *mSofaFloor2;
+		mTex = mSofaFloor2;
 		break;
 	case 25:
-		mTex = *mWall;
+		mTex = mWall;
 		break;
 	case 26:
-		mTex = *mWayBackRoom;
+		mTex = mWayBackRoom;
 		break;
 
 	}

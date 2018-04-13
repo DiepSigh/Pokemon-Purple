@@ -1,1 +1,84 @@
-﻿
+﻿  AssetManager.cpp
+  AudioManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): warning C4778: 'printf' : unterminated format string '%\n'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\audiomanager.cpp(27): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Dialouge.cpp
+  DisplayText.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\displaytext.cpp(31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Inventory.cpp
+  Items.cpp
+  MasterMap.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  NPC.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\npc.cpp(9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Oak.cpp
+  Options.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\options.cpp(68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\options.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PkmnState.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pkmnstate.cpp(11): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pkmnstate.cpp(12): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PlayerMenu.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\playermenu.cpp(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\playermenu.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  PokeDex.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pokedex.cpp(48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\pokedex.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pokemon.cpp
+  TextManager.cpp
+  animatedTexture.cpp
+  battle.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(401): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(403): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(405): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(409): warning C4305: 'return': truncation from 'double' to 'float'
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(433): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(438): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(479): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(480): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(482): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\battle.cpp(483): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  camera.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  characters.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  Generating Code...
+  Compiling...
+  gameManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  graphics.cpp
+  levelManager.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\levelmanager.cpp(242): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  menuManager.cpp
+  menuStart.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  moves.cpp
+  playerHouse.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  pokemonCenter.cpp
+  pokemonLeague.cpp
+  pokemonMart.cpp
+  pokemonSchool.cpp
+  redHouse.cpp
+  reserchLab.cpp
+  startRoom.cpp
+  texture.cpp
+  userInput.cpp
+c:\users\erick.hobbs\documents\github\pokemon\pokemon\pokemon\camera.h(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  viridianCityHouse.cpp
+  Generating Code...
+  LINK : C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe not found or not built by the last incremental link; performing full link
+  Pokemon.vcxproj -> C:\Users\Erick.Hobbs\Documents\GitHub\Pokemon\Pokemon\Debug\Pokemon.exe

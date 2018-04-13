@@ -15,7 +15,7 @@ void AssetManager::Release() {
 	sInstance = NULL;
 }
 
-AssetManager::AssetManager() {
+AssetManager::AssetManager(){
 
 }
 
@@ -53,7 +53,7 @@ SDL_Texture* AssetManager::GetTexture(std::string filename) {
 	return mTexture[fullPath];
 }
 
-TTF_Font* AssetManager::GetFont(std::string filename, int size) {
+TTF_Font* AssetManager::GetFont(std::string filename, int size){
 	std::string fullPath = SDL_GetBasePath();
 	fullPath.append("Assets/" + filename);
 	std::string key = fullPath + (char)size;
@@ -64,7 +64,7 @@ TTF_Font* AssetManager::GetFont(std::string filename, int size) {
 		if (mFonts[key] == nullptr) {
 			//printf("Font Loading Error: %s\n font-%s, Error-%s", filename.c_str(), TTF_GetError());
 		}
-
+			
 	}
 
 	return mFonts[key];
@@ -106,10 +106,10 @@ Mix_Chunk* AssetManager::GetSFX(std::string filename) {
 
 	if (mSFX[fullPath] == nullptr) {
 		mSFX[fullPath] = Mix_LoadWAV(fullPath.c_str());
-		if (mSFX[fullPath] == NULL) {
+		if (mSFX[fullPath] = NULL) {
 			printf("SFX Loading Error: File-%s Error-%s", filename.c_str(), Mix_GetError());
 		}
-
+		
 	}
 
 	return mSFX[fullPath];

@@ -7,7 +7,7 @@ Camera* Camera::Instance() {
 
 	int mPosX = 0;
 	int mPosY = 0;
-
+	 
 	if (sInstance == nullptr) {
 		sInstance = new Camera();
 	}
@@ -28,3 +28,4 @@ Camera::~Camera() {
 void Camera::Update() {
 
 }
+
