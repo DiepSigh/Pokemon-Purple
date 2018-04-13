@@ -494,6 +494,8 @@ void battle::fight(Pokemon &active, Pokemon &opposing) {
 			}
 			else if (opposing.getFainted()){
 				std::cout << opposing.getName() << " has fainted.";
+				active.gainEXP(opposing);
+				active.gainEVs(opposing);
 				m_battleState = OVER;
 			}
 		}

@@ -10,6 +10,7 @@ struct battle : public GameEntity{
 
 	battle();
 	~battle();
+	void battleActive(Pokemon &one, Pokemon &two); //Starts battle and renders
 	void battleMenu(Pokemon &, Pokemon &);
 	//Fighting
 	void fight(Pokemon &, Pokemon &);
@@ -54,7 +55,6 @@ struct battle : public GameEntity{
 	void battle_setState(int state) { m_battleState = state; }
 	//Rendering
 	battle(int, int, Texture*);
-	void battleActive(Pokemon &one, Pokemon &two);
 	void Update(Pokemon &, Pokemon &);
 	void Render();
 	void displayStats(Pokemon &, Pokemon &);

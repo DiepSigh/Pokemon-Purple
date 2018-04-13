@@ -1,31 +1,7 @@
-﻿  battle.cpp
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(320): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(321): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(450): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(451): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(589): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(618): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(619): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(621): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(624): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(646): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(722): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(726): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(731): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(737): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(991): warning C4305: 'return': truncation from 'double' to 'float'
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(993): warning C4305: 'return': truncation from 'double' to 'float'
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(995): warning C4305: 'return': truncation from 'double' to 'float'
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(999): warning C4305: 'return': truncation from 'double' to 'float'
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1075): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1076): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1078): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1079): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1278): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\stephen.diep\desktop\pokemon\pokemon\battle.cpp(1279): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+﻿  Pokemon.cpp
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\stephen.diep\desktop\pokemon\pokemon\pokemon.cpp(62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.exe
   Pokemon.vcxproj -> C:\Users\Stephen.Diep\Desktop\Pokemon\Debug\Pokemon.pdb (Partial PDB)

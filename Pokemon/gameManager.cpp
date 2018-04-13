@@ -25,8 +25,8 @@ GameManager::GameManager() {
 	//Stephen's
 	mBattle = battle::Instance();
 	mPokebase = PokeBase::Instance();
-	starter = new Pokemon(SANDSLASH, 99);
-	rivalStarter = new Pokemon(VENUSAUR, 99);
+	starter = new Pokemon(SQUIRTLE, 5);
+	rivalStarter = new Pokemon(PIDGEY, 5);
 
 	if (!Graphics::Initialized()) {
 		mQuit = true;
