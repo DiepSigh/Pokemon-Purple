@@ -33,9 +33,8 @@ LevelManager::LevelManager() {
 	mPlayer = new Characters();
 	mPlayer->SetPosX(400);
 	mPlayer->SetPosY(300);
-	mPlayer->SetSpeed(5);
+	mPlayer->SetSpeed(2);
 
-	mStartScreen = new StartScreen(0, 0, new Texture("StartScreen.png", 0, 0, 800, 600));
 	mStartRoom = new StartRoom(0, 0);
 	mPlayerHouse = new PlayerHouse(0, 0);
 	mRedHouse = new RedHouse(0, 0);
@@ -46,6 +45,14 @@ LevelManager::LevelManager() {
 	mViridianCityHouse = new ViridianCityHouse(0, 0);
 	mPokemonLeague = new PokemonLeague(0, 0);
 	mMasterMap = new MasterMap(0, 0);
+
+	//mOak = new Oak;
+	//mOak->SetPosX(250);
+	//mOak->SetPosY(250);
+	
+	//map1 = new Map1();
+	//cout << "mCameraPOSx: " + (int)mCamera->GetCamXPos() << std::endl;
+	//cout << "mPlayerPOSx: " + (int)mPlayer->GetPosX() << std::endl;
 }
 
 LevelManager::~LevelManager() {
@@ -86,61 +93,62 @@ void LevelManager::Update() {
 	//mPlayer->SetPosX(mPlayer->GetPosX() + 0.1f);
 }
 
-void LevelManager::Render(float) {
+void LevelManager::Render(float t) {
 	///LEVEL LOAD TEST
+	switch (activeLevel)
+	{
+	case NONE :
+		break;
+
+	
+	case MASTERMAP :
+		mMasterMap->Update();
+
+		break;
+
+	case PLAYERHOUSE :
+		mPlayerHouse->Update();
+
+		break;
+	default:
+		break;
+	}
+	//mPlayerHouse->isActive = true;
+	
+	mPlayer->Render();
+	//mOak->Render();//Renders .png image
+}
+
+void LevelManager::moveLeft() {
+
 	switch (activeLevel)
 	{
 	case NONE:
 		break;
 
-	case START:
-		mStartScreen->Update();
-		mStartScreen->Render();
-		mStartScreen->StartChar->GetmTex()->Update();
-		mStartScreen->StartChar->Render();
-		
+	case PLAYERHOUSE:
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+		mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
+		mPlayerHouse->momLeft();
 		break;
 
-	case PLAYERHOUSE :
-		mPlayerHouse->Update();
-		mPlayer->Render();
-		break;
-
-	case MASTERMAP :
-		mMasterMap->Update();
-		mPlayer->Render();
+	case MASTERMAP:
+		mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+		mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
+		mMasterMap->NPC1Left();
+		mMasterMap->NPC2Left();
 		break;
 
 	default:
 		break;
-	
-	mPlayer->Render();
 	}
-}
-
-	void LevelManager::moveLeft() {
-
-		switch (activeLevel)
-		{
-		case NONE:
-			break;
-
-		case PLAYERHOUSE:
-			mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
-			mPlayerHouse->SetPosX(mPlayerHouse->GetPosX() + mCamera->GetSpeed());
-			mPlayerHouse->momLeft();
-			break;
-
-		case MASTERMAP:
-			mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
-			mMasterMap->SetPosX(mMasterMap->GetPosX() + mCamera->GetSpeed());
-			mPlayer->Render();
-			break;
-
-		default:
-			break;
-		
-	}
+	//mPlayer->SetPosX(mPlayer->GetPosX() - mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//cout << mCamera->GetXPos() << endl;
 }
 
 void LevelManager::moveRight() {
@@ -160,12 +168,21 @@ void LevelManager::moveRight() {
 	case MASTERMAP:
 		mCamera->SetXPos(mCamera->GetXPos() - mCamera->GetSpeed());
 		mMasterMap->SetPosX(mMasterMap->GetPosX() - mCamera->GetSpeed());
-		mPlayer->Render();
+		mMasterMap->NPC1Right();
+		mMasterMap->NPC2Right();
 		break;
 
 	default:
 		break;
-	}	
+	}	//mPlayer->SetPosX(mPlayer->GetPosX() + mPlayer->GetSpeed());
+	//mCamera->SetVel(2);
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//mCamera->SetXPos(mCamera->GetXPos() + mCamera->GetSpeed());
+	//cout << mCamera->GetXPos() <<endl;
+
 }
 
 void LevelManager::moveUp() {
@@ -180,18 +197,17 @@ void LevelManager::moveUp() {
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() + mCamera->GetSpeed());
 		mPlayerHouse->momUp();
-		mPlayer->Render();
 		break;
 
 	case MASTERMAP:
 		mCamera->SetYPos(mCamera->GetYPos() + mCamera->GetSpeed());
 		mMasterMap->SetPosY(mMasterMap->GetPosY() + mCamera->GetSpeed());
-		mPlayer->Render();
+		mMasterMap->NPC1Up();
+		mMasterMap->NPC2Up();
 		break;
 
 	default:
 		break;
-
 	}	//mPlayer->SetPosY(mPlayer->GetPosY() - mPlayer->GetSpeed());
 	//mCamera->SetVel(2);
 	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
@@ -212,17 +228,28 @@ void LevelManager::moveDown() {
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
 		mPlayerHouse->SetPosY(mPlayerHouse->GetPosY() - mCamera->GetSpeed());
 		mPlayerHouse->momDown();
-		mPlayer->Render();
 		break;
 	case MASTERMAP:
 		mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
 		mMasterMap->SetPosY(mMasterMap->GetPosY() - mCamera->GetSpeed());
-		mPlayer->Render();
+		mMasterMap->NPC1Down();
+		mMasterMap->NPC2Down();
 		break;
 
 	default:
 		break;
-	}	
+	}	//mCamera->SetVel(2);
+	//mCamera->SetSpeed(0.01f/*mCamera->GetSpeed() * mCamera->GetVel()*/);
+	//if (mCamera->GetSpeed() > 0.01f) {
+	//	mCamera->SetSpeed(0.01f);
+	//}
+	//mCamera->SetYPos(mCamera->GetYPos() - mCamera->GetSpeed());
+	//cout << mCamera->GetYPos() << endl;
+}
+
+void LevelManager::NormalizeVel() {
+	mCamera->SetVel(0);
+	mCamera->SetSpeed(mCamera->GetSpeed() * mCamera->GetVel());
 }
 
 void LevelManager::buttonA() {}

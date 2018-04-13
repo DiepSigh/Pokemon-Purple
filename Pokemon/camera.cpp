@@ -5,8 +5,8 @@ Camera* Camera::sInstance = nullptr;
 
 Camera* Camera::Instance() {
 
-	float mPosX = 0;
-	float mPosY = 0;
+	int mPosX = 0;
+	int mPosY = 0;
 	 
 	if (sInstance == nullptr) {
 		sInstance = new Camera();

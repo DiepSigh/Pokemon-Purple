@@ -166,6 +166,7 @@
     <ClInclude Include="Mom.h" />
     <ClInclude Include="moves.h" />
     <ClInclude Include="NPC1.h" />
+    <ClInclude Include="NPC2.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PlayerMenu.h" />
@@ -182,7 +183,6 @@
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="PkmnState.h" />
     <ClInclude Include="PokeDex.h" />
-    <ClInclude Include="StartScreen.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="userInput.h" />
@@ -217,6 +217,7 @@
     <ClCompile Include="Mom.cpp" />
     <ClCompile Include="moves.cpp" />
     <ClCompile Include="NPC1.cpp" />
+    <ClCompile Include="NPC2.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PlayerMenu.cpp" />
@@ -230,7 +231,6 @@
     <ClCompile Include="redHouse.cpp" />
     <ClCompile Include="reserchLab.cpp" />
     <ClCompile Include="startRoom.cpp" />
-    <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />

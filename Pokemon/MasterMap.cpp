@@ -13,8 +13,12 @@ MasterMap::MasterMap(float x, float y) {
 	SetPosY(-5800);
 
 	mNPC1 = new NPC1;
-	mNPC1->SetPosX(70);
-	mNPC1->SetPosY(70);
+	mNPC1->SetPosX(393);
+	mNPC1->SetPosY(253);
+
+	mNPC2 = new NPC2;
+	mNPC2->SetPosX(583);
+	mNPC2->SetPosY(475);
 	
 	mCam = Camera::Instance();
 }
@@ -36,6 +40,36 @@ void MasterMap::Update() {
 		SetPosX(GetPosX());
 		SetPosY(GetPosY());
 		DrawMap();
+		
+		mNPC1->Render();
+		mNPC2->Render();
+}
+//NPC1//////////////////////
+void MasterMap::NPC1Left() {
+	mNPC1->SetPosX(mNPC1->GetPosX() + mCam->GetSpeed());
+}
+void MasterMap::NPC1Right() {
+	mNPC1->SetPosX(mNPC1->GetPosX() - mCam->GetSpeed());
+}
+void MasterMap::NPC1Up() {
+	mNPC1->SetPosY(mNPC1->GetPosY() + mCam->GetSpeed());
+}
+void MasterMap::NPC1Down() {
+	mNPC1->SetPosY(mNPC1->GetPosY() - mCam->GetSpeed());
+}
+
+//NPC2/////////////////////
+void MasterMap::NPC2Left() {
+	mNPC2->SetPosX(mNPC2->GetPosX() + mCam->GetSpeed());
+}
+void MasterMap::NPC2Right() {
+	mNPC2->SetPosX(mNPC2->GetPosX() - mCam->GetSpeed());
+}
+void MasterMap::NPC2Up() {
+	mNPC2->SetPosY(mNPC2->GetPosY() + mCam->GetSpeed());
+}
+void MasterMap::NPC2Down() {
+	mNPC2->SetPosY(mNPC2->GetPosY() - mCam->GetSpeed());
 }
 
 void MasterMap::DrawMap() {

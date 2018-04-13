@@ -8,7 +8,6 @@
 #include "menuManager.h"
 
 class UserInput : public Menu{
-
 public:
 	UserInput();
 	void Input();

@@ -35,6 +35,8 @@ GameManager::GameManager() {
 	// By Canados
 	
 	mAudioMgr = AudioManager::Instance();
+	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
+	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
 	
 	mPlayerControls = new UserInput();
 	mNPCtext = new TextScreen();
@@ -56,6 +58,8 @@ GameManager::~GameManager() {
 
 	delete mTex;
 	mTex = NULL;
+
+
 	delete mPlayerControls;
 	mPlayerControls = NULL;
 
@@ -66,6 +70,7 @@ GameManager::~GameManager() {
 void GameManager::Run() {
 	while (!mQuit) {
 		mTimer->Update();
+
 		mPlayerControls->Input(mMenuManager, mOptions);
 
 		while (SDL_PollEvent(&events) != 0) {
@@ -75,17 +80,16 @@ void GameManager::Run() {
 		}
 
 		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-
-			mGraphics->ClearBackBuffer();			
-			//UPDATES!!!!
-			mLevelManager->Update();	
-			mMenuManager->Update();
 			
+			mGraphics->ClearBackBuffer();
+			//UPDATES!!!!
+			mMenuManager->Update();
+			mLevelManager->Update();
 
 			//RENDERS!!!!!
-			mMenuManager->Render();
+			//Menu Controller
 			mLevelManager->Render(mTimer->DeltaTime());
-
+			mMenuManager->Render();
 			mGraphics->Render();
 			mTimer->Reset();
 		}

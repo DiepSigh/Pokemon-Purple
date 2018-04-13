@@ -3,7 +3,6 @@
 
 #include "characters.h"
 #include "camera.h"
-#include "StartScreen.h"
 #include "startRoom.h"
 #include "playerHouse.h"
 #include "redHouse.h"
@@ -17,6 +16,19 @@
 #include "Oak.h"
 
 class LevelManager {
+private:
+	static LevelManager* sInstance;
+	static bool sInitialized;
+	StartRoom* mStartRoom;
+	PlayerHouse* mPlayerHouse;
+	RedHouse* mRedHouse;
+	ReserchLab* mReserchLab;
+	PokemonMart* mPokemonMart;
+	PokemonCenter* mPokemonCenter;
+	PokemonSchool* mPokemonSchool;
+	ViridianCityHouse* mViridianCityHouse;
+	PokemonLeague* mPokemonLeague;
+	MasterMap* mMasterMap;
 
 public:
 	static LevelManager* Instance();
@@ -32,37 +44,20 @@ public:
 	void buttonS();
 	void buttonC();
 	Camera* mCamera;
-	enum ActiveLevel{NONE,START, MASTERMAP, PLAYERHOUSE};
+	void NormalizeVel();
+	enum ActiveLevel{NONE, MASTERMAP, PLAYERHOUSE};
 	ActiveLevel GetLevelName(){ return activeLevel; }
 	void SetLevelName(ActiveLevel levelName) { activeLevel = levelName; }
 
 private:
 	LevelManager();
 	~LevelManager();
-	static LevelManager* sInstance;
-	static bool sInitialized;
-	StartScreen* mStartScreen;
-	StartScreen* mStartPokemon;
-	StartRoom* mStartRoom;
-	AnimatedTexture *mIntroChar;
-
-	PlayerHouse* mPlayerHouse;
-	RedHouse* mRedHouse;
-	ReserchLab* mReserchLab;
-	PokemonMart* mPokemonMart;
-	PokemonCenter* mPokemonCenter;
-	PokemonSchool* mPokemonSchool;
-	ViridianCityHouse* mViridianCityHouse;
-	PokemonLeague* mPokemonLeague;
-	MasterMap* mMasterMap;
 	Characters* mPlayer;
-	Timer* mTimer;
 	int mMapId;
 	float mNewPlayerXPos;
 	float mNewPlayerYPos;
 	ActiveLevel activeLevel = MASTERMAP;
 	Oak* mOak;
-
 };
 
 
