@@ -2,24 +2,24 @@
 
 PokemonMart::PokemonMart(float x, float y) {
 
-	mCashbox = new Texture("pokemonMart/cashbox.png", 0, 0, 32, 32);
-	mCashboxBottom = new Texture("pokemonMart/cashbox_bottom.png", 0, 0, 32, 32);
-	mCashboxBottomLeft = new Texture("pokemonMart/cashbox_bottom_left.png", 0, 0, 32, 32);
-	mCooler1 = new Texture("pokemonMart/cooler1.png", 0, 0, 32, 32);
-	mCooler2 = new Texture("pokemonMart/cooler2.png", 0, 0, 32, 32);
-	mExit = new Texture("pokemonMart/exit.png", 0, 0, 32, 32);
-	mFloor = new Texture("pokemonMart/floor.png", 0, 0, 32, 32);
-	mFloorShadow = new Texture("pokemonMart/floor_shadow.png", 0, 0, 32, 32);
-	mShelfCashierBottom1 = new Texture("pokemonMart/shelf_cashier_bottom1.png", 0, 0, 32, 32);
-	mShelfCashierBottom2 = new Texture("pokemonMart/shelf_cashier_bottom2.png", 0, 0, 32, 32);
-	mShelfCashier1 = new Texture("pokemonMart/shelf_cashier1.png", 0, 0, 32, 32);
-	mShelfCashier2 = new Texture("pokemonMart/shelf_cashier2.png", 0, 0, 32, 32);
-	mShelf1 = new Texture("pokemonMart/shelf1.png", 0, 0, 32, 32);
-	mShelf2 = new Texture("pokemonMart/shelf2.png", 0, 0, 32, 32);
-	mShelf3 = new Texture("pokemonMart/shelf3.png", 0, 0, 32, 32);
-	mShelf4 = new Texture("pokemonMart/shelf4.png", 0, 0, 32, 32);
-	mSignSale = new Texture("pokemonMart/sign_sale.png", 0, 0, 32, 32);
-	mSignSaleBottom = new Texture("pokemonMart/sign_sale_bottom.png", 0, 0, 32, 32);
+	mCashbox = &pmCashbox;
+	mCashboxBottom = &pmCashboxBottom;
+	mCashboxBottomLeft = &pmCashboxBottomLeft;
+	mCooler1 = &pmCooler1;
+	mCooler2 = &pmCooler2;
+	mExit = &pmExit;
+	mFloor = &Floor2;
+	mFloorShadow = &Floor2Shadow;
+	mShelfCashierBottom1 = &pmShelfCashierBottom1;
+	mShelfCashierBottom2 = &pmShelfCashierBottom2;
+	mShelfCashier1 = &pmShelfCashier1;
+	mShelfCashier2 = &pmShelfCashier2;
+	mShelf1 = &pmShelf1;
+	mShelf2 = &pmShelf2;
+	mShelf3 = &pmShelf3;
+	mShelf4 = &pmShelf4;
+	mSignSale = &pmSignSale;
+	mSignSaleBottom = &pmSignSaleBottom;
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -72,19 +72,18 @@ void PokemonMart::Render() {
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
-	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 
 }
 
 void PokemonMart::Update() {
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(250);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(0);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -99,8 +98,8 @@ void PokemonMart::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(0);
+	SetPosY(140);
+	SetPosX(250);
 
 
 }
@@ -110,58 +109,58 @@ void PokemonMart::DrawMap(int tile) {
 
 	switch (tile) {
 	case 0:
-		mTex = mCashbox;
+		mTex = *mCashbox;
 		break;
 	case 1:
-		mTex = mCashboxBottom;
+		mTex = *mCashboxBottom;
 		break;
 	case 2:
-		mTex = mCashboxBottomLeft;
+		mTex = *mCashboxBottomLeft;
 		break;
 	case 3:
-		mTex = mCooler1;
+		mTex = *mCooler1;
 		break;
 	case 4:
-		mTex = mCooler2;
+		mTex = *mCooler2;
 		break;
 	case 5:
-		mTex = mExit;
+		mTex = *mExit;
 		break;
 	case 6:
-		mTex = mFloor;
+		mTex = *mFloor;
 		break;
 	case 7:
-		mTex = mFloorShadow;
+		mTex = *mFloorShadow;
 		break;
 	case 8:
-		mTex = mShelfCashierBottom1;
+		mTex = *mShelfCashierBottom1;
 		break;
 	case 9:
-		mTex = mShelfCashierBottom2;
+		mTex = *mShelfCashierBottom2;
 		break;
 	case 10:
-		mTex = mShelfCashier1;
+		mTex = *mShelfCashier1;
 		break;
 	case 11:
-		mTex = mShelfCashier2;
+		mTex = *mShelfCashier2;
 		break;
 	case 12:
-		mTex = mShelf1;
+		mTex = *mShelf1;
 		break;
 	case 13:
-		mTex = mShelf2;
+		mTex = *mShelf2;
 		break;
 	case 14:
-		mTex = mShelf3;
+		mTex = *mShelf3;
 		break;
 	case 15:
-		mTex = mShelf4;
+		mTex = *mShelf4;
 		break;
 	case 16:
-		mTex = mSignSale;
+		mTex = *mSignSale;
 		break;
 	case 17:
-		mTex = mSignSaleBottom;
+		mTex = *mSignSaleBottom;
 		break;
 
 	}

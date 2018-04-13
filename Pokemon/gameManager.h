@@ -29,7 +29,6 @@ private:
 	UserInput* mPlayerControls;
 
 	AudioManager* mAudioMgr;
-	PkmnState* mPokeState;
 	Camera* mCamera;
 	GameManager();
 	~GameManager();
@@ -47,4 +46,3 @@ public:
 };
 
 #endif // !GAMEMANAGER_H
-

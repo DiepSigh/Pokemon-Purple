@@ -20,26 +20,27 @@ GameManager::GameManager() {
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
 
+
 	mCamera = Camera::Instance();
 	mOptions = Options::Instance();
 
 	mTextDisplay = Dialouge::Instance();
 
+	
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
+
 	mTimer = Timer::Instance();
 
 	mLevelManager = LevelManager::Instance();
 	
 	// By Canados
-	
 	mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
-	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
 	
 	mPlayerControls = new UserInput();
 	mNPCtext = new TextScreen();
+
 
 }
 
@@ -49,12 +50,9 @@ GameManager::~GameManager() {
 	LevelManager::Release();
 	Graphics::Release();
 	mGraphics = NULL;
-	
+
 	Timer::Release();
 	mTimer = NULL;
-
-	AudioManager::Release();
-	mAudioMgr = NULL;
 
 	delete mTex;
 	mTex = NULL;
@@ -79,16 +77,23 @@ void GameManager::Run() {
 			}
 		}
 
-		if(mTimer->DeltaTime() >= (0.1f / FRAME_RATE)){
-			
+		if (mTimer->DeltaTime() >= (0.1f / FRAME_RATE)) {
+
 			mGraphics->ClearBackBuffer();
+
 			//UPDATES!!!!
 			mMenuManager->Update();
 			mLevelManager->Update();
 			//RENDERS!!!!!
+
+			
+			mLevelManager->Render(mTimer->DeltaTime());
+			//Player Controller
+
+
 			//Menu Controller
 			//mMenuManager->Render();
-			mLevelManager->Render(mTimer->DeltaTime());
+
 			mGraphics->Render();
 			mTimer->Reset();
 		}

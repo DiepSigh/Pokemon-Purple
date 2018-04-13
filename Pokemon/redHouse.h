@@ -1,15 +1,15 @@
 #ifndef _REDHOUSE_H
 #define _REDHOUSE_H
 
-#include "gameEntity.h"
+#include "mapsLoader.h"
 
-class RedHouse : public GameEntity {
+class RedHouse : public MapsLoader {
 
 private:
 
 	Texture
-		*mBookshelf1_1, *mBookshelf1_2, *mBookshelf2_1, *mBookshelf2_2, *mChair, *mExit, *mFloor,
-		*mFlower1, *mFlower2, *mPicture, *mTable1, *mTable2, *mTable3, *mTable4, *mWall, *mWindow;
+		**mBookshelf1_1, **mBookshelf1_2, **mBookshelf2_1, **mBookshelf2_2, **mChair, **mExit, **mFloor,
+		**mFlower1, **mFlower2, **mPicture, **mTable1, **mTable2, **mTable3, **mTable4, **mWall, **mWindow;
 
 
 	int map[8][8] = 

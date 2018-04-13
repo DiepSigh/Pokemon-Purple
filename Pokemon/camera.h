@@ -1,11 +1,9 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-
-
 class Camera {
 public:
-	static Camera* Instance();	
+	static Camera* Instance();
 	void Update();
 	void Release();
 
@@ -19,7 +17,7 @@ public:
 
 	int GetVel() { return Vel; }
 	void SetVel(int vel) { Vel = vel; }
-	
+
 private:
 	static Camera* sInstance;
 	int mPosX;

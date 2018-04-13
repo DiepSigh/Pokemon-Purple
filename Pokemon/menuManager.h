@@ -7,13 +7,13 @@
 #include "Options.h"
 #include "PlayerMenu.h"
 
-class MenuManager : public Menu{
+
+class MenuManager : public Menu {
 public:
 	static void Release();
 	Graphics* mGraphics;
 	static MenuManager* sInstance;
 	static MenuManager* Instance();
-
 	void StartMenu();
 
 	Menu* mMenu;
@@ -21,6 +21,8 @@ public:
 	PlayerMenu* mPlayerMenu;
 	PokeDex* mPokeDex;
 
+	void CursorMoveDown();
+	void CursorMoveUp();
 
 	void MenuState();
 
@@ -30,8 +32,11 @@ public:
 	void LoadOptions();
 	void LoadPlayerM();
 	void LoadPokeDex();
+
 private:
 	MenuManager();
+	MenuManager(int, int, Texture*);
 	~MenuManager();
 };
 #endif // !MENUMANAGER_H
+

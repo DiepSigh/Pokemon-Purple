@@ -59,15 +59,50 @@ void AudioManager::PlaySFX(std::string filename, int loops, int channel) {
 	Mix_PlayChannel(channel, mAssetMng->GetSFX(filename), loops);
 }
 
+void AudioManager::StartGameSound() {
+	PlayMusic("sounds/StartGameSound.wav");
+}
+
+void AudioManager::DialogWithOakSound() {
+	PlayMusic("sounds/DialogWithOakSound.wav");
+}
 
 void AudioManager::PalletTownSound() {
-	
-	
+	PlayMusic("sounds/PaletteTownTheme.wav");
+}
 
+void AudioManager::ReserchLabSound() {
+	PlayMusic("sounds/ResearchLab.wav");
+}
+
+void AudioManager::RoadToViridianCitySound() {
+	PlayMusic("sounds/RoadViridianCityFromPalette.wav");
 }
 
 void AudioManager::ViridianCitySound() {
+	PlayMusic("sounds/ViridianCity.wav");
+}
+
+void AudioManager::PokemonCenterSound() {
+	PlayMusic("sounds/PokemonCenter.wav");
+}
+
+void AudioManager::PokemonMartSound() {
+	PlayMusic("sounds/PokemonMart.wav");
+}
+void AudioManager::BattleVsWildPokemonSound() {
+	PlayMusic("sounds/BattleVsWildPokemon.wav");
+}
+
+void AudioManager::VictoryVsWildPokemon() {
+	PlayMusic("sounds/VictoryVsWildPokemon.wav");
+}
 
 
+void AudioManager::BumpSFX() {
+	PlaySFX("sounds/bump.wav", 0);
+}
 
+void AudioManager::ExitSFX() {
+	PlaySFX("sounds/exit.wav", 0);
 }

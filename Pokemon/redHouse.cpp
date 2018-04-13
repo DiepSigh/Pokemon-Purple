@@ -2,22 +2,22 @@
 
 RedHouse::RedHouse(float x, float y) {
 
-	mBookshelf1_1 = new Texture ("redHouse/bookshelf1_1.png", 0, 0, 32, 32);
-	mBookshelf1_2 = new Texture ("redHouse/bookshelf1_2.png", 0, 0, 32, 32);
-	mBookshelf2_1 = new Texture ("redHouse/bookshelf2_1.png", 0, 0, 32, 32);
-	mBookshelf2_2 = new Texture ("redHouse/bookshelf2_2.png", 0, 0, 32, 32);
-	mChair = new Texture ("redHouse/chair.png", 0, 0, 32, 32);
-	mExit = new Texture ("redHouse/exit.png", 0, 0, 32, 32);
-	mFloor = new Texture ("redHouse/floor.png", 0, 0, 32, 32);
-	mFlower1 = new Texture ("redHouse/flower1.png", 0, 0, 32, 32);
-	mFlower2 = new Texture ("redHouse/flower2.png", 0, 0, 32, 32);
-	mPicture = new Texture ("redHouse/picture.png", 0, 0, 32, 32);
-	mTable1 = new Texture ("redHouse/table1.png", 0, 0, 32, 32);
-	mTable2 = new Texture ("redHouse/table2.png", 0, 0, 32, 32);
-	mTable3 = new Texture ("redHouse/table3.png", 0, 0, 32, 32);
-	mTable4 = new Texture ("redHouse/table4.png", 0, 0, 32, 32);
-	mWall = new Texture ("redHouse/wall.png", 0, 0, 32, 32);
-	mWindow = new Texture ("redHouse/window.png", 0, 0, 32, 32);
+	mBookshelf1_1 = &Bookshelf1_1;
+	mBookshelf1_2 = &Bookshelf1_2;
+	mBookshelf2_1 = &Bookshelf2_1;
+	mBookshelf2_2 = &Bookshelf2_2;
+	mChair = &Chair;
+	mExit = &psExit;
+	mFloor = &Floor;
+	mFlower1 = &Flower1;
+	mFlower2 = &Flower2;
+	mPicture = &Picture;
+	mTable1 = &TableTopLeft;
+	mTable2 = &TableTopRight;
+	mTable3 = &Bottom_Table_Left;
+	mTable4 = &Bottom_Table_Right;
+	mWall = &Wall;
+	mWindow = &Window;
 
 	mGraphics = Graphics::Instance();
 	mPos.x = x;
@@ -67,19 +67,18 @@ void RedHouse::Render() {
 	GetmTex()->SetRenderRectX((int)(GetPosX()));
 	GetmTex()->SetRenderRectY((int)(GetPosY()));
 
-	//mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (mClipped) ? &mClipRect : NULL, &GetmTex()->GetmRenderRect());
 	mGraphics->DrawTexture(GetmTex()->GetSDLTex(), (GetmTex()->GetClipped()) ? &GetmTex()->GetmClipRect() : NULL, &GetmTex()->GetmRenderRect());
 }
 
 void RedHouse::Update() {
 	
-	SetPosY(0);
-	SetPosX(520);
+	SetPosY(140);
+	SetPosX(250);
 
 	for (int i = 0; i < 8; i++) {
 
 		if (i != 0) {
-			SetPosX(520);
+			SetPosX(250);
 			SetPosY(GetPosY() + 32);
 
 		}
@@ -94,8 +93,8 @@ void RedHouse::Update() {
 		}
 
 	}
-	SetPosY(0);
-	SetPosX(520);
+	SetPosY(140);
+	SetPosX(250);
 
 }
 
@@ -103,52 +102,52 @@ void RedHouse::DrawMap(int tile) {
 
 	switch (tile) {
 	case 0:
-		mTex = mBookshelf1_1;
+		mTex = *mBookshelf1_1;
 		break;
 	case 1:
-		mTex = mBookshelf1_2;
+		mTex = *mBookshelf1_2;
 		break;
 	case 2:
-		mTex = mBookshelf2_1;
+		mTex = *mBookshelf2_1;
 		break;
 	case 3:
-		mTex = mBookshelf2_2;
+		mTex = *mBookshelf2_2;
 		break;
 	case 4:
-		mTex = mChair;
+		mTex = *mChair;
 		break;
 	case 5:
-		mTex = mExit;
+		mTex = *mExit;
 		break;
 	case 6:
-		mTex = mFlower1;
+		mTex = *mFlower1;
 		break;
 	case 7:
-		mTex = mFlower2;
+		mTex = *mFlower2;
 		break;
 	case 8:
-		mTex = mPicture;
+		mTex = *mPicture;
 		break;
 	case 9:
-		mTex = mTable1;
+		mTex = *mTable1;
 		break;
 	case 10:
-		mTex = mTable2;
+		mTex = *mTable2;
 		break;
 	case 11:
-		mTex = mTable3;
+		mTex = *mTable3;
 		break;
 	case 12:
-		mTex = mTable4;
+		mTex = *mTable4;
 		break;
 	case 13:
-		mTex = mWall;
+		mTex = *mWall;
 		break;
 	case 14:
-		mTex = mWindow;
+		mTex = *mWindow;
 		break;
 	case 20:
-		mTex = mFloor;
+		mTex = *mFloor;
 		break;
 	}
 

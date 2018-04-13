@@ -2,15 +2,15 @@
 #define _PLAYERROOM_H
 
 #include "gameEntity.h"
+#include "mapsLoader.h"
 #include "camera.h"
-#include <iostream>
 
-class PlayerHouse : public GameEntity {
+class PlayerHouse : public MapsLoader {
 private:
 
 	Texture
-		*mBookshelf1, *mBookshelf2, *mChair, *mExit, *mFloor, *mTable1,
-		*mTable2, *mTable3, *mTable4, *mTv, *mUpstairs, *mWall, *mWindow;
+		**mBookshelf1, **mBookshelf2, **mChair, **mExit, **mFloor, **mTable1,
+		**mTable2, **mTable3, **mTable4, **mTv, **mUpstairs, **mWall, **mWindow;
 
 	int map[8][8] =
 	{
@@ -33,8 +33,11 @@ public:
 	PlayerHouse(float, float);
 	~PlayerHouse();
 	void Render();
-	void Update();		
+	void Update();
 	bool isActive;
+		
 };
+
+
 
 #endif // !_PLAYERROOM_H
