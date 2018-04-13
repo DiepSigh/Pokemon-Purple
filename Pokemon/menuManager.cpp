@@ -36,13 +36,10 @@ MenuManager::~MenuManager() {
 
 
 void MenuManager::Update() {
-
 }
 
 void MenuManager::Render() {
 	if (StrtMnuisActive) {
-		//cout << ((int) Cursor->GetPosY());
-
 		StartMenu();
 	}
 
@@ -54,6 +51,9 @@ void MenuManager::Render() {
 	}
 	if (PokedexisActive) {
 		LoadPokeDex();
+	}
+	if (mPokeDex->DataCheck) {
+		DataDraw();
 	}
 }
 
@@ -151,5 +151,13 @@ void MenuManager::LoadPokeDex() {
 	mPokeDex->Cry->Render();
 	mPokeDex->Area->Render();
 	mPokeDex->Quit->Render();
+	mPokeDex->CursorP->Render();
+	mPokeDex->SeenCounter->Render();
+	for (int i = mPokeDex->GetValueR(); i < mPokeDex->GetValueT(); i++){
+		mPokeDex->PkmnName[i]->Render();
+	}
+}
 
+void MenuManager::DataDraw() {
+	mPokeDex->DataDisplay->Render();
 }

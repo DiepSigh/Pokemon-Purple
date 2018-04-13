@@ -3,16 +3,15 @@
 
 #include "graphics.h"
 #include "timer.h"
-//#include "animatedTexture.h"
 #include "menuManager.h"
 #include "levelmanager.h"
 #include "camera.h"
 #include "userInput.h"
 #include "AudioManager.h"
+#include "PokeBase.h"
 #include "DisplayText.h"
 #include "TextManager.h"
 #include "Dialouge.h"
-
 
 class GameManager {
 private:
@@ -34,6 +33,7 @@ private:
 	GameManager();
 	~GameManager();
 	Options* mOptions;
+	PokeBase* mPokeBase;
 
 	TextScreen* mNPCtext;
 	Dialouge* mTextDisplay;

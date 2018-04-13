@@ -22,6 +22,8 @@ GameManager::GameManager() {
 
 	mCamera = Camera::Instance();
 	mOptions = Options::Instance();
+	mPokeBase = PokeBase::Instance();
+
 
 	mTextDisplay = Dialouge::Instance();
 
@@ -44,7 +46,6 @@ GameManager::GameManager() {
 }
 
 GameManager::~GameManager() {
-
 	AssetManager::Release();
 	LevelManager::Release();
 	Graphics::Release();
@@ -87,7 +88,6 @@ void GameManager::Run() {
 			mLevelManager->Update();
 
 			//RENDERS!!!!!
-			//Menu Controller
 			mLevelManager->Render(mTimer->DeltaTime());
 			mMenuManager->Render();
 			mGraphics->Render();
