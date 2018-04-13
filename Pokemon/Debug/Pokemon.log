@@ -1,25 +1,10 @@
-﻿  animatedTexture.cpp
-  AssetManager.cpp
+﻿  AssetManager.cpp
   AudioManager.cpp
 c:\users\mike\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4778: 'printf' : unterminated format string '%\n'
 c:\users\mike\documents\github\pokemon\pokemon\audiomanager.cpp(27): warning C4474: 'printf' : too many arguments passed for format string
   c:\users\mike\documents\github\pokemon\pokemon\audiomanager.cpp(27): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
   DisplayText.cpp
-  gameEntity.cpp
-  gameManager.cpp
   MasterMap.cpp
-  menuManager.cpp
-  menuStart.cpp
-c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  camera.cpp
-  characters.cpp
-c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  graphics.cpp
-  Inventory.cpp
-  Items.cpp
-  levelManager.cpp
   Options.cpp
 c:\users\mike\documents\github\pokemon\pokemon\options.cpp(12): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\options.cpp(13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -29,23 +14,39 @@ c:\users\mike\documents\github\pokemon\pokemon\pkmnstate.cpp(12): warning C4244:
   PokeDex.cpp
 c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\mike\documents\github\pokemon\pokemon\pokedex.cpp(17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  pokemonLeague.cpp
-  pokemonMart.cpp
+  Pokemon.cpp
+  StartScreen.cpp
+c:\users\mike\documents\github\pokemon\pokemon\startscreen.cpp(35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\startscreen.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  animatedTexture.cpp
+  camera.cpp
+  characters.cpp
+c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(15): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\characters.cpp(16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameEntity.cpp
+  gameManager.cpp
+  graphics.cpp
+  levelManager.cpp
+  menuManager.cpp
+  menuStart.cpp
+c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\mike\documents\github\pokemon\pokemon\menustart.cpp(58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  playerHouse.cpp
+  pokemonCenter.cpp
   Generating Code...
   Compiling...
-  playerHouse.cpp
-  Pokemon.cpp
-  pokemonCenter.cpp
+  pokemonLeague.cpp
+  pokemonMart.cpp
   pokemonSchool.cpp
   redHouse.cpp
   reserchLab.cpp
   startRoom.cpp
-  StartScreen.cpp
-c:\users\mike\documents\github\pokemon\pokemon\startscreen.cpp(35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\mike\documents\github\pokemon\pokemon\startscreen.cpp(36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   texture.cpp
   timer.cpp
   userInput.cpp
   viridianCityHouse.cpp
   Generating Code...
+  LINK : C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe not found or not built by the last incremental link; performing full link
+Items.obj : warning LNK4099: PDB 'vc141.pdb' was not found with 'Items.obj' or at 'C:\Users\Mike\Documents\GitHub\Pokemon\Debug\vc141.pdb'; linking object as if no debug info
+Inventory.obj : warning LNK4099: PDB 'vc141.pdb' was not found with 'Inventory.obj' or at 'C:\Users\Mike\Documents\GitHub\Pokemon\Debug\vc141.pdb'; linking object as if no debug info
   Pokemon.vcxproj -> C:\Users\Mike\Documents\GitHub\Pokemon\Debug\Pokemon.exe
