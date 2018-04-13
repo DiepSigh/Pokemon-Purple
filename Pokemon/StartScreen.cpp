@@ -15,7 +15,7 @@ StartScreen::StartScreen(float x, float y, Texture *tex) {
 	SetPosY(y);
 	isPlaying = false;
 	mTex = tex;
-	StartChar = new StartScreen(320, 300, new AnimatedTexture("StartScreenChar.png", 0, 0, 130, 200, 2, 5, AnimatedTexture::HORIZONTAL));
+	StartChar = new StartScreen(320, 300, new AnimatedTexture("StartScreenChar.png", 0, 0, 130, 200, 2, 1, AnimatedTexture::HORIZONTAL));
 }
 
 StartScreen::StartScreen(float x, float y, AnimatedTexture *tex) {
