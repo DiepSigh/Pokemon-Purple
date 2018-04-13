@@ -14,7 +14,6 @@ private:
 	std::map<std::string, Mix_Music*>mMusic; // By Canados
 	std::map<std::string, Mix_Chunk*>mSFX; // By Canados
 
-
 public:
 	static AssetManager* Instance();
 	static void Release();
@@ -28,7 +27,6 @@ public:
 private:
 	AssetManager();
 	~AssetManager();
-
 	TTF_Font* GetFont(std::string filename, int size);
 };
 #endif // !ASSETSMANAGER_H

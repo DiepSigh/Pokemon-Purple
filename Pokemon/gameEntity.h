@@ -17,7 +17,11 @@ private:
 
 public:
 	Texture* GetmTex() { return mTex; }
+
 	void SetmTex(Texture* tex) {mTex = tex;}
+
+	AnimatedTexture* GetmAtex() { return mAtex; }
+
 	GameEntity(float x = 0.0f, float y = 0.0f);
 	~GameEntity();	
 	enum SPACE {LOCAL = 0, WORLD = 1};
@@ -26,7 +30,6 @@ public:
 	void SetPosX(float x) { mPos.x = x; }
 	void SetPosY(float y) { mPos.y = y; }
 
-	AnimatedTexture* GetmAtex() { return mAtex; }
 	void Pos(Vector2 pos);
 	Vector2 Pos(SPACE space = WORLD);
 	void Rotation(float rotation);

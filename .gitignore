@@ -30,7 +30,13 @@
 .vs/Pokemon/v15/.suo
 .vs/Pokemon/v15/Browse.VC.opendb
 *.log
+<<<<<<< HEAD
+*.vs/Pokemon/v15/.suo
+*ipch
+*tlog
+=======
 .vs/Pokemon/v15/.suo
 *.ipch
 *.tlog
+>>>>>>> master
 *.db*

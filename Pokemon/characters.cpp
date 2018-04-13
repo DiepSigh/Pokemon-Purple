@@ -23,6 +23,9 @@ void Characters::Render() {
 void Characters::Update() {
 }
 
-void Characters::NPC(){
+void Characters::NPC() {
+}
 
+void Characters::DisplayText()
+{
 }

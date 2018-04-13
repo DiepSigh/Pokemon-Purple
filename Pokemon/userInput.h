@@ -8,6 +8,7 @@
 #include "menuManager.h"
 
 class UserInput : public Menu{
+
 public:
 	UserInput();
 	void Input();
@@ -17,6 +18,7 @@ private:
 	SDL_Event events;
 	LevelManager* mLevelManager;
 	MenuManager* mMenu;
+
 };
 
 #endif

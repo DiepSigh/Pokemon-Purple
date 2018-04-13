@@ -3,22 +3,28 @@
 
 #include "gameEntity.h"
 #include "animatedTexture.h"
+#include "texture.h"
+#include "DisplayText.h"
+#include <vector>
 
-
-class Characters : public GameEntity{
+class Characters : public GameEntity {
 public:
 	Characters();
 	void Player();
 	void Render();
 	void Update();
+
 	void NPC();
+	
 	inline float GetSpeed() { return SPEED; }
 	void SetSpeed(float s) { SPEED = s; }
+	void DisplayText();
 
 private:
 	Graphics* mGraphics;
 	Texture* mPlayer;
 	float SPEED;
+	TextScreen* mTextScreen;
 
 };
 

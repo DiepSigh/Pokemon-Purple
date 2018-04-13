@@ -230,12 +230,15 @@
     <Filter Include="Source Files\Headers">
       <UniqueIdentifier>{c98fefc3-f72f-4277-a9de-01c5493913f8}</UniqueIdentifier>
     </Filter>
+
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="battle.cpp" />
     <ClCompile Include="DisplayText.cpp" />
     <ClCompile Include="gameEntity.cpp" />
     <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MasterMap.cpp" />
     <ClCompile Include="menuManager.cpp" />
     <ClCompile Include="menuStart.cpp" />
@@ -245,12 +248,15 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+    <ClCompile Include="moves.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
+    <ClCompile Include="PlayerMenu.cpp" />
     <ClCompile Include="PokeDex.cpp" />
+    <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="pokemonLeague.cpp" />
     <ClCompile Include="pokemonMart.cpp" />
     <ClCompile Include="playerHouse.cpp" />
-    <ClCompile Include="Pokemon.cpp" />
     <ClCompile Include="pokemonCenter.cpp" />
     <ClCompile Include="pokemonSchool.cpp" />
     <ClCompile Include="redHouse.cpp" />
@@ -260,22 +266,31 @@
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
-    <ClCompile Include="Options.cpp" />
-    <ClCompile Include="PlayerMenu.cpp" />
+    <ClCompile Include="StartScreen.cpp" />
+    <ClCompile Include="Dialouge.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Oak.cpp" />
+    <ClCompile Include="TextManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
     <ClInclude Include="assetManager.h" />
     <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="battle.h" />
+    <ClInclude Include="characters.h" />
+    <ClInclude Include="Dialouge.h" />
     <ClInclude Include="DisplayText.h" />
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Options.h" />
+    <ClInclude Include="moves.h" />
+    <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="PlayerMenu.h" />
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
     <ClInclude Include="camera.h" />
-    <ClInclude Include="characters.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="items.h" />
     <ClInclude Include="levelManager.h" />
@@ -294,7 +309,9 @@
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
-    <ClInclude Include="Options.h" />
-    <ClInclude Include="PlayerMenu.h" />
+    <ClInclude Include="StartScreen.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="Oak.h" />
+    <ClInclude Include="TextManager.h" />
   </ItemGroup>
 </Project>

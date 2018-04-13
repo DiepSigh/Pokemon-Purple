@@ -19,25 +19,28 @@ GameManager::GameManager() {
 	mQuit = false;
 	mGraphics = Graphics::Instance();
 	mMenuManager = MenuManager::Instance();
+
 	mCamera = Camera::Instance();
 	mOptions = Options::Instance();
 	mPokeBase = PokeBase::Instance();
 
 
+	mTextDisplay = Dialouge::Instance();
+
 	if (!Graphics::Initialized()) {
 		mQuit = true;
 	}
-	
 	mTimer = Timer::Instance();
+
 	mLevelManager = LevelManager::Instance();
-	mPlayerControls = new UserInput();
 	
 	// By Canados
 	
 	mAudioMgr = AudioManager::Instance();
-	//mAudioMgr->PlayMusic("Palette_Town_Theme.wav");
-	//mAudioMgr->PlayMusic("Road_Viridian_City_From_Palette.wav");
 	
+	mPlayerControls = new UserInput();
+	mNPCtext = new TextScreen();
+
 }
 
 GameManager::~GameManager() {
@@ -54,14 +57,14 @@ GameManager::~GameManager() {
 
 	delete mTex;
 	mTex = NULL;
+	delete mPlayerControls;
+	mPlayerControls = NULL;
 
-	
-	
+	delete mNPCtext;
+	mNPCtext = NULL;
 }
 
-
 void GameManager::Run() {
-
 	while (!mQuit) {
 		mTimer->Update();
 		mPlayerControls->Input(mMenuManager, mOptions);
@@ -77,16 +80,11 @@ void GameManager::Run() {
 			mGraphics->ClearBackBuffer();
 			//UPDATES!!!!
 			//mLevelManager->Update();
-
-			//RENDERS!!!!!	
-			mMenuManager->Update();
-			mLevelManager->Render(mTimer->DeltaTime());
-
-			//UPDATES!!!!
 			
 			mMenuManager->Update();
+			
+
 			//RENDERS!!!!!
-			mGraphics->ClearBackBuffer();
 			mLevelManager->Update();
 			//Player Controller
 		
