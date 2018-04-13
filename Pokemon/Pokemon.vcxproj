@@ -182,6 +182,7 @@
     <ClInclude Include="menuManager.h" />
     <ClInclude Include="PkmnState.h" />
     <ClInclude Include="PokeDex.h" />
+    <ClInclude Include="StartScreen.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="userInput.h" />
@@ -229,6 +230,7 @@
     <ClCompile Include="redHouse.cpp" />
     <ClCompile Include="reserchLab.cpp" />
     <ClCompile Include="startRoom.cpp" />
+    <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />

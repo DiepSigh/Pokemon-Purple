@@ -74,7 +74,6 @@ void PlayerHouse::Update() {
 
 	SetPosY(GetPosY());
 	SetPosX(GetPosX());
-	
 
 	for (int i = 0; i < 8; i++) {
 		//ROWS

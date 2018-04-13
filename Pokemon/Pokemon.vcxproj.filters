@@ -18,7 +18,10 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="levelManager.cpp" />
+<<<<<<< HEAD
+=======
     <ClCompile Include="moves.cpp" />
+>>>>>>> master
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="PkmnState.cpp" />
     <ClCompile Include="PlayerMenu.cpp" />
@@ -36,12 +39,19 @@
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="StartScreen.cpp" />
+=======
     <ClCompile Include="Dialouge.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Oak.cpp" />
     <ClCompile Include="TextManager.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Mom.cpp" />
     <ClCompile Include="NPC1.cpp" />
+=======
+>>>>>>> master
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -54,10 +64,14 @@
     <ClInclude Include="gameEntity.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="graphics.h" />
+<<<<<<< HEAD
+    <ClInclude Include="Options.h" />
+=======
     <ClInclude Include="moves.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="PlayerMenu.h" />
+>>>>>>> master
     <ClInclude Include="pokemonLeague.h" />
     <ClInclude Include="pokemonMart.h" />
     <ClInclude Include="MasterMap.h" />
@@ -80,10 +94,17 @@
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
+<<<<<<< HEAD
+    <ClInclude Include="StartScreen.h" />
+=======
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Oak.h" />
     <ClInclude Include="TextManager.h" />
+<<<<<<< HEAD
     <ClInclude Include="Mom.h" />
     <ClInclude Include="NPC1.h" />
+=======
+>>>>>>> master
+>>>>>>> master
   </ItemGroup>
 </Project>
