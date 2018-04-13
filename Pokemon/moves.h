@@ -42,12 +42,17 @@ public:
 	inline int getMoveID() { return m_moveID; }
 	std::string getMoveName() { return m_moveName; }
 	inline int getMoveType() { return m_moveType; }
+	inline std::string getMoveTypeStr() { return m_moveType_str; }
 	inline int getPower() { return m_movePower; }
 	inline int getCat() { return m_moveCat; }
 	inline int getAcc() { return m_moveAcc; }
+	inline int getmaxPP() { return m_movePPMax; }
 	inline int getEffect() { return m_moveEffect; }
 	inline int getChance() { return m_moveChance; }
 	inline int getPriority() { return m_movePriority; }
+	inline int getPP() { return m_movePPCurrent; }
+
+	void useMove() { m_movePPCurrent--; }
 protected:
 	PokeBase *Pokebase;
 	int m_moveID;

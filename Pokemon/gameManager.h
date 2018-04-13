@@ -9,6 +9,7 @@
 #include "userInput.h"
 #include "AudioManager.h"
 #include "PokeBase.h"
+#include "battle.h"
 #include "DisplayText.h"
 #include "TextManager.h"
 #include "Dialouge.h"
@@ -34,6 +35,11 @@ private:
 	~GameManager();
 	Options* mOptions;
 	PokeBase* mPokeBase;
+
+	//Stephen's
+	battle* mBattle;
+	Pokemon *starter;
+	Pokemon *rivalStarter;
 
 	TextScreen* mNPCtext;
 	Dialouge* mTextDisplay;

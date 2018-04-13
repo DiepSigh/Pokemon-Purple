@@ -5,7 +5,7 @@ UserInput::UserInput(){
 	mLevelManager = LevelManager::Instance();
 }
 
-void UserInput::Input(MenuManager* menuM, Options* menuO) {
+void UserInput::Input(MenuManager* menuM, Options* menuO, battle *encounter) {
 	while (SDL_PollEvent(&events) != 0) {
 		if (events.type == SDL_QUIT) {
 				//mQuit = true;
@@ -23,6 +23,10 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				else if (menuM->StrtMnuisActive == false) {
 					mLevelManager->moveLeft();
 				}
+				//BATTLES
+				if (encounter->battle_getActive()) {
+					encounter->left();
+				}
 				break;
 
 			case SDLK_RIGHT:
@@ -33,6 +37,10 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 				//World Control
 				if (menuM->StrtMnuisActive == false && menuM->OptsMnuisActive == false) {
 					mLevelManager->moveRight();
+				}
+				//BATTLES
+				if (encounter->battle_getActive()) {
+					encounter->right();
 				}
 				break;
 
@@ -71,7 +79,34 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 					mLevelManager->moveDown();
 				}
 				break;
-
+				//BATTLES
+			case SDLK_x:
+				if (encounter->battle_getActive()) {
+					switch (encounter->battle_getState()) {
+					case battle::ENCOUNTER:
+						encounter->encounter_continue(true);
+						break;
+					case battle::MENU:
+						encounter->menu_continue(true);
+						break;
+					case battle::MOVES:
+						encounter->moves_continue(true);
+						break;
+					case battle::ATTACK:
+						encounter->attack_continue(true);
+						break;
+					}
+					break;
+				}
+			case SDLK_z:
+				if (encounter->battle_getActive()) {
+					switch (encounter->battle_getState()) {
+					case battle::MOVES:
+						encounter->moves_return(true);
+						break;
+					}
+					break;
+				}
 			case SDLK_ESCAPE:
 				//mQuit = true;
 				break;
@@ -121,8 +156,6 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						}
 					}
 					
-
-
 					//World Control
 					break;
 
@@ -142,8 +175,19 @@ void UserInput::Input(MenuManager* menuM, Options* menuO) {
 						menuM->PlayerMnuisActive = false;
 						menuM->StrtMnuisActive = true;
 					}
-
 					break;
+					//BATTLES
+				case SDLK_x:
+					if (encounter->battle_getActive()) {
+						switch (encounter->battle_getState()) {
+						case battle::MENU:
+							encounter->menu_continue(false);
+							break;
+						case battle::MOVES:
+							encounter->moves_continue(false);
+							break;
+						}
+					}
 				}
 				break;
 		}

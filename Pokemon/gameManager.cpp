@@ -24,7 +24,6 @@ GameManager::GameManager() {
 	mOptions = Options::Instance();
 	mPokeBase = PokeBase::Instance();
 
-
 	mTextDisplay = Dialouge::Instance();
 
 	if (!Graphics::Initialized()) {
@@ -43,6 +42,10 @@ GameManager::GameManager() {
 	mPlayerControls = new UserInput();
 	mNPCtext = new TextScreen();
 
+	//Stephen's
+	mBattle = battle::Instance();
+	starter = new Pokemon(VENUSAUR, 40);
+	rivalStarter = new Pokemon(CHARIZARD, 40);
 }
 
 GameManager::~GameManager() {
@@ -54,12 +57,14 @@ GameManager::~GameManager() {
 	Timer::Release();
 	mTimer = NULL;
 
+	battle::Release();
+	mBattle = NULL;
+
 	AudioManager::Release();
 	mAudioMgr = NULL;
 
 	delete mTex;
 	mTex = NULL;
-
 
 	delete mPlayerControls;
 	mPlayerControls = NULL;
@@ -72,7 +77,7 @@ void GameManager::Run() {
 	while (!mQuit) {
 		mTimer->Update();
 
-		mPlayerControls->Input(mMenuManager, mOptions);
+		mPlayerControls->Input(mMenuManager, mOptions, mBattle);
 
 		while (SDL_PollEvent(&events) != 0) {
 			if (events.type == SDL_QUIT) {
@@ -90,8 +95,16 @@ void GameManager::Run() {
 			//RENDERS!!!!!
 			mLevelManager->Render(mTimer->DeltaTime());
 			mMenuManager->Render();
+
+			//uncomment for battle. must render before update.
+			//mBattle->battleActive(*starter, *rivalStarter);
+			//mBattle->Update(*starter, *rivalStarter);
+
 			mGraphics->Render();
 			mTimer->Reset();
+
+			
+			
 		}
 	}
 }

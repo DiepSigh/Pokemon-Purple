@@ -2,13 +2,22 @@
 #include "battle.h"
 
 battle::battle() {
-	//7,90, 162, 146
 	//m_battleScreen = new battle(0,0, new Texture("battle_screen.png", 28, 370, 648, 600));
 	//m_battleScreen = new battle(0, 0, new AnimatedTexture("battle_screen.png", 28, 360, 162*4, 152*4, 1, 1.0f ,AnimatedTexture::HORIZONTAL));
-	m_battleScreen = new battle(0, 0, new Texture("battle/battle_screen.png", 28, 370, 648, 600));
 	//move to next screen +648+4
+	m_encounter = new battle(0, 0, new Texture("battle/battle_screen.png", 28, 370, 648, 600));
+	m_battleMenu = new battle(0, 0, new Texture("battle/battle_screen.png", 680, 370, 648, 600));
+	m_battleMoves = new battle(0, 0, new Texture("battle/battle_screen.png", 28+652+652, 370, 648, 600));
+	m_battleDisplay = new battle(0, 0, new Texture("battle/battle_screen.png", 28+652+652, 962, 648, 600));
+	m_cursor = new battle(0, 0, new Texture("arrowPKMN.png", 0, 0, 40, 40));
+	m_cursorX = 360;
+	m_cursorY = 452;
+	m_cursorPos = 0;
+	m_battleState = ENCOUNTER;
+	m_battleScreen = m_encounter;
 	m_battleScreen->SetPosX(80);
 	m_battleScreen->SetPosY(0);
+	m_active = false;
 }
 
 battle::battle(int x, int y, Texture* tex) {
@@ -22,18 +31,6 @@ battle::battle(int x, int y, Texture* tex) {
 
 battle::~battle() {}
 
-void battle::startBattle(Pokemon &one, Pokemon &two) {
-	m_battleState = ENCOUNTER;
-	m_battleScreen->Render();
-	two.getFront()->Render();
-	pOutput = new battle(120, 440, new Texture("A wild " + two.getName() + " appeared!", "PKMNSOLID.ttf", 20));
-	pOutput->Render();
-	m_battleContinue = false;
-	if (m_battleContinue) {
-		battleMenu(one, two);
-	}
-}
-
 void battle::Render() {
 	GetmTex()->SetRenderRectX(GetPosX());
 	GetmTex()->SetRenderRectY(GetPosY());
@@ -42,6 +39,156 @@ void battle::Render() {
 }
 
 battle* battle::sInstance = nullptr;
+
+void battle::battleActive(Pokemon &one, Pokemon &two) {
+	if (m_battleState == ATTACK) {
+		screenChange();
+		displayText(m_Rmessage[m_displayCount]);
+	}
+	if (m_battleState == OVER) {
+		screenChange();
+		if (one.getFainted() == true) {
+			displayText(one.getName() + " has fainted.");
+		}
+		else if (two.getFainted() == true) {
+			displayText(two.getName() + " has fainted.");
+		}
+		else {
+			displayText(m_message);
+		}
+	}
+}
+
+void battle::displayText(std::string text) {
+	pOutput = new battle(m_textX, m_textY, new Texture(text, "PKMNSOLID.ttf", 20));
+	pOutput->Render();
+}
+
+void battle::Update(Pokemon &one, Pokemon &two) {
+	if (m_battleState == ENCOUNTER) {
+		one.resetStatStages();
+		two.resetStatStages();
+		resetStates(one, two);
+		screenChange();
+		two.getFront()->Render();
+		m_message = "A wild " + two.getName() + " appeared!";
+		displayText(m_message);
+		m_active = true;
+	}
+	switch (m_battleState) {
+	case ENCOUNTER:
+		if (m_encounterContinue) {
+			battleMenu(one, two);
+			displayStats(one, two);
+		}
+		break;
+	case MENU:
+		battleMenu(one, two);
+		displayStats(one, two);
+		if (m_menuContinue) {
+			switch (m_cursorPos) {
+			case 0:
+				m_cursorX = 240;
+				m_cursorY = 425;
+				fight(one, two);
+				displayStats(one, two);
+				m_menuContinue = false;
+				break;
+			case 3:
+				if (flee(one, two, m_fleeCount)){
+					m_battleState = OVER;
+					m_message = "You have fled.";
+				}
+				else {
+
+				}
+				break;
+			}
+		}
+		break;
+	case MOVES:
+		fight(one, two);
+		displayStats(one, two);
+		switch (m_cursorPos) {
+		case 0:
+			displayMove(one, 0);
+			break;
+		case 1:
+			displayMove(one, 1);
+			break;
+		case 2:
+			displayMove(one, 2);
+			break;
+		case 3:
+			displayMove(one, 3);
+			break;
+		}
+		if (m_movesContinue) {
+			displayText(m_Rmessage[m_displayCount]);
+			/*m_cursorX = 360;
+			m_cursorY = 452;
+			battleMenu(one, two);
+			displayStats(one, two);*/
+			m_movesContinue = false;
+		}
+		if (m_movesReturn) {
+			m_cursorPos = 0;
+			m_cursorX = 360;
+			m_cursorY = 452;
+			battleMenu(one, two);
+			displayStats(one, two);
+			m_movesReturn = false;
+		}
+		break;
+	case ATTACK:
+		one.getBack()->Render();
+		two.getFront()->Render();
+		displayStats(one, two);
+		if (m_attackContinue) {
+			displayText(m_Rmessage[m_displayCount]);
+			m_displayCount++;
+			m_attackContinue = false;
+			if (m_displayCount == m_messageCount) {
+				m_cursorPos = 0;
+				m_cursorX = 360;
+				m_cursorY = 452;
+				battleMenu(one, two);
+				displayStats(one, two);
+			}
+		}
+		break;
+	case OVER:
+		one.getBack()->Render();
+		two.getFront()->Render();
+		displayStats(one, two);
+		//if (m_displayCount == m_messageCount) {
+		//}
+		break;
+	}
+}
+//after encounter
+void battle::encounter_continue(bool yn) {
+	m_encounterContinue = yn;
+}
+//selecting one of 4 menu options
+void battle::menu_continue(bool yn) {
+	m_menuContinue = yn;
+}
+
+//after selecting a move
+void battle::moves_continue(bool yn) {
+	m_movesContinue = yn;
+}
+
+//returning to menu from moves
+void battle::moves_return(bool yn) {
+	m_movesReturn = yn;
+}
+
+//continuing attack/message display
+void battle::attack_continue(bool yn) {
+	m_attackContinue = yn;
+}
 
 battle*battle::Instance() {
 	if (sInstance == nullptr) {
@@ -57,67 +204,284 @@ void battle::Release() {
 }
 
 void battle::right() {
+	switch (m_battleState) {
+	case MENU:
+		switch (m_cursorPos) {
+		case 0:
+			m_cursorX += 195;
+			m_cursorPos++;
+			break;
+		case 1:
+			m_cursorX -= 195;
+			m_cursorY += 65;
+			m_cursorPos++;
+			break;
+		case 2:
+			m_cursorX += 195;
+			m_cursorPos++;
+			break;
+		case 3:
+			m_cursorX -= 195;
+			m_cursorY -= 65;
+			m_cursorPos -= 3;
+			break;
+		}
+		break;
+	case MOVES:
+		switch (m_cursorPos) {
+		case 0:
+			m_cursorY += 30;
+			m_cursorPos++;
+			break;
+		case 1:
+			m_cursorY += 30;
+			m_cursorPos++;
+			break;
+		case 2:
+			m_cursorY += 30;
+			m_cursorPos++;
+			break;
+		case 3:
+			m_cursorY -= 90;
+			m_cursorPos -= 3;
+			break;
+		}
+		break;
+	}
+}
 
+void battle::left() {
+	switch (m_battleState) {
+	case MENU:
+		switch (m_cursorPos) {
+		case 0:
+			m_cursorX += 195;
+			m_cursorY += 65;
+			m_cursorPos+=3;
+			break;
+		case 1:
+			m_cursorX -= 195;
+			m_cursorPos--;
+			break;
+		case 2:
+			m_cursorX += 195;
+			m_cursorY -= 65;
+			m_cursorPos--;
+			break;
+		case 3:
+			m_cursorX -= 195;
+			m_cursorPos--;
+			break;
+		}
+		break;
+	case MOVES:
+		switch (m_cursorPos) {
+		case 0: 
+			m_cursorY += 90;
+			m_cursorPos+=3;
+			break;
+		case 1: case 2: case 3:
+			m_cursorY -= 30;
+			m_cursorPos--;
+			break;
+		}
+		break;
+	}
+}
+
+void battle::screenChange() {
+	switch (m_battleState) {
+	case ENCOUNTER:
+		m_battleScreen = m_encounter;
+		break;
+	case MENU:
+		m_battleScreen = m_battleMenu;
+		break;
+	case MOVES:
+		m_battleScreen = m_battleMoves;
+		break;
+	case ATTACK: case OVER:
+		m_battleScreen = m_battleDisplay;
+		break;
+	}
+	m_battleScreen->SetPosX(80);
+	m_battleScreen->SetPosY(0);
+	m_battleScreen->Render();
 }
 
 void battle::battleMenu(Pokemon &active, Pokemon &opposing) {
-	m_battleMenu = true;
-	m_battleScreen = new battle(0, 0, new Texture("battle/battle_screen.png", 28 + 648 + 4, 370, 648, 600));
+	m_battleState = MENU;
+	screenChange();
+	active.getBack()->Render();
+	opposing.getFront()->Render();
 	
+	m_cursor->SetPosX(m_cursorX);
+	m_cursor->SetPosY(m_cursorY);
+	m_cursor->Render();
+}
+
+void battle::displayStats(Pokemon &active, Pokemon &opposing) {
+	m_name = new battle(0, 0, new Texture(active.getName(), "PKMNSOLID.ttf", 20));
+	m_name->SetPosX(410);
+	m_name->SetPosY(250);
+	m_currHP = new battle(0, 0, new Texture(std::to_string(active.getHP()), "PKMNSOLID.ttf", 20));
+	m_currHP->SetPosX(480);
+	m_currHP->SetPosY(340);
+	m_maxHP = new battle(0, 0, new Texture(std::to_string(active.getMaxHP()), "PKMNSOLID.ttf", 20));
+	m_maxHP->SetPosX(580);
+	m_maxHP->SetPosY(340);
+	m_level = new battle(0, 0, new Texture(std::to_string(active.getLevel()), "PKMNSOLID.ttf", 20));
+	m_level->SetPosX(570);
+	m_level->SetPosY(275);
+	m_name->Render();
+	m_currHP->Render();
+	m_maxHP->Render();
+	m_level->Render();
+
+	m_nameAI = new battle(0, 0, new Texture(opposing.getName(), "PKMNSOLID.ttf", 20));
+	m_nameAI->SetPosX(130);
+	m_nameAI->SetPosY(25);
+	m_levelAI = new battle(0, 0, new Texture(std::to_string(opposing.getLevel()), "PKMNSOLID.ttf", 20));
+	m_levelAI->SetPosX(245);
+	m_levelAI->SetPosY(55);
+	m_HP_AI = new battle(0, 0, new Texture(std::to_string(opposing.getHP()), "PKMNSOLID.ttf", 20));
+	m_HP_AI->SetPosX(420);
+	m_HP_AI->SetPosY(80);
+	m_nameAI->Render();
+	m_levelAI->Render();
+	m_HP_AI->Render();
+}
+
+void battle::displayMoves(Pokemon &active) {
+	m_move1 = new battle(0, 0, new Texture(active.getMove(0).getMoveName(), "PKMNSOLID.ttf", 20));
+	m_move1->SetPosX(290);
+	m_move1->SetPosY(435);
+	m_move1->Render();
+	m_move2 = new battle(0, 0, new Texture(active.getMove(1).getMoveName(), "PKMNSOLID.ttf", 20));
+	m_move2->SetPosX(290);
+	m_move2->SetPosY(465);
+	m_move2->Render();
+	m_move3 = new battle(0, 0, new Texture(active.getMove(2).getMoveName(), "PKMNSOLID.ttf", 20));
+	m_move3->SetPosX(290);
+	m_move3->SetPosY(495);
+	m_move3->Render();
+	m_move4 = new battle(0, 0, new Texture(active.getMove(3).getMoveName(), "PKMNSOLID.ttf", 20));
+	m_move4->SetPosX(290);
+	m_move4->SetPosY(525);
+	m_move4->Render();
+}
+
+void battle::displayMove(Pokemon &one, int num) {
+	switch (num) {
+	case 0:
+		m_moveType = new battle(0, 0, new Texture(one.getMove(0).getMoveTypeStr(), "PKMNSOLID.ttf", 20));
+		m_moveType->SetPosX(125);
+		m_moveType->SetPosY(335);
+		m_moveType->Render();
+		m_currPP = new battle(0, 0, new Texture(std::to_string(one.getMove(0).getPP()), "PKMNSOLID.ttf", 20));
+		m_currPP->SetPosX(250);
+		m_currPP->SetPosY(375);
+		m_currPP->Render();
+		m_maxPP = new battle(0, 0, new Texture(std::to_string(one.getMove(0).getmaxPP()), "PKMNSOLID.ttf", 20));
+		m_maxPP->SetPosX(350);
+		m_maxPP->SetPosY(375);
+		m_maxPP->Render();
+		break;
+	case 1:
+		m_moveType = new battle(0, 0, new Texture(one.getMove(1).getMoveTypeStr(), "PKMNSOLID.ttf", 20));
+		m_moveType->SetPosX(125);
+		m_moveType->SetPosY(335);
+		m_moveType->Render();
+		m_currPP = new battle(0, 0, new Texture(std::to_string(one.getMove(1).getPP()), "PKMNSOLID.ttf", 20));
+		m_currPP->SetPosX(250);
+		m_currPP->SetPosY(375);
+		m_currPP->Render();
+		m_maxPP = new battle(0, 0, new Texture(std::to_string(one.getMove(1).getmaxPP()), "PKMNSOLID.ttf", 20));
+		m_maxPP->SetPosX(350);
+		m_maxPP->SetPosY(375);
+		m_maxPP->Render();
+		break;
+	case 2:
+		m_moveType = new battle(0, 0, new Texture(one.getMove(2).getMoveTypeStr(), "PKMNSOLID.ttf", 20));
+		m_moveType->SetPosX(125);
+		m_moveType->SetPosY(335);
+		m_moveType->Render();
+		m_currPP = new battle(0, 0, new Texture(std::to_string(one.getMove(2).getPP()), "PKMNSOLID.ttf", 20));
+		m_currPP->SetPosX(250);
+		m_currPP->SetPosY(375);
+		m_currPP->Render();
+		m_maxPP = new battle(0, 0, new Texture(std::to_string(one.getMove(2).getmaxPP()), "PKMNSOLID.ttf", 20));
+		m_maxPP->SetPosX(350);
+		m_maxPP->SetPosY(375);
+		m_maxPP->Render();
+		break;
+	case 3:
+		m_moveType = new battle(0, 0, new Texture(one.getMove(3).getMoveTypeStr(), "PKMNSOLID.ttf", 20));
+		m_moveType->SetPosX(125);
+		m_moveType->SetPosY(335);
+		m_moveType->Render();
+		m_currPP = new battle(0, 0, new Texture(std::to_string(one.getMove(3).getPP()), "PKMNSOLID.ttf", 20));
+		m_currPP->SetPosX(250);
+		m_currPP->SetPosY(375);
+		m_currPP->Render();
+		m_maxPP = new battle(0, 0, new Texture(std::to_string(one.getMove(3).getmaxPP()), "PKMNSOLID.ttf", 20));
+		m_maxPP->SetPosX(350);
+		m_maxPP->SetPosY(375);
+		m_maxPP->Render();
+		break;
+	}
 }
 
 void battle::fight(Pokemon &active, Pokemon &opposing) {
-	battle();
-	active.resetStatStages();
-	opposing.resetStatStages();
-	resetStates(active, opposing);
-	using namespace std;
+	m_messageCount = 0;
+	m_displayCount = 0;
+	m_battleState = MOVES;
+	screenChange();
+	opposing.getFront()->Render();
+	//using namespace std;
 
-	std::cout << "Commence battle.\n";
-	do {
-		active.displayStats();
-		opposing.displayStats2();
+	//std::cout << "Commence battle.\n";
+	//do {
 		int input = 0;
 		int playerMove = 0;
-		std::cout << "Choose move 1-4;\n\n";
-		std::cin >> input;
-		switch (input) {
-		case 0:
-			//playerMove = active.getMove(input).getMoveID();
-			break;
-		case 1:
-			//playerMove = active.getMove(input).getMoveID();
-			break;
-		case 2:
-			//playerMove = active.getMove(input).getMoveID();
-			break;
-		case 3:
-			//playerMove = active.getMove(input).getMoveID();
-			break;
-		}
+		displayMoves(active);
+		m_cursor->SetPosX(m_cursorX);
+		m_cursor->SetPosY(m_cursorY);
+		m_cursor->Render();
+		if (m_movesContinue) {
+			active.displayStats();
+			opposing.displayStats2();
 
-		int aiMove = AIChoice(opposing);
-		int attacker = firstAttack(active, input-1, opposing, aiMove);
-		if (!faintCheck(active, opposing)) {
-			if (attacker == PLAYER) {
-				attack(opposing, active, aiMove);
-			}else {
-				attack(active, opposing, input-1);
+				int aiMove = AIChoice(opposing);
+				m_battleState = ATTACK;
+				int attacker = firstAttack(active, m_cursorPos, opposing, aiMove);
+				if (!faintCheck(active, opposing)) {
+					if (attacker == PLAYER) {
+						attack(opposing, active, aiMove);
+					}else {
+						attack(active, opposing, m_cursorPos);
+					}
+				}
+				statusCheck2(active, opposing);
+				statusCheck2(opposing, active);
+				m_movesContinue = false;
+		
+			if (active.getFainted()) {
+				std::cout << active.getName() << " has fainted.";
+				m_battleState = OVER;
+			}
+			else if (opposing.getFainted()){
+				std::cout << opposing.getName() << " has fainted.";
+				active.gainEXP(opposing);
+				active.gainEVs(opposing);
+				m_battleState = OVER;
 			}
 		}
-		statusCheck2(active, opposing);
-		statusCheck2(opposing, active);
-	} while (!faintCheck(active, opposing));
-	if (active.getFainted()) {
-		cout << active.getName() << " has fainted.";
-	}
-	else {
-		cout << opposing.getFainted() << " has fainted.";
-	}
 	//set to normal poison after battle ends
 	if (active.getStatus() == BADLY_POISONED) {
 		active.setStatus(POISONED);
 	}
+
 }
 
 int battle::AIChoice(Pokemon &ai) {
@@ -140,6 +504,12 @@ int battle::AIChoice(Pokemon &ai) {
 
 	//random move to use
 	move = randomGen(0, moveCount-1);
+	if (move > 3) {
+		move = 3;
+	}
+	if (move < 0) {
+		move = 0;
+	}
 	return move;
 }
 
@@ -168,6 +538,8 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 	if (statusCheck1(attacking)) {
 		double damage = 0;
 		Move moveUsed = attacking.getMove(move);
+		m_Rmessage[m_messageCount] = attacking.getName() + " used " + moveUsed.getMoveName();
+		m_messageCount++;
 		//accuracy check
 		if (!attackMissed(moveUsed.getAcc(), attacking.getAccStage(), defending.getEvaStage())) {
 			//check if damaging move or status move
@@ -202,7 +574,12 @@ void battle::attack(Pokemon &attacking, Pokemon &defending, int move) {
 		else {
 			//attack missed
 			m_message += "Attack missed.\n";
+			if (m_message != "") {
+				m_Rmessage[m_messageCount] = m_message;
+				m_messageCount++;
+			}
 		}
+		attacking.useMove(move); //PP--
 		std::cout << attacking.getName() << " used " << moveUsed.getMoveName() << std::endl;
 		//if (damage != 0) {
 		//	std::cout << "It did " << damage << " damage!\n";
@@ -308,6 +685,10 @@ bool battle::statusCheck1(Pokemon &pokemon) {
 				}
 			}
 		}
+		if (m_message != "") {
+			m_Rmessage[m_messageCount] = m_message;
+			m_messageCount++;
+		}
 	}
 	return attack;
 }
@@ -338,7 +719,10 @@ void battle::statusCheck2(Pokemon &pokemon, Pokemon &other) {
 		other.heal(drain);
 		m_message += pokemon.getName() + " got its HP sapped.\n";
 	}
-
+	if (m_message != "") {
+		m_Rmessage[m_messageCount] = m_message;
+		m_messageCount++;
+	}
 	std::cout << m_message;
 }
 
@@ -402,6 +786,10 @@ void battle::vStatusChange(Pokemon &affected, int effect) {
 		}
 		break;
 	}
+	if (m_message != "") {
+		m_Rmessage[m_messageCount] = m_message;
+		m_messageCount++;
+	}
 }
 
 void battle::nvStatusChange(Pokemon &affected, int effect) {
@@ -426,7 +814,11 @@ void battle::nvStatusChange(Pokemon &affected, int effect) {
 			break;
 		}
 	}else {
-		//if a status category move, message = it failed
+		m_message += "It failed.\n";
+	}
+	if (m_message != "") {
+		m_Rmessage[m_messageCount] = m_message;
+		m_messageCount++;
 	}
 }
 
@@ -564,6 +956,10 @@ void battle::statChange(Pokemon &user, Pokemon &opposing, int move) {
 			m_message += "evasion fell.\n";
 			break;
 		}
+	}
+	if (m_message != "") {
+		m_Rmessage[m_messageCount] = m_message;
+		m_messageCount++;
 	}
 }
 
@@ -847,6 +1243,11 @@ float battle::typeEffectiveness(int move, int pokemon) {
 	}
 	else if (multiplier == 0) {
 		m_message += "It had no effect.\n";
+	}
+
+	if (m_message != "") {
+		m_Rmessage[m_messageCount] = m_message;
+		m_messageCount++;
 	}
 
 	return multiplier;

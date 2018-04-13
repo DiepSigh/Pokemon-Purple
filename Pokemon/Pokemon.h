@@ -12,22 +12,6 @@
 #include "gameEntity.h"
 #include "moves.h"
 #include <math.h>
-//#include <iostream>
-//#include <fstream>
-
-/*enum pokemon {MISSINGNO, BULBASAUR, IVYSAUR, VENUSAUR, CHARMANDER, CHARMELEON, CHARIZARD, SQUIRTLE, WARTORTLE, BLASTOISE, CATERPIE, METAPOD, BUTTERFREE,
-//	  WEEDLE, KAKUNA, BEEDRILL, PIDGEY, PIDGEOTTO, PIDGEOT, RATTATA, RATICATE, SPEAROW, FEAROW, EKANS, ARBOK, PIKACHU, RAICHU, SANDSHREW, SANDSLASH,  
-//	  NIDORAN_F, NIDORINA, NIDOQUEEN, NIDORAN_M, NIDORINO, NIDOKING, CLEFAIRY, CLEFABLE, VULPIX, NINETALES, JIGGLYPUFF, WIGGLYTUFF, ZUBAT, GOLBAT,  
-//	  ODDISH, GLOOM, VILEPLUME, PARAS, PARASECT, VENONAT, VENOMOTH, DIGLETT, DUGTRIO, MEOWTH, PERSIAN, PSYDUCK, GOLDUCK, MANKEY, PRIMEAPE, GROWLITHE,  
-//	  ARCANINE, POLIWAG, POLIWHIRL, POLIWRATH, ABRA, KADABRA, ALAKAZAM, MACHOP, MACHOKE, MACHAMP, BELLSPROUT, WEEPINBELL, VICTREEBEL, TENTACOOL,  
-//	  TENTACRUEL, GEODUDE, GRAVELER, GOLEM, PONYTA, RAPIDASH, SLOWPOKE, SLOWBRO, MAGNEMITE, MAGNETON, FARFETCHD, DODUO, DODRIO, SEEL, DEWGONG,  
-//	  GRIMER, MUK, SHELLDER, CLOYSTER, GASTLY, HAUNTER, GENGAR, ONIX, DROWZEE, HYPNO, KRABBY, KINGLER, VOLTORB, ELECTRODE, EXEGGCUTE, EXEGGUTOR,  
-//	  CUBONE, MAROWAK, HITMONLEE, HITMONCHAN, LICKITUNG, KOFFING, WEEZING, RHYHORN, RHYDON, CHANSEY, TANGELA, KANGASKHAN, HORSEA, SEADRA, GOLDEEN,  
-//	  SEAKING, STARYU, STARMIE, MR_MIME, SCYTHER, JYNX, ELECTABUZZ, MAGMAR, PINSIR, TAUROS, MAGIKARP, GYARADOS, LAPRAS, DITTO, EEVEE, VAPOREON,  
-//	  JOLTEON, FLAREON, PORYGON, OMANYTE, OMASTAR, KABUTO, KABUTOPS, AERODACTYL, SNORLAX, ARTICUNO, ZAPDOS, MOLTRES, DRATINI, DRAGONAIR, DRAGONITE,  
-	  MEWTWO, MEW};
-
-enum experience_group { SLOW = 1, MED_SLOW = 2, MED_FAST = 3, FAST = 4 };*/
 
 enum pokemon_status { OK=0, FROZEN=1, PARALYZED=2, POISONED=3, BADLY_POISONED=4, BURNED = 5, ASLEEP=6 };
 
@@ -38,15 +22,16 @@ public:
 	Pokemon();
 	Pokemon(int pokemon, int level);
 	~Pokemon();
-	//void setPokemonStats(int pokemon); 
 	void retrievePokemon(int pokemon); //Grabs data from PokeBase class to Pokemon variables
 	void retrieveMoves(int pokemon); //Stores learnable moves at levels in m_learnLevel[] and m_moveToLearn[]
 	void setIV(); //Sets IV's randomly
 	void emptyEV(); //Sets all EV's to 0
 	void setStats(); //Sets stats of Pokemon based on IV's, current EV's, and level
-	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
 	void setMoves(int pokemon, int level); //Sets 4 learnables moves based on level or less
-	void resetStatStages(); //Resets stages of stats for battles
+	void setEXP(); //Sets EXP of Pokemon based on level; should only be called when new Pokemon is created
+	void gainEXP(Pokemon &);
+	void levelUP();
+	void gainEVs(Pokemon &);
 	void displayMoves();
 	void displayStats();
 	void displayStats2();
@@ -54,6 +39,7 @@ public:
 	//Battle
 	void hurt(int damage);
 	void heal(int amount);
+	void resetStatStages(); //Resets stages of stats for battles
 	inline void awake() { m_status = OK; m_sleepCount = 0; }
 	inline void asleep() { m_sleepCount++; }
 	inline void cured() { m_status = OK; m_poisonCount = 0; }
@@ -62,12 +48,12 @@ public:
 	inline void confused() { m_confusedCount++; }
 	inline void fainted() { m_fainted = true; m_hp = 0; m_status = OK; }
 	inline void restored() { m_fainted = false; m_hp = m_maxHP; }
+	void useMove(int num) { move[num].useMove(); } //uses move's PP
 
 	//Getters
-	inline bool getSeen() { return m_seen; }
-	inline int getSeenCount() { return m_seenCount; }
 	inline std::string getName() { return m_nickname; }
 	inline Move getMove(int k) { return move[k]; }
+	inline int getMoveCount() { return m_moveCount; }
 	inline int getLevel() { return m_level; }
 	inline int getStatus() { return m_status; }
 	inline bool getFainted() { return m_fainted; }
@@ -81,6 +67,7 @@ public:
 	inline int getType2() { return m_type2; }
 
 	inline int getBaseSpd() { return m_baseSpd; }
+	inline int getEXPYield() { return m_expYield; }
 
 	inline int getAtkStage() { return m_atkStage; }
 	inline int getDefStage() { return m_defStage; }
@@ -114,11 +101,11 @@ public:
 	inline void setSeeded(bool state) { m_seeded = state; }
 
 	//Rendering / Sprites
-	
 	Pokemon(int, int, Texture*);
 	Pokemon* getFront() { return m_frontSprite; } //112x112
 	Pokemon* getBack() { return m_backSprite; } //256x256
 	void Render();
+
 protected:
 	Pokemon *m_frontSprite = nullptr;
 	int m_frontX;
@@ -126,6 +113,7 @@ protected:
 	Pokemon *m_backSprite = nullptr;
 	int m_backX;
 	int m_backY;
+
 	PokeBase *Pokebase = nullptr;
 	Graphics *mGraphics = nullptr;
 	AssetManager *mAssetManager = nullptr;
@@ -139,6 +127,7 @@ protected:
 	bool m_fainted;
 	int m_exp; //current amount of exp
 	Move move[4];
+	int m_moveCount;
 
 	//Other
 	int m_type1;

@@ -230,7 +230,6 @@
     <Filter Include="Source Files\Headers">
       <UniqueIdentifier>{c98fefc3-f72f-4277-a9de-01c5493913f8}</UniqueIdentifier>
     </Filter>
-
     <ClCompile Include="animatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="AudioManager.cpp" />
@@ -266,7 +265,6 @@
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="viridianCityHouse.cpp" />
-    <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="Dialouge.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Oak.cpp" />
@@ -274,9 +272,6 @@
     <ClCompile Include="Mom.cpp" />
     <ClCompile Include="NPC1.cpp" />
     <ClCompile Include="NPC2.cpp" />
-
-
-
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedTexture.h" />
@@ -315,13 +310,11 @@
     <ClInclude Include="redHouse.h" />
     <ClInclude Include="reserchLab.h" />
     <ClInclude Include="viridianCityHouse.h" />
-    <ClInclude Include="StartScreen.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Oak.h" />
     <ClInclude Include="TextManager.h" />
     <ClInclude Include="Mom.h" />
     <ClInclude Include="NPC1.h" />
     <ClInclude Include="NPC2.h" />
-
   </ItemGroup>
 </Project>
